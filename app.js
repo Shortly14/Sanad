@@ -113,6 +113,7 @@ en: {
   authTitle:"Sign in", lblEmail:"Email", sendCode:"Send code", useUsernameLogin:"I have a username and password", lblCode:"Code", verifyCode:"Verify", resendCode:"Send a new code", changeEmail:"Change email", continueLabel:"Continue", useEmailLogin:"Sign in with email instead",
   authHintEmail:"Enter your email. We'll send you a code to sign in or create your account.", authHintLink:"One more step: add your email to keep your account safe. We'll send you a code there.", authHintCode:"Enter the code we emailed to {email}. If you can't find it, check your spam folder.", authHintName:"Welcome to Sanad! What name should other people see?", codeResent:"We emailed you a new code.",
   authErrorEmail:"Enter a valid email, for example name@example.com.", authErrorCode:"Enter the code from the email.", authErrorWrongCode:"That code is wrong. Check it and try again.", authErrorCodeExpired:"That code has expired. Tap \"Send a new code\".", authErrorTooManyCodes:"Too many tries. Wait 15 minutes and try again.", authErrorSendFailed:"We couldn't send a code to this email. Check it and try again.", authErrorEmailTaken:"This email already belongs to another account. Sign in with email instead.", authErrorName:"Enter a name.",
+  themeToDark:"Switch to dark mode", themeToLight:"Switch to light mode",
 },
 ar: {
   brandName:"سند · Sanad", brandTag:"سندك في السعودية",
@@ -193,6 +194,7 @@ ar: {
   authTitle:"تسجيل الدخول", lblEmail:"البريد الإلكتروني", sendCode:"أرسل الرمز", useUsernameLogin:"لدي اسم مستخدم وكلمة مرور", lblCode:"الرمز", verifyCode:"تحقّق", resendCode:"أرسل رمزًا جديدًا", changeEmail:"غيّر البريد", continueLabel:"متابعة", useEmailLogin:"سجّل الدخول بالبريد الإلكتروني بدلًا من ذلك",
   authHintEmail:"أدخل بريدك الإلكتروني. سنرسل إليك رمزًا لتسجيل الدخول أو إنشاء حسابك.", authHintLink:"خطوة أخيرة: أضف بريدك الإلكتروني لحماية حسابك. سنرسل إليك رمزًا هناك.", authHintCode:"أدخل الرمز الذي أرسلناه إلى {email}. إذا لم تجده، تحقّق من مجلد الرسائل غير المرغوب فيها.", authHintName:"أهلًا بك في سند! ما الاسم الذي تريد أن يراه الآخرون؟", codeResent:"أرسلنا إليك رمزًا جديدًا بالبريد.",
   authErrorEmail:"أدخل بريدًا إلكترونيًا صحيحًا، مثل name@example.com.", authErrorCode:"أدخل الرمز الذي وصلك في البريد.", authErrorWrongCode:"الرمز غير صحيح. تحقّق منه وحاول مرة أخرى.", authErrorCodeExpired:"انتهت صلاحية الرمز. اضغط \"أرسل رمزًا جديدًا\".", authErrorTooManyCodes:"محاولات كثيرة. انتظر ١٥ دقيقة ثم حاول مرة أخرى.", authErrorSendFailed:"تعذّر إرسال رمز إلى هذا البريد. تحقّق منه وحاول مرة أخرى.", authErrorEmailTaken:"هذا البريد مرتبط بحساب آخر. سجّل الدخول بالبريد الإلكتروني بدلًا من ذلك.", authErrorName:"أدخل اسمًا.",
+  themeToDark:"التبديل إلى الوضع الداكن", themeToLight:"التبديل إلى الوضع الفاتح",
 },
 ur: {
   brandName:"سند · Sanad", brandTag:"سعودی عرب میں آپ کا سہارا",
@@ -273,6 +275,7 @@ ur: {
   authTitle:"سائن اِن", lblEmail:"ای میل", sendCode:"کوڈ بھیجیں", useUsernameLogin:"میرے پاس یوزرنیم اور پاس ورڈ ہے", lblCode:"کوڈ", verifyCode:"تصدیق کریں", resendCode:"نیا کوڈ بھیجیں", changeEmail:"ای میل بدلیں", continueLabel:"جاری رکھیں", useEmailLogin:"اس کے بجائے ای میل سے سائن اِن کریں",
   authHintEmail:"اپنی ای میل درج کریں۔ سائن اِن کرنے یا اکاؤنٹ بنانے کے لیے ہم آپ کو ایک کوڈ بھیجیں گے۔", authHintLink:"ایک آخری قدم: اپنے اکاؤنٹ کو محفوظ رکھنے کے لیے اپنی ای میل شامل کریں۔ ہم وہاں آپ کو ایک کوڈ بھیجیں گے۔", authHintCode:"وہ کوڈ درج کریں جو ہم نے {email} پر بھیجا ہے۔ اگر نہ ملے تو اسپام فولڈر دیکھیں۔", authHintName:"سند میں خوش آمدید! دوسرے لوگ آپ کا کون سا نام دیکھیں؟", codeResent:"ہم نے آپ کو ای میل پر نیا کوڈ بھیج دیا ہے۔",
   authErrorEmail:"درست ای میل درج کریں، مثلاً name@example.com۔", authErrorCode:"ای میل میں آنے والا کوڈ درج کریں۔", authErrorWrongCode:"یہ کوڈ غلط ہے۔ اسے چیک کر کے دوبارہ کوشش کریں۔", authErrorCodeExpired:"اس کوڈ کی مدت ختم ہو گئی ہے۔ \"نیا کوڈ بھیجیں\" پر ٹیپ کریں۔", authErrorTooManyCodes:"بہت زیادہ کوششیں۔ ۱۵ منٹ انتظار کریں اور دوبارہ کوشش کریں۔", authErrorSendFailed:"اس ای میل پر کوڈ نہیں بھیجا جا سکا۔ اسے چیک کر کے دوبارہ کوشش کریں۔", authErrorEmailTaken:"یہ ای میل پہلے سے کسی اور اکاؤنٹ کی ہے۔ اس کے بجائے ای میل سے سائن اِن کریں۔", authErrorName:"ایک نام درج کریں۔",
+  themeToDark:"ڈارک موڈ پر جائیں", themeToLight:"لائٹ موڈ پر جائیں",
 }
 };
 
@@ -499,6 +502,31 @@ function persistIdSet(key, obj){
   catch(err){ /* private-browsing/storage-disabled — likes/saves just won't survive a reload */ }
 }
 
+/* ============================= Theme (light / dark) ============================= */
+/* Light is the standard look; dark is opt-in. The attribute is already set by the
+   inline script in index.html before first paint — this only handles switching it
+   afterwards and remembering the choice. */
+const THEME_STORAGE_KEY = 'sanad_theme';
+
+function currentTheme(){
+  return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+}
+function applyTheme(theme){
+  const next = theme === 'dark' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', next);
+  try{ localStorage.setItem(THEME_STORAGE_KEY, next); }
+  catch(err){ /* storage disabled — the theme still applies for this visit */ }
+  syncThemeToggles();
+}
+function syncThemeToggles(){
+  // The button offers the OTHER mode, so label it with what tapping it will do.
+  const label = t(currentTheme() === 'dark' ? 'themeToLight' : 'themeToDark');
+  document.querySelectorAll('[data-theme-toggle]').forEach(btn=>{
+    btn.setAttribute('aria-label', label);
+    btn.setAttribute('title', label);
+  });
+}
+
 /* ============================= State & render ============================= */
 let state = {
   lang:'en', tab:'housing',
@@ -554,6 +582,10 @@ function applyI18n(){
       el.setAttribute('aria-label', translations[state.lang][k]);
     }
   });
+  document.querySelectorAll('[data-theme-toggle]').forEach(btn=>{
+    btn.addEventListener('click', ()=> applyTheme(currentTheme() === 'dark' ? 'light' : 'dark'));
+  });
+
   document.querySelectorAll('[data-lang-btn]').forEach(b=>{
     b.classList.toggle('active', b.getAttribute('data-lang-btn')===state.lang);
   });
@@ -2084,6 +2116,7 @@ function renderAll(){
   applyI18n();
   populateFilterOptions();
   renderGuide();
+  syncThemeToggles();
   renderListings();
   renderCatChips();
   renderForum();

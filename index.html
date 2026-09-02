@@ -6,6 +6,16 @@
 <title>Sanad · سند — Your support system in Saudi Arabia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet">
+<script>
+/* Applied before the stylesheet paints so the app never flashes the wrong palette.
+   Light is the default look; dark is opt-in and remembered per device. Wrapped in
+   try/catch because localStorage throws outright in some privacy modes. */
+(function(){
+  var t = 'light';
+  try{ if(localStorage.getItem('sanad_theme') === 'dark') t = 'dark'; }catch(e){}
+  document.documentElement.setAttribute('data-theme', t);
+})();
+</script>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -21,10 +31,16 @@
         <div class="tag" data-i18n="brandTag">Your support system in Saudi Arabia</div>
       </div>
     </div>
-    <div class="lang-switch">
-      <button data-lang-btn="en">EN</button>
-      <button data-lang-btn="ar">عربي</button>
-      <button data-lang-btn="ur">اردو</button>
+    <div class="topbar-actions">
+      <div class="lang-switch">
+        <button data-lang-btn="en">EN</button>
+        <button data-lang-btn="ar">عربي</button>
+        <button data-lang-btn="ur">اردو</button>
+      </div>
+      <button class="theme-toggle" data-theme-toggle type="button">
+        <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg>
+        <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.2 8.2 0 019.5 4 8.3 8.3 0 1020 14.5z"/></svg>
+      </button>
     </div>
   </header>
 
@@ -117,6 +133,10 @@
           <button data-lang-btn="ar">عربي</button>
           <button data-lang-btn="ur">اردو</button>
         </div>
+        <button class="theme-toggle theme-toggle--floating" data-theme-toggle type="button">
+        <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg>
+        <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.2 8.2 0 019.5 4 8.3 8.3 0 1020 14.5z"/></svg>
+      </button>
       </div>
       <div class="explore-chip-bar explore-chip-bar--cats">
         <div class="cat-chip-row explore-chip-row" id="feedTypeChips">
