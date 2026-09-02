@@ -1135,3 +1135,15 @@
     padding:22px 24px;margin:0 22px;
   }
   html[data-theme="light"] .feed-card--empty .feed-placeholder svg{stroke:rgba(20,35,29,0.14);}
+
+  /* ---- Active states inside the light layer ----
+     The overrides above target base states (e.g. `nav.tabbar button[data-tab]`)
+     and carry one more selector than the original `.active` rules, so they won
+     on specificity and repainted the selected item as if it were unselected --
+     the bottom bar stopped showing which page you were on. These restore the
+     selected look; each is scoped with .active so it outranks its base rule. */
+  html[data-theme="light"] nav.tabbar button[data-tab].active{color:var(--green);}
+  html[data-theme="light"] nav.tabbar button[data-tab].active svg{stroke:var(--green);}
+  html[data-theme="light"] .lang-switch--floating button.active{color:#2A1D08;}
+  html[data-theme="light"] .feed-rail .lk.active svg{fill:var(--feed-pink);stroke:var(--feed-pink);}
+  html[data-theme="light"] .feed-rail .sv.active svg{fill:var(--green);stroke:var(--green);}
