@@ -107,7 +107,7 @@ en: {
   guestSavedLabel:"Saved", guestLanguageLabel:"Language", guestLanguageValue:"العربية · English · اردو",
   likedCountLabel:"{n} liked on this phone", savedCountLabel:"{n} saved on this phone",
   signInBtnShort:"Log in / Sign up",
-  authErrorInvalid:"Wrong username or password.", authErrorMissing:"Enter a username and password.", authErrorNetwork:"Couldn't reach the server — try again.", authErrorShort:"Password must be at least 6 characters.", authErrorTaken:"That username is already taken.", loginHint:"Log in with your username and password.", loginTabLabel:"Log in", signInSubmit:"Log in", signupHint:"Pick a username and password — that's all you need.", signupTabLabel:"Sign up",
+  authErrorInvalid:"Wrong username or password.", authErrorTooMany:"Too many wrong attempts. Wait 15 minutes and try again.", authErrorMissing:"Enter a username and password.", authErrorNetwork:"Couldn't reach the server — try again.", authErrorShort:"Password must be at least 6 characters.", authErrorTaken:"That username is already taken.", loginHint:"Log in with your username and password.", loginTabLabel:"Log in", signInSubmit:"Log in", signupHint:"Pick a username and password — that's all you need.", signupTabLabel:"Sign up",
   lblUsername:"Username", lblPassword:"Password",
 },
 ar: {
@@ -183,7 +183,7 @@ ar: {
   guestSavedLabel:"المحفوظات", guestLanguageLabel:"اللغة", guestLanguageValue:"العربية · English · اردو",
   likedCountLabel:"{n} إعجاب على هذا الجهاز", savedCountLabel:"{n} محفوظ على هذا الجهاز",
   signInBtnShort:"تسجيل الدخول / إنشاء حساب",
-  authErrorInvalid:"اسم المستخدم أو كلمة المرور غير صحيحة.", authErrorMissing:"أدخل اسم المستخدم وكلمة المرور.", authErrorNetwork:"تعذر الوصول إلى الخادم — حاول مرة أخرى.", authErrorShort:"يجب أن تتكون كلمة المرور من ٦ أحرف على الأقل.", authErrorTaken:"اسم المستخدم هذا مُستخدم بالفعل.", loginHint:"سجّل الدخول باسم المستخدم وكلمة المرور.", loginTabLabel:"تسجيل الدخول", signInSubmit:"تسجيل الدخول", signupHint:"اختر اسم مستخدم وكلمة مرور — هذا كل ما تحتاجه.", signupTabLabel:"إنشاء حساب",
+  authErrorInvalid:"اسم المستخدم أو كلمة المرور غير صحيحة.", authErrorTooMany:"محاولات خاطئة كثيرة. انتظر ١٥ دقيقة ثم حاول مرة أخرى.", authErrorMissing:"أدخل اسم المستخدم وكلمة المرور.", authErrorNetwork:"تعذر الوصول إلى الخادم — حاول مرة أخرى.", authErrorShort:"يجب أن تتكون كلمة المرور من ٦ أحرف على الأقل.", authErrorTaken:"اسم المستخدم هذا مُستخدم بالفعل.", loginHint:"سجّل الدخول باسم المستخدم وكلمة المرور.", loginTabLabel:"تسجيل الدخول", signInSubmit:"تسجيل الدخول", signupHint:"اختر اسم مستخدم وكلمة مرور — هذا كل ما تحتاجه.", signupTabLabel:"إنشاء حساب",
   lblUsername:"اسم المستخدم", lblPassword:"كلمة المرور",
 },
 ur: {
@@ -259,7 +259,7 @@ ur: {
   guestSavedLabel:"محفوظ شدہ", guestLanguageLabel:"زبان", guestLanguageValue:"العربية · English · اردو",
   likedCountLabel:"اس فون پر {n} پسند", savedCountLabel:"اس فون پر {n} محفوظ",
   signInBtnShort:"لاگ ان / اکاؤنٹ بنائیں",
-  authErrorInvalid:"غلط یوزرنیم یا پاس ورڈ۔", authErrorMissing:"یوزرنیم اور پاس ورڈ درج کریں۔", authErrorNetwork:"سرور تک رسائی نہیں ہو سکی — دوبارہ کوشش کریں۔", authErrorShort:"پاس ورڈ کم از کم ۶ حروف کا ہونا چاہیے۔", authErrorTaken:"یہ یوزرنیم پہلے سے لیا جا چکا ہے۔", loginHint:"اپنے یوزرنیم اور پاس ورڈ سے لاگ ان کریں۔", loginTabLabel:"لاگ ان", signInSubmit:"لاگ ان", signupHint:"ایک یوزرنیم اور پاس ورڈ منتخب کریں — بس اتنا ہی چاہیے۔", signupTabLabel:"اکاؤنٹ بنائیں",
+  authErrorInvalid:"غلط یوزرنیم یا پاس ورڈ۔", authErrorTooMany:"بہت زیادہ غلط کوششیں۔ ۱۵ منٹ انتظار کریں اور دوبارہ کوشش کریں۔", authErrorMissing:"یوزرنیم اور پاس ورڈ درج کریں۔", authErrorNetwork:"سرور تک رسائی نہیں ہو سکی — دوبارہ کوشش کریں۔", authErrorShort:"پاس ورڈ کم از کم ۶ حروف کا ہونا چاہیے۔", authErrorTaken:"یہ یوزرنیم پہلے سے لیا جا چکا ہے۔", loginHint:"اپنے یوزرنیم اور پاس ورڈ سے لاگ ان کریں۔", loginTabLabel:"لاگ ان", signInSubmit:"لاگ ان", signupHint:"ایک یوزرنیم اور پاس ورڈ منتخب کریں — بس اتنا ہی چاہیے۔", signupTabLabel:"اکاؤنٹ بنائیں",
   lblUsername:"یوزرنیم", lblPassword:"پاس ورڈ",
 }
 };
@@ -507,6 +507,22 @@ function fmt(key, replacements){
   return str;
 }
 
+/* Anything a user typed (or that came back from the database) is escaped
+   before it goes into an innerHTML template, so a post like
+   <img src=x onerror=...> shows as text instead of running. */
+function escapeHtml(value){
+  return String(value ?? '').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+/* Media src from the database: only real http(s)/blob links, escaped for the attribute. */
+function safeUrl(value){
+  const url = String(value ?? '');
+  return /^(https?:|blob:)/i.test(url) ? escapeHtml(url) : '';
+}
+/* wa.me only takes digits — also keeps a stored number from breaking out of an href. */
+function waDigits(value){
+  return String(value ?? '').replace(/[^0-9]/g,'');
+}
+
 function applyI18n(){
   document.documentElement.lang = state.lang;
   document.documentElement.dir = (state.lang==='ar'||state.lang==='ur') ? 'rtl' : 'ltr';
@@ -738,53 +754,55 @@ function buildFeedCardHtml(l, i){
   const postType = l.postType || 'housing';
   const isHousing = postType === 'housing' && l.city != null && l.rent != null;
   const isForumInquiry = postType === 'inquiry';
-  const key = l.id;
+  const key = escapeHtml(l.id);
   const liked = !!state.feedLikes[key];
   const saved = !!state.feedSaves[key];
   const count = baseLikeCount(l) + (liked ? 1 : 0);
   const hasProfile = !!l.posterUserId;
-  const avatarLetter = (isHousing ? l.city : (l.by || l.city || '?')).charAt(0).toUpperCase();
+  const avatarLetter = escapeHtml(String(isHousing ? l.city : (l.by || l.city || '?')).charAt(0).toUpperCase());
+  const posterId = escapeHtml(l.posterUserId);
+  const wa = waDigits(l.wa);
   const typeTagKey = postType==='inquiry' ? 'chipInquiries' : postType==='guide' ? 'chipGuides' : 'chipHousing';
   const typeIcon = postType==='inquiry' ? chatIconSvg : postType==='guide' ? bulbIconSvg : houseIconSvg;
-  const mediaHtml = l.video
-    ? `<video class="feed-media" src="${l.video}" muted loop playsinline></video>`
-    : (l.media ? `<img class="feed-media" src="${l.media}" alt="">` : `<div class="feed-placeholder feed-placeholder--${postType}">${typeIcon}</div>`);
+  const mediaHtml = safeUrl(l.video)
+    ? `<video class="feed-media" src="${safeUrl(l.video)}" muted loop playsinline></video>`
+    : (safeUrl(l.media) ? `<img class="feed-media" src="${safeUrl(l.media)}" alt="">` : `<div class="feed-placeholder feed-placeholder--${postType}">${typeIcon}</div>`);
   return `
-  <div class="feed-card" data-idx="${i}" data-like-key="${key}" data-listing-id="${l.id||''}">
+  <div class="feed-card" data-idx="${i}" data-like-key="${key}" data-listing-id="${key}">
     ${mediaHtml}
     <div class="feed-scrim"></div>
     <div class="feed-heart-burst" data-heart-burst></div>
-    ${l.video ? `<button class="feed-mute" data-mute-toggle="${i}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 9v6h4l5 4V5l-5 4H5z"/><path d="M17 9a3 3 0 010 6" stroke-opacity="0.4"/></svg></button>` : ''}
+    ${safeUrl(l.video) ? `<button class="feed-mute" data-mute-toggle="${i}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 9v6h4l5 4V5l-5 4H5z"/><path d="M17 9a3 3 0 010 6" stroke-opacity="0.4"/></svg></button>` : ''}
     <div class="feed-rail">
-      <button class="feed-avatar-wrap" ${hasProfile ? `data-view-profile="${l.posterUserId}"` : 'disabled'}><div class="feed-avatar">${avatarLetter}</div></button>
+      <button class="feed-avatar-wrap" ${hasProfile ? `data-view-profile="${posterId}"` : 'disabled'}><div class="feed-avatar">${avatarLetter}</div></button>
       <div><button class="lk ${liked?'active':''}" data-like="${key}" aria-pressed="${liked}">${heartIconSvg}</button><div class="lbl" data-like-count="${key}">${formatCount(count)}</div></div>
-      ${l.wa ? `<div><button class="wa" data-wa="${l.wa}">${waIconSvg}</button><div class="lbl">${t('contactWA')}</div></div>` : ''}
+      ${wa ? `<div><button class="wa" data-wa="${wa}">${waIconSvg}</button><div class="lbl">${t('contactWA')}</div></div>` : ''}
       ${isForumInquiry ? `<div><button class="ans" data-view-forum-post="${l.forumIndex}">${chatIconSvg}</button><div class="lbl">${t('viewAndAnswer')}</div></div>` : ''}
       <div><button class="sv ${saved?'active':''}" data-save="${key}" aria-pressed="${saved}">${bookmarkIconSvg}</button><div class="lbl">${t('saveLabel')}</div></div>
-      <div><button class="sh" data-share-listing-id="${l.id||''}">${shareIconSvg}</button><div class="lbl">${t('shareLabel')}</div></div>
+      <div><button class="sh" data-share-listing-id="${key}">${shareIconSvg}</button><div class="lbl">${t('shareLabel')}</div></div>
     </div>
     <div class="feed-content">
       <div class="feed-handle">
-        <button class="feed-handle-link" ${hasProfile ? `data-view-profile="${l.posterUserId}"` : 'disabled'}>
+        <button class="feed-handle-link" ${hasProfile ? `data-view-profile="${posterId}"` : 'disabled'}>
           <span class="feed-avatar-sm">${avatarLetter}</span>
-          <span class="handle-name">${t('postedBy')} ${l.by}</span>
+          <span class="handle-name">${t('postedBy')} ${escapeHtml(l.by)}</span>
         </button>
         ${isHousing
-          ? `<span class="feed-price-pill">${l.rent} ${t('sarLabel')}${t('perMonth')}</span>`
+          ? `<span class="feed-price-pill">${escapeHtml(l.rent)} ${t('sarLabel')}${t('perMonth')}</span>`
           : isForumInquiry
             ? `<span class="feed-price-pill feed-price-pill--muted">${chatIconSvg}${l.repliesCount}</span>`
             : `<span class="feed-tag">${t(typeTagKey)}</span>`}
       </div>
-      ${isHousing ? `<h3>${t(roomTypeLabelKey[l.type] || l.type)} · ${l.city}</h3>` : ''}
-      <p class="feed-desc${isHousing ? '' : ' feed-desc--quote'}">${l.desc}</p>
+      ${isHousing ? `<h3>${escapeHtml(t(roomTypeLabelKey[l.type] || l.type))} · ${escapeHtml(l.city)}</h3>` : ''}
+      <p class="feed-desc${isHousing ? '' : ' feed-desc--quote'}">${escapeHtml(l.desc)}</p>
       ${isHousing ? `
       <div class="feed-tag-row">
-        <span class="feed-tag">#${t(genderLabelKey[l.gender] || l.gender).replace(/\s+/g,'')}</span>
-        <span class="feed-tag">#${(l.nat==='Any' ? t('natAny') : l.nat).replace(/\s+/g,'')}</span>
+        <span class="feed-tag">#${escapeHtml(String(t(genderLabelKey[l.gender] || l.gender)).replace(/\s+/g,''))}</span>
+        <span class="feed-tag">#${escapeHtml(String(l.nat==='Any' ? t('natAny') : l.nat).replace(/\s+/g,''))}</span>
         <span class="feed-tag">#${(l.bills ? t('billsIncluded') : t('billsShared')).replace(/\s+/g,'')}</span>
       </div>` : isForumInquiry
         ? `<div class="feed-tag-row"><span class="feed-tag">${t('fromCommunity')}</span></div>`
-        : (l.natTarget ? `<div class="feed-tag-row"><span class="feed-tag">#${l.natTarget.replace(/\s+/g,'')}</span></div>` : '')}
+        : (l.natTarget ? `<div class="feed-tag-row"><span class="feed-tag">#${escapeHtml(l.natTarget.replace(/\s+/g,''))}</span></div>` : '')}
       <div class="feed-sound"><span class="feed-sound-ic">${noteIconSvg}</span><span class="feed-sound-track"><span>${t('soundTicker')}</span><span>${t('soundTicker')}</span></span></div>
     </div>
   </div>
@@ -990,7 +1008,7 @@ function renderForum(){
           <button class="feed-replies-close" data-close-replies="${idx}">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
           </button>
-          <p class="feed-replies-q">${post.q}</p>
+          <p class="feed-replies-q">${escapeHtml(post.q)}</p>
           <div class="feed-replies-list">${post.replies.map(r=> renderReply(r)).join('') || `<p class="hint">${t('noHelpersYet')}</p>`}</div>
           ${appUser
             ? `<div class="reply-compose">
@@ -1055,10 +1073,10 @@ function renderReply(r){
   return `<div class="reply">
     <span class="who">↳</span>
     <div class="reply-body">
-      <p>${text}</p>
+      <p>${escapeHtml(text)}</p>
       <div class="reply-meta">
-        ${by ? `<button class="reply-by" ${r.posterUserId?`data-view-profile="${r.posterUserId}"`:'disabled'}>${t('repliedBy')} ${by}</button>` : ''}
-        ${canVote ? `<button class="reply-vote ${voted?'voted':''}" data-vote-reply="${r.id}" ${voted?'disabled':''}>${upvoteIconSvg}<span>${r.votes||0}</span></button>` : ''}
+        ${by ? `<button class="reply-by" ${r.posterUserId?`data-view-profile="${escapeHtml(r.posterUserId)}"`:'disabled'}>${t('repliedBy')} ${escapeHtml(by)}</button>` : ''}
+        ${canVote ? `<button class="reply-vote ${voted?'voted':''}" data-vote-reply="${escapeHtml(r.id)}" ${voted?'disabled':''}>${upvoteIconSvg}<span>${r.votes||0}</span></button>` : ''}
       </div>
     </div>
   </div>`;
@@ -1091,9 +1109,9 @@ async function submitReply(post, text){
       return;
     }
     try{
-      const { error } = await supabaseClient.from('forum_replies').insert([{
-        post_id: post.id, reply_text: text, poster_user_id: appUser.id
-      }]);
+      const { error } = await supabaseClient.rpc('create_forum_reply', {
+        p_session_token: appUser.sessionToken, p_post_id: post.id, p_reply_text: text
+      });
       if(error){ console.error('Error posting reply:', error); return; }
       await fetchAndRenderForum();
     } catch(err){
@@ -1211,6 +1229,7 @@ async function submitSignIn(){
         if(msg.includes('taken')) showAuthError(t('authErrorTaken'));
         else if(msg.includes('least') || msg.includes('at least 3')) showAuthError(t('authErrorShort'));
         else if(msg.includes('invalid username or password')) showAuthError(t('authErrorInvalid'));
+        else if(msg.includes('too many failed attempts')) showAuthError(t('authErrorTooMany'));
         else if(error.code === 'PGRST202' || msg.includes('could not find the function')){
           showAuthError('Sign-in isn\'t set up on the database yet — run schema.sql in the Supabase SQL editor (see console for details).');
         } else {
@@ -1295,8 +1314,8 @@ function profileGridTile(l){
     <div class="pf-tile-scrim"></div>
     <div class="pf-tile-info">
       ${isHousing
-        ? `<strong>${l.rent} ${t('sarLabel')}</strong><span>${l.city}</span>`
-        : `<span class="pf-tile-snippet">${(l.desc||'').slice(0,60)}</span>`}
+        ? `<strong>${escapeHtml(l.rent)} ${t('sarLabel')}</strong><span>${escapeHtml(l.city)}</span>`
+        : `<span class="pf-tile-snippet">${escapeHtml(String(l.desc||'').slice(0,60))}</span>`}
     </div>
   </div>`;
 }
@@ -1391,7 +1410,7 @@ async function showPublicProfile(userId){
     bindGridTileClicks(gridEl, theirListings);
     if(badgeEl) badgeEl.style.display = isTopHelper(userId) ? 'inline-flex' : 'none';
     if(contactEl){
-      const wa = openToWorkMap[userId];
+      const wa = waDigits(openToWorkMap[userId]);
       contactEl.style.display = wa ? 'flex' : 'none';
       contactEl.href = wa ? 'https://wa.me/'+wa : '#';
     }
@@ -1529,9 +1548,9 @@ async function getOrCreateShareLink(page){
     return existing;
   }
   try{
-    const { data, error } = await supabaseClient.from('share_links').insert([{ user_id: appUser.id, page, code }]).select();
+    const { data, error } = await supabaseClient.rpc('create_share_link', { p_session_token: appUser.sessionToken, p_page: page, p_code: code });
     if(error){ console.error('Error creating share link:', error); return { id:null, page, code, clicks:0 }; }
-    existing = { id:data[0].id, page, code, clicks:0 };
+    existing = { id:data, page, code, clicks:0 };
     myShareLinks.push(existing);
     return existing;
   } catch(err){
@@ -1615,10 +1634,10 @@ function renderBuddies(){
   const helpKeyMap = {Housing:'helpHousing', Paperwork:'helpPaperwork', Orientation:'helpOrientation'};
   wrap.innerHTML = buddies.map(b=>`
     <div class="buddy-card">
-      <div class="buddy-top"><h3>${b.name}</h3></div>
-      <div class="tag-row">${(b.help||[]).map(h=>`<span class="tag">${t(helpKeyMap[h]||h)}</span>`).join('')}</div>
-      <p class="buddy-desc">${b.bio}</p>
-      <a class="wa-btn" href="https://wa.me/${b.wa}" target="_blank" rel="noopener">${waIconSvg}${t('contactWA')}</a>
+      <div class="buddy-top"><h3>${escapeHtml(b.name)}</h3></div>
+      <div class="tag-row">${(b.help||[]).map(h=>`<span class="tag">${escapeHtml(t(helpKeyMap[h]||h))}</span>`).join('')}</div>
+      <p class="buddy-desc">${escapeHtml(b.bio)}</p>
+      <a class="wa-btn" href="https://wa.me/${waDigits(b.wa)}" target="_blank" rel="noopener">${waIconSvg}${t('contactWA')}</a>
     </div>
   `).join('');
 }
@@ -1650,7 +1669,7 @@ async function submitBuddy(){
       return;
     }
     try{
-      const { error } = await supabaseClient.from('buddies').insert([{ user_id: appUser.id, help_areas: help, bio, whatsapp: wa }]);
+      const { error } = await supabaseClient.rpc('create_buddy', { p_session_token: appUser.sessionToken, p_help_areas: help, p_bio: bio, p_whatsapp: wa });
       if(error){ console.error('Error publishing buddy profile:', error); return; }
       document.getElementById('buddyForm').style.display = 'none';
       await fetchAndRenderBuddies();
@@ -1727,12 +1746,12 @@ function renderLeaderboard(){
   list.innerHTML = rows.map((r,i)=>`
     <div class="lb-row">
       <div class="lb-rank">${i+1}</div>
-      <button class="lb-identity" data-view-profile="${r.userId}">
-        <span class="lb-avatar">${(r.name||'?').charAt(0).toUpperCase()}</span>
-        <span class="lb-name">${r.name}${i<TOP_HELPER_BADGE_COUNT?` <span class="lb-badge">${badgeIconSvg}</span>`:''}</span>
+      <button class="lb-identity" data-view-profile="${escapeHtml(r.userId)}">
+        <span class="lb-avatar">${escapeHtml(String(r.name||'?').charAt(0).toUpperCase())}</span>
+        <span class="lb-name">${escapeHtml(r.name)}${i<TOP_HELPER_BADGE_COUNT?` <span class="lb-badge">${badgeIconSvg}</span>`:''}</span>
       </button>
       <div class="lb-stats">${r.replies} ${t('lbStatReplies')} · ${r.votes} ${t('lbStatVotes')}</div>
-      ${openToWorkMap[r.userId] ? `<a class="wa-btn lb-contact" href="https://wa.me/${openToWorkMap[r.userId]}" target="_blank" rel="noopener">${waIconSvg}</a>` : ''}
+      ${openToWorkMap[r.userId] ? `<a class="wa-btn lb-contact" href="https://wa.me/${waDigits(openToWorkMap[r.userId])}" target="_blank" rel="noopener">${waIconSvg}</a>` : ''}
     </div>
   `).join('');
 
@@ -1903,7 +1922,7 @@ document.getElementById('btnSubmitQuickPost').addEventListener('click', async ()
         return;
       }
       try{
-        const { error } = await supabaseClient.from('forum_posts').insert([{ category: category_i, question, posted_by: appUser.name, votes: 0, poster_user_id: appUser.id }]);
+        const { error } = await supabaseClient.rpc('create_forum_post', { p_session_token: appUser.sessionToken, p_category: category_i, p_question: question });
         if(error){ console.error('Error posting question:', error); return; }
         resetComposerFields();
         state.forumCat = 'All'; renderCatChips();
@@ -1966,8 +1985,9 @@ document.getElementById('btnSubmitQuickPost').addEventListener('click', async ()
           else video_url = supabaseClient.storage.from('listing-videos').getPublicUrl(path).data.publicUrl;
         }
         row = {
-          post_type: 'housing', city, rent, room_type, gender_pref, nationality_pref, bills_included,
-          description: text || '—', whatsapp, video_url, poster_role: appUser.name, poster_user_id: appUser.id
+          p_post_type: 'housing', p_city: city, p_rent: rent, p_room_type: room_type, p_gender_pref: gender_pref,
+          p_nationality_pref: nationality_pref, p_bills_included: bills_included,
+          p_description: text || '—', p_whatsapp: whatsapp, p_video_url: video_url
         };
       } else {
         let media_url = null;
@@ -1980,10 +2000,11 @@ document.getElementById('btnSubmitQuickPost').addEventListener('click', async ()
           if (uploadError) console.error('Error uploading image:', uploadError);
           else media_url = supabaseClient.storage.from('post-images').getPublicUrl(path).data.publicUrl;
         }
-        row = { post_type: postedCategory, description: text, media_url, poster_role: appUser.name, poster_user_id: appUser.id };
+        row = { p_post_type: postedCategory, p_description: text, p_media_url: media_url };
       }
 
-      const { error } = await supabaseClient.from('housing_listings').insert([row]);
+      // The server fills in poster_user_id / poster_role from the session token.
+      const { error } = await supabaseClient.rpc('create_listing', { p_session_token: appUser.sessionToken, ...row });
 
       if (error) {
         console.error('Error publishing post:', error);
