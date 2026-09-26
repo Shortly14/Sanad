@@ -1,7 +1,7 @@
 /* ============================= Supabase ============================= */
 // Replace with your project details from Supabase Dashboard -> Project Settings -> API
-const SUPABASE_URL = "https://fbwubybszqzridyrydmi.supabase.co";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZid3VieWJzenF6cmlkeXJ5ZG1pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY5MDQ1MzYsImV4cCI6MjEwMjQ4MDUzNn0.GevYCvCFsIOgvyHrQB5CmGM225LfnhJ9njt7rjMeaOw";
+const SUPABASE_URL = "https://api.thesannad.com";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIiwiaWF0IjoxNzkwNDU0MTM0LCJleHAiOjE5NDgxMzQxMzR9.8O74oaHNmyzsZz2i4md35He-E3TODOFPOi4hk3j4uK0";
 
 // True once you swap in your real project URL/key. Until then the app runs
 // on local in-memory data only, so every button still works — it just won't
