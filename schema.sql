@@ -146,6 +146,20 @@ create unique index if not exists idx_app_users_session_token on app_users(sessi
 drop function if exists signup_user(text, text, text, text);
 drop function if exists login_user(text, text);
 
+-- Failed logins, so login_user can slow down password guessing: 5 misses per
+-- username or 20 per IP address inside 15 minutes locks that username/IP out
+-- for the rest of the window. Nobody reads this table through the API.
+create table if not exists login_attempts (
+  id bigserial primary key,
+  attempted_at timestamptz default now(),
+  username text,
+  ip text
+);
+create index if not exists idx_login_attempts_username on login_attempts(username, attempted_at);
+create index if not exists idx_login_attempts_ip on login_attempts(ip, attempted_at);
+alter table login_attempts enable row level security;
+revoke all on login_attempts from anon, authenticated;
+
 create or replace function signup_user(
   p_username text,
   p_password text,
@@ -190,17 +204,36 @@ language plpgsql
 security definer
 set search_path = public, extensions
 as $$
-declare v_id uuid;
+declare
+  v_id uuid;
+  v_username text := lower(trim(p_username));
+  -- Cloudflare sets cf-connecting-ip on every request through the tunnel and
+  -- overwrites any value a client sends. Null when called outside the API.
+  v_ip text := nullif(current_setting('request.headers', true), '')::json->>'cf-connecting-ip';
 begin
+  delete from login_attempts where attempted_at < now() - interval '1 day';
+
+  if (select count(*) from login_attempts
+      where login_attempts.username = v_username and attempted_at > now() - interval '15 minutes') >= 5
+     or (v_ip is not null and (select count(*) from login_attempts
+      where login_attempts.ip = v_ip and attempted_at > now() - interval '15 minutes') >= 20) then
+    raise exception 'Too many failed attempts, try again in 15 minutes';
+  end if;
+
   select app_users.id into v_id
   from app_users
-  where app_users.username = lower(trim(p_username))
+  where app_users.username = v_username
     and app_users.password_hash = crypt(p_password, app_users.password_hash);
 
   if v_id is null then
-    -- Deliberately vague — doesn't reveal whether the username exists.
-    raise exception 'Invalid username or password';
+    -- Returning no row (instead of raising) is what the app treats as
+    -- "Invalid username or password" — and it keeps this insert, which a
+    -- raised exception would roll back. Deliberately vague either way.
+    insert into login_attempts (username, ip) values (v_username, v_ip);
+    return;
   end if;
+
+  delete from login_attempts where login_attempts.username = v_username;
 
   -- Rotate the token on every login (simple "one active session" behavior —
   -- logging in elsewhere invalidates the old session token).
@@ -239,7 +272,10 @@ begin
     ) then
       execute format('create policy "public read" on public.%I for select using (true)', t);
     end if;
-    if not exists (
+    -- Only share_clicks keeps a direct public insert (an anonymous visitor
+    -- landing on a ?ref= link). Every other table is written through the
+    -- session-token functions in section 11, which drop these policies.
+    if t = 'share_clicks' and not exists (
       select 1 from pg_policies where schemaname = 'public' and tablename = t and policyname = 'public insert'
     ) then
       execute format('create policy "public insert" on public.%I for insert with check (true)', t);
@@ -408,3 +444,246 @@ exception
 end $$;
 
 create index if not exists idx_housing_listings_post_type on housing_listings(post_type);
+
+-- ============================================================
+-- 11. Writes go through the signed-in user's session token.
+--     Direct inserts used to trust whatever poster_user_id /
+--     posted_by / user_id the browser sent, so anyone could post
+--     as anyone. These functions look the user up from
+--     p_session_token (same pattern as vote_on_reply) and fill in
+--     the id and display name themselves.
+-- ============================================================
+
+-- Internal helper — not callable through the API.
+create or replace function sanad_session_user(p_session_token text)
+returns table(id uuid, name text)
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+begin
+  if p_session_token is null or length(p_session_token) < 32 then
+    raise exception 'You need to be signed in to do this';
+  end if;
+  return query select app_users.id, app_users.name from app_users where app_users.session_token = p_session_token;
+  if not found then
+    raise exception 'You need to be signed in to do this';
+  end if;
+end;
+$$;
+revoke execute on function sanad_session_user(text) from public, anon, authenticated;
+
+create or replace function create_listing(
+  p_session_token text,
+  p_post_type text,
+  p_description text,
+  p_city text default null,
+  p_rent int default null,
+  p_room_type text default null,
+  p_gender_pref text default null,
+  p_nationality_pref text default null,
+  p_bills_included boolean default null,
+  p_whatsapp text default null,
+  p_video_url text default null,
+  p_media_url text default null
+)
+returns uuid
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare v_user record; v_id uuid;
+begin
+  select * into v_user from sanad_session_user(p_session_token);
+  if length(coalesce(p_description, '')) > 2000 then raise exception 'Text is too long'; end if;
+  if length(coalesce(p_city, '')) > 60 or length(coalesce(p_room_type, '')) > 30
+     or length(coalesce(p_gender_pref, '')) > 30 or length(coalesce(p_nationality_pref, '')) > 60
+     or length(coalesce(p_whatsapp, '')) > 32 then
+    raise exception 'A field is too long';
+  end if;
+  -- Media must be a file this site's own storage handed out, not any URL.
+  if p_video_url is not null and p_video_url !~ '^https?://[^/"''<>\s]+/storage/v1/object/public/listing-videos/[A-Za-z0-9._-]+$' then
+    raise exception 'Invalid video link';
+  end if;
+  if p_media_url is not null and p_media_url !~ '^https?://[^/"''<>\s]+/storage/v1/object/public/post-images/[A-Za-z0-9._-]+$' then
+    raise exception 'Invalid image link';
+  end if;
+
+  insert into housing_listings (post_type, city, rent, room_type, gender_pref, nationality_pref, bills_included,
+                                description, whatsapp, video_url, media_url, poster_role, poster_user_id)
+  values (p_post_type, p_city, p_rent, p_room_type, p_gender_pref, p_nationality_pref, p_bills_included,
+          p_description, p_whatsapp, p_video_url, p_media_url, v_user.name, v_user.id)
+  returning housing_listings.id into v_id;
+  return v_id;
+end;
+$$;
+
+create or replace function create_forum_post(p_session_token text, p_category text, p_question text)
+returns uuid
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare v_user record; v_id uuid;
+begin
+  select * into v_user from sanad_session_user(p_session_token);
+  if length(trim(coalesce(p_question, ''))) = 0 then raise exception 'Question is empty'; end if;
+  if length(p_question) > 1000 or length(coalesce(p_category, '')) > 40 then raise exception 'Text is too long'; end if;
+
+  insert into forum_posts (category, question, posted_by, votes, poster_user_id)
+  values (p_category, p_question, v_user.name, 0, v_user.id)
+  returning forum_posts.id into v_id;
+  return v_id;
+end;
+$$;
+
+create or replace function create_forum_reply(p_session_token text, p_post_id uuid, p_reply_text text)
+returns uuid
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare v_user record; v_id uuid;
+begin
+  select * into v_user from sanad_session_user(p_session_token);
+  if length(trim(coalesce(p_reply_text, ''))) = 0 then raise exception 'Reply is empty'; end if;
+  if length(p_reply_text) > 2000 then raise exception 'Text is too long'; end if;
+  if not exists (select 1 from forum_posts where forum_posts.id = p_post_id) then
+    raise exception 'That question no longer exists';
+  end if;
+
+  insert into forum_replies (post_id, reply_text, poster_user_id)
+  values (p_post_id, p_reply_text, v_user.id)
+  returning forum_replies.id into v_id;
+  return v_id;
+end;
+$$;
+
+create or replace function create_buddy(p_session_token text, p_help_areas text[], p_bio text, p_whatsapp text)
+returns uuid
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare v_user record; v_id uuid;
+begin
+  select * into v_user from sanad_session_user(p_session_token);
+  if length(coalesce(p_bio, '')) > 500 then raise exception 'Text is too long'; end if;
+  if coalesce(p_whatsapp, '') !~ '^[0-9]{0,20}$' then raise exception 'Invalid WhatsApp number'; end if;
+  if coalesce(array_length(p_help_areas, 1), 0) > 10 then raise exception 'Too many help areas'; end if;
+
+  insert into buddies (user_id, help_areas, bio, whatsapp)
+  values (v_user.id, p_help_areas, p_bio, p_whatsapp)
+  returning buddies.id into v_id;
+  return v_id;
+end;
+$$;
+
+create or replace function create_share_link(p_session_token text, p_page text, p_code text)
+returns uuid
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare v_user record; v_id uuid;
+begin
+  select * into v_user from sanad_session_user(p_session_token);
+  if p_page not in ('guide', 'housing', 'community') then raise exception 'Unknown page'; end if;
+  if coalesce(p_code, '') !~ '^[a-z0-9]{4,16}$' then raise exception 'Invalid code'; end if;
+
+  insert into share_links (user_id, page, code)
+  values (v_user.id, p_page, p_code)
+  returning share_links.id into v_id;
+  return v_id;
+end;
+$$;
+
+grant execute on function create_listing(text, text, text, text, int, text, text, text, boolean, text, text, text) to anon, authenticated;
+grant execute on function create_forum_post(text, text, text) to anon, authenticated;
+grant execute on function create_forum_reply(text, uuid, text) to anon, authenticated;
+grant execute on function create_buddy(text, text[], text, text) to anon, authenticated;
+grant execute on function create_share_link(text, text, text) to anon, authenticated;
+
+-- Close the direct write path. Drops every insert/update/delete policy on
+-- these tables — the "public insert" ones from section 5 and any older
+-- hand-made duplicates (e.g. "Public update forum votes") — and removes the
+-- table privileges too, so a raw POST/PATCH/DELETE from a client is refused.
+-- share_clicks keeps only its "public insert" (anonymous ?ref= link clicks).
+do $$
+declare pol record;
+begin
+  for pol in
+    select tablename, policyname from pg_policies
+    where schemaname = 'public'
+      and cmd <> 'SELECT'
+      and (tablename in ('housing_listings','forum_posts','forum_replies','share_links','buddies','forum_reply_votes')
+           or (tablename = 'share_clicks' and not (cmd = 'INSERT' and policyname = 'public insert')))
+  loop
+    execute format('drop policy %I on public.%I', pol.policyname, pol.tablename);
+  end loop;
+end $$;
+
+revoke insert, update, delete, truncate on housing_listings, forum_posts, forum_replies, share_links, buddies, forum_reply_votes from anon, authenticated;
+revoke update, delete, truncate on share_clicks from anon, authenticated;
+
+-- ============================================================
+-- 12. Storage limits. Uploads were unlimited (any size, any file
+--     type, any number), so anyone could fill the PC's disk or host
+--     arbitrary files on the API domain. Skipped when the storage
+--     schema isn't there (plain Postgres).
+-- ============================================================
+
+-- At most 100 uploads per hour across the whole site — a brake on
+-- disk-filling, far above normal use. Checked by the upload policy below.
+create or replace function sanad_upload_budget_ok()
+returns boolean
+language plpgsql
+stable
+security definer
+set search_path = public, extensions
+as $$
+begin
+  return (select count(*) from storage.objects
+          where bucket_id in ('listing-videos', 'post-images')
+            and created_at > now() - interval '1 hour') < 100;
+end;
+$$;
+grant execute on function sanad_upload_budget_ok() to anon, authenticated;
+
+do $$
+declare pol record;
+begin
+  if to_regclass('storage.buckets') is null or to_regclass('storage.objects') is null then
+    return;
+  end if;
+
+  -- 50 MB matches self-hosted Storage's default global FILE_SIZE_LIMIT.
+  update storage.buckets
+  set file_size_limit = 52428800,
+      allowed_mime_types = array['video/mp4', 'video/quicktime', 'video/webm', 'video/3gpp']
+  where id = 'listing-videos';
+
+  update storage.buckets
+  set file_size_limit = 5242880,
+      allowed_mime_types = array['image/jpeg', 'image/png', 'image/webp', 'image/gif']
+  where id = 'post-images';
+
+  -- Replace any existing write policy on these two buckets (e.g. "Public
+  -- upload sanad media") — including update/delete ones, which let anyone
+  -- overwrite or remove other people's files. Public reads don't use RLS.
+  for pol in
+    select policyname from pg_policies
+    where schemaname = 'storage' and tablename = 'objects'
+      and cmd <> 'SELECT'
+      and (coalesce(qual, '') || coalesce(with_check, '')) ~ '(listing-videos|post-images)'
+  loop
+    execute format('drop policy %I on storage.objects', pol.policyname);
+  end loop;
+
+  create policy "sanad upload" on storage.objects for insert to anon, authenticated
+    with check (
+      bucket_id in ('listing-videos', 'post-images')
+      and position('/' in name) = 0
+      and public.sanad_upload_budget_ok()
+    );
+end $$;
