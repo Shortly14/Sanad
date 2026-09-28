@@ -109,6 +109,9 @@ en: {
   signInBtnShort:"Log in / Sign up",
   authErrorInvalid:"Wrong username or password.", authErrorTooMany:"Too many wrong attempts. Wait 15 minutes and try again.", authErrorMissing:"Enter a username and password.", authErrorNetwork:"Couldn't reach the server — try again.", authErrorShort:"Password must be at least 6 characters.", authErrorTaken:"That username is already taken.", loginHint:"Log in with your username and password.", loginTabLabel:"Log in", signInSubmit:"Log in", signupHint:"Pick a username and password — that's all you need.", signupTabLabel:"Sign up",
   lblUsername:"Username", lblPassword:"Password",
+  authTitle:"Sign in", lblWhatsappNumber:"WhatsApp number", sendCode:"Send code", useUsernameLogin:"I have a username and password", lblCode:"Code", verifyCode:"Verify", resendCode:"Send a new code", changeNumber:"Change number", continueLabel:"Continue", usePhoneLogin:"Sign in with WhatsApp instead",
+  authHintPhone:"Enter your WhatsApp number. We'll send you a code there to sign in or create your account.", authHintLink:"One more step: add your WhatsApp number to keep your account safe. We'll send you a code there.", authHintCode:"Enter the code we sent on WhatsApp to {phone}.", authHintName:"Welcome to Sanad! What name should other people see?", codeResent:"We sent you a new code on WhatsApp.",
+  authErrorPhone:"Enter your WhatsApp number with the country code, for example +966 5X XXX XXXX.", authErrorCode:"Enter the code from WhatsApp.", authErrorWrongCode:"That code is wrong. Check it and try again.", authErrorCodeExpired:"That code has expired. Tap \"Send a new code\".", authErrorTooManyCodes:"Too many tries. Wait 15 minutes and try again.", authErrorSendFailed:"We couldn't send a code to this number. Check that it uses WhatsApp and try again.", authErrorNumberTaken:"This WhatsApp number already belongs to another account. Sign in with WhatsApp instead.", authErrorName:"Enter a name.",
 },
 ar: {
   brandName:"سند · Sanad", brandTag:"سندك في السعودية",
@@ -185,6 +188,9 @@ ar: {
   signInBtnShort:"تسجيل الدخول / إنشاء حساب",
   authErrorInvalid:"اسم المستخدم أو كلمة المرور غير صحيحة.", authErrorTooMany:"محاولات خاطئة كثيرة. انتظر ١٥ دقيقة ثم حاول مرة أخرى.", authErrorMissing:"أدخل اسم المستخدم وكلمة المرور.", authErrorNetwork:"تعذر الوصول إلى الخادم — حاول مرة أخرى.", authErrorShort:"يجب أن تتكون كلمة المرور من ٦ أحرف على الأقل.", authErrorTaken:"اسم المستخدم هذا مُستخدم بالفعل.", loginHint:"سجّل الدخول باسم المستخدم وكلمة المرور.", loginTabLabel:"تسجيل الدخول", signInSubmit:"تسجيل الدخول", signupHint:"اختر اسم مستخدم وكلمة مرور — هذا كل ما تحتاجه.", signupTabLabel:"إنشاء حساب",
   lblUsername:"اسم المستخدم", lblPassword:"كلمة المرور",
+  authTitle:"تسجيل الدخول", lblWhatsappNumber:"رقم واتساب", sendCode:"أرسل الرمز", useUsernameLogin:"لدي اسم مستخدم وكلمة مرور", lblCode:"الرمز", verifyCode:"تحقّق", resendCode:"أرسل رمزًا جديدًا", changeNumber:"غيّر الرقم", continueLabel:"متابعة", usePhoneLogin:"سجّل الدخول عبر واتساب بدلًا من ذلك",
+  authHintPhone:"أدخل رقم واتساب الخاص بك. سنرسل إليك رمزًا هناك لتسجيل الدخول أو إنشاء حسابك.", authHintLink:"خطوة أخيرة: أضف رقم واتساب لحماية حسابك. سنرسل إليك رمزًا هناك.", authHintCode:"أدخل الرمز الذي أرسلناه عبر واتساب إلى {phone}.", authHintName:"أهلًا بك في سند! ما الاسم الذي تريد أن يراه الآخرون؟", codeResent:"أرسلنا إليك رمزًا جديدًا عبر واتساب.",
+  authErrorPhone:"أدخل رقم واتساب مع رمز الدولة، مثل ‎+966 5X XXX XXXX.", authErrorCode:"أدخل الرمز الذي وصلك على واتساب.", authErrorWrongCode:"الرمز غير صحيح. تحقّق منه وحاول مرة أخرى.", authErrorCodeExpired:"انتهت صلاحية الرمز. اضغط \"أرسل رمزًا جديدًا\".", authErrorTooManyCodes:"محاولات كثيرة. انتظر ١٥ دقيقة ثم حاول مرة أخرى.", authErrorSendFailed:"تعذّر إرسال رمز إلى هذا الرقم. تأكّد أنه مسجّل في واتساب وحاول مرة أخرى.", authErrorNumberTaken:"رقم واتساب هذا مرتبط بحساب آخر. سجّل الدخول عبر واتساب بدلًا من ذلك.", authErrorName:"أدخل اسمًا.",
 },
 ur: {
   brandName:"سند · Sanad", brandTag:"سعودی عرب میں آپ کا سہارا",
@@ -261,6 +267,9 @@ ur: {
   signInBtnShort:"لاگ ان / اکاؤنٹ بنائیں",
   authErrorInvalid:"غلط یوزرنیم یا پاس ورڈ۔", authErrorTooMany:"بہت زیادہ غلط کوششیں۔ ۱۵ منٹ انتظار کریں اور دوبارہ کوشش کریں۔", authErrorMissing:"یوزرنیم اور پاس ورڈ درج کریں۔", authErrorNetwork:"سرور تک رسائی نہیں ہو سکی — دوبارہ کوشش کریں۔", authErrorShort:"پاس ورڈ کم از کم ۶ حروف کا ہونا چاہیے۔", authErrorTaken:"یہ یوزرنیم پہلے سے لیا جا چکا ہے۔", loginHint:"اپنے یوزرنیم اور پاس ورڈ سے لاگ ان کریں۔", loginTabLabel:"لاگ ان", signInSubmit:"لاگ ان", signupHint:"ایک یوزرنیم اور پاس ورڈ منتخب کریں — بس اتنا ہی چاہیے۔", signupTabLabel:"اکاؤنٹ بنائیں",
   lblUsername:"یوزرنیم", lblPassword:"پاس ورڈ",
+  authTitle:"سائن اِن", lblWhatsappNumber:"واٹس ایپ نمبر", sendCode:"کوڈ بھیجیں", useUsernameLogin:"میرے پاس یوزرنیم اور پاس ورڈ ہے", lblCode:"کوڈ", verifyCode:"تصدیق کریں", resendCode:"نیا کوڈ بھیجیں", changeNumber:"نمبر بدلیں", continueLabel:"جاری رکھیں", usePhoneLogin:"اس کے بجائے واٹس ایپ سے سائن اِن کریں",
+  authHintPhone:"اپنا واٹس ایپ نمبر درج کریں۔ سائن اِن کرنے یا اکاؤنٹ بنانے کے لیے ہم وہاں آپ کو ایک کوڈ بھیجیں گے۔", authHintLink:"ایک آخری قدم: اپنے اکاؤنٹ کو محفوظ رکھنے کے لیے اپنا واٹس ایپ نمبر شامل کریں۔ ہم وہاں آپ کو ایک کوڈ بھیجیں گے۔", authHintCode:"وہ کوڈ درج کریں جو ہم نے واٹس ایپ پر {phone} کو بھیجا ہے۔", authHintName:"سند میں خوش آمدید! دوسرے لوگ آپ کا کون سا نام دیکھیں؟", codeResent:"ہم نے آپ کو واٹس ایپ پر نیا کوڈ بھیج دیا ہے۔",
+  authErrorPhone:"اپنا واٹس ایپ نمبر ملک کے کوڈ کے ساتھ درج کریں، مثلاً ‎+966 5X XXX XXXX۔", authErrorCode:"واٹس ایپ پر آنے والا کوڈ درج کریں۔", authErrorWrongCode:"یہ کوڈ غلط ہے۔ اسے چیک کر کے دوبارہ کوشش کریں۔", authErrorCodeExpired:"اس کوڈ کی مدت ختم ہو گئی ہے۔ \"نیا کوڈ بھیجیں\" پر ٹیپ کریں۔", authErrorTooManyCodes:"بہت زیادہ کوششیں۔ ۱۵ منٹ انتظار کریں اور دوبارہ کوشش کریں۔", authErrorSendFailed:"اس نمبر پر کوڈ نہیں بھیجا جا سکا۔ یقینی بنائیں کہ یہ نمبر واٹس ایپ پر ہے اور دوبارہ کوشش کریں۔", authErrorNumberTaken:"یہ واٹس ایپ نمبر پہلے سے کسی اور اکاؤنٹ کا ہے۔ اس کے بجائے واٹس ایپ سے سائن اِن کریں۔", authErrorName:"ایک نام درج کریں۔",
 }
 };
 
@@ -1142,17 +1151,39 @@ async function voteOnReply(replyId){
   });
 }
 
-/* ============================= Sign-in (username + password) ============================= */
+/* ============================= Sign-in (WhatsApp code) ============================= */
+/* Steps: 'phone' -> 'code' -> 'name' (new accounts only). Older accounts use
+   'legacy' (username + password), then add their WhatsApp number once through
+   the same phone/code steps: the server refuses every write until an account
+   has a verified number (sanad_session_user in schema.sql). The send-otp Edge
+   Function (supabase/functions) sends the code on WhatsApp; verify_phone_code
+   in schema.sql checks it. */
 const AUTH_STORAGE_KEY = 'sanad_user';
-let authMode = 'login'; // 'login' | 'signup'
+let authStep = 'phone';
+let authPhone = null;     // the normalized number the current code was sent to
+let authLinkUser = null;  // a username account that still needs a WhatsApp number
+let authNewUser = null;   // a brand-new WhatsApp account waiting for its name
 
-function setAuthMode(mode){
-  authMode = mode;
-  document.getElementById('authTabLogin').classList.toggle('active', mode==='login');
-  document.getElementById('authTabSignup').classList.toggle('active', mode==='signup');
-  document.getElementById('signupNameField').style.display = mode==='signup' ? 'block' : 'none';
-  document.getElementById('authHint').textContent = t(mode==='signup' ? 'signupHint' : 'loginHint');
-  document.getElementById('btnSignInSubmit').textContent = t(mode==='signup' ? 'signupTabLabel' : 'signInSubmit');
+function setAuthStep(step){
+  authStep = step;
+  document.getElementById('authStepPhone').style.display = step==='phone' ? 'block' : 'none';
+  document.getElementById('authStepCode').style.display = step==='code' ? 'block' : 'none';
+  document.getElementById('authStepName').style.display = step==='name' ? 'block' : 'none';
+  document.getElementById('authStepLegacy').style.display = step==='legacy' ? 'block' : 'none';
+  // Adding a number to a username account is required, so no way back to the username form.
+  document.getElementById('btnUseUsername').style.display = authLinkUser ? 'none' : 'block';
+  const hint = document.getElementById('authHint');
+  if(step==='phone') hint.textContent = t(authLinkUser ? 'authHintLink' : 'authHintPhone');
+  else if(step==='code'){
+    hint.textContent = '';
+    const num = document.createElement('bdi');
+    num.dir = 'ltr'; // keeps the + in front in Arabic and Urdu
+    num.textContent = authPhone;
+    const [before, after] = t('authHintCode').split('{phone}');
+    hint.append(before || '', num, after || '');
+  }
+  else if(step==='name') hint.textContent = t('authHintName');
+  else hint.textContent = t('loginHint');
   hideAuthError();
 }
 function showAuthError(msg){
@@ -1166,15 +1197,17 @@ function hideAuthError(){
 
 function openSignIn(onSuccess){
   pendingSignInAction = onSuccess || null;
-  document.getElementById('si-name').value = '';
-  document.getElementById('si-username').value = '';
-  document.getElementById('si-password').value = '';
-  setAuthMode('login');
+  authPhone = null; authLinkUser = null; authNewUser = null;
+  ['si-phone','si-code','si-name','si-username','si-password'].forEach(id=> document.getElementById(id).value = '');
+  setAuthStep('phone');
   document.getElementById('signInModal').style.display = 'flex';
 }
 function closeSignIn(){
   document.getElementById('signInModal').style.display = 'none';
   pendingSignInAction = null;
+  authLinkUser = null;
+  // A new account that closes before picking a name is still signed in (it shows as "Member").
+  if(authNewUser){ const u = authNewUser; authNewUser = null; finishSignIn(u); }
 }
 function requireSignIn(onReady){
   // A session saved before session tokens existed (or one Supabase has since
@@ -1201,52 +1234,182 @@ function restoreAppUser(){
   } catch(err){ appUser = null; }
 }
 
+/* Accepts what people actually type: spaces, dashes, 00 instead of +, a Saudi
+   05XXXXXXXX number without the country code, and Arabic or Urdu digits. */
+function toLatinDigits(value){
+  return String(value||'')
+    .replace(/[٠-٩]/g, d=> String('٠١٢٣٤٥٦٧٨٩'.indexOf(d)))
+    .replace(/[۰-۹]/g, d=> String('۰۱۲۳۴۵۶۷۸۹'.indexOf(d)));
+}
+function normalizePhone(raw){
+  let p = toLatinDigits(raw).replace(/[\s\-().]/g, '');
+  if(p.startsWith('00')) p = '+' + p.slice(2);
+  else if(/^05\d{8}$/.test(p)) p = '+966' + p.slice(1);
+  else if(/^5\d{8}$/.test(p)) p = '+966' + p;
+  else if(/^966\d{9}$/.test(p)) p = '+' + p;
+  return /^\+[1-9]\d{7,14}$/.test(p) ? p : null;
+}
+
+const AUTH_ERROR_KEYS = {
+  invalid_phone:'authErrorPhone', too_many:'authErrorTooManyCodes', send_failed:'authErrorSendFailed',
+  wrong:'authErrorWrongCode', expired:'authErrorCodeExpired', number_taken:'authErrorNumberTaken'
+};
+// Calls the send-otp Edge Function and returns { data } or { error: '<code>' }.
+async function callAuthFunction(name, body){
+  try{
+    const { data, error } = await supabaseClient.functions.invoke(name, { body });
+    if(!error) return { data };
+    let code = 'network';
+    if(error.context && typeof error.context.json === 'function'){
+      try{ const j = await error.context.json(); if(j && j.error) code = j.error; } catch(e){}
+    }
+    console.error(`Sanad: ${name} failed:`, code, error);
+    return { error: code };
+  } catch(err){
+    console.error(`Sanad: could not reach ${name}:`, err);
+    return { error: 'network' };
+  }
+}
+function showAuthFunctionError(code){
+  showAuthError(t(AUTH_ERROR_KEYS[code] || 'authErrorNetwork'));
+}
+async function withBusy(btnId, fn){
+  const btn = document.getElementById(btnId);
+  if(btn.disabled) return;
+  btn.disabled = true;
+  try{ await fn(); } finally{ btn.disabled = false; }
+}
+
+function sendCode(){
+  return withBusy('btnSendCode', async ()=>{
+    hideAuthError();
+    const phone = normalizePhone(document.getElementById('si-phone').value);
+    if(!phone){ showAuthError(t('authErrorPhone')); return; }
+    if(SUPABASE_CONFIGURED){
+      const { error } = await callAuthFunction('send-otp', { phone, lang: state.lang });
+      if(error){ showAuthFunctionError(error); return; }
+    }
+    authPhone = phone;
+    document.getElementById('si-code').value = '';
+    setAuthStep('code');
+    document.getElementById('si-code').focus();
+  });
+}
+function resendCode(){
+  return withBusy('btnResendCode', async ()=>{
+    hideAuthError();
+    if(SUPABASE_CONFIGURED){
+      const { error } = await callAuthFunction('send-otp', { phone: authPhone, lang: state.lang });
+      if(error){ showAuthFunctionError(error); return; }
+    }
+    document.getElementById('authHint').textContent = t('codeResent');
+  });
+}
+
+function verifyCode(){
+  return withBusy('btnVerifyCode', async ()=>{
+    hideAuthError();
+    const code = toLatinDigits(document.getElementById('si-code').value).replace(/\D/g, '');
+    if(code.length < 4){ showAuthError(t('authErrorCode')); return; }
+
+    if(!SUPABASE_CONFIGURED){
+      // No backend configured yet — accept any code so the demo still works offline.
+      const user = authLinkUser
+        ? { ...authLinkUser, phone: authPhone }
+        : { id:'local-'+authPhone, name:'', phone: authPhone, createdAt: new Date().toISOString(), sessionToken:'local-session-'+Date.now() };
+      if(authLinkUser){ authLinkUser = null; finishSignIn(user); }
+      else { authNewUser = user; setAuthStep('name'); }
+      return;
+    }
+
+    let row;
+    try{
+      const { data, error } = await supabaseClient.rpc('verify_phone_code', { p_phone: authPhone, p_code: code, p_link_token: authLinkUser ? authLinkUser.sessionToken : null });
+      if(error){ console.error('Sanad: verify_phone_code failed:', error); showAuthError(t('authErrorNetwork')); return; }
+      row = Array.isArray(data) ? data[0] : data;
+    } catch(err){
+      console.error('Sanad: could not reach Supabase to check the code:', err);
+      showAuthError(t('authErrorNetwork'));
+      return;
+    }
+    if(!row){ showAuthError(t('authErrorNetwork')); return; }
+    if(row.status === 'not_signed_in'){ authLinkUser = null; setAuthStep('legacy'); showAuthError(t('authErrorInvalid')); return; }
+    if(row.status !== 'ok'){ showAuthFunctionError(row.status); return; }
+    const user = { id: row.id, username: row.username, name: row.name, phone: authPhone, createdAt: row.created_at, sessionToken: row.session_token };
+    authLinkUser = null;
+    if(row.is_new){ authNewUser = user; setAuthStep('name'); document.getElementById('si-name').focus(); return; }
+    finishSignIn(user);
+  });
+}
+
+function saveName(){
+  return withBusy('btnSaveName', async ()=>{
+    hideAuthError();
+    const name = document.getElementById('si-name').value.trim();
+    if(!name){ showAuthError(t('authErrorName')); return; }
+    if(SUPABASE_CONFIGURED && !String(authNewUser.id).startsWith('local-')){
+      try{
+        const { error } = await supabaseClient.rpc('set_my_name', { p_session_token: authNewUser.sessionToken, p_name: name });
+        if(error){ console.error('Sanad: set_my_name failed:', error); showAuthError(t('authErrorNetwork')); return; }
+      } catch(err){
+        console.error('Sanad: could not reach Supabase to save the name:', err);
+        showAuthError(t('authErrorNetwork'));
+        return;
+      }
+    }
+    const user = { ...authNewUser, name };
+    authNewUser = null;
+    finishSignIn(user);
+  });
+}
+
 async function submitSignIn(){
   const username = document.getElementById('si-username').value.trim();
   const password = document.getElementById('si-password').value;
-  const name = document.getElementById('si-name').value.trim();
   hideAuthError();
 
   if(!username || !password){ showAuthError(t('authErrorMissing')); return; }
-  if(authMode==='signup' && password.length < 6){ showAuthError(t('authErrorShort')); return; }
 
   if(!SUPABASE_CONFIGURED){
     // No backend configured yet — accept anything so the demo still works offline.
-    appUser = { id:'local-'+username.toLowerCase(), username: username.toLowerCase(), name: name || username, createdAt: new Date().toISOString(), sessionToken:'local-session-'+Date.now() };
-  } else {
-    try{
-      const fn = authMode==='signup' ? 'signup_user' : 'login_user';
-      const params = authMode==='signup'
-        ? { p_username: username, p_password: password, p_name: name || username }
-        : { p_username: username, p_password: password };
-      const { data, error } = await supabaseClient.rpc(fn, params);
-      if(error){
-        // Always log the raw error — the banner below only shows a translated
-        // summary, and "couldn't reach the server" hides very different causes
-        // (schema.sql not run yet, RLS blocking the call, a real network drop).
-        console.error(`Sanad: ${fn} failed:`, error);
-        const msg = (error.message||'').toLowerCase();
-        if(msg.includes('taken')) showAuthError(t('authErrorTaken'));
-        else if(msg.includes('least') || msg.includes('at least 3')) showAuthError(t('authErrorShort'));
-        else if(msg.includes('invalid username or password')) showAuthError(t('authErrorInvalid'));
-        else if(msg.includes('too many failed attempts')) showAuthError(t('authErrorTooMany'));
-        else if(error.code === 'PGRST202' || msg.includes('could not find the function')){
-          showAuthError('Sign-in isn\'t set up on the database yet — run schema.sql in the Supabase SQL editor (see console for details).');
-        } else {
-          showAuthError(t('authErrorNetwork') + ' (' + (error.message || error.code || 'unknown error') + ')');
-        }
-        return;
+    authLinkUser = { id:'local-'+username.toLowerCase(), username: username.toLowerCase(), name: username, createdAt: new Date().toISOString(), sessionToken:'local-session-'+Date.now() };
+    setAuthStep('phone');
+    return;
+  }
+  try{
+    const { data, error } = await supabaseClient.rpc('login_user', { p_username: username, p_password: password });
+    if(error){
+      // Always log the raw error — the banner below only shows a translated
+      // summary, and "couldn't reach the server" hides very different causes
+      // (schema.sql not run yet, RLS blocking the call, a real network drop).
+      console.error('Sanad: login_user failed:', error);
+      const msg = (error.message||'').toLowerCase();
+      if(msg.includes('invalid username or password')) showAuthError(t('authErrorInvalid'));
+      else if(msg.includes('too many failed attempts')) showAuthError(t('authErrorTooMany'));
+      else if(error.code === 'PGRST202' || msg.includes('could not find the function')){
+        showAuthError('Sign-in isn\'t set up on the database yet — run schema.sql in the Supabase SQL editor (see console for details).');
+      } else {
+        showAuthError(t('authErrorNetwork') + ' (' + (error.message || error.code || 'unknown error') + ')');
       }
-      const row = Array.isArray(data) ? data[0] : data;
-      if(!row){ showAuthError(t('authErrorInvalid')); return; }
-      appUser = { id: row.id, username: row.username, name: row.name, createdAt: row.created_at, sessionToken: row.session_token };
-    } catch(err){
-      console.error('Sanad: could not reach Supabase to sign in:', err);
-      showAuthError(t('authErrorNetwork') + ' (' + (err && err.message ? err.message : String(err)) + ')');
       return;
     }
+    const row = Array.isArray(data) ? data[0] : data;
+    if(!row){ showAuthError(t('authErrorInvalid')); return; }
+    const user = { id: row.id, username: row.username, name: row.name, createdAt: row.created_at, sessionToken: row.session_token };
+    const { data: status } = await supabaseClient.rpc('session_status', { p_session_token: user.sessionToken });
+    const s = Array.isArray(status) ? status[0] : status;
+    if(s && s.phone_verified){ finishSignIn({ ...user, phone: s.phone }); return; }
+    authLinkUser = user;
+    document.getElementById('si-phone').value = '';
+    setAuthStep('phone');
+  } catch(err){
+    console.error('Sanad: could not reach Supabase to sign in:', err);
+    showAuthError(t('authErrorNetwork') + ' (' + (err && err.message ? err.message : String(err)) + ')');
   }
+}
 
+async function finishSignIn(user){
+  appUser = user;
   persistAppUser();
   document.getElementById('signInModal').style.display = 'none';
   const action = pendingSignInAction;
@@ -1261,7 +1424,30 @@ async function submitSignIn(){
   if(action) action();
 }
 
+/* A saved session can stop working (signed out elsewhere, expired after 90
+   days unused) or belong to a username account with no WhatsApp number yet.
+   Either way every write would fail, so show it as signed out. */
+async function validateStoredSession(){
+  if(!appUser || !SUPABASE_CONFIGURED || String(appUser.id).startsWith('local-')) return;
+  try{
+    const { data, error } = await supabaseClient.rpc('session_status', { p_session_token: appUser.sessionToken });
+    if(error){ console.error('Sanad: session_status failed:', error); return; }
+    const s = Array.isArray(data) ? data[0] : data;
+    if(s && s.signed_in && s.phone_verified) return;
+    appUser = null;
+    persistAppUser();
+    renderProfile();
+    renderForum();
+  } catch(err){
+    console.error('Sanad: could not check the saved session:', err);
+  }
+}
+
 function signOut(){
+  if(appUser && SUPABASE_CONFIGURED && !String(appUser.id).startsWith('local-')){
+    supabaseClient.rpc('sign_out', { p_session_token: appUser.sessionToken })
+      .then(({ error })=>{ if(error) console.error('Sanad: sign_out failed:', error); });
+  }
   appUser = null;
   myShareLinks = [];
   persistAppUser();
@@ -2068,11 +2254,18 @@ document.getElementById('filterSheet').addEventListener('click', e=>{
   renderListings();
 });
 
-/* ---- Sign-in modal (username + password) ---- */
+/* ---- Sign-in modal (WhatsApp code) ---- */
 document.getElementById('btnProfileSignIn').addEventListener('click', ()=> openSignIn());
+document.getElementById('btnSendCode').addEventListener('click', sendCode);
+document.getElementById('btnVerifyCode').addEventListener('click', verifyCode);
+document.getElementById('btnResendCode').addEventListener('click', resendCode);
+document.getElementById('btnChangeNumber').addEventListener('click', ()=> setAuthStep('phone'));
+document.getElementById('btnSaveName').addEventListener('click', saveName);
+document.getElementById('btnUseUsername').addEventListener('click', ()=> setAuthStep('legacy'));
+document.getElementById('btnUsePhone').addEventListener('click', ()=> setAuthStep('phone'));
 document.getElementById('btnSignInSubmit').addEventListener('click', submitSignIn);
-document.querySelectorAll('[data-auth-tab]').forEach(btn=>{
-  btn.addEventListener('click', ()=> setAuthMode(btn.getAttribute('data-auth-tab')));
+[['si-phone', sendCode], ['si-code', verifyCode], ['si-name', saveName], ['si-password', submitSignIn]].forEach(([id, fn])=>{
+  document.getElementById(id).addEventListener('keydown', e=>{ if(e.key==='Enter') fn(); });
 });
 document.getElementById('btnSignInCancel').addEventListener('click', closeSignIn);
 document.getElementById('btnSignOut').addEventListener('click', signOut);
@@ -2175,7 +2368,7 @@ async function initApp(){
   renderAll();
   applyFeedMode();
   await trackIncomingShareCode();
-  await Promise.all([fetchAndRenderListings(), fetchAndRenderForum(), fetchAndRenderBuddies()]);
+  await Promise.all([fetchAndRenderListings(), fetchAndRenderForum(), fetchAndRenderBuddies(), validateStoredSession()]);
   // Depends on buddies (isBuddy bonus) being loaded above, so it runs after.
   await fetchLeaderboardData();
   renderLeaderboard();
