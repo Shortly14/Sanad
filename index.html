@@ -489,27 +489,55 @@
   <!-- SIGN-IN MODAL -->
   <div class="modal-overlay" id="signInModal" style="display:none;">
     <div class="modal-box">
-      <div class="auth-tabs">
-        <button class="auth-tab active" id="authTabLogin" data-auth-tab="login" data-i18n="loginTabLabel">Log in</button>
-        <button class="auth-tab" id="authTabSignup" data-auth-tab="signup" data-i18n="signupTabLabel">Sign up</button>
-      </div>
-      <p class="hint" id="authHint" data-i18n="loginHint">Log in with your username and password.</p>
+      <h3 data-i18n="authTitle">Sign in</h3>
+      <p class="hint" id="authHint"></p>
 
       <p class="auth-error" id="authError" style="display:none;"></p>
 
-      <div class="field" id="signupNameField" style="display:none;">
-        <label data-i18n="lblName">Your name</label>
-        <input type="text" id="si-name" autocomplete="name">
+      <!-- Step 1: WhatsApp number -->
+      <div id="authStepPhone">
+        <div class="field">
+          <label data-i18n="lblWhatsappNumber">WhatsApp number</label>
+          <input type="tel" id="si-phone" inputmode="tel" autocomplete="tel" dir="ltr" placeholder="+966 5X XXX XXXX">
+        </div>
+        <button class="btn-primary" id="btnSendCode" data-i18n="sendCode">Send code</button>
+        <button class="auth-link" id="btnUseUsername" data-i18n="useUsernameLogin">I have a username and password</button>
       </div>
-      <div class="field">
-        <label data-i18n="lblUsername">Username</label>
-        <input type="text" id="si-username" autocomplete="username" autocapitalize="off" spellcheck="false">
+
+      <!-- Step 2: the code from WhatsApp -->
+      <div id="authStepCode" style="display:none;">
+        <div class="field">
+          <label data-i18n="lblCode">Code</label>
+          <input type="text" id="si-code" inputmode="numeric" autocomplete="one-time-code" dir="ltr" maxlength="10">
+        </div>
+        <button class="btn-primary" id="btnVerifyCode" data-i18n="verifyCode">Verify</button>
+        <button class="auth-link" id="btnResendCode" data-i18n="resendCode">Send a new code</button>
+        <button class="auth-link" id="btnChangeNumber" data-i18n="changeNumber">Change number</button>
       </div>
-      <div class="field">
-        <label data-i18n="lblPassword">Password</label>
-        <input type="password" id="si-password" autocomplete="current-password">
+
+      <!-- Step 3 (new accounts only): public display name -->
+      <div id="authStepName" style="display:none;">
+        <div class="field">
+          <label data-i18n="lblName">Your name</label>
+          <input type="text" id="si-name" autocomplete="name" maxlength="40">
+        </div>
+        <button class="btn-primary" id="btnSaveName" data-i18n="continueLabel">Continue</button>
       </div>
-      <button class="btn-primary" id="btnSignInSubmit" data-i18n="signInSubmit">Log in</button>
+
+      <!-- Older accounts: username + password, then add a WhatsApp number once -->
+      <div id="authStepLegacy" style="display:none;">
+        <div class="field">
+          <label data-i18n="lblUsername">Username</label>
+          <input type="text" id="si-username" autocomplete="username" autocapitalize="off" spellcheck="false">
+        </div>
+        <div class="field">
+          <label data-i18n="lblPassword">Password</label>
+          <input type="password" id="si-password" autocomplete="current-password">
+        </div>
+        <button class="btn-primary" id="btnSignInSubmit" data-i18n="signInSubmit">Log in</button>
+        <button class="auth-link" id="btnUsePhone" data-i18n="usePhoneLogin">Sign in with WhatsApp instead</button>
+      </div>
+
       <button class="toggle-open" id="btnSignInCancel" style="margin-top:10px;margin-bottom:0;border-style:solid;">✕</button>
     </div>
   </div>
