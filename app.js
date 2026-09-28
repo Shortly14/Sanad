@@ -87,6 +87,7 @@ en: {
   lblBudget:"Budget per month", lblNatShort:"Nationality", lblGenderShort:"Gender",
   noListingsTitle:"No rooms match these filters", noListingsSub:"Try a wider budget, or clear a filter or two.",
   soundTicker:"Original sound · Sanad Housing", likeLabel:"Like", saveLabel:"Save",
+  deleteLabel:"Delete", deleteConfirm:"Delete this for good? This can't be undone.", deleteFailed:"Couldn't delete this. Check your connection, or sign out and sign in again, then try once more.", removeBuddyProfile:"Remove my buddy profile",
   statMyListings:"Listings", statMyQuestions:"Questions", statMyClicks:"Link clicks",
   tabMyPosts:"Posts", tabLiked:"Liked", memberSince:"Member since",
   noPostsYet:"No listings posted yet", noLikedYet:"Rooms you like will show up here", noSavedYet:"Things you save will show up here",
@@ -163,6 +164,7 @@ ar: {
   lblBudget:"الميزانية بالشهر", lblNatShort:"الجنسية", lblGenderShort:"الجنس",
   noListingsTitle:"لا توجد غرف مطابقة لهذه الفلاتر", noListingsSub:"جرّب ميزانية أوسع أو أزل فلتراً أو اثنين.",
   soundTicker:"صوت أصلي · سند للإسكان", likeLabel:"إعجاب", saveLabel:"احفظ",
+  deleteLabel:"حذف", deleteConfirm:"هل تريد حذف هذا نهائيًا؟ لا يمكن التراجع عن ذلك.", deleteFailed:"تعذّر الحذف. تحقّق من اتصالك، أو سجّل الخروج ثم سجّل الدخول من جديد، وحاول مرة أخرى.", removeBuddyProfile:"إزالة ملفي كرفيق",
   statMyListings:"الإعلانات", statMyQuestions:"الأسئلة", statMyClicks:"نقرات الروابط",
   tabMyPosts:"إعلاناتي", tabLiked:"أعجبني", memberSince:"عضو منذ",
   noPostsYet:"لم تنشر أي إعلان بعد", noLikedYet:"الغرف التي تعجبك ستظهر هنا", noSavedYet:"الأشياء التي تحفظها ستظهر هنا",
@@ -239,6 +241,7 @@ ur: {
   lblBudget:"ماہانہ بجٹ", lblNatShort:"قومیت", lblGenderShort:"صنف",
   noListingsTitle:"ان فلٹرز سے کوئی کمرہ نہیں ملا", noListingsSub:"بجٹ بڑھائیں یا ایک دو فلٹر ہٹا دیں۔",
   soundTicker:"اصل آواز · سند ہاؤسنگ", likeLabel:"پسند", saveLabel:"محفوظ کریں",
+  deleteLabel:"حذف کریں", deleteConfirm:"کیا اسے ہمیشہ کے لیے حذف کر دیں؟ یہ واپس نہیں ہو سکتا۔", deleteFailed:"حذف نہیں ہو سکا۔ اپنا کنکشن چیک کریں، یا سائن آؤٹ کر کے دوبارہ سائن اِن کریں، پھر ایک بار اور کوشش کریں۔", removeBuddyProfile:"میری ساتھی پروفائل ہٹائیں",
   statMyListings:"لسٹنگز", statMyQuestions:"سوالات", statMyClicks:"لنک کلکس",
   tabMyPosts:"پوسٹس", tabLiked:"پسندیدہ", memberSince:"رکن بننے کی تاریخ",
   noPostsYet:"ابھی تک کوئی لسٹنگ پوسٹ نہیں کی گئی", noLikedYet:"آپ کے پسندیدہ کمرے یہاں نظر آئیں گے", noSavedYet:"آپ کی محفوظ کردہ چیزیں یہاں نظر آئیں گی",
@@ -686,7 +689,8 @@ const bookmarkIconSvg = '<svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4.5L6 2
 const noteIconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>';
 const chatIconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 01-8.5 8.5c-1.35 0-2.61-.34-3.7-.94L3 21l1.94-5.8A8.5 8.5 0 1121 11.5z"/></svg>';
 const bulbIconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a6 6 0 00-3.5 10.9c.5.4.8 1 .8 1.6V16h5.4v-1.5c0-.6.3-1.2.8-1.6A6 6 0 0012 2z"/></svg>';
-const upvoteIconSvg = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 5l7 8H5l7-8z"/></svg>';
+const trashIconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M10 11v6M14 11v6"/><path d="M6 7l1 13h10l1-13"/><path d="M9 7V4h6v3"/></svg>';
+const upvoteIconSvg ='<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 5l7 8H5l7-8z"/></svg>';
 const badgeIconSvg = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 5.6L21 8.5l-4.5 4.2L17.6 19 12 15.8 6.4 19l1.1-6.3L3 8.5l6.4-.9L12 2z"/></svg>';
 
 /* Deterministic "since forever" like counts so a listing's number doesn't jump on
@@ -759,6 +763,7 @@ function buildFeedCardHtml(l, i){
   const saved = !!state.feedSaves[key];
   const count = baseLikeCount(l) + (liked ? 1 : 0);
   const hasProfile = !!l.posterUserId;
+  const isMine = !!(appUser && l.posterUserId && l.posterUserId === appUser.id);
   const avatarLetter = escapeHtml(String(isHousing ? l.city : (l.by || l.city || '?')).charAt(0).toUpperCase());
   const posterId = escapeHtml(l.posterUserId);
   const wa = waDigits(l.wa);
@@ -780,6 +785,7 @@ function buildFeedCardHtml(l, i){
       ${isForumInquiry ? `<div><button class="ans" data-view-forum-post="${l.forumIndex}">${chatIconSvg}</button><div class="lbl">${t('viewAndAnswer')}</div></div>` : ''}
       <div><button class="sv ${saved?'active':''}" data-save="${key}" aria-pressed="${saved}">${bookmarkIconSvg}</button><div class="lbl">${t('saveLabel')}</div></div>
       <div><button class="sh" data-share-listing-id="${key}">${shareIconSvg}</button><div class="lbl">${t('shareLabel')}</div></div>
+      ${isMine ? `<div><button class="del" data-delete-post="${key}" data-delete-kind="${isForumInquiry ? 'forum' : 'listing'}" aria-label="${t('deleteLabel')}">${trashIconSvg}</button><div class="lbl">${t('deleteLabel')}</div></div>` : ''}
     </div>
     <div class="feed-content">
       <div class="feed-handle">
@@ -830,6 +836,13 @@ function bindFeedCardEvents(wrap, filtered){
   });
   wrap.querySelectorAll('[data-view-profile]').forEach(btn=>{
     btn.addEventListener('click', ()=> showPublicProfile(btn.getAttribute('data-view-profile')));
+  });
+  wrap.querySelectorAll('[data-delete-post]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const id = btn.getAttribute('data-delete-post');
+      if(btn.getAttribute('data-delete-kind') === 'forum') deleteForumPost(id);
+      else deleteListing(id);
+    });
   });
 
   /* ---- Likes: tap the heart, or double-tap the card (TikTok's classic gesture) ---- */
@@ -937,6 +950,7 @@ async function fetchAndRenderForum(){
       cat: p.category,
       q: p.question,
       by: p.posted_by,
+      posterUserId: p.poster_user_id,
       votes: p.votes,
       replies: (p.forum_replies || [])
         .slice()
@@ -1055,6 +1069,9 @@ function renderForum(){
   wrap.querySelectorAll('[data-vote-reply]').forEach(btn=>{
     btn.addEventListener('click', ()=> voteOnReply(btn.getAttribute('data-vote-reply')));
   });
+  wrap.querySelectorAll('[data-delete-reply]').forEach(btn=>{
+    btn.addEventListener('click', ()=> deleteForumReply(btn.getAttribute('data-delete-reply')));
+  });
 
   // Community questions are mirrored into the Feed too (see forumFeedItems),
   // so any change here — a new question, a new reply count — needs to reach it.
@@ -1076,6 +1093,7 @@ function renderReply(r){
       <p>${escapeHtml(text)}</p>
       <div class="reply-meta">
         ${by ? `<button class="reply-by" ${r.posterUserId?`data-view-profile="${escapeHtml(r.posterUserId)}"`:'disabled'}>${t('repliedBy')} ${escapeHtml(by)}</button>` : ''}
+        ${canVote && appUser && r.posterUserId === appUser.id ? `<button class="reply-delete" data-delete-reply="${escapeHtml(r.id)}" aria-label="${t('deleteLabel')}">${trashIconSvg}</button>` : ''}
         ${canVote ? `<button class="reply-vote ${voted?'voted':''}" data-vote-reply="${escapeHtml(r.id)}" ${voted?'disabled':''}>${upvoteIconSvg}<span>${r.votes||0}</span></button>` : ''}
       </div>
     </div>
@@ -1139,6 +1157,79 @@ async function voteOnReply(replyId){
     } catch(err){
       console.error('Could not reach Supabase to vote on reply:', err);
     }
+  });
+}
+
+/* ============================= Deleting your own posts ============================= */
+/* The Delete buttons only render on the signed-in user's own content; the
+   server checks ownership again from the session token (schema.sql §13). */
+async function runOwnDelete(rpcName, params, deleteLocally){
+  if(!window.confirm(t('deleteConfirm'))) return false;
+  if(!SUPABASE_CONFIGURED || String(appUser.id).startsWith('local-')){
+    deleteLocally();
+    return true;
+  }
+  try{
+    const { error } = await supabaseClient.rpc(rpcName, { p_session_token: appUser.sessionToken, ...params });
+    if(error){
+      console.error(`Error in ${rpcName}:`, error);
+      window.alert(t('deleteFailed'));
+      return false;
+    }
+    return true;
+  } catch(err){
+    console.error(`Could not reach Supabase for ${rpcName}:`, err);
+    window.alert(t('deleteFailed'));
+    return false;
+  }
+}
+
+function deleteListing(listingId){
+  requireSignIn(async ()=>{
+    const ok = await runOwnDelete('delete_listing', { p_listing_id: listingId }, ()=>{
+      listings = listings.filter(l=> l.id !== listingId);
+      myListingsCache = myListingsCache.filter(l=> l.id !== listingId);
+    });
+    if(!ok) return;
+    await Promise.all([fetchAndRenderListings(), fetchAndRenderProfileStats()]);
+    renderProfile();
+  });
+}
+
+function deleteForumPost(postId){
+  requireSignIn(async ()=>{
+    const ok = await runOwnDelete('delete_forum_post', { p_post_id: postId }, ()=>{
+      forumPosts = forumPosts.filter(p=> p.id !== postId);
+    });
+    if(!ok) return;
+    state.openReplies = {}; // keyed by list position, which just shifted
+    await Promise.all([fetchAndRenderForum(), fetchAndRenderProfileStats(), fetchLeaderboardData()]);
+    renderLeaderboard();
+    renderProfile();
+  });
+}
+
+function deleteForumReply(replyId){
+  requireSignIn(async ()=>{
+    const ok = await runOwnDelete('delete_forum_reply', { p_reply_id: replyId }, ()=>{
+      forumPosts.forEach(p=>{ p.replies = p.replies.filter(r=> !(r && r.id === replyId)); });
+    });
+    if(!ok) return;
+    await Promise.all([fetchAndRenderForum(), fetchLeaderboardData()]);
+    renderLeaderboard();
+    renderProfile();
+  });
+}
+
+function deleteBuddyProfile(){
+  requireSignIn(async ()=>{
+    const ok = await runOwnDelete('delete_buddy', {}, ()=>{
+      buddies = buddies.filter(b=> b.userId !== appUser.id);
+    });
+    if(!ok) return;
+    await Promise.all([fetchAndRenderBuddies(), fetchLeaderboardData()]);
+    renderLeaderboard();
+    renderProfile();
   });
 }
 
@@ -1258,6 +1349,7 @@ async function submitSignIn(){
   await Promise.all([fetchAndRenderShareLinks(), fetchAndRenderProfileStats(), fetchAndRenderForum(), fetchLeaderboardData()]);
   renderProfile();
   renderLeaderboard();
+  renderBuddies();
   if(action) action();
 }
 
@@ -1266,6 +1358,9 @@ function signOut(){
   myShareLinks = [];
   persistAppUser();
   renderProfile();
+  // Drop the Delete buttons that were only shown on this user's own posts.
+  renderForum();
+  renderBuddies();
 }
 
 /* ---- Profile stats + "Posts"/"Liked"/"Saved" grids ---- */
@@ -1638,8 +1733,10 @@ function renderBuddies(){
       <div class="tag-row">${(b.help||[]).map(h=>`<span class="tag">${escapeHtml(t(helpKeyMap[h]||h))}</span>`).join('')}</div>
       <p class="buddy-desc">${escapeHtml(b.bio)}</p>
       <a class="wa-btn" href="https://wa.me/${waDigits(b.wa)}" target="_blank" rel="noopener">${waIconSvg}${t('contactWA')}</a>
+      ${appUser && b.userId === appUser.id ? `<button class="buddy-remove" data-delete-buddy>${trashIconSvg}${t('removeBuddyProfile')}</button>` : ''}
     </div>
   `).join('');
+  wrap.querySelectorAll('[data-delete-buddy]').forEach(btn=> btn.addEventListener('click', deleteBuddyProfile));
 }
 
 async function fetchAndRenderBuddies(){
