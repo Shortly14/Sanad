@@ -687,3 +687,75 @@ begin
       and public.sanad_upload_budget_ok()
     );
 end $$;
+
+-- ============================================================
+-- 13. Deleting your own posts. Section 11 took away every direct
+--     delete, so these are the only way to remove a listing, a
+--     question, a reply or a buddy profile. Each one looks the
+--     user up from p_session_token and only deletes rows that
+--     user posted. Deleting a question also removes its replies
+--     and their votes (on delete cascade). Uploaded videos/images
+--     stay in Storage; nothing links to them afterwards.
+-- ============================================================
+
+create or replace function delete_listing(p_session_token text, p_listing_id uuid)
+returns void
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare v_user record;
+begin
+  select * into v_user from sanad_session_user(p_session_token);
+  delete from housing_listings where id = p_listing_id and poster_user_id = v_user.id;
+  if not found then raise exception 'You can only delete your own posts'; end if;
+end;
+$$;
+
+create or replace function delete_forum_post(p_session_token text, p_post_id uuid)
+returns void
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare v_user record;
+begin
+  select * into v_user from sanad_session_user(p_session_token);
+  delete from forum_posts where id = p_post_id and poster_user_id = v_user.id;
+  if not found then raise exception 'You can only delete your own posts'; end if;
+end;
+$$;
+
+create or replace function delete_forum_reply(p_session_token text, p_reply_id uuid)
+returns void
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare v_user record;
+begin
+  select * into v_user from sanad_session_user(p_session_token);
+  delete from forum_replies where id = p_reply_id and poster_user_id = v_user.id;
+  if not found then raise exception 'You can only delete your own posts'; end if;
+end;
+$$;
+
+-- Removes every buddy profile the user has (pressing "Become a buddy"
+-- twice used to create two).
+create or replace function delete_buddy(p_session_token text)
+returns void
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare v_user record;
+begin
+  select * into v_user from sanad_session_user(p_session_token);
+  delete from buddies where user_id = v_user.id;
+end;
+$$;
+
+grant execute on function delete_listing(text, uuid) to anon, authenticated;
+grant execute on function delete_forum_post(text, uuid) to anon, authenticated;
+grant execute on function delete_forum_reply(text, uuid) to anon, authenticated;
+grant execute on function delete_buddy(text) to anon, authenticated;
