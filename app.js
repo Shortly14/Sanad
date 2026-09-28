@@ -107,7 +107,7 @@ en: {
   guestSavedLabel:"Saved", guestLanguageLabel:"Language", guestLanguageValue:"العربية · English · اردو",
   likedCountLabel:"{n} liked on this phone", savedCountLabel:"{n} saved on this phone",
   signInBtnShort:"Log in / Sign up",
-  authErrorInvalid:"Wrong username or password.", authErrorTooMany:"Too many wrong attempts. Wait 15 minutes and try again.", authErrorMissing:"Enter a username and password.", authErrorNetwork:"Couldn't reach the server — try again.", authErrorShort:"Password must be at least 6 characters.", authErrorTaken:"That username is already taken.", loginHint:"Log in with your username and password.", loginTabLabel:"Log in", signInSubmit:"Log in", signupHint:"Pick a username and password — that's all you need.", signupTabLabel:"Sign up",
+  authErrorInvalid:"Wrong username or password.", authErrorTooMany:"Too many wrong attempts. Wait 15 minutes and try again.", authErrorTooOften:"Too many new accounts from this network. Try again in an hour.", authErrorMissing:"Enter a username and password.", authErrorNetwork:"Couldn't reach the server — try again.", authErrorShort:"Password must be at least 6 characters.", authErrorTaken:"That username is already taken.", loginHint:"Log in with your username and password.", loginTabLabel:"Log in", signInSubmit:"Log in", signupHint:"Pick a username and password — that's all you need.", signupTabLabel:"Sign up",
   lblUsername:"Username", lblPassword:"Password",
 },
 ar: {
@@ -183,7 +183,7 @@ ar: {
   guestSavedLabel:"المحفوظات", guestLanguageLabel:"اللغة", guestLanguageValue:"العربية · English · اردو",
   likedCountLabel:"{n} إعجاب على هذا الجهاز", savedCountLabel:"{n} محفوظ على هذا الجهاز",
   signInBtnShort:"تسجيل الدخول / إنشاء حساب",
-  authErrorInvalid:"اسم المستخدم أو كلمة المرور غير صحيحة.", authErrorTooMany:"محاولات خاطئة كثيرة. انتظر ١٥ دقيقة ثم حاول مرة أخرى.", authErrorMissing:"أدخل اسم المستخدم وكلمة المرور.", authErrorNetwork:"تعذر الوصول إلى الخادم — حاول مرة أخرى.", authErrorShort:"يجب أن تتكون كلمة المرور من ٦ أحرف على الأقل.", authErrorTaken:"اسم المستخدم هذا مُستخدم بالفعل.", loginHint:"سجّل الدخول باسم المستخدم وكلمة المرور.", loginTabLabel:"تسجيل الدخول", signInSubmit:"تسجيل الدخول", signupHint:"اختر اسم مستخدم وكلمة مرور — هذا كل ما تحتاجه.", signupTabLabel:"إنشاء حساب",
+  authErrorInvalid:"اسم المستخدم أو كلمة المرور غير صحيحة.", authErrorTooMany:"محاولات خاطئة كثيرة. انتظر ١٥ دقيقة ثم حاول مرة أخرى.", authErrorTooOften:"تم إنشاء حسابات كثيرة من هذه الشبكة. حاول مرة أخرى بعد ساعة.", authErrorMissing:"أدخل اسم المستخدم وكلمة المرور.", authErrorNetwork:"تعذر الوصول إلى الخادم — حاول مرة أخرى.", authErrorShort:"يجب أن تتكون كلمة المرور من ٦ أحرف على الأقل.", authErrorTaken:"اسم المستخدم هذا مُستخدم بالفعل.", loginHint:"سجّل الدخول باسم المستخدم وكلمة المرور.", loginTabLabel:"تسجيل الدخول", signInSubmit:"تسجيل الدخول", signupHint:"اختر اسم مستخدم وكلمة مرور — هذا كل ما تحتاجه.", signupTabLabel:"إنشاء حساب",
   lblUsername:"اسم المستخدم", lblPassword:"كلمة المرور",
 },
 ur: {
@@ -259,7 +259,7 @@ ur: {
   guestSavedLabel:"محفوظ شدہ", guestLanguageLabel:"زبان", guestLanguageValue:"العربية · English · اردو",
   likedCountLabel:"اس فون پر {n} پسند", savedCountLabel:"اس فون پر {n} محفوظ",
   signInBtnShort:"لاگ ان / اکاؤنٹ بنائیں",
-  authErrorInvalid:"غلط یوزرنیم یا پاس ورڈ۔", authErrorTooMany:"بہت زیادہ غلط کوششیں۔ ۱۵ منٹ انتظار کریں اور دوبارہ کوشش کریں۔", authErrorMissing:"یوزرنیم اور پاس ورڈ درج کریں۔", authErrorNetwork:"سرور تک رسائی نہیں ہو سکی — دوبارہ کوشش کریں۔", authErrorShort:"پاس ورڈ کم از کم ۶ حروف کا ہونا چاہیے۔", authErrorTaken:"یہ یوزرنیم پہلے سے لیا جا چکا ہے۔", loginHint:"اپنے یوزرنیم اور پاس ورڈ سے لاگ ان کریں۔", loginTabLabel:"لاگ ان", signInSubmit:"لاگ ان", signupHint:"ایک یوزرنیم اور پاس ورڈ منتخب کریں — بس اتنا ہی چاہیے۔", signupTabLabel:"اکاؤنٹ بنائیں",
+  authErrorInvalid:"غلط یوزرنیم یا پاس ورڈ۔", authErrorTooMany:"بہت زیادہ غلط کوششیں۔ ۱۵ منٹ انتظار کریں اور دوبارہ کوشش کریں۔", authErrorTooOften:"اس نیٹ ورک سے بہت زیادہ نئے اکاؤنٹ بنائے گئے ہیں۔ ایک گھنٹے بعد دوبارہ کوشش کریں۔", authErrorMissing:"یوزرنیم اور پاس ورڈ درج کریں۔", authErrorNetwork:"سرور تک رسائی نہیں ہو سکی — دوبارہ کوشش کریں۔", authErrorShort:"پاس ورڈ کم از کم ۶ حروف کا ہونا چاہیے۔", authErrorTaken:"یہ یوزرنیم پہلے سے لیا جا چکا ہے۔", loginHint:"اپنے یوزرنیم اور پاس ورڈ سے لاگ ان کریں۔", loginTabLabel:"لاگ ان", signInSubmit:"لاگ ان", signupHint:"ایک یوزرنیم اور پاس ورڈ منتخب کریں — بس اتنا ہی چاہیے۔", signupTabLabel:"اکاؤنٹ بنائیں",
   lblUsername:"یوزرنیم", lblPassword:"پاس ورڈ",
 }
 };
@@ -1230,6 +1230,7 @@ async function submitSignIn(){
         else if(msg.includes('least') || msg.includes('at least 3')) showAuthError(t('authErrorShort'));
         else if(msg.includes('invalid username or password')) showAuthError(t('authErrorInvalid'));
         else if(msg.includes('too many failed attempts')) showAuthError(t('authErrorTooMany'));
+        else if(msg.includes('too often')) showAuthError(t('authErrorTooOften'));
         else if(error.code === 'PGRST202' || msg.includes('could not find the function')){
           showAuthError('Sign-in isn\'t set up on the database yet — run schema.sql in the Supabase SQL editor (see console for details).');
         } else {
