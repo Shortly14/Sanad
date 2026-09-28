@@ -687,3 +687,81 @@ begin
       and public.sanad_upload_budget_ok()
     );
 end $$;
+
+-- ============================================================
+-- 13. Speed limits. Nothing stopped one person from creating
+--     hundreds of accounts or flooding the feed with posts in a
+--     minute. Each insert below is counted, and past the limit the
+--     insert is refused. Limits are well above what a real person
+--     does; accounts are counted per IP address, everything else
+--     per signed-in user.
+-- ============================================================
+
+create table if not exists rate_limit_events (
+  id bigserial primary key,
+  at timestamptz default now(),
+  kind text not null,
+  key text not null
+);
+create index if not exists idx_rate_limit_events_lookup on rate_limit_events(kind, key, at);
+create index if not exists idx_rate_limit_events_at on rate_limit_events(at);
+alter table rate_limit_events enable row level security;
+revoke all on rate_limit_events from anon, authenticated;
+
+-- Internal helper — not callable through the API. A refused action raises,
+-- which also rolls back its own event row, so only real inserts count.
+create or replace function sanad_rate_limit(p_kind text, p_key text, p_max int, p_window interval)
+returns void
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+begin
+  if p_key is null then
+    return;
+  end if;
+  delete from rate_limit_events where at < now() - interval '1 day';
+  if (select count(*) from rate_limit_events
+      where kind = p_kind and key = p_key and at > now() - p_window) >= p_max then
+    raise exception 'You are doing that too often, try again later';
+  end if;
+  insert into rate_limit_events (kind, key) values (p_kind, p_key);
+end;
+$$;
+revoke execute on function sanad_rate_limit(text, text, int, interval) from public, anon, authenticated;
+
+create or replace function sanad_rate_limit_trigger()
+returns trigger
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare
+  -- Same source login_user uses: set by Cloudflare, null outside the API.
+  v_ip text := nullif(current_setting('request.headers', true), '')::json->>'cf-connecting-ip';
+begin
+  case TG_TABLE_NAME
+    -- Workers often share one IP (camp Wi-Fi, mobile carriers), so this is loose.
+    when 'app_users' then perform sanad_rate_limit('signup', v_ip, 30, interval '1 hour');
+    when 'housing_listings' then perform sanad_rate_limit('listing', new.poster_user_id::text, 10, interval '1 hour');
+    when 'forum_posts' then perform sanad_rate_limit('question', new.poster_user_id::text, 10, interval '1 hour');
+    when 'forum_replies' then perform sanad_rate_limit('reply', new.poster_user_id::text, 30, interval '1 hour');
+    when 'buddies' then perform sanad_rate_limit('buddy', new.user_id::text, 3, interval '1 day');
+    when 'share_links' then perform sanad_rate_limit('share_link', new.user_id::text, 20, interval '1 hour');
+    when 'share_clicks' then perform sanad_rate_limit('share_click', v_ip, 60, interval '1 hour');
+  end case;
+  return new;
+end;
+$$;
+revoke execute on function sanad_rate_limit_trigger() from public, anon, authenticated;
+
+do $$
+declare
+  t text;
+  tables text[] := array['app_users','housing_listings','forum_posts','forum_replies','buddies','share_links','share_clicks'];
+begin
+  foreach t in array tables loop
+    execute format('drop trigger if exists sanad_rate_limit on public.%I', t);
+    execute format('create trigger sanad_rate_limit before insert on public.%I for each row execute function sanad_rate_limit_trigger()', t);
+  end loop;
+end $$;
