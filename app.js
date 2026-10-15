@@ -582,10 +582,6 @@ function applyI18n(){
       el.setAttribute('aria-label', translations[state.lang][k]);
     }
   });
-  document.querySelectorAll('[data-theme-toggle]').forEach(btn=>{
-    btn.addEventListener('click', ()=> applyTheme(currentTheme() === 'dark' ? 'light' : 'dark'));
-  });
-
   document.querySelectorAll('[data-lang-btn]').forEach(b=>{
     b.classList.toggle('active', b.getAttribute('data-lang-btn')===state.lang);
   });
@@ -2126,6 +2122,9 @@ function renderAll(){
 }
 
 /* ============================= Events ============================= */
+document.querySelectorAll('[data-theme-toggle]').forEach(btn=>{
+  btn.addEventListener('click', ()=> applyTheme(currentTheme() === 'dark' ? 'light' : 'dark'));
+});
 document.querySelectorAll('[data-lang-btn]').forEach(btn=>{
   btn.addEventListener('click', ()=>{
     state.lang = btn.getAttribute('data-lang-btn');
