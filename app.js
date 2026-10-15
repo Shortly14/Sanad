@@ -109,9 +109,9 @@ en: {
   signInBtnShort:"Log in / Sign up",
   authErrorInvalid:"Wrong username or password.", authErrorTooMany:"Too many wrong attempts. Wait 15 minutes and try again.", authErrorMissing:"Enter a username and password.", authErrorNetwork:"Couldn't reach the server — try again.", authErrorShort:"Password must be at least 6 characters.", authErrorTaken:"That username is already taken.", loginHint:"Log in with your username and password.", loginTabLabel:"Log in", signInSubmit:"Log in", signupHint:"Pick a username and password — that's all you need.", signupTabLabel:"Sign up",
   lblUsername:"Username", lblPassword:"Password",
-  authTitle:"Sign in", lblWhatsappNumber:"WhatsApp number", sendCode:"Send code", useUsernameLogin:"I have a username and password", lblCode:"Code", verifyCode:"Verify", resendCode:"Send a new code", changeNumber:"Change number", continueLabel:"Continue", usePhoneLogin:"Sign in with WhatsApp instead",
-  authHintPhone:"Enter your WhatsApp number. We'll send you a code there to sign in or create your account.", authHintLink:"One more step: add your WhatsApp number to keep your account safe. We'll send you a code there.", authHintCode:"Enter the code we sent on WhatsApp to {phone}.", authHintName:"Welcome to Sanad! What name should other people see?", codeResent:"We sent you a new code on WhatsApp.",
-  authErrorPhone:"Enter your WhatsApp number with the country code, for example +966 5X XXX XXXX.", authErrorCode:"Enter the code from WhatsApp.", authErrorWrongCode:"That code is wrong. Check it and try again.", authErrorCodeExpired:"That code has expired. Tap \"Send a new code\".", authErrorTooManyCodes:"Too many tries. Wait 15 minutes and try again.", authErrorSendFailed:"We couldn't send a code to this number. Check that it uses WhatsApp and try again.", authErrorNumberTaken:"This WhatsApp number already belongs to another account. Sign in with WhatsApp instead.", authErrorName:"Enter a name.",
+  authTitle:"Sign in", lblEmail:"Email", sendCode:"Send code", useUsernameLogin:"I have a username and password", lblCode:"Code", verifyCode:"Verify", resendCode:"Send a new code", changeEmail:"Change email", continueLabel:"Continue", useEmailLogin:"Sign in with email instead",
+  authHintEmail:"Enter your email. We'll send you a code to sign in or create your account.", authHintLink:"One more step: add your email to keep your account safe. We'll send you a code there.", authHintCode:"Enter the code we emailed to {email}. If you can't find it, check your spam folder.", authHintName:"Welcome to Sanad! What name should other people see?", codeResent:"We emailed you a new code.",
+  authErrorEmail:"Enter a valid email, for example name@example.com.", authErrorCode:"Enter the code from the email.", authErrorWrongCode:"That code is wrong. Check it and try again.", authErrorCodeExpired:"That code has expired. Tap \"Send a new code\".", authErrorTooManyCodes:"Too many tries. Wait 15 minutes and try again.", authErrorSendFailed:"We couldn't send a code to this email. Check it and try again.", authErrorEmailTaken:"This email already belongs to another account. Sign in with email instead.", authErrorName:"Enter a name.",
 },
 ar: {
   brandName:"سند · Sanad", brandTag:"سندك في السعودية",
@@ -188,9 +188,9 @@ ar: {
   signInBtnShort:"تسجيل الدخول / إنشاء حساب",
   authErrorInvalid:"اسم المستخدم أو كلمة المرور غير صحيحة.", authErrorTooMany:"محاولات خاطئة كثيرة. انتظر ١٥ دقيقة ثم حاول مرة أخرى.", authErrorMissing:"أدخل اسم المستخدم وكلمة المرور.", authErrorNetwork:"تعذر الوصول إلى الخادم — حاول مرة أخرى.", authErrorShort:"يجب أن تتكون كلمة المرور من ٦ أحرف على الأقل.", authErrorTaken:"اسم المستخدم هذا مُستخدم بالفعل.", loginHint:"سجّل الدخول باسم المستخدم وكلمة المرور.", loginTabLabel:"تسجيل الدخول", signInSubmit:"تسجيل الدخول", signupHint:"اختر اسم مستخدم وكلمة مرور — هذا كل ما تحتاجه.", signupTabLabel:"إنشاء حساب",
   lblUsername:"اسم المستخدم", lblPassword:"كلمة المرور",
-  authTitle:"تسجيل الدخول", lblWhatsappNumber:"رقم واتساب", sendCode:"أرسل الرمز", useUsernameLogin:"لدي اسم مستخدم وكلمة مرور", lblCode:"الرمز", verifyCode:"تحقّق", resendCode:"أرسل رمزًا جديدًا", changeNumber:"غيّر الرقم", continueLabel:"متابعة", usePhoneLogin:"سجّل الدخول عبر واتساب بدلًا من ذلك",
-  authHintPhone:"أدخل رقم واتساب الخاص بك. سنرسل إليك رمزًا هناك لتسجيل الدخول أو إنشاء حسابك.", authHintLink:"خطوة أخيرة: أضف رقم واتساب لحماية حسابك. سنرسل إليك رمزًا هناك.", authHintCode:"أدخل الرمز الذي أرسلناه عبر واتساب إلى {phone}.", authHintName:"أهلًا بك في سند! ما الاسم الذي تريد أن يراه الآخرون؟", codeResent:"أرسلنا إليك رمزًا جديدًا عبر واتساب.",
-  authErrorPhone:"أدخل رقم واتساب مع رمز الدولة، مثل ‎+966 5X XXX XXXX.", authErrorCode:"أدخل الرمز الذي وصلك على واتساب.", authErrorWrongCode:"الرمز غير صحيح. تحقّق منه وحاول مرة أخرى.", authErrorCodeExpired:"انتهت صلاحية الرمز. اضغط \"أرسل رمزًا جديدًا\".", authErrorTooManyCodes:"محاولات كثيرة. انتظر ١٥ دقيقة ثم حاول مرة أخرى.", authErrorSendFailed:"تعذّر إرسال رمز إلى هذا الرقم. تأكّد أنه مسجّل في واتساب وحاول مرة أخرى.", authErrorNumberTaken:"رقم واتساب هذا مرتبط بحساب آخر. سجّل الدخول عبر واتساب بدلًا من ذلك.", authErrorName:"أدخل اسمًا.",
+  authTitle:"تسجيل الدخول", lblEmail:"البريد الإلكتروني", sendCode:"أرسل الرمز", useUsernameLogin:"لدي اسم مستخدم وكلمة مرور", lblCode:"الرمز", verifyCode:"تحقّق", resendCode:"أرسل رمزًا جديدًا", changeEmail:"غيّر البريد", continueLabel:"متابعة", useEmailLogin:"سجّل الدخول بالبريد الإلكتروني بدلًا من ذلك",
+  authHintEmail:"أدخل بريدك الإلكتروني. سنرسل إليك رمزًا لتسجيل الدخول أو إنشاء حسابك.", authHintLink:"خطوة أخيرة: أضف بريدك الإلكتروني لحماية حسابك. سنرسل إليك رمزًا هناك.", authHintCode:"أدخل الرمز الذي أرسلناه إلى {email}. إذا لم تجده، تحقّق من مجلد الرسائل غير المرغوب فيها.", authHintName:"أهلًا بك في سند! ما الاسم الذي تريد أن يراه الآخرون؟", codeResent:"أرسلنا إليك رمزًا جديدًا بالبريد.",
+  authErrorEmail:"أدخل بريدًا إلكترونيًا صحيحًا، مثل name@example.com.", authErrorCode:"أدخل الرمز الذي وصلك في البريد.", authErrorWrongCode:"الرمز غير صحيح. تحقّق منه وحاول مرة أخرى.", authErrorCodeExpired:"انتهت صلاحية الرمز. اضغط \"أرسل رمزًا جديدًا\".", authErrorTooManyCodes:"محاولات كثيرة. انتظر ١٥ دقيقة ثم حاول مرة أخرى.", authErrorSendFailed:"تعذّر إرسال رمز إلى هذا البريد. تحقّق منه وحاول مرة أخرى.", authErrorEmailTaken:"هذا البريد مرتبط بحساب آخر. سجّل الدخول بالبريد الإلكتروني بدلًا من ذلك.", authErrorName:"أدخل اسمًا.",
 },
 ur: {
   brandName:"سند · Sanad", brandTag:"سعودی عرب میں آپ کا سہارا",
@@ -267,9 +267,9 @@ ur: {
   signInBtnShort:"لاگ ان / اکاؤنٹ بنائیں",
   authErrorInvalid:"غلط یوزرنیم یا پاس ورڈ۔", authErrorTooMany:"بہت زیادہ غلط کوششیں۔ ۱۵ منٹ انتظار کریں اور دوبارہ کوشش کریں۔", authErrorMissing:"یوزرنیم اور پاس ورڈ درج کریں۔", authErrorNetwork:"سرور تک رسائی نہیں ہو سکی — دوبارہ کوشش کریں۔", authErrorShort:"پاس ورڈ کم از کم ۶ حروف کا ہونا چاہیے۔", authErrorTaken:"یہ یوزرنیم پہلے سے لیا جا چکا ہے۔", loginHint:"اپنے یوزرنیم اور پاس ورڈ سے لاگ ان کریں۔", loginTabLabel:"لاگ ان", signInSubmit:"لاگ ان", signupHint:"ایک یوزرنیم اور پاس ورڈ منتخب کریں — بس اتنا ہی چاہیے۔", signupTabLabel:"اکاؤنٹ بنائیں",
   lblUsername:"یوزرنیم", lblPassword:"پاس ورڈ",
-  authTitle:"سائن اِن", lblWhatsappNumber:"واٹس ایپ نمبر", sendCode:"کوڈ بھیجیں", useUsernameLogin:"میرے پاس یوزرنیم اور پاس ورڈ ہے", lblCode:"کوڈ", verifyCode:"تصدیق کریں", resendCode:"نیا کوڈ بھیجیں", changeNumber:"نمبر بدلیں", continueLabel:"جاری رکھیں", usePhoneLogin:"اس کے بجائے واٹس ایپ سے سائن اِن کریں",
-  authHintPhone:"اپنا واٹس ایپ نمبر درج کریں۔ سائن اِن کرنے یا اکاؤنٹ بنانے کے لیے ہم وہاں آپ کو ایک کوڈ بھیجیں گے۔", authHintLink:"ایک آخری قدم: اپنے اکاؤنٹ کو محفوظ رکھنے کے لیے اپنا واٹس ایپ نمبر شامل کریں۔ ہم وہاں آپ کو ایک کوڈ بھیجیں گے۔", authHintCode:"وہ کوڈ درج کریں جو ہم نے واٹس ایپ پر {phone} کو بھیجا ہے۔", authHintName:"سند میں خوش آمدید! دوسرے لوگ آپ کا کون سا نام دیکھیں؟", codeResent:"ہم نے آپ کو واٹس ایپ پر نیا کوڈ بھیج دیا ہے۔",
-  authErrorPhone:"اپنا واٹس ایپ نمبر ملک کے کوڈ کے ساتھ درج کریں، مثلاً ‎+966 5X XXX XXXX۔", authErrorCode:"واٹس ایپ پر آنے والا کوڈ درج کریں۔", authErrorWrongCode:"یہ کوڈ غلط ہے۔ اسے چیک کر کے دوبارہ کوشش کریں۔", authErrorCodeExpired:"اس کوڈ کی مدت ختم ہو گئی ہے۔ \"نیا کوڈ بھیجیں\" پر ٹیپ کریں۔", authErrorTooManyCodes:"بہت زیادہ کوششیں۔ ۱۵ منٹ انتظار کریں اور دوبارہ کوشش کریں۔", authErrorSendFailed:"اس نمبر پر کوڈ نہیں بھیجا جا سکا۔ یقینی بنائیں کہ یہ نمبر واٹس ایپ پر ہے اور دوبارہ کوشش کریں۔", authErrorNumberTaken:"یہ واٹس ایپ نمبر پہلے سے کسی اور اکاؤنٹ کا ہے۔ اس کے بجائے واٹس ایپ سے سائن اِن کریں۔", authErrorName:"ایک نام درج کریں۔",
+  authTitle:"سائن اِن", lblEmail:"ای میل", sendCode:"کوڈ بھیجیں", useUsernameLogin:"میرے پاس یوزرنیم اور پاس ورڈ ہے", lblCode:"کوڈ", verifyCode:"تصدیق کریں", resendCode:"نیا کوڈ بھیجیں", changeEmail:"ای میل بدلیں", continueLabel:"جاری رکھیں", useEmailLogin:"اس کے بجائے ای میل سے سائن اِن کریں",
+  authHintEmail:"اپنی ای میل درج کریں۔ سائن اِن کرنے یا اکاؤنٹ بنانے کے لیے ہم آپ کو ایک کوڈ بھیجیں گے۔", authHintLink:"ایک آخری قدم: اپنے اکاؤنٹ کو محفوظ رکھنے کے لیے اپنی ای میل شامل کریں۔ ہم وہاں آپ کو ایک کوڈ بھیجیں گے۔", authHintCode:"وہ کوڈ درج کریں جو ہم نے {email} پر بھیجا ہے۔ اگر نہ ملے تو اسپام فولڈر دیکھیں۔", authHintName:"سند میں خوش آمدید! دوسرے لوگ آپ کا کون سا نام دیکھیں؟", codeResent:"ہم نے آپ کو ای میل پر نیا کوڈ بھیج دیا ہے۔",
+  authErrorEmail:"درست ای میل درج کریں، مثلاً name@example.com۔", authErrorCode:"ای میل میں آنے والا کوڈ درج کریں۔", authErrorWrongCode:"یہ کوڈ غلط ہے۔ اسے چیک کر کے دوبارہ کوشش کریں۔", authErrorCodeExpired:"اس کوڈ کی مدت ختم ہو گئی ہے۔ \"نیا کوڈ بھیجیں\" پر ٹیپ کریں۔", authErrorTooManyCodes:"بہت زیادہ کوششیں۔ ۱۵ منٹ انتظار کریں اور دوبارہ کوشش کریں۔", authErrorSendFailed:"اس ای میل پر کوڈ نہیں بھیجا جا سکا۔ اسے چیک کر کے دوبارہ کوشش کریں۔", authErrorEmailTaken:"یہ ای میل پہلے سے کسی اور اکاؤنٹ کی ہے۔ اس کے بجائے ای میل سے سائن اِن کریں۔", authErrorName:"ایک نام درج کریں۔",
 }
 };
 
@@ -1151,36 +1151,36 @@ async function voteOnReply(replyId){
   });
 }
 
-/* ============================= Sign-in (WhatsApp code) ============================= */
-/* Steps: 'phone' -> 'code' -> 'name' (new accounts only). Older accounts use
-   'legacy' (username + password), then add their WhatsApp number once through
-   the same phone/code steps: the server refuses every write until an account
-   has a verified number (sanad_session_user in schema.sql). The send-otp Edge
-   Function (supabase/functions) sends the code on WhatsApp; verify_phone_code
-   in schema.sql checks it. */
+/* ============================= Sign-in (email code) ============================= */
+/* Steps: 'email' -> 'code' -> 'name' (new accounts only). Older accounts use
+   'legacy' (username + password), then add their email once through the same
+   email/code steps: the server refuses every write until an account has a
+   verified email (sanad_session_user in schema.sql). The send-code Edge
+   Function (supabase/functions) emails the code; verify_email_code in
+   schema.sql checks it. */
 const AUTH_STORAGE_KEY = 'sanad_user';
-let authStep = 'phone';
-let authPhone = null;     // the normalized number the current code was sent to
-let authLinkUser = null;  // a username account that still needs a WhatsApp number
-let authNewUser = null;   // a brand-new WhatsApp account waiting for its name
+let authStep = 'email';
+let authEmail = null;     // the normalized email the current code was sent to
+let authLinkUser = null;  // a username account that still needs an email
+let authNewUser = null;   // a brand-new email account waiting for its name
 
 function setAuthStep(step){
   authStep = step;
-  document.getElementById('authStepPhone').style.display = step==='phone' ? 'block' : 'none';
+  document.getElementById('authStepEmail').style.display = step==='email' ? 'block' : 'none';
   document.getElementById('authStepCode').style.display = step==='code' ? 'block' : 'none';
   document.getElementById('authStepName').style.display = step==='name' ? 'block' : 'none';
   document.getElementById('authStepLegacy').style.display = step==='legacy' ? 'block' : 'none';
-  // Adding a number to a username account is required, so no way back to the username form.
+  // Adding an email to a username account is required, so no way back to the username form.
   document.getElementById('btnUseUsername').style.display = authLinkUser ? 'none' : 'block';
   const hint = document.getElementById('authHint');
-  if(step==='phone') hint.textContent = t(authLinkUser ? 'authHintLink' : 'authHintPhone');
+  if(step==='email') hint.textContent = t(authLinkUser ? 'authHintLink' : 'authHintEmail');
   else if(step==='code'){
     hint.textContent = '';
-    const num = document.createElement('bdi');
-    num.dir = 'ltr'; // keeps the + in front in Arabic and Urdu
-    num.textContent = authPhone;
-    const [before, after] = t('authHintCode').split('{phone}');
-    hint.append(before || '', num, after || '');
+    const addr = document.createElement('bdi');
+    addr.dir = 'ltr'; // keeps the address readable inside Arabic and Urdu text
+    addr.textContent = authEmail;
+    const [before, after] = t('authHintCode').split('{email}');
+    hint.append(before || '', addr, after || '');
   }
   else if(step==='name') hint.textContent = t('authHintName');
   else hint.textContent = t('loginHint');
@@ -1197,9 +1197,9 @@ function hideAuthError(){
 
 function openSignIn(onSuccess){
   pendingSignInAction = onSuccess || null;
-  authPhone = null; authLinkUser = null; authNewUser = null;
-  ['si-phone','si-code','si-name','si-username','si-password'].forEach(id=> document.getElementById(id).value = '');
-  setAuthStep('phone');
+  authEmail = null; authLinkUser = null; authNewUser = null;
+  ['si-email','si-code','si-name','si-username','si-password'].forEach(id=> document.getElementById(id).value = '');
+  setAuthStep('email');
   document.getElementById('signInModal').style.display = 'flex';
 }
 function closeSignIn(){
@@ -1234,27 +1234,23 @@ function restoreAppUser(){
   } catch(err){ appUser = null; }
 }
 
-/* Accepts what people actually type: spaces, dashes, 00 instead of +, a Saudi
-   05XXXXXXXX number without the country code, and Arabic or Urdu digits. */
+/* Codes may be typed with Arabic or Urdu digits. */
 function toLatinDigits(value){
   return String(value||'')
     .replace(/[٠-٩]/g, d=> String('٠١٢٣٤٥٦٧٨٩'.indexOf(d)))
     .replace(/[۰-۹]/g, d=> String('۰۱۲۳۴۵۶۷۸۹'.indexOf(d)));
 }
-function normalizePhone(raw){
-  let p = toLatinDigits(raw).replace(/[\s\-().]/g, '');
-  if(p.startsWith('00')) p = '+' + p.slice(2);
-  else if(/^05\d{8}$/.test(p)) p = '+966' + p.slice(1);
-  else if(/^5\d{8}$/.test(p)) p = '+966' + p;
-  else if(/^966\d{9}$/.test(p)) p = '+' + p;
-  return /^\+[1-9]\d{7,14}$/.test(p) ? p : null;
+// Same rule as sanad_clean_email in schema.sql.
+function normalizeEmail(raw){
+  const e = String(raw||'').trim().toLowerCase();
+  return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e) && e.length <= 254 ? e : null;
 }
 
 const AUTH_ERROR_KEYS = {
-  invalid_phone:'authErrorPhone', too_many:'authErrorTooManyCodes', send_failed:'authErrorSendFailed',
-  wrong:'authErrorWrongCode', expired:'authErrorCodeExpired', number_taken:'authErrorNumberTaken'
+  invalid_email:'authErrorEmail', too_many:'authErrorTooManyCodes', send_failed:'authErrorSendFailed',
+  wrong:'authErrorWrongCode', expired:'authErrorCodeExpired', email_taken:'authErrorEmailTaken'
 };
-// Calls the send-otp Edge Function and returns { data } or { error: '<code>' }.
+// Calls the send-code Edge Function and returns { data } or { error: '<code>' }.
 async function callAuthFunction(name, body){
   try{
     const { data, error } = await supabaseClient.functions.invoke(name, { body });
@@ -1283,13 +1279,13 @@ async function withBusy(btnId, fn){
 function sendCode(){
   return withBusy('btnSendCode', async ()=>{
     hideAuthError();
-    const phone = normalizePhone(document.getElementById('si-phone').value);
-    if(!phone){ showAuthError(t('authErrorPhone')); return; }
+    const email = normalizeEmail(document.getElementById('si-email').value);
+    if(!email){ showAuthError(t('authErrorEmail')); return; }
     if(SUPABASE_CONFIGURED){
-      const { error } = await callAuthFunction('send-otp', { phone, lang: state.lang });
+      const { error } = await callAuthFunction('send-code', { email, lang: state.lang });
       if(error){ showAuthFunctionError(error); return; }
     }
-    authPhone = phone;
+    authEmail = email;
     document.getElementById('si-code').value = '';
     setAuthStep('code');
     document.getElementById('si-code').focus();
@@ -1299,7 +1295,7 @@ function resendCode(){
   return withBusy('btnResendCode', async ()=>{
     hideAuthError();
     if(SUPABASE_CONFIGURED){
-      const { error } = await callAuthFunction('send-otp', { phone: authPhone, lang: state.lang });
+      const { error } = await callAuthFunction('send-code', { email: authEmail, lang: state.lang });
       if(error){ showAuthFunctionError(error); return; }
     }
     document.getElementById('authHint').textContent = t('codeResent');
@@ -1315,8 +1311,8 @@ function verifyCode(){
     if(!SUPABASE_CONFIGURED){
       // No backend configured yet — accept any code so the demo still works offline.
       const user = authLinkUser
-        ? { ...authLinkUser, phone: authPhone }
-        : { id:'local-'+authPhone, name:'', phone: authPhone, createdAt: new Date().toISOString(), sessionToken:'local-session-'+Date.now() };
+        ? { ...authLinkUser, email: authEmail }
+        : { id:'local-'+authEmail, name:'', email: authEmail, createdAt: new Date().toISOString(), sessionToken:'local-session-'+Date.now() };
       if(authLinkUser){ authLinkUser = null; finishSignIn(user); }
       else { authNewUser = user; setAuthStep('name'); }
       return;
@@ -1324,8 +1320,8 @@ function verifyCode(){
 
     let row;
     try{
-      const { data, error } = await supabaseClient.rpc('verify_phone_code', { p_phone: authPhone, p_code: code, p_link_token: authLinkUser ? authLinkUser.sessionToken : null });
-      if(error){ console.error('Sanad: verify_phone_code failed:', error); showAuthError(t('authErrorNetwork')); return; }
+      const { data, error } = await supabaseClient.rpc('verify_email_code', { p_email: authEmail, p_code: code, p_link_token: authLinkUser ? authLinkUser.sessionToken : null });
+      if(error){ console.error('Sanad: verify_email_code failed:', error); showAuthError(t('authErrorNetwork')); return; }
       row = Array.isArray(data) ? data[0] : data;
     } catch(err){
       console.error('Sanad: could not reach Supabase to check the code:', err);
@@ -1335,7 +1331,7 @@ function verifyCode(){
     if(!row){ showAuthError(t('authErrorNetwork')); return; }
     if(row.status === 'not_signed_in'){ authLinkUser = null; setAuthStep('legacy'); showAuthError(t('authErrorInvalid')); return; }
     if(row.status !== 'ok'){ showAuthFunctionError(row.status); return; }
-    const user = { id: row.id, username: row.username, name: row.name, phone: authPhone, createdAt: row.created_at, sessionToken: row.session_token };
+    const user = { id: row.id, username: row.username, name: row.name, email: authEmail, createdAt: row.created_at, sessionToken: row.session_token };
     authLinkUser = null;
     if(row.is_new){ authNewUser = user; setAuthStep('name'); document.getElementById('si-name').focus(); return; }
     finishSignIn(user);
@@ -1373,7 +1369,7 @@ async function submitSignIn(){
   if(!SUPABASE_CONFIGURED){
     // No backend configured yet — accept anything so the demo still works offline.
     authLinkUser = { id:'local-'+username.toLowerCase(), username: username.toLowerCase(), name: username, createdAt: new Date().toISOString(), sessionToken:'local-session-'+Date.now() };
-    setAuthStep('phone');
+    setAuthStep('email');
     return;
   }
   try{
@@ -1398,10 +1394,10 @@ async function submitSignIn(){
     const user = { id: row.id, username: row.username, name: row.name, createdAt: row.created_at, sessionToken: row.session_token };
     const { data: status } = await supabaseClient.rpc('session_status', { p_session_token: user.sessionToken });
     const s = Array.isArray(status) ? status[0] : status;
-    if(s && s.phone_verified){ finishSignIn({ ...user, phone: s.phone }); return; }
+    if(s && s.email_verified){ finishSignIn({ ...user, email: s.email }); return; }
     authLinkUser = user;
-    document.getElementById('si-phone').value = '';
-    setAuthStep('phone');
+    document.getElementById('si-email').value = '';
+    setAuthStep('email');
   } catch(err){
     console.error('Sanad: could not reach Supabase to sign in:', err);
     showAuthError(t('authErrorNetwork') + ' (' + (err && err.message ? err.message : String(err)) + ')');
@@ -1425,7 +1421,7 @@ async function finishSignIn(user){
 }
 
 /* A saved session can stop working (signed out elsewhere, expired after 90
-   days unused) or belong to a username account with no WhatsApp number yet.
+   days unused) or belong to a username account with no email yet.
    Either way every write would fail, so show it as signed out. */
 async function validateStoredSession(){
   if(!appUser || !SUPABASE_CONFIGURED || String(appUser.id).startsWith('local-')) return;
@@ -1433,7 +1429,7 @@ async function validateStoredSession(){
     const { data, error } = await supabaseClient.rpc('session_status', { p_session_token: appUser.sessionToken });
     if(error){ console.error('Sanad: session_status failed:', error); return; }
     const s = Array.isArray(data) ? data[0] : data;
-    if(s && s.signed_in && s.phone_verified) return;
+    if(s && s.signed_in && s.email_verified) return;
     appUser = null;
     persistAppUser();
     renderProfile();
@@ -1647,9 +1643,9 @@ function renderProfile(){
   }
   out.style.display = 'none';
   inn.style.display = 'block';
-  document.getElementById('profileAvatar').textContent = (appUser.name || appUser.phone || '?').charAt(0).toUpperCase();
-  document.getElementById('profileName').textContent = appUser.name || appUser.phone;
-  document.getElementById('profileHandle').textContent = appUser.phone || '';
+  document.getElementById('profileAvatar').textContent = (appUser.name || appUser.email || appUser.phone || '?').charAt(0).toUpperCase();
+  document.getElementById('profileName').textContent = appUser.name || appUser.email || appUser.phone;
+  document.getElementById('profileHandle').textContent = appUser.email || appUser.phone || '';
   const year = appUser.createdAt ? new Date(appUser.createdAt).getFullYear() : new Date().getFullYear();
   document.getElementById('profileMemberSince').textContent = t('memberSince') + ' ' + year;
   renderProfileGrids();
@@ -2254,17 +2250,17 @@ document.getElementById('filterSheet').addEventListener('click', e=>{
   renderListings();
 });
 
-/* ---- Sign-in modal (WhatsApp code) ---- */
+/* ---- Sign-in modal (email code) ---- */
 document.getElementById('btnProfileSignIn').addEventListener('click', ()=> openSignIn());
 document.getElementById('btnSendCode').addEventListener('click', sendCode);
 document.getElementById('btnVerifyCode').addEventListener('click', verifyCode);
 document.getElementById('btnResendCode').addEventListener('click', resendCode);
-document.getElementById('btnChangeNumber').addEventListener('click', ()=> setAuthStep('phone'));
+document.getElementById('btnChangeEmail').addEventListener('click', ()=> setAuthStep('email'));
 document.getElementById('btnSaveName').addEventListener('click', saveName);
 document.getElementById('btnUseUsername').addEventListener('click', ()=> setAuthStep('legacy'));
-document.getElementById('btnUsePhone').addEventListener('click', ()=> setAuthStep('phone'));
+document.getElementById('btnUseEmail').addEventListener('click', ()=> setAuthStep('email'));
 document.getElementById('btnSignInSubmit').addEventListener('click', submitSignIn);
-[['si-phone', sendCode], ['si-code', verifyCode], ['si-name', saveName], ['si-password', submitSignIn]].forEach(([id, fn])=>{
+[['si-email', sendCode], ['si-code', verifyCode], ['si-name', saveName], ['si-password', submitSignIn]].forEach(([id, fn])=>{
   document.getElementById(id).addEventListener('keydown', e=>{ if(e.key==='Enter') fn(); });
 });
 document.getElementById('btnSignInCancel').addEventListener('click', closeSignIn);

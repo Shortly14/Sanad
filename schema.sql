@@ -172,9 +172,9 @@ security definer
 set search_path = public, extensions
 as $$
 begin
-  -- New accounts are created only by a verified WhatsApp code (phone_login,
+  -- New accounts are created only by a verified email code (email_login,
   -- section 14). Kept so older cached copies of the app get a clear error.
-  raise exception 'Sign up with your WhatsApp number';
+  raise exception 'Sign up with your email';
 end;
 $$;
 
@@ -442,22 +442,22 @@ begin
   end if;
   -- app_sessions (section 14) holds one row per signed-in device. Tokens
   -- minted before it existed live in app_users.session_token.
-  select u.id, u.name, u.phone_verified_at into v_id, v_name, v_verified
+  select u.id, u.name, u.email_verified_at into v_id, v_name, v_verified
   from app_sessions s join app_users u on u.id = s.user_id
   where s.token = p_session_token and s.last_used_at > now() - interval '90 days';
   if v_id is null then
-    select u.id, u.name, u.phone_verified_at into v_id, v_name, v_verified
+    select u.id, u.name, u.email_verified_at into v_id, v_name, v_verified
     from app_users u where u.session_token = p_session_token;
   end if;
   if v_id is null then
     raise exception 'You need to be signed in to do this';
   end if;
   if v_verified is null then
-    raise exception 'Verify your WhatsApp number first';
+    raise exception 'Verify your email first';
   end if;
   update app_sessions set last_used_at = now()
   where token = p_session_token and last_used_at < now() - interval '1 day';
-  -- A WhatsApp account that closed the app before picking a name.
+  -- An email account that closed the app before picking a name.
   return query select v_id, coalesce(v_name, 'Member');
 end;
 $$;
@@ -679,25 +679,26 @@ begin
 end $$;
 
 -- ============================================================
--- 14. WhatsApp code sign-in. otp_create() makes a 6-digit code;
---     the send-otp Edge Function (supabase/functions/send-otp) is the
---     only caller (service_role key) and sends it through Meta's
---     WhatsApp Cloud API. The browser then calls verify_phone_code()
---     with the code it received.
---     - Every write now needs a verified WhatsApp number (checked in
+-- 14. Email code sign-in. otp_create() makes a 6-digit code; the
+--     send-code Edge Function (supabase/functions/send-code) is the
+--     only caller (service_role key) and emails it through Resend.
+--     The browser then calls verify_email_code() with the code it
+--     received.
+--     - Every write now needs a verified email (checked in
 --       sanad_session_user). Username accounts keep working after
---       they add their number once.
+--       they add their email once.
 --     - app_sessions keeps one row per signed-in device, so signing
 --       in on a second phone no longer signs the first one out.
 --     - otp_requests limits how many codes can be sent, so nobody can
---       run up the WhatsApp bill. Each code allows 5 guesses and
---       expires after 10 minutes.
+--       flood someone's inbox or use up the email quota. Each code
+--       allows 5 guesses and expires after 10 minutes.
 -- ============================================================
 
-alter table app_users add column if not exists phone_verified_at timestamptz;
--- One account per verified number. Older unverified phone values are
+alter table app_users add column if not exists email text;
+alter table app_users add column if not exists email_verified_at timestamptz;
+-- One account per verified email (stored lowercase). Unverified values are
 -- ignored, so this can't fail on existing data.
-create unique index if not exists idx_app_users_verified_phone on app_users(phone) where phone_verified_at is not null;
+create unique index if not exists idx_app_users_verified_email on app_users(email) where email_verified_at is not null;
 
 create table if not exists app_sessions (
   token text primary key,
@@ -711,24 +712,34 @@ revoke all on app_sessions from anon, authenticated;
 
 create table if not exists otp_requests (
   id bigserial primary key,
-  phone text not null,
+  email text not null,
   ip text,
   requested_at timestamptz default now()
 );
-create index if not exists idx_otp_requests_phone on otp_requests(phone, requested_at);
+create index if not exists idx_otp_requests_email on otp_requests(email, requested_at);
 create index if not exists idx_otp_requests_ip on otp_requests(ip, requested_at);
 alter table otp_requests enable row level security;
 revoke all on otp_requests from anon, authenticated;
 
--- The latest code per number, stored hashed.
+-- The latest code per email, stored hashed.
 create table if not exists otp_codes (
-  phone text primary key,
+  email text primary key,
   code_hash text not null,
   expires_at timestamptz not null,
   attempts int not null default 0
 );
 alter table otp_codes enable row level security;
 revoke all on otp_codes from anon, authenticated;
+
+-- Internal: lowercases and trims an email, or returns null when it isn't one.
+create or replace function sanad_clean_email(p_email text)
+returns text
+language sql
+immutable
+as $$
+  select case when e ~ '^[^@\s]+@[^@\s]+\.[^@\s]+$' and length(e) <= 254 then e end
+  from (select lower(trim(coalesce(p_email, ''))) as e) x;
+$$;
 
 -- Internal helper: adds a session for a user, same shape login_user returns.
 create or replace function sanad_new_session(p_user_id uuid)
@@ -744,52 +755,53 @@ begin
 end;
 $$;
 
--- Called by send-otp. Returns a new code for the number, or null when the
--- limit is reached: at most 3 codes per number per 15 minutes, 10 per IP
--- per hour, and 300 per hour site-wide.
-create or replace function otp_create(p_phone text, p_ip text)
+-- Called by send-code. Returns a new code for the email, or null when the
+-- limit is reached: at most 3 codes per email per 15 minutes, 10 per IP
+-- per hour, and 100 per hour site-wide (Resend's free plan sends 100 a day).
+create or replace function otp_create(p_email text, p_ip text)
 returns text
 language plpgsql
 security definer
 set search_path = public, extensions
 as $$
 declare
+  v_email text := sanad_clean_email(p_email);
   -- gen_random_bytes is cryptographically random; random() is not.
   v_code text := lpad((('x' || lpad(encode(gen_random_bytes(4), 'hex'), 16, '0'))::bit(64)::bigint % 1000000)::text, 6, '0');
 begin
-  if p_phone is null or p_phone !~ '^\+[1-9][0-9]{7,14}$' then
-    raise exception 'Invalid phone number';
+  if v_email is null then
+    raise exception 'Invalid email';
   end if;
   delete from otp_requests where requested_at < now() - interval '1 day';
   delete from otp_codes where expires_at < now() - interval '1 day';
-  if (select count(*) from otp_requests where phone = p_phone and requested_at > now() - interval '15 minutes') >= 3
+  if (select count(*) from otp_requests where email = v_email and requested_at > now() - interval '15 minutes') >= 3
      or (p_ip is not null and (select count(*) from otp_requests where ip = p_ip and requested_at > now() - interval '1 hour') >= 10)
-     or (select count(*) from otp_requests where requested_at > now() - interval '1 hour') >= 300 then
+     or (select count(*) from otp_requests where requested_at > now() - interval '1 hour') >= 100 then
     return null;
   end if;
-  insert into otp_requests (phone, ip) values (p_phone, p_ip);
-  insert into otp_codes (phone, code_hash, expires_at, attempts)
-  values (p_phone, crypt(v_code, gen_salt('bf')), now() + interval '10 minutes', 0)
-  on conflict (phone) do update set code_hash = excluded.code_hash, expires_at = excluded.expires_at, attempts = 0;
+  insert into otp_requests (email, ip) values (v_email, p_ip);
+  insert into otp_codes (email, code_hash, expires_at, attempts)
+  values (v_email, crypt(v_code, gen_salt('bf')), now() + interval '10 minutes', 0)
+  on conflict (email) do update set code_hash = excluded.code_hash, expires_at = excluded.expires_at, attempts = 0;
   return v_code;
 end;
 $$;
 
--- Internal (called by verify_phone_code once the code is right). Signs in
--- the account with this number, or creates one. With p_link_token (a
--- username account that just logged in), attaches the number to it.
-create or replace function phone_login(p_phone text, p_link_token text default null)
+-- Internal (called by verify_email_code once the code is right). Signs in
+-- the account with this email, or creates one. With p_link_token (a
+-- username account that just logged in), attaches the email to it.
+create or replace function email_login(p_email text, p_link_token text default null)
 returns table(id uuid, username text, name text, created_at timestamptz, session_token text, is_new boolean)
 language plpgsql
 security definer
 set search_path = public, extensions
 as $$
-declare v_id uuid; v_link uuid; v_new boolean := false;
+declare v_email text := sanad_clean_email(p_email); v_id uuid; v_link uuid; v_new boolean := false;
 begin
-  if p_phone is null or p_phone !~ '^\+[1-9][0-9]{7,14}$' then
-    raise exception 'Invalid phone number';
+  if v_email is null then
+    raise exception 'Invalid email';
   end if;
-  select u.id into v_id from app_users u where u.phone = p_phone and u.phone_verified_at is not null;
+  select u.id into v_id from app_users u where u.email = v_email and u.email_verified_at is not null;
 
   if p_link_token is not null then
     select s.user_id into v_link from app_sessions s where s.token = p_link_token;
@@ -798,13 +810,13 @@ begin
     end if;
     if v_link is null then raise exception 'You need to be signed in to do this'; end if;
     if v_id is not null and v_id <> v_link then
-      raise exception 'This WhatsApp number is already used by another account';
+      raise exception 'This email is already used by another account';
     end if;
-    update app_users set phone = p_phone, phone_verified_at = coalesce(phone_verified_at, now()) where app_users.id = v_link;
+    update app_users set email = v_email, email_verified_at = coalesce(email_verified_at, now()) where app_users.id = v_link;
     v_id := v_link;
   elsif v_id is null then
-    insert into app_users (username, phone, phone_verified_at)
-    values ('wa_' || encode(gen_random_bytes(6), 'hex'), p_phone, now())
+    insert into app_users (username, email, email_verified_at)
+    values ('u_' || encode(gen_random_bytes(6), 'hex'), v_email, now())
     returning app_users.id into v_id;
     v_new := true;
   end if;
@@ -813,18 +825,18 @@ begin
 end;
 $$;
 
--- The browser's half of sign-in: checks the code from WhatsApp and, when
--- it's right, signs in. status is 'ok' (the other columns are filled),
--- 'wrong', 'expired', 'too_many', 'number_taken' or 'not_signed_in'.
-create or replace function verify_phone_code(p_phone text, p_code text, p_link_token text default null)
+-- The browser's half of sign-in: checks the emailed code and, when it's
+-- right, signs in. status is 'ok' (the other columns are filled), 'wrong',
+-- 'expired', 'too_many', 'email_taken' or 'not_signed_in'.
+create or replace function verify_email_code(p_email text, p_code text, p_link_token text default null)
 returns table(status text, id uuid, username text, name text, created_at timestamptz, session_token text, is_new boolean)
 language plpgsql
 security definer
 set search_path = public, extensions
 as $$
-declare v_row otp_codes%rowtype;
+declare v_email text := sanad_clean_email(p_email); v_row otp_codes%rowtype;
 begin
-  select * into v_row from otp_codes c where c.phone = p_phone;
+  select * into v_row from otp_codes c where c.email = v_email;
   if not found or v_row.expires_at < now() then
     return query select 'expired', null::uuid, null::text, null::text, null::timestamptz, null::text, null::boolean;
     return;
@@ -834,25 +846,25 @@ begin
     return;
   end if;
   if v_row.code_hash <> crypt(coalesce(p_code, ''), v_row.code_hash) then
-    update otp_codes c set attempts = c.attempts + 1 where c.phone = p_phone;
+    update otp_codes c set attempts = c.attempts + 1 where c.email = v_email;
     return query select 'wrong', null::uuid, null::text, null::text, null::timestamptz, null::text, null::boolean;
     return;
   end if;
 
-  delete from otp_codes c where c.phone = p_phone;
+  delete from otp_codes c where c.email = v_email;
   begin
     return query select 'ok', l.id, l.username, l.name, l.created_at, l.session_token, l.is_new
-    from phone_login(p_phone, p_link_token) l;
+    from email_login(v_email, p_link_token) l;
   exception when raise_exception then
-    return query select case when sqlerrm like '%already used%' then 'number_taken' else 'not_signed_in' end,
+    return query select case when sqlerrm like '%already used%' then 'email_taken' else 'not_signed_in' end,
       null::uuid, null::text, null::text, null::timestamptz, null::text, null::boolean;
   end;
 end;
 $$;
 
--- Tells the app whether a saved session still works and has a verified number.
+-- Tells the app whether a saved session still works and has a verified email.
 create or replace function session_status(p_session_token text)
-returns table(signed_in boolean, phone_verified boolean, phone text)
+returns table(signed_in boolean, email_verified boolean, email text)
 language plpgsql
 security definer
 set search_path = public, extensions
@@ -870,12 +882,12 @@ begin
     return query select false, false, null::text;
     return;
   end if;
-  return query select true, u.phone_verified_at is not null, case when u.phone_verified_at is not null then u.phone end
+  return query select true, u.email_verified_at is not null, case when u.email_verified_at is not null then u.email end
   from app_users u where u.id = v_id;
 end;
 $$;
 
--- New WhatsApp accounts pick their public display name right after the code.
+-- New email accounts pick their public display name right after the code.
 create or replace function set_my_name(p_session_token text, p_name text)
 returns void
 language plpgsql
@@ -905,16 +917,16 @@ $$;
 
 revoke execute on function sanad_new_session(uuid) from public, anon, authenticated;
 revoke execute on function otp_create(text, text) from public, anon, authenticated;
-revoke execute on function phone_login(text, text) from public, anon, authenticated;
+revoke execute on function email_login(text, text) from public, anon, authenticated;
 do $$
 begin
-  -- service_role is the key the send-otp Edge Function uses. Plain
+  -- service_role is the key the send-code Edge Function uses. Plain
   -- Postgres (no Supabase roles) skips this.
   if exists (select 1 from pg_roles where rolname = 'service_role') then
     grant execute on function otp_create(text, text) to service_role;
   end if;
 end $$;
-grant execute on function verify_phone_code(text, text, text) to anon, authenticated;
+grant execute on function verify_email_code(text, text, text) to anon, authenticated;
 grant execute on function session_status(text) to anon, authenticated;
 grant execute on function set_my_name(text, text) to anon, authenticated;
 grant execute on function sign_out(text) to anon, authenticated;

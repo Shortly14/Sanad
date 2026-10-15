@@ -494,17 +494,17 @@
 
       <p class="auth-error" id="authError" style="display:none;"></p>
 
-      <!-- Step 1: WhatsApp number -->
-      <div id="authStepPhone">
+      <!-- Step 1: email -->
+      <div id="authStepEmail">
         <div class="field">
-          <label data-i18n="lblWhatsappNumber">WhatsApp number</label>
-          <input type="tel" id="si-phone" inputmode="tel" autocomplete="tel" dir="ltr" placeholder="+966 5X XXX XXXX">
+          <label data-i18n="lblEmail">Email</label>
+          <input type="email" id="si-email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" dir="ltr" placeholder="name@example.com">
         </div>
         <button class="btn-primary" id="btnSendCode" data-i18n="sendCode">Send code</button>
         <button class="auth-link" id="btnUseUsername" data-i18n="useUsernameLogin">I have a username and password</button>
       </div>
 
-      <!-- Step 2: the code from WhatsApp -->
+      <!-- Step 2: the code from the email -->
       <div id="authStepCode" style="display:none;">
         <div class="field">
           <label data-i18n="lblCode">Code</label>
@@ -512,7 +512,7 @@
         </div>
         <button class="btn-primary" id="btnVerifyCode" data-i18n="verifyCode">Verify</button>
         <button class="auth-link" id="btnResendCode" data-i18n="resendCode">Send a new code</button>
-        <button class="auth-link" id="btnChangeNumber" data-i18n="changeNumber">Change number</button>
+        <button class="auth-link" id="btnChangeEmail" data-i18n="changeEmail">Change email</button>
       </div>
 
       <!-- Step 3 (new accounts only): public display name -->
@@ -524,7 +524,7 @@
         <button class="btn-primary" id="btnSaveName" data-i18n="continueLabel">Continue</button>
       </div>
 
-      <!-- Older accounts: username + password, then add a WhatsApp number once -->
+      <!-- Older accounts: username + password, then add an email once -->
       <div id="authStepLegacy" style="display:none;">
         <div class="field">
           <label data-i18n="lblUsername">Username</label>
@@ -535,7 +535,7 @@
           <input type="password" id="si-password" autocomplete="current-password">
         </div>
         <button class="btn-primary" id="btnSignInSubmit" data-i18n="signInSubmit">Log in</button>
-        <button class="auth-link" id="btnUsePhone" data-i18n="usePhoneLogin">Sign in with WhatsApp instead</button>
+        <button class="auth-link" id="btnUseEmail" data-i18n="useEmailLogin">Sign in with email instead</button>
       </div>
 
       <button class="toggle-open" id="btnSignInCancel" style="margin-top:10px;margin-bottom:0;border-style:solid;">✕</button>
