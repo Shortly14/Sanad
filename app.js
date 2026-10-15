@@ -89,7 +89,7 @@ en: {
   soundTicker:"Original sound · Sanad Housing", likeLabel:"Like", saveLabel:"Save",
   deleteLabel:"Delete", deleteConfirm:"Delete this for good? This can't be undone.", deleteFailed:"Couldn't delete this. Check your connection, or sign out and sign in again, then try once more.", removeBuddyProfile:"Remove my buddy profile",
   statMyListings:"Listings", statMyQuestions:"Questions", statMyClicks:"Link clicks",
-  tabMyPosts:"Posts", tabLiked:"Liked", memberSince:"Member since",
+  tabMyPosts:"Posts", tabLiked:"Liked", memberSince:"Member since", memberFallback:"Member",
   noPostsYet:"No listings posted yet", noLikedYet:"Rooms you like will show up here", noSavedYet:"Things you save will show up here",
   backBtn:"Back", loadingProfile:"Loading…", publicProfileUnavailable:"Profile not available",
   communityTabLeaderboard:"Top Helpers", leaderboardMonthLabel:"Top Helpers —",
@@ -110,6 +110,9 @@ en: {
   signInBtnShort:"Log in / Sign up",
   authErrorInvalid:"Wrong username or password.", authErrorTooMany:"Too many wrong attempts. Wait 15 minutes and try again.", authErrorTooOften:"Too many new accounts from this network. Try again in an hour.", authErrorMissing:"Enter a username and password.", authErrorNetwork:"Couldn't reach the server — try again.", authErrorShort:"Password must be at least 6 characters.", authErrorTaken:"That username is already taken.", loginHint:"Log in with your username and password.", loginTabLabel:"Log in", signInSubmit:"Log in", signupHint:"Pick a username and password — that's all you need.", signupTabLabel:"Sign up",
   lblUsername:"Username", lblPassword:"Password",
+  authTitle:"Sign in", lblEmail:"Email", sendCode:"Send code", useUsernameLogin:"I have a username and password", lblCode:"Code", verifyCode:"Verify", resendCode:"Send a new code", changeEmail:"Change email", continueLabel:"Continue", useEmailLogin:"Sign in with email instead",
+  authHintEmail:"Enter your email. We'll send you a code to sign in or create your account.", authHintLink:"One more step: add your email to keep your account safe. We'll send you a code there.", authHintCode:"Enter the code we emailed to {email}. If you can't find it, check your spam folder.", authHintName:"Welcome to Sanad! What name should other people see?", codeResent:"We emailed you a new code.",
+  authErrorEmail:"Enter a valid email, for example name@example.com.", authErrorCode:"Enter the code from the email.", authErrorWrongCode:"That code is wrong. Check it and try again.", authErrorCodeExpired:"That code has expired. Tap \"Send a new code\".", authErrorTooManyCodes:"Too many tries. Wait 15 minutes and try again.", authErrorSendFailed:"We couldn't send a code to this email. Check it and try again.", authErrorEmailTaken:"This email already belongs to another account. Sign in with email instead.", authErrorName:"Enter a name.",
 },
 ar: {
   brandName:"سند · Sanad", brandTag:"سندك في السعودية",
@@ -166,7 +169,7 @@ ar: {
   soundTicker:"صوت أصلي · سند للإسكان", likeLabel:"إعجاب", saveLabel:"احفظ",
   deleteLabel:"حذف", deleteConfirm:"هل تريد حذف هذا نهائيًا؟ لا يمكن التراجع عن ذلك.", deleteFailed:"تعذّر الحذف. تحقّق من اتصالك، أو سجّل الخروج ثم سجّل الدخول من جديد، وحاول مرة أخرى.", removeBuddyProfile:"إزالة ملفي كرفيق",
   statMyListings:"الإعلانات", statMyQuestions:"الأسئلة", statMyClicks:"نقرات الروابط",
-  tabMyPosts:"إعلاناتي", tabLiked:"أعجبني", memberSince:"عضو منذ",
+  tabMyPosts:"إعلاناتي", tabLiked:"أعجبني", memberSince:"عضو منذ", memberFallback:"عضو",
   noPostsYet:"لم تنشر أي إعلان بعد", noLikedYet:"الغرف التي تعجبك ستظهر هنا", noSavedYet:"الأشياء التي تحفظها ستظهر هنا",
   backBtn:"رجوع", loadingProfile:"جارٍ التحميل…", publicProfileUnavailable:"الملف الشخصي غير متاح",
   communityTabLeaderboard:"الأكثر مساعدة", leaderboardMonthLabel:"الأكثر مساعدة —",
@@ -187,6 +190,9 @@ ar: {
   signInBtnShort:"تسجيل الدخول / إنشاء حساب",
   authErrorInvalid:"اسم المستخدم أو كلمة المرور غير صحيحة.", authErrorTooMany:"محاولات خاطئة كثيرة. انتظر ١٥ دقيقة ثم حاول مرة أخرى.", authErrorTooOften:"تم إنشاء حسابات كثيرة من هذه الشبكة. حاول مرة أخرى بعد ساعة.", authErrorMissing:"أدخل اسم المستخدم وكلمة المرور.", authErrorNetwork:"تعذر الوصول إلى الخادم — حاول مرة أخرى.", authErrorShort:"يجب أن تتكون كلمة المرور من ٦ أحرف على الأقل.", authErrorTaken:"اسم المستخدم هذا مُستخدم بالفعل.", loginHint:"سجّل الدخول باسم المستخدم وكلمة المرور.", loginTabLabel:"تسجيل الدخول", signInSubmit:"تسجيل الدخول", signupHint:"اختر اسم مستخدم وكلمة مرور — هذا كل ما تحتاجه.", signupTabLabel:"إنشاء حساب",
   lblUsername:"اسم المستخدم", lblPassword:"كلمة المرور",
+  authTitle:"تسجيل الدخول", lblEmail:"البريد الإلكتروني", sendCode:"أرسل الرمز", useUsernameLogin:"لدي اسم مستخدم وكلمة مرور", lblCode:"الرمز", verifyCode:"تحقّق", resendCode:"أرسل رمزًا جديدًا", changeEmail:"غيّر البريد", continueLabel:"متابعة", useEmailLogin:"سجّل الدخول بالبريد الإلكتروني بدلًا من ذلك",
+  authHintEmail:"أدخل بريدك الإلكتروني. سنرسل إليك رمزًا لتسجيل الدخول أو إنشاء حسابك.", authHintLink:"خطوة أخيرة: أضف بريدك الإلكتروني لحماية حسابك. سنرسل إليك رمزًا هناك.", authHintCode:"أدخل الرمز الذي أرسلناه إلى {email}. إذا لم تجده، تحقّق من مجلد الرسائل غير المرغوب فيها.", authHintName:"أهلًا بك في سند! ما الاسم الذي تريد أن يراه الآخرون؟", codeResent:"أرسلنا إليك رمزًا جديدًا بالبريد.",
+  authErrorEmail:"أدخل بريدًا إلكترونيًا صحيحًا، مثل name@example.com.", authErrorCode:"أدخل الرمز الذي وصلك في البريد.", authErrorWrongCode:"الرمز غير صحيح. تحقّق منه وحاول مرة أخرى.", authErrorCodeExpired:"انتهت صلاحية الرمز. اضغط \"أرسل رمزًا جديدًا\".", authErrorTooManyCodes:"محاولات كثيرة. انتظر ١٥ دقيقة ثم حاول مرة أخرى.", authErrorSendFailed:"تعذّر إرسال رمز إلى هذا البريد. تحقّق منه وحاول مرة أخرى.", authErrorEmailTaken:"هذا البريد مرتبط بحساب آخر. سجّل الدخول بالبريد الإلكتروني بدلًا من ذلك.", authErrorName:"أدخل اسمًا.",
 },
 ur: {
   brandName:"سند · Sanad", brandTag:"سعودی عرب میں آپ کا سہارا",
@@ -243,7 +249,7 @@ ur: {
   soundTicker:"اصل آواز · سند ہاؤسنگ", likeLabel:"پسند", saveLabel:"محفوظ کریں",
   deleteLabel:"حذف کریں", deleteConfirm:"کیا اسے ہمیشہ کے لیے حذف کر دیں؟ یہ واپس نہیں ہو سکتا۔", deleteFailed:"حذف نہیں ہو سکا۔ اپنا کنکشن چیک کریں، یا سائن آؤٹ کر کے دوبارہ سائن اِن کریں، پھر ایک بار اور کوشش کریں۔", removeBuddyProfile:"میری ساتھی پروفائل ہٹائیں",
   statMyListings:"لسٹنگز", statMyQuestions:"سوالات", statMyClicks:"لنک کلکس",
-  tabMyPosts:"پوسٹس", tabLiked:"پسندیدہ", memberSince:"رکن بننے کی تاریخ",
+  tabMyPosts:"پوسٹس", tabLiked:"پسندیدہ", memberSince:"رکن بننے کی تاریخ", memberFallback:"رکن",
   noPostsYet:"ابھی تک کوئی لسٹنگ پوسٹ نہیں کی گئی", noLikedYet:"آپ کے پسندیدہ کمرے یہاں نظر آئیں گے", noSavedYet:"آپ کی محفوظ کردہ چیزیں یہاں نظر آئیں گی",
   backBtn:"واپس", loadingProfile:"لوڈ ہو رہا ہے…", publicProfileUnavailable:"پروفائل دستیاب نہیں",
   communityTabLeaderboard:"ٹاپ ہیلپرز", leaderboardMonthLabel:"ٹاپ ہیلپرز —",
@@ -264,6 +270,9 @@ ur: {
   signInBtnShort:"لاگ ان / اکاؤنٹ بنائیں",
   authErrorInvalid:"غلط یوزرنیم یا پاس ورڈ۔", authErrorTooMany:"بہت زیادہ غلط کوششیں۔ ۱۵ منٹ انتظار کریں اور دوبارہ کوشش کریں۔", authErrorTooOften:"اس نیٹ ورک سے بہت زیادہ نئے اکاؤنٹ بنائے گئے ہیں۔ ایک گھنٹے بعد دوبارہ کوشش کریں۔", authErrorMissing:"یوزرنیم اور پاس ورڈ درج کریں۔", authErrorNetwork:"سرور تک رسائی نہیں ہو سکی — دوبارہ کوشش کریں۔", authErrorShort:"پاس ورڈ کم از کم ۶ حروف کا ہونا چاہیے۔", authErrorTaken:"یہ یوزرنیم پہلے سے لیا جا چکا ہے۔", loginHint:"اپنے یوزرنیم اور پاس ورڈ سے لاگ ان کریں۔", loginTabLabel:"لاگ ان", signInSubmit:"لاگ ان", signupHint:"ایک یوزرنیم اور پاس ورڈ منتخب کریں — بس اتنا ہی چاہیے۔", signupTabLabel:"اکاؤنٹ بنائیں",
   lblUsername:"یوزرنیم", lblPassword:"پاس ورڈ",
+  authTitle:"سائن اِن", lblEmail:"ای میل", sendCode:"کوڈ بھیجیں", useUsernameLogin:"میرے پاس یوزرنیم اور پاس ورڈ ہے", lblCode:"کوڈ", verifyCode:"تصدیق کریں", resendCode:"نیا کوڈ بھیجیں", changeEmail:"ای میل بدلیں", continueLabel:"جاری رکھیں", useEmailLogin:"اس کے بجائے ای میل سے سائن اِن کریں",
+  authHintEmail:"اپنی ای میل درج کریں۔ سائن اِن کرنے یا اکاؤنٹ بنانے کے لیے ہم آپ کو ایک کوڈ بھیجیں گے۔", authHintLink:"ایک آخری قدم: اپنے اکاؤنٹ کو محفوظ رکھنے کے لیے اپنی ای میل شامل کریں۔ ہم وہاں آپ کو ایک کوڈ بھیجیں گے۔", authHintCode:"وہ کوڈ درج کریں جو ہم نے {email} پر بھیجا ہے۔ اگر نہ ملے تو اسپام فولڈر دیکھیں۔", authHintName:"سند میں خوش آمدید! دوسرے لوگ آپ کا کون سا نام دیکھیں؟", codeResent:"ہم نے آپ کو ای میل پر نیا کوڈ بھیج دیا ہے۔",
+  authErrorEmail:"درست ای میل درج کریں، مثلاً name@example.com۔", authErrorCode:"ای میل میں آنے والا کوڈ درج کریں۔", authErrorWrongCode:"یہ کوڈ غلط ہے۔ اسے چیک کر کے دوبارہ کوشش کریں۔", authErrorCodeExpired:"اس کوڈ کی مدت ختم ہو گئی ہے۔ \"نیا کوڈ بھیجیں\" پر ٹیپ کریں۔", authErrorTooManyCodes:"بہت زیادہ کوششیں۔ ۱۵ منٹ انتظار کریں اور دوبارہ کوشش کریں۔", authErrorSendFailed:"اس ای میل پر کوڈ نہیں بھیجا جا سکا۔ اسے چیک کر کے دوبارہ کوشش کریں۔", authErrorEmailTaken:"یہ ای میل پہلے سے کسی اور اکاؤنٹ کی ہے۔ اس کے بجائے ای میل سے سائن اِن کریں۔", authErrorName:"ایک نام درج کریں۔",
 }
 };
 
@@ -958,7 +967,7 @@ async function fetchAndRenderForum(){
         .map(r => ({
           id: r.id,
           text: r.reply_text,
-          by: r.app_users ? r.app_users.name : null,
+          by: r.app_users ? (r.app_users.name || t('memberFallback')) : null,
           votes: r.votes || 0,
           posterUserId: r.poster_user_id
         }))
@@ -1233,17 +1242,39 @@ function deleteBuddyProfile(){
   });
 }
 
-/* ============================= Sign-in (username + password) ============================= */
+/* ============================= Sign-in (email code) ============================= */
+/* Steps: 'email' -> 'code' -> 'name' (new accounts only). Older accounts use
+   'legacy' (username + password), then add their email once through the same
+   email/code steps: the server refuses every write until an account has a
+   verified email (sanad_session_user in schema.sql). The send-code Edge
+   Function (supabase/functions) emails the code; verify_email_code in
+   schema.sql checks it. */
 const AUTH_STORAGE_KEY = 'sanad_user';
-let authMode = 'login'; // 'login' | 'signup'
+let authStep = 'email';
+let authEmail = null;     // the normalized email the current code was sent to
+let authLinkUser = null;  // a username account that still needs an email
+let authNewUser = null;   // a brand-new email account waiting for its name
 
-function setAuthMode(mode){
-  authMode = mode;
-  document.getElementById('authTabLogin').classList.toggle('active', mode==='login');
-  document.getElementById('authTabSignup').classList.toggle('active', mode==='signup');
-  document.getElementById('signupNameField').style.display = mode==='signup' ? 'block' : 'none';
-  document.getElementById('authHint').textContent = t(mode==='signup' ? 'signupHint' : 'loginHint');
-  document.getElementById('btnSignInSubmit').textContent = t(mode==='signup' ? 'signupTabLabel' : 'signInSubmit');
+function setAuthStep(step){
+  authStep = step;
+  document.getElementById('authStepEmail').style.display = step==='email' ? 'block' : 'none';
+  document.getElementById('authStepCode').style.display = step==='code' ? 'block' : 'none';
+  document.getElementById('authStepName').style.display = step==='name' ? 'block' : 'none';
+  document.getElementById('authStepLegacy').style.display = step==='legacy' ? 'block' : 'none';
+  // Adding an email to a username account is required, so no way back to the username form.
+  document.getElementById('btnUseUsername').style.display = authLinkUser ? 'none' : 'block';
+  const hint = document.getElementById('authHint');
+  if(step==='email') hint.textContent = t(authLinkUser ? 'authHintLink' : 'authHintEmail');
+  else if(step==='code'){
+    hint.textContent = '';
+    const addr = document.createElement('bdi');
+    addr.dir = 'ltr'; // keeps the address readable inside Arabic and Urdu text
+    addr.textContent = authEmail;
+    const [before, after] = t('authHintCode').split('{email}');
+    hint.append(before || '', addr, after || '');
+  }
+  else if(step==='name') hint.textContent = t('authHintName');
+  else hint.textContent = t('loginHint');
   hideAuthError();
 }
 function showAuthError(msg){
@@ -1257,15 +1288,17 @@ function hideAuthError(){
 
 function openSignIn(onSuccess){
   pendingSignInAction = onSuccess || null;
-  document.getElementById('si-name').value = '';
-  document.getElementById('si-username').value = '';
-  document.getElementById('si-password').value = '';
-  setAuthMode('login');
+  authEmail = null; authLinkUser = null; authNewUser = null;
+  ['si-email','si-code','si-name','si-username','si-password'].forEach(id=> document.getElementById(id).value = '');
+  setAuthStep('email');
   document.getElementById('signInModal').style.display = 'flex';
 }
 function closeSignIn(){
   document.getElementById('signInModal').style.display = 'none';
   pendingSignInAction = null;
+  authLinkUser = null;
+  // A new account that closes before picking a name is still signed in (it shows as "Member").
+  if(authNewUser){ const u = authNewUser; authNewUser = null; finishSignIn(u); }
 }
 function requireSignIn(onReady){
   // A session saved before session tokens existed (or one Supabase has since
@@ -1292,53 +1325,179 @@ function restoreAppUser(){
   } catch(err){ appUser = null; }
 }
 
+/* Codes may be typed with Arabic or Urdu digits. */
+function toLatinDigits(value){
+  return String(value||'')
+    .replace(/[٠-٩]/g, d=> String('٠١٢٣٤٥٦٧٨٩'.indexOf(d)))
+    .replace(/[۰-۹]/g, d=> String('۰۱۲۳۴۵۶۷۸۹'.indexOf(d)));
+}
+// Same rule as sanad_clean_email in schema.sql.
+function normalizeEmail(raw){
+  const e = String(raw||'').trim().toLowerCase();
+  return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e) && e.length <= 254 ? e : null;
+}
+
+const AUTH_ERROR_KEYS = {
+  invalid_email:'authErrorEmail', too_many:'authErrorTooManyCodes', send_failed:'authErrorSendFailed',
+  wrong:'authErrorWrongCode', expired:'authErrorCodeExpired', email_taken:'authErrorEmailTaken'
+};
+// Calls the send-code Edge Function and returns { data } or { error: '<code>' }.
+async function callAuthFunction(name, body){
+  try{
+    const { data, error } = await supabaseClient.functions.invoke(name, { body });
+    if(!error) return { data };
+    let code = 'network';
+    if(error.context && typeof error.context.json === 'function'){
+      try{ const j = await error.context.json(); if(j && j.error) code = j.error; } catch(e){}
+    }
+    console.error(`Sanad: ${name} failed:`, code, error);
+    return { error: code };
+  } catch(err){
+    console.error(`Sanad: could not reach ${name}:`, err);
+    return { error: 'network' };
+  }
+}
+function showAuthFunctionError(code){
+  showAuthError(t(AUTH_ERROR_KEYS[code] || 'authErrorNetwork'));
+}
+async function withBusy(btnId, fn){
+  const btn = document.getElementById(btnId);
+  if(btn.disabled) return;
+  btn.disabled = true;
+  try{ await fn(); } finally{ btn.disabled = false; }
+}
+
+function sendCode(){
+  return withBusy('btnSendCode', async ()=>{
+    hideAuthError();
+    const email = normalizeEmail(document.getElementById('si-email').value);
+    if(!email){ showAuthError(t('authErrorEmail')); return; }
+    if(SUPABASE_CONFIGURED){
+      const { error } = await callAuthFunction('send-code', { email, lang: state.lang });
+      if(error){ showAuthFunctionError(error); return; }
+    }
+    authEmail = email;
+    document.getElementById('si-code').value = '';
+    setAuthStep('code');
+    document.getElementById('si-code').focus();
+  });
+}
+function resendCode(){
+  return withBusy('btnResendCode', async ()=>{
+    hideAuthError();
+    if(SUPABASE_CONFIGURED){
+      const { error } = await callAuthFunction('send-code', { email: authEmail, lang: state.lang });
+      if(error){ showAuthFunctionError(error); return; }
+    }
+    document.getElementById('authHint').textContent = t('codeResent');
+  });
+}
+
+function verifyCode(){
+  return withBusy('btnVerifyCode', async ()=>{
+    hideAuthError();
+    const code = toLatinDigits(document.getElementById('si-code').value).replace(/\D/g, '');
+    if(code.length < 4){ showAuthError(t('authErrorCode')); return; }
+
+    if(!SUPABASE_CONFIGURED){
+      // No backend configured yet — accept any code so the demo still works offline.
+      const user = authLinkUser
+        ? { ...authLinkUser, email: authEmail }
+        : { id:'local-'+authEmail, name:'', email: authEmail, createdAt: new Date().toISOString(), sessionToken:'local-session-'+Date.now() };
+      if(authLinkUser){ authLinkUser = null; finishSignIn(user); }
+      else { authNewUser = user; setAuthStep('name'); }
+      return;
+    }
+
+    let row;
+    try{
+      const { data, error } = await supabaseClient.rpc('verify_email_code', { p_email: authEmail, p_code: code, p_link_token: authLinkUser ? authLinkUser.sessionToken : null });
+      if(error){ console.error('Sanad: verify_email_code failed:', error); showAuthError(t('authErrorNetwork')); return; }
+      row = Array.isArray(data) ? data[0] : data;
+    } catch(err){
+      console.error('Sanad: could not reach Supabase to check the code:', err);
+      showAuthError(t('authErrorNetwork'));
+      return;
+    }
+    if(!row){ showAuthError(t('authErrorNetwork')); return; }
+    if(row.status === 'not_signed_in'){ authLinkUser = null; setAuthStep('legacy'); showAuthError(t('authErrorInvalid')); return; }
+    if(row.status !== 'ok'){ showAuthFunctionError(row.status); return; }
+    const user = { id: row.id, username: row.username, name: row.name, email: authEmail, createdAt: row.created_at, sessionToken: row.session_token };
+    authLinkUser = null;
+    // New accounts, and ones that closed the app before picking a name, choose one now.
+    if(row.is_new || !row.name){ authNewUser = user; setAuthStep('name'); document.getElementById('si-name').focus(); return; }
+    finishSignIn(user);
+  });
+}
+
+function saveName(){
+  return withBusy('btnSaveName', async ()=>{
+    hideAuthError();
+    const name = document.getElementById('si-name').value.trim();
+    if(!name){ showAuthError(t('authErrorName')); return; }
+    if(SUPABASE_CONFIGURED && !String(authNewUser.id).startsWith('local-')){
+      try{
+        const { error } = await supabaseClient.rpc('set_my_name', { p_session_token: authNewUser.sessionToken, p_name: name });
+        if(error){ console.error('Sanad: set_my_name failed:', error); showAuthError(t('authErrorNetwork')); return; }
+      } catch(err){
+        console.error('Sanad: could not reach Supabase to save the name:', err);
+        showAuthError(t('authErrorNetwork'));
+        return;
+      }
+    }
+    const user = { ...authNewUser, name };
+    authNewUser = null;
+    finishSignIn(user);
+  });
+}
+
 async function submitSignIn(){
   const username = document.getElementById('si-username').value.trim();
   const password = document.getElementById('si-password').value;
-  const name = document.getElementById('si-name').value.trim();
   hideAuthError();
 
   if(!username || !password){ showAuthError(t('authErrorMissing')); return; }
-  if(authMode==='signup' && password.length < 6){ showAuthError(t('authErrorShort')); return; }
 
   if(!SUPABASE_CONFIGURED){
     // No backend configured yet — accept anything so the demo still works offline.
-    appUser = { id:'local-'+username.toLowerCase(), username: username.toLowerCase(), name: name || username, createdAt: new Date().toISOString(), sessionToken:'local-session-'+Date.now() };
-  } else {
-    try{
-      const fn = authMode==='signup' ? 'signup_user' : 'login_user';
-      const params = authMode==='signup'
-        ? { p_username: username, p_password: password, p_name: name || username }
-        : { p_username: username, p_password: password };
-      const { data, error } = await supabaseClient.rpc(fn, params);
-      if(error){
-        // Always log the raw error — the banner below only shows a translated
-        // summary, and "couldn't reach the server" hides very different causes
-        // (schema.sql not run yet, RLS blocking the call, a real network drop).
-        console.error(`Sanad: ${fn} failed:`, error);
-        const msg = (error.message||'').toLowerCase();
-        if(msg.includes('taken')) showAuthError(t('authErrorTaken'));
-        else if(msg.includes('least') || msg.includes('at least 3')) showAuthError(t('authErrorShort'));
-        else if(msg.includes('invalid username or password')) showAuthError(t('authErrorInvalid'));
-        else if(msg.includes('too many failed attempts')) showAuthError(t('authErrorTooMany'));
-        else if(msg.includes('too often')) showAuthError(t('authErrorTooOften'));
-        else if(error.code === 'PGRST202' || msg.includes('could not find the function')){
-          showAuthError('Sign-in isn\'t set up on the database yet — run schema.sql in the Supabase SQL editor (see console for details).');
-        } else {
-          showAuthError(t('authErrorNetwork') + ' (' + (error.message || error.code || 'unknown error') + ')');
-        }
-        return;
+    authLinkUser = { id:'local-'+username.toLowerCase(), username: username.toLowerCase(), name: username, createdAt: new Date().toISOString(), sessionToken:'local-session-'+Date.now() };
+    setAuthStep('email');
+    return;
+  }
+  try{
+    const { data, error } = await supabaseClient.rpc('login_user', { p_username: username, p_password: password });
+    if(error){
+      // Always log the raw error — the banner below only shows a translated
+      // summary, and "couldn't reach the server" hides very different causes
+      // (schema.sql not run yet, RLS blocking the call, a real network drop).
+      console.error('Sanad: login_user failed:', error);
+      const msg = (error.message||'').toLowerCase();
+      if(msg.includes('invalid username or password')) showAuthError(t('authErrorInvalid'));
+      else if(msg.includes('too many failed attempts')) showAuthError(t('authErrorTooMany'));
+      else if(error.code === 'PGRST202' || msg.includes('could not find the function')){
+        showAuthError('Sign-in isn\'t set up on the database yet — run schema.sql in the Supabase SQL editor (see console for details).');
+      } else {
+        showAuthError(t('authErrorNetwork') + ' (' + (error.message || error.code || 'unknown error') + ')');
       }
-      const row = Array.isArray(data) ? data[0] : data;
-      if(!row){ showAuthError(t('authErrorInvalid')); return; }
-      appUser = { id: row.id, username: row.username, name: row.name, createdAt: row.created_at, sessionToken: row.session_token };
-    } catch(err){
-      console.error('Sanad: could not reach Supabase to sign in:', err);
-      showAuthError(t('authErrorNetwork') + ' (' + (err && err.message ? err.message : String(err)) + ')');
       return;
     }
+    const row = Array.isArray(data) ? data[0] : data;
+    if(!row){ showAuthError(t('authErrorInvalid')); return; }
+    const user = { id: row.id, username: row.username, name: row.name, createdAt: row.created_at, sessionToken: row.session_token };
+    const { data: status } = await supabaseClient.rpc('session_status', { p_session_token: user.sessionToken });
+    const s = Array.isArray(status) ? status[0] : status;
+    if(s && s.email_verified){ finishSignIn({ ...user, email: s.email }); return; }
+    authLinkUser = user;
+    document.getElementById('si-email').value = '';
+    setAuthStep('email');
+  } catch(err){
+    console.error('Sanad: could not reach Supabase to sign in:', err);
+    showAuthError(t('authErrorNetwork') + ' (' + (err && err.message ? err.message : String(err)) + ')');
   }
+}
 
+async function finishSignIn(user){
+  appUser = user;
   persistAppUser();
   document.getElementById('signInModal').style.display = 'none';
   const action = pendingSignInAction;
@@ -1354,7 +1513,30 @@ async function submitSignIn(){
   if(action) action();
 }
 
+/* A saved session can stop working (signed out elsewhere, expired after 90
+   days unused) or belong to a username account with no email yet.
+   Either way every write would fail, so show it as signed out. */
+async function validateStoredSession(){
+  if(!appUser || !SUPABASE_CONFIGURED || String(appUser.id).startsWith('local-')) return;
+  try{
+    const { data, error } = await supabaseClient.rpc('session_status', { p_session_token: appUser.sessionToken });
+    if(error){ console.error('Sanad: session_status failed:', error); return; }
+    const s = Array.isArray(data) ? data[0] : data;
+    if(s && s.signed_in && s.email_verified) return;
+    appUser = null;
+    persistAppUser();
+    renderProfile();
+    renderForum();
+  } catch(err){
+    console.error('Sanad: could not check the saved session:', err);
+  }
+}
+
 function signOut(){
+  if(appUser && SUPABASE_CONFIGURED && !String(appUser.id).startsWith('local-')){
+    supabaseClient.rpc('sign_out', { p_session_token: appUser.sessionToken })
+      .then(({ error })=>{ if(error) console.error('Sanad: sign_out failed:', error); });
+  }
   appUser = null;
   myShareLinks = [];
   persistAppUser();
@@ -1557,9 +1739,9 @@ function renderProfile(){
   }
   out.style.display = 'none';
   inn.style.display = 'block';
-  document.getElementById('profileAvatar').textContent = (appUser.name || appUser.phone || '?').charAt(0).toUpperCase();
-  document.getElementById('profileName').textContent = appUser.name || appUser.phone;
-  document.getElementById('profileHandle').textContent = appUser.phone || '';
+  document.getElementById('profileAvatar').textContent = (appUser.name || appUser.email || appUser.phone || '?').charAt(0).toUpperCase();
+  document.getElementById('profileName').textContent = appUser.name || appUser.email || appUser.phone;
+  document.getElementById('profileHandle').textContent = appUser.email || appUser.phone || '';
   const year = appUser.createdAt ? new Date(appUser.createdAt).getFullYear() : new Date().getFullYear();
   document.getElementById('profileMemberSince').textContent = t('memberSince') + ' ' + year;
   renderProfileGrids();
@@ -1745,7 +1927,7 @@ async function fetchAndRenderBuddies(){
   try{
     const { data, error } = await supabaseClient.from('buddies').select('*, app_users(name)').order('created_at', { ascending:false });
     if(error){ console.error('Error loading buddies:', error); renderBuddies(); return; }
-    buddies = data.map(b=>({ userId: b.user_id, name: b.app_users ? b.app_users.name : 'Buddy', help: b.help_areas || [], bio: b.bio, wa: b.whatsapp }));
+    buddies = data.map(b=>({ userId: b.user_id, name: (b.app_users && b.app_users.name) || 'Buddy', help: b.help_areas || [], bio: b.bio, wa: b.whatsapp }));
     renderBuddies();
   } catch(err){
     console.error('Could not reach Supabase for buddies, showing local data instead:', err);
@@ -1814,7 +1996,7 @@ async function fetchLeaderboardData(){
         const votes = c.vote_count_month || 0;
         const isBuddy = buddyIds.has(c.user_id);
         const score = votes*LEADERBOARD_WEIGHTS.votes + replies*LEADERBOARD_WEIGHTS.replies + (isBuddy ? LEADERBOARD_WEIGHTS.buddy : 0);
-        return { userId: c.user_id, name: c.app_users.name, replies, votes, isBuddy, score };
+        return { userId: c.user_id, name: c.app_users.name || t('memberFallback'), replies, votes, isBuddy, score };
       })
       .filter(row=> row.score > 0)
       .sort((a,b)=> b.score - a.score);
@@ -2166,11 +2348,18 @@ document.getElementById('filterSheet').addEventListener('click', e=>{
   renderListings();
 });
 
-/* ---- Sign-in modal (username + password) ---- */
+/* ---- Sign-in modal (email code) ---- */
 document.getElementById('btnProfileSignIn').addEventListener('click', ()=> openSignIn());
+document.getElementById('btnSendCode').addEventListener('click', sendCode);
+document.getElementById('btnVerifyCode').addEventListener('click', verifyCode);
+document.getElementById('btnResendCode').addEventListener('click', resendCode);
+document.getElementById('btnChangeEmail').addEventListener('click', ()=> setAuthStep('email'));
+document.getElementById('btnSaveName').addEventListener('click', saveName);
+document.getElementById('btnUseUsername').addEventListener('click', ()=> setAuthStep('legacy'));
+document.getElementById('btnUseEmail').addEventListener('click', ()=> setAuthStep('email'));
 document.getElementById('btnSignInSubmit').addEventListener('click', submitSignIn);
-document.querySelectorAll('[data-auth-tab]').forEach(btn=>{
-  btn.addEventListener('click', ()=> setAuthMode(btn.getAttribute('data-auth-tab')));
+[['si-email', sendCode], ['si-code', verifyCode], ['si-name', saveName], ['si-password', submitSignIn]].forEach(([id, fn])=>{
+  document.getElementById(id).addEventListener('keydown', e=>{ if(e.key==='Enter') fn(); });
 });
 document.getElementById('btnSignInCancel').addEventListener('click', closeSignIn);
 document.getElementById('btnSignOut').addEventListener('click', signOut);
@@ -2273,7 +2462,7 @@ async function initApp(){
   renderAll();
   applyFeedMode();
   await trackIncomingShareCode();
-  await Promise.all([fetchAndRenderListings(), fetchAndRenderForum(), fetchAndRenderBuddies()]);
+  await Promise.all([fetchAndRenderListings(), fetchAndRenderForum(), fetchAndRenderBuddies(), validateStoredSession()]);
   // Depends on buddies (isBuddy bonus) being loaded above, so it runs after.
   await fetchLeaderboardData();
   renderLeaderboard();
