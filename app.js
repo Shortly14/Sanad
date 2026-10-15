@@ -1333,7 +1333,8 @@ function verifyCode(){
     if(row.status !== 'ok'){ showAuthFunctionError(row.status); return; }
     const user = { id: row.id, username: row.username, name: row.name, email: authEmail, createdAt: row.created_at, sessionToken: row.session_token };
     authLinkUser = null;
-    if(row.is_new){ authNewUser = user; setAuthStep('name'); document.getElementById('si-name').focus(); return; }
+    // New accounts, and ones that closed the app before picking a name, choose one now.
+    if(row.is_new || !row.name){ authNewUser = user; setAuthStep('name'); document.getElementById('si-name').focus(); return; }
     finishSignIn(user);
   });
 }
