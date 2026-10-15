@@ -51,7 +51,7 @@ en: {
   lblGender:"Gender preference", genAny:"Any", genMale:"Men only", genFemale:"Women only",
   lblNationality:"Nationality / language preference", natAny:"Any", natArab:"Arab",
   lblBills:"Electricity & water included", lblDesc:"Description", descPh:"e.g. Close to metro, quiet flat, 3 flatmates already...",
-  lblWhatsapp:"WhatsApp number",
+  lblWhatsapp:"WhatsApp number", waInvalid:"Enter a valid WhatsApp number, for example 05XXXXXXXX.",
   filterAllCities:"All cities", filterAnyBudget:"Any budget", filterUnder500:"Under 500", filterBudget500to800:"500 – 800 SAR", filterBudget800to1200:"800 – 1,200 SAR",
   filterAnyNat:"Any nationality pref.",
   perMonth:"/ month", contactWA:"WhatsApp", billsIncluded:"Bills included", billsShared:"Bills shared",
@@ -132,7 +132,7 @@ ar: {
   lblGender:"تفضيل الجنس", genAny:"الكل", genMale:"رجال فقط", genFemale:"نساء فقط",
   lblNationality:"تفضيل الجنسية / اللغة", natAny:"أي جنسية", natArab:"عربي",
   lblBills:"الكهرباء والماء شاملة", lblDesc:"الوصف", descPh:"مثال: قريب من المترو، شقة هادئة، ٣ سكان حالياً...",
-  lblWhatsapp:"رقم واتساب",
+  lblWhatsapp:"رقم واتساب", waInvalid:"أدخل رقم واتساب صحيحًا، مثل 05XXXXXXXX.",
   filterAllCities:"كل المدن", filterAnyBudget:"أي ميزانية", filterUnder500:"أقل من ٥٠٠", filterBudget500to800:"٥٠٠ – ٨٠٠ ريال", filterBudget800to1200:"٨٠٠ – ١٬٢٠٠ ريال",
   filterAnyNat:"أي تفضيل جنسية",
   perMonth:"/ شهرياً", contactWA:"واتساب", billsIncluded:"الفواتير شاملة", billsShared:"الفواتير مشتركة",
@@ -213,7 +213,7 @@ ur: {
   lblGender:"صنفی ترجیح", genAny:"کوئی بھی", genMale:"صرف مرد", genFemale:"صرف خواتین",
   lblNationality:"قومیت / زبان کی ترجیح", natAny:"کوئی بھی", natArab:"عرب",
   lblBills:"بجلی اور پانی شامل", lblDesc:"تفصیل", descPh:"مثلاً: میٹرو کے قریب، پرسکون فلیٹ، پہلے سے 3 ساتھی...",
-  lblWhatsapp:"واٹس ایپ نمبر",
+  lblWhatsapp:"واٹس ایپ نمبر", waInvalid:"درست واٹس ایپ نمبر درج کریں، مثلاً 05XXXXXXXX۔",
   filterAllCities:"تمام شہر", filterAnyBudget:"کوئی بھی بجٹ", filterUnder500:"500 سے کم", filterBudget500to800:"500 – 800 SAR", filterBudget800to1200:"800 – 1,200 SAR",
   filterAnyNat:"کوئی بھی قومیت ترجیح",
   perMonth:"/ ماہانہ", contactWA:"واٹس ایپ", billsIncluded:"بلز شامل ہیں", billsShared:"بلز مشترکہ",
@@ -558,9 +558,30 @@ function safeUrl(value){
   const url = String(value ?? '');
   return /^(https?:|blob:)/i.test(url) ? escapeHtml(url) : '';
 }
-/* wa.me only takes digits — also keeps a stored number from breaking out of an href. */
+/* wa.me only takes the full international number, as digits — which also keeps a
+   stored number from breaking out of an href. People in Saudi Arabia usually type
+   the local form (05XXXXXXXX), which wa.me can't place, so Saudi mobiles get 966 in
+   front. Arabic/Urdu digits, spaces, dashes, + and 00 are all accepted. Applied when
+   a number is saved and again when a link is built, so older posts work too. */
 function waDigits(value){
-  return String(value ?? '').replace(/[^0-9]/g,'');
+  let d = toLatinDigits(value).replace(/[^0-9]/g,'');
+  if(d.startsWith('00')) d = d.slice(2);
+  if(d.startsWith('9660')) d = '966' + d.slice(4);   // +966 05XXXXXXXX
+  if(/^05\d{8}$/.test(d)) d = '966' + d.slice(1);   // 05XXXXXXXX
+  else if(/^5\d{8}$/.test(d)) d = '966' + d;        // 5XXXXXXXX
+  return d;
+}
+/* A number wa.me can open: 8–15 digits starting with a country code (never 0),
+   and a Saudi one is 966 + 9 digits. */
+function waLooksValid(d){
+  return /^[1-9][0-9]{7,14}$/.test(d) && (!d.startsWith('966') || d.length === 12);
+}
+/* Shows the problem on the field itself (the browser's own bubble), cleared on edit. */
+function flagWaInput(input){
+  input.setCustomValidity(t('waInvalid'));
+  input.reportValidity();
+  input.addEventListener('input', ()=> input.setCustomValidity(''), { once:true });
+  input.focus();
 }
 
 function applyI18n(){
@@ -1971,8 +1992,11 @@ async function fetchAndRenderBuddies(){
 async function submitBuddy(){
   const help = [...document.querySelectorAll('.buddy-help:checked')].map(c=>c.value);
   const bio = document.getElementById('buddy-bio').value.trim() || '—';
-  const wa = (document.getElementById('buddy-wa').value || '966500000000').replace(/[^0-9]/g,'');
+  const waInput = document.getElementById('buddy-wa');
+  const wa = waDigits(waInput.value);
   if(!help.length){ return; }
+  // The card's only contact is WhatsApp; an empty field used to save a made-up number.
+  if(!waLooksValid(wa)){ flagWaInput(waInput); return; }
 
   requireSignIn(async ()=>{
     if(!SUPABASE_CONFIGURED){
@@ -2077,9 +2101,13 @@ function renderLeaderboard(){
 async function submitOpenToWorkToggle(enabled){
   requireSignIn(async ()=>{
     const waInput = document.getElementById('openToWorkWa');
-    const wa = waInput ? waInput.value.replace(/[^0-9]/g,'') : '';
+    const wa = waInput ? waDigits(waInput.value) : '';
     const errEl = document.getElementById('openToWorkError');
     if(errEl) errEl.style.display = 'none';
+    if(enabled && !waLooksValid(wa)){
+      if(errEl){ errEl.textContent = t('waInvalid'); errEl.style.display = 'block'; }
+      return;
+    }
 
     if(!SUPABASE_CONFIGURED || String(appUser.id).startsWith('local-')){
       appUser.openToWork = enabled;
@@ -2267,11 +2295,12 @@ document.getElementById('btnSubmitQuickPost').addEventListener('click', async ()
     : natValue === 'other' ? (document.getElementById('qc-nat-other').value.trim() || t('natOther'))
     : natValue;
   const bills_included = document.getElementById('qc-bills').checked;
-  const whatsapp = document.getElementById('qc-wa').value.trim();
+  const whatsapp = waDigits(document.getElementById('qc-wa').value);
   const videoFile = document.getElementById('qc-video').files[0];
 
   if(isHousing && !rent){ document.getElementById('qc-rent').focus(); return; }
   if(isHousing && !whatsapp){ document.getElementById('qc-wa').focus(); return; }
+  if(isHousing && !waLooksValid(whatsapp)){ flagWaInput(document.getElementById('qc-wa')); return; }
 
   requireSignIn(async ()=>{
     const postedCategory = category;
