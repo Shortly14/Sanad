@@ -172,26 +172,9 @@ security definer
 set search_path = public, extensions
 as $$
 begin
-  if p_username is null or length(trim(p_username)) < 3 then
-    raise exception 'Username must be at least 3 characters';
-  end if;
-  if p_password is null or length(p_password) < 6 then
-    raise exception 'Password must be at least 6 characters';
-  end if;
-
-  return query
-  insert into app_users (username, password_hash, name, phone, session_token)
-  values (
-    lower(trim(p_username)),
-    crypt(p_password, gen_salt('bf')),
-    coalesce(nullif(trim(p_name), ''), p_username),
-    p_phone,
-    encode(gen_random_bytes(32), 'hex')
-  )
-  returning app_users.id, app_users.username, app_users.name, app_users.created_at, app_users.session_token;
-exception
-  when unique_violation then
-    raise exception 'That username is already taken';
+  -- New accounts are created only by a verified email code (email_login,
+  -- section 15). Kept so older cached copies of the app get a clear error.
+  raise exception 'Sign up with your email';
 end;
 $$;
 
@@ -235,12 +218,9 @@ begin
 
   delete from login_attempts where login_attempts.username = v_username;
 
-  -- Rotate the token on every login (simple "one active session" behavior —
-  -- logging in elsewhere invalidates the old session token).
-  return query
-  update app_users set session_token = encode(gen_random_bytes(32), 'hex')
-  where app_users.id = v_id
-  returning app_users.id, app_users.username, app_users.name, app_users.created_at, app_users.session_token;
+  -- Each login adds a session (app_sessions, section 15), so signing in on
+  -- a second phone no longer signs the first one out.
+  return query select * from sanad_new_session(v_id);
 end;
 $$;
 
@@ -331,10 +311,7 @@ set search_path = public, extensions
 as $$
 declare v_user_id uuid;
 begin
-  select id into v_user_id from app_users where session_token = p_session_token;
-  if v_user_id is null then
-    raise exception 'You need to be signed in to vote';
-  end if;
+  select id into v_user_id from sanad_session_user(p_session_token);
   if not exists (select 1 from forum_replies where id = p_reply_id) then
     raise exception 'That reply no longer exists';
   end if;
@@ -393,10 +370,7 @@ set search_path = public, extensions
 as $$
 declare v_user_id uuid;
 begin
-  select id into v_user_id from app_users where session_token = p_session_token;
-  if v_user_id is null then
-    raise exception 'You need to be signed in to change this';
-  end if;
+  select id into v_user_id from sanad_session_user(p_session_token);
   if p_enabled and (p_whatsapp is null or length(trim(p_whatsapp)) < 8) then
     raise exception 'A WhatsApp number is required to become visible to employers';
   end if;
@@ -461,14 +435,30 @@ language plpgsql
 security definer
 set search_path = public, extensions
 as $$
+declare v_id uuid; v_name text; v_verified timestamptz;
 begin
   if p_session_token is null or length(p_session_token) < 32 then
     raise exception 'You need to be signed in to do this';
   end if;
-  return query select app_users.id, app_users.name from app_users where app_users.session_token = p_session_token;
-  if not found then
+  -- app_sessions (section 15) holds one row per signed-in device. Tokens
+  -- minted before it existed live in app_users.session_token.
+  select u.id, u.name, u.email_verified_at into v_id, v_name, v_verified
+  from app_sessions s join app_users u on u.id = s.user_id
+  where s.token = p_session_token and s.last_used_at > now() - interval '90 days';
+  if v_id is null then
+    select u.id, u.name, u.email_verified_at into v_id, v_name, v_verified
+    from app_users u where u.session_token = p_session_token;
+  end if;
+  if v_id is null then
     raise exception 'You need to be signed in to do this';
   end if;
+  if v_verified is null then
+    raise exception 'Verify your email first';
+  end if;
+  update app_sessions set last_used_at = now()
+  where token = p_session_token and last_used_at < now() - interval '1 day';
+  -- An email account that closed the app before picking a name.
+  return query select v_id, coalesce(v_name, 'Member');
 end;
 $$;
 revoke execute on function sanad_session_user(text) from public, anon, authenticated;
@@ -687,3 +677,410 @@ begin
       and public.sanad_upload_budget_ok()
     );
 end $$;
+
+-- ============================================================
+-- 13. Deleting your own posts. Section 11 took away every direct
+--     delete, so these are the only way to remove a listing, a
+--     question, a reply or a buddy profile. Each one looks the
+--     user up from p_session_token and only deletes rows that
+--     user posted. Deleting a question also removes its replies
+--     and their votes (on delete cascade). Uploaded videos/images
+--     stay in Storage; nothing links to them afterwards.
+-- ============================================================
+
+create or replace function delete_listing(p_session_token text, p_listing_id uuid)
+returns void
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare v_user record;
+begin
+  select * into v_user from sanad_session_user(p_session_token);
+  delete from housing_listings where id = p_listing_id and poster_user_id = v_user.id;
+  if not found then raise exception 'You can only delete your own posts'; end if;
+end;
+$$;
+
+create or replace function delete_forum_post(p_session_token text, p_post_id uuid)
+returns void
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare v_user record;
+begin
+  select * into v_user from sanad_session_user(p_session_token);
+  delete from forum_posts where id = p_post_id and poster_user_id = v_user.id;
+  if not found then raise exception 'You can only delete your own posts'; end if;
+end;
+$$;
+
+create or replace function delete_forum_reply(p_session_token text, p_reply_id uuid)
+returns void
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare v_user record;
+begin
+  select * into v_user from sanad_session_user(p_session_token);
+  delete from forum_replies where id = p_reply_id and poster_user_id = v_user.id;
+  if not found then raise exception 'You can only delete your own posts'; end if;
+end;
+$$;
+
+-- Removes every buddy profile the user has (pressing "Become a buddy"
+-- twice used to create two).
+create or replace function delete_buddy(p_session_token text)
+returns void
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare v_user record;
+begin
+  select * into v_user from sanad_session_user(p_session_token);
+  delete from buddies where user_id = v_user.id;
+end;
+$$;
+
+grant execute on function delete_listing(text, uuid) to anon, authenticated;
+grant execute on function delete_forum_post(text, uuid) to anon, authenticated;
+grant execute on function delete_forum_reply(text, uuid) to anon, authenticated;
+grant execute on function delete_buddy(text) to anon, authenticated;
+
+-- ============================================================
+-- 14. Speed limits. Nothing stopped one person from creating
+--     hundreds of accounts or flooding the feed with posts in a
+--     minute. Each insert below is counted, and past the limit the
+--     insert is refused. Limits are well above what a real person
+--     does; accounts are counted per IP address, everything else
+--     per signed-in user.
+-- ============================================================
+
+create table if not exists rate_limit_events (
+  id bigserial primary key,
+  at timestamptz default now(),
+  kind text not null,
+  key text not null
+);
+create index if not exists idx_rate_limit_events_lookup on rate_limit_events(kind, key, at);
+create index if not exists idx_rate_limit_events_at on rate_limit_events(at);
+alter table rate_limit_events enable row level security;
+revoke all on rate_limit_events from anon, authenticated;
+
+-- Internal helper — not callable through the API. A refused action raises,
+-- which also rolls back its own event row, so only real inserts count.
+create or replace function sanad_rate_limit(p_kind text, p_key text, p_max int, p_window interval)
+returns void
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+begin
+  if p_key is null then
+    return;
+  end if;
+  delete from rate_limit_events where at < now() - interval '1 day';
+  if (select count(*) from rate_limit_events
+      where kind = p_kind and key = p_key and at > now() - p_window) >= p_max then
+    raise exception 'You are doing that too often, try again later';
+  end if;
+  insert into rate_limit_events (kind, key) values (p_kind, p_key);
+end;
+$$;
+revoke execute on function sanad_rate_limit(text, text, int, interval) from public, anon, authenticated;
+
+create or replace function sanad_rate_limit_trigger()
+returns trigger
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare
+  -- Same source login_user uses: set by Cloudflare, null outside the API.
+  v_ip text := nullif(current_setting('request.headers', true), '')::json->>'cf-connecting-ip';
+begin
+  case TG_TABLE_NAME
+    -- Workers often share one IP (camp Wi-Fi, mobile carriers), so this is loose.
+    when 'app_users' then perform sanad_rate_limit('signup', v_ip, 30, interval '1 hour');
+    when 'housing_listings' then perform sanad_rate_limit('listing', new.poster_user_id::text, 10, interval '1 hour');
+    when 'forum_posts' then perform sanad_rate_limit('question', new.poster_user_id::text, 10, interval '1 hour');
+    when 'forum_replies' then perform sanad_rate_limit('reply', new.poster_user_id::text, 30, interval '1 hour');
+    when 'buddies' then perform sanad_rate_limit('buddy', new.user_id::text, 3, interval '1 day');
+    when 'share_links' then perform sanad_rate_limit('share_link', new.user_id::text, 20, interval '1 hour');
+    when 'share_clicks' then perform sanad_rate_limit('share_click', v_ip, 60, interval '1 hour');
+  end case;
+  return new;
+end;
+$$;
+revoke execute on function sanad_rate_limit_trigger() from public, anon, authenticated;
+
+do $$
+declare
+  t text;
+  tables text[] := array['app_users','housing_listings','forum_posts','forum_replies','buddies','share_links','share_clicks'];
+begin
+  foreach t in array tables loop
+    execute format('drop trigger if exists sanad_rate_limit on public.%I', t);
+    execute format('create trigger sanad_rate_limit before insert on public.%I for each row execute function sanad_rate_limit_trigger()', t);
+  end loop;
+end $$;
+
+-- ============================================================
+-- 15. Email code sign-in. otp_create() makes a 6-digit code; the
+--     send-code Edge Function (supabase/functions/send-code) is the
+--     only caller (service_role key) and emails it through Resend.
+--     The browser then calls verify_email_code() with the code it
+--     received.
+--     - Every write now needs a verified email (checked in
+--       sanad_session_user). Username accounts keep working after
+--       they add their email once.
+--     - app_sessions keeps one row per signed-in device, so signing
+--       in on a second phone no longer signs the first one out.
+--     - otp_requests limits how many codes can be sent, so nobody can
+--       flood someone's inbox or use up the email quota. Each code
+--       allows 5 guesses and expires after 10 minutes.
+-- ============================================================
+
+alter table app_users add column if not exists email text;
+alter table app_users add column if not exists email_verified_at timestamptz;
+-- New email accounts pick their name right after the code (set_my_name), so
+-- the row starts without one. Databases created from an older version of
+-- this file may still have name as not null.
+alter table app_users alter column name drop not null;
+-- One account per verified email (stored lowercase). Unverified values are
+-- ignored, so this can't fail on existing data.
+create unique index if not exists idx_app_users_verified_email on app_users(email) where email_verified_at is not null;
+
+create table if not exists app_sessions (
+  token text primary key,
+  user_id uuid not null references app_users(id) on delete cascade,
+  created_at timestamptz default now(),
+  last_used_at timestamptz default now()
+);
+create index if not exists idx_app_sessions_user on app_sessions(user_id);
+alter table app_sessions enable row level security;
+revoke all on app_sessions from anon, authenticated;
+
+create table if not exists otp_requests (
+  id bigserial primary key,
+  email text not null,
+  ip text,
+  requested_at timestamptz default now()
+);
+create index if not exists idx_otp_requests_email on otp_requests(email, requested_at);
+create index if not exists idx_otp_requests_ip on otp_requests(ip, requested_at);
+alter table otp_requests enable row level security;
+revoke all on otp_requests from anon, authenticated;
+
+-- The latest code per email, stored hashed.
+create table if not exists otp_codes (
+  email text primary key,
+  code_hash text not null,
+  expires_at timestamptz not null,
+  attempts int not null default 0
+);
+alter table otp_codes enable row level security;
+revoke all on otp_codes from anon, authenticated;
+
+-- Internal: lowercases and trims an email, or returns null when it isn't one.
+create or replace function sanad_clean_email(p_email text)
+returns text
+language sql
+immutable
+as $$
+  select case when e ~ '^[^@\s]+@[^@\s]+\.[^@\s]+$' and length(e) <= 254 then e end
+  from (select lower(trim(coalesce(p_email, ''))) as e) x;
+$$;
+
+-- Internal helper: adds a session for a user, same shape login_user returns.
+create or replace function sanad_new_session(p_user_id uuid)
+returns table(id uuid, username text, name text, created_at timestamptz, session_token text)
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare v_token text := encode(gen_random_bytes(32), 'hex');
+begin
+  insert into app_sessions (token, user_id) values (v_token, p_user_id);
+  return query select u.id, u.username, u.name, u.created_at, v_token from app_users u where u.id = p_user_id;
+end;
+$$;
+
+-- Called by send-code. Returns a new code for the email, or null when the
+-- limit is reached: at most 3 codes per email per 15 minutes, 10 per IP
+-- per hour, and 100 per hour site-wide (Resend's free plan sends 100 a day).
+create or replace function otp_create(p_email text, p_ip text)
+returns text
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare
+  v_email text := sanad_clean_email(p_email);
+  -- gen_random_bytes is cryptographically random; random() is not.
+  v_code text := lpad((('x' || lpad(encode(gen_random_bytes(4), 'hex'), 16, '0'))::bit(64)::bigint % 1000000)::text, 6, '0');
+begin
+  if v_email is null then
+    raise exception 'Invalid email';
+  end if;
+  delete from otp_requests where requested_at < now() - interval '1 day';
+  delete from otp_codes where expires_at < now() - interval '1 day';
+  if (select count(*) from otp_requests where email = v_email and requested_at > now() - interval '15 minutes') >= 3
+     or (p_ip is not null and (select count(*) from otp_requests where ip = p_ip and requested_at > now() - interval '1 hour') >= 10)
+     or (select count(*) from otp_requests where requested_at > now() - interval '1 hour') >= 100 then
+    return null;
+  end if;
+  insert into otp_requests (email, ip) values (v_email, p_ip);
+  insert into otp_codes (email, code_hash, expires_at, attempts)
+  values (v_email, crypt(v_code, gen_salt('bf')), now() + interval '10 minutes', 0)
+  on conflict (email) do update set code_hash = excluded.code_hash, expires_at = excluded.expires_at, attempts = 0;
+  return v_code;
+end;
+$$;
+
+-- Internal (called by verify_email_code once the code is right). Signs in
+-- the account with this email, or creates one. With p_link_token (a
+-- username account that just logged in), attaches the email to it.
+create or replace function email_login(p_email text, p_link_token text default null)
+returns table(id uuid, username text, name text, created_at timestamptz, session_token text, is_new boolean)
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare v_email text := sanad_clean_email(p_email); v_id uuid; v_link uuid; v_new boolean := false;
+begin
+  if v_email is null then
+    raise exception 'Invalid email';
+  end if;
+  select u.id into v_id from app_users u where u.email = v_email and u.email_verified_at is not null;
+
+  if p_link_token is not null then
+    select s.user_id into v_link from app_sessions s where s.token = p_link_token;
+    if v_link is null then
+      select u.id into v_link from app_users u where u.session_token = p_link_token;
+    end if;
+    if v_link is null then raise exception 'You need to be signed in to do this'; end if;
+    if v_id is not null and v_id <> v_link then
+      raise exception 'This email is already used by another account';
+    end if;
+    update app_users set email = v_email, email_verified_at = coalesce(email_verified_at, now()) where app_users.id = v_link;
+    v_id := v_link;
+  elsif v_id is null then
+    insert into app_users (username, email, email_verified_at)
+    values ('u_' || encode(gen_random_bytes(6), 'hex'), v_email, now())
+    returning app_users.id into v_id;
+    v_new := true;
+  end if;
+
+  return query select s.id, s.username, s.name, s.created_at, s.session_token, v_new from sanad_new_session(v_id) s;
+end;
+$$;
+
+-- The browser's half of sign-in: checks the emailed code and, when it's
+-- right, signs in. status is 'ok' (the other columns are filled), 'wrong',
+-- 'expired', 'too_many', 'email_taken' or 'not_signed_in'.
+create or replace function verify_email_code(p_email text, p_code text, p_link_token text default null)
+returns table(status text, id uuid, username text, name text, created_at timestamptz, session_token text, is_new boolean)
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare v_email text := sanad_clean_email(p_email); v_row otp_codes%rowtype;
+begin
+  select * into v_row from otp_codes c where c.email = v_email;
+  if not found or v_row.expires_at < now() then
+    return query select 'expired', null::uuid, null::text, null::text, null::timestamptz, null::text, null::boolean;
+    return;
+  end if;
+  if v_row.attempts >= 5 then
+    return query select 'too_many', null::uuid, null::text, null::text, null::timestamptz, null::text, null::boolean;
+    return;
+  end if;
+  if v_row.code_hash <> crypt(coalesce(p_code, ''), v_row.code_hash) then
+    update otp_codes c set attempts = c.attempts + 1 where c.email = v_email;
+    return query select 'wrong', null::uuid, null::text, null::text, null::timestamptz, null::text, null::boolean;
+    return;
+  end if;
+
+  delete from otp_codes c where c.email = v_email;
+  begin
+    return query select 'ok', l.id, l.username, l.name, l.created_at, l.session_token, l.is_new
+    from email_login(v_email, p_link_token) l;
+  exception when raise_exception then
+    return query select case when sqlerrm like '%already used%' then 'email_taken' else 'not_signed_in' end,
+      null::uuid, null::text, null::text, null::timestamptz, null::text, null::boolean;
+  end;
+end;
+$$;
+
+-- Tells the app whether a saved session still works and has a verified email.
+create or replace function session_status(p_session_token text)
+returns table(signed_in boolean, email_verified boolean, email text)
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare v_id uuid;
+begin
+  if p_session_token is not null and length(p_session_token) >= 32 then
+    select s.user_id into v_id from app_sessions s
+    where s.token = p_session_token and s.last_used_at > now() - interval '90 days';
+    if v_id is null then
+      select u.id into v_id from app_users u where u.session_token = p_session_token;
+    end if;
+  end if;
+  if v_id is null then
+    return query select false, false, null::text;
+    return;
+  end if;
+  return query select true, u.email_verified_at is not null, case when u.email_verified_at is not null then u.email end
+  from app_users u where u.id = v_id;
+end;
+$$;
+
+-- New email accounts pick their public display name right after the code.
+create or replace function set_my_name(p_session_token text, p_name text)
+returns void
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare v_user record;
+begin
+  select * into v_user from sanad_session_user(p_session_token);
+  if length(trim(coalesce(p_name, ''))) = 0 then raise exception 'Name is empty'; end if;
+  if length(trim(p_name)) > 40 then raise exception 'Text is too long'; end if;
+  update app_users set name = trim(p_name) where app_users.id = v_user.id;
+end;
+$$;
+
+create or replace function sign_out(p_session_token text)
+returns void
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+begin
+  delete from app_sessions where token = p_session_token;
+  update app_users set session_token = null where session_token = p_session_token;
+end;
+$$;
+
+revoke execute on function sanad_new_session(uuid) from public, anon, authenticated;
+revoke execute on function otp_create(text, text) from public, anon, authenticated;
+revoke execute on function email_login(text, text) from public, anon, authenticated;
+do $$
+begin
+  -- service_role is the key the send-code Edge Function uses. Plain
+  -- Postgres (no Supabase roles) skips this.
+  if exists (select 1 from pg_roles where rolname = 'service_role') then
+    grant execute on function otp_create(text, text) to service_role;
+  end if;
+end $$;
+grant execute on function verify_email_code(text, text, text) to anon, authenticated;
+grant execute on function session_status(text) to anon, authenticated;
+grant execute on function set_my_name(text, text) to anon, authenticated;
+grant execute on function sign_out(text) to anon, authenticated;
