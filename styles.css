@@ -954,6 +954,13 @@
     background:rgba(255,255,255,0.86);border:1px solid var(--line);
   }
   html[data-theme="light"] .lang-switch--floating button{color:var(--ink-soft);}
+  /* The header stays dark green, but the tagline also picks up the generic .tag
+     pill, whose light-theme tint made it pale text on a pale pill. */
+  html[data-theme="light"] .brand-text .tag{background:rgba(255,255,255,0.1);}
+  /* Sign-in and share modals: the box was hardcoded dark, which hid the dark
+     light-theme title and links. */
+  html[data-theme="light"] .modal-box{background:var(--card);box-shadow:0 20px 50px rgba(20,35,29,0.18);}
+  html[data-theme="light"] .modal-box .hint{color:var(--ink-soft);}
 
   /* ---- Feed: caption moves into a white card, so the dark scrim goes away ---- */
   html[data-theme="light"] .feed-card + .feed-card,
