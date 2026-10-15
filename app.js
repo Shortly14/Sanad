@@ -1412,7 +1412,12 @@ function verifyCode(){
     let row;
     try{
       const { data, error } = await supabaseClient.rpc('verify_email_code', { p_email: authEmail, p_code: code, p_link_token: authLinkUser ? authLinkUser.sessionToken : null });
-      if(error){ console.error('Sanad: verify_email_code failed:', error); showAuthError(t('authErrorNetwork')); return; }
+      if(error){
+        console.error('Sanad: verify_email_code failed:', error);
+        // A new account past the per-network sign-up limit (schema.sql §14).
+        showAuthError(t((error.message||'').toLowerCase().includes('too often') ? 'authErrorTooOften' : 'authErrorNetwork'));
+        return;
+      }
       row = Array.isArray(data) ? data[0] : data;
     } catch(err){
       console.error('Sanad: could not reach Supabase to check the code:', err);
