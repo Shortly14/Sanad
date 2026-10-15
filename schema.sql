@@ -696,6 +696,10 @@ end $$;
 
 alter table app_users add column if not exists email text;
 alter table app_users add column if not exists email_verified_at timestamptz;
+-- New email accounts pick their name right after the code (set_my_name), so
+-- the row starts without one. Databases created from an older version of
+-- this file may still have name as not null.
+alter table app_users alter column name drop not null;
 -- One account per verified email (stored lowercase). Unverified values are
 -- ignored, so this can't fail on existing data.
 create unique index if not exists idx_app_users_verified_email on app_users(email) where email_verified_at is not null;

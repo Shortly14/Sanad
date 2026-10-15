@@ -88,7 +88,7 @@ en: {
   noListingsTitle:"No rooms match these filters", noListingsSub:"Try a wider budget, or clear a filter or two.",
   soundTicker:"Original sound · Sanad Housing", likeLabel:"Like", saveLabel:"Save",
   statMyListings:"Listings", statMyQuestions:"Questions", statMyClicks:"Link clicks",
-  tabMyPosts:"Posts", tabLiked:"Liked", memberSince:"Member since",
+  tabMyPosts:"Posts", tabLiked:"Liked", memberSince:"Member since", memberFallback:"Member",
   noPostsYet:"No listings posted yet", noLikedYet:"Rooms you like will show up here", noSavedYet:"Things you save will show up here",
   backBtn:"Back", loadingProfile:"Loading…", publicProfileUnavailable:"Profile not available",
   communityTabLeaderboard:"Top Helpers", leaderboardMonthLabel:"Top Helpers —",
@@ -167,7 +167,7 @@ ar: {
   noListingsTitle:"لا توجد غرف مطابقة لهذه الفلاتر", noListingsSub:"جرّب ميزانية أوسع أو أزل فلتراً أو اثنين.",
   soundTicker:"صوت أصلي · سند للإسكان", likeLabel:"إعجاب", saveLabel:"احفظ",
   statMyListings:"الإعلانات", statMyQuestions:"الأسئلة", statMyClicks:"نقرات الروابط",
-  tabMyPosts:"إعلاناتي", tabLiked:"أعجبني", memberSince:"عضو منذ",
+  tabMyPosts:"إعلاناتي", tabLiked:"أعجبني", memberSince:"عضو منذ", memberFallback:"عضو",
   noPostsYet:"لم تنشر أي إعلان بعد", noLikedYet:"الغرف التي تعجبك ستظهر هنا", noSavedYet:"الأشياء التي تحفظها ستظهر هنا",
   backBtn:"رجوع", loadingProfile:"جارٍ التحميل…", publicProfileUnavailable:"الملف الشخصي غير متاح",
   communityTabLeaderboard:"الأكثر مساعدة", leaderboardMonthLabel:"الأكثر مساعدة —",
@@ -246,7 +246,7 @@ ur: {
   noListingsTitle:"ان فلٹرز سے کوئی کمرہ نہیں ملا", noListingsSub:"بجٹ بڑھائیں یا ایک دو فلٹر ہٹا دیں۔",
   soundTicker:"اصل آواز · سند ہاؤسنگ", likeLabel:"پسند", saveLabel:"محفوظ کریں",
   statMyListings:"لسٹنگز", statMyQuestions:"سوالات", statMyClicks:"لنک کلکس",
-  tabMyPosts:"پوسٹس", tabLiked:"پسندیدہ", memberSince:"رکن بننے کی تاریخ",
+  tabMyPosts:"پوسٹس", tabLiked:"پسندیدہ", memberSince:"رکن بننے کی تاریخ", memberFallback:"رکن",
   noPostsYet:"ابھی تک کوئی لسٹنگ پوسٹ نہیں کی گئی", noLikedYet:"آپ کے پسندیدہ کمرے یہاں نظر آئیں گے", noSavedYet:"آپ کی محفوظ کردہ چیزیں یہاں نظر آئیں گی",
   backBtn:"واپس", loadingProfile:"لوڈ ہو رہا ہے…", publicProfileUnavailable:"پروفائل دستیاب نہیں",
   communityTabLeaderboard:"ٹاپ ہیلپرز", leaderboardMonthLabel:"ٹاپ ہیلپرز —",
@@ -953,7 +953,7 @@ async function fetchAndRenderForum(){
         .map(r => ({
           id: r.id,
           text: r.reply_text,
-          by: r.app_users ? r.app_users.name : null,
+          by: r.app_users ? (r.app_users.name || t('memberFallback')) : null,
           votes: r.votes || 0,
           posterUserId: r.poster_user_id
         }))
@@ -1830,7 +1830,7 @@ async function fetchAndRenderBuddies(){
   try{
     const { data, error } = await supabaseClient.from('buddies').select('*, app_users(name)').order('created_at', { ascending:false });
     if(error){ console.error('Error loading buddies:', error); renderBuddies(); return; }
-    buddies = data.map(b=>({ userId: b.user_id, name: b.app_users ? b.app_users.name : 'Buddy', help: b.help_areas || [], bio: b.bio, wa: b.whatsapp }));
+    buddies = data.map(b=>({ userId: b.user_id, name: (b.app_users && b.app_users.name) || 'Buddy', help: b.help_areas || [], bio: b.bio, wa: b.whatsapp }));
     renderBuddies();
   } catch(err){
     console.error('Could not reach Supabase for buddies, showing local data instead:', err);
@@ -1899,7 +1899,7 @@ async function fetchLeaderboardData(){
         const votes = c.vote_count_month || 0;
         const isBuddy = buddyIds.has(c.user_id);
         const score = votes*LEADERBOARD_WEIGHTS.votes + replies*LEADERBOARD_WEIGHTS.replies + (isBuddy ? LEADERBOARD_WEIGHTS.buddy : 0);
-        return { userId: c.user_id, name: c.app_users.name, replies, votes, isBuddy, score };
+        return { userId: c.user_id, name: c.app_users.name || t('memberFallback'), replies, votes, isBuddy, score };
       })
       .filter(row=> row.score > 0)
       .sort((a,b)=> b.score - a.score);
