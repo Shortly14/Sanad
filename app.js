@@ -71,7 +71,7 @@ en: {
   lblHelpAreas:"What can you help with?", helpHousing:"Finding housing", helpPaperwork:"Paperwork & procedures", helpOrientation:"General orientation",
   lblBio:"Short bio", bioPh:"e.g. Lived in Riyadh for 3 years, happy to help with Absher/Nafath setup...",
   buddyFormSubmit:"Publish my buddy profile", noBuddiesYet:"No buddies listed yet — be the first!", helpsWith:"Can help with",
-  videoLabel:"Room video (optional)", videoHint:"A short walkthrough gets far more replies than photos alone.", uploadingVideo:"Uploading video...",
+  videoLabel:"Room photo or video (optional)", videoHint:"A photo or a short walkthrough video gets far more replies.", uploadingVideo:"Uploading video...",
   qcTextLabel:"What's on your mind?", qcTextPh:"Share a tip that could help someone new...",
   qcImageLabel:"Add a photo (optional)", uploadingImage:"Uploading image...",
   viewAndAnswer:"View & answer", fromCommunity:"From Community",
@@ -152,7 +152,7 @@ ar: {
   lblHelpAreas:"بماذا يمكنك المساعدة؟", helpHousing:"إيجاد السكن", helpPaperwork:"الأوراق والإجراءات", helpOrientation:"التوجيه العام",
   lblBio:"نبذة قصيرة", bioPh:"مثال: أعيش في الرياض منذ 3 سنوات، يسعدني المساعدة في إعداد أبشر ونفاذ...",
   buddyFormSubmit:"نشر ملفي كرفيق", noBuddiesYet:"لا يوجد رفقاء بعد — كن الأول!", helpsWith:"يمكنه المساعدة في",
-  videoLabel:"فيديو الغرفة (اختياري)", videoHint:"جولة قصيرة بالفيديو تحصل على ردود أكثر بكثير من الصور فقط.", uploadingVideo:"جارٍ رفع الفيديو...",
+  videoLabel:"صورة أو فيديو للغرفة (اختياري)", videoHint:"صورة أو جولة قصيرة بالفيديو تحصل على ردود أكثر بكثير.", uploadingVideo:"جارٍ رفع الفيديو...",
   qcTextLabel:"ما الذي يدور في ذهنك؟", qcTextPh:"شارك نصيحة قد تفيد شخصاً جديداً...",
   qcImageLabel:"أضف صورة (اختياري)", uploadingImage:"جارٍ رفع الصورة...",
   viewAndAnswer:"عرض والإجابة", fromCommunity:"من المجتمع",
@@ -233,7 +233,7 @@ ur: {
   lblHelpAreas:"آپ کس چیز میں مدد کر سکتے ہیں؟", helpHousing:"رہائش تلاش کرنا", helpPaperwork:"کاغذی کارروائی اور طریقہ کار", helpOrientation:"عمومی رہنمائی",
   lblBio:"مختصر تعارف", bioPh:"مثلاً: 3 سال سے ریاض میں مقیم ہوں، ابشر/نفاذ سیٹ اپ میں مدد کے لیے تیار ہوں...",
   buddyFormSubmit:"میری ساتھی پروفائل شائع کریں", noBuddiesYet:"ابھی تک کوئی ساتھی نہیں — پہلے آپ بنیں!", helpsWith:"مدد کر سکتا ہے",
-  videoLabel:"کمرے کی ویڈیو (اختیاری)", videoHint:"ایک مختصر ویڈیو صرف تصاویر کے مقابلے میں کہیں زیادہ جوابات لاتی ہے۔", uploadingVideo:"ویڈیو اپ لوڈ ہو رہی ہے...",
+  videoLabel:"کمرے کی تصویر یا ویڈیو (اختیاری)", videoHint:"ایک تصویر یا مختصر ویڈیو کہیں زیادہ جوابات لاتی ہے۔", uploadingVideo:"ویڈیو اپ لوڈ ہو رہی ہے...",
   qcTextLabel:"آپ کے ذہن میں کیا ہے؟", qcTextPh:"ایک تجویز شیئر کریں جو کسی نئے شخص کے کام آئے...",
   qcImageLabel:"تصویر شامل کریں (اختیاری)", uploadingImage:"تصویر اپ لوڈ ہو رہی ہے...",
   viewAndAnswer:"دیکھیں اور جواب دیں", fromCommunity:"کمیونٹی سے",
@@ -2230,6 +2230,28 @@ document.getElementById('qcInquiryCatRow').addEventListener('click', e=>{
   document.querySelectorAll('#qcInquiryCatRow [data-qc-i-cat]').forEach(b=> b.classList.toggle('active', b===btn));
 });
 
+/* The post-images bucket only takes JPEG/PNG/WebP/GIF up to 5 MB (schema.sql
+   section 12), and phone cameras often produce bigger files or HEIC. Anything
+   outside that is redrawn as a JPEG no wider/taller than 1600 px. If the
+   browser can't decode it, the original goes up and Storage decides. */
+async function fitImageForUpload(file){
+  const okTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
+  if(okTypes.includes(file.type) && file.size <= 5 * 1024 * 1024) return file;
+  try{
+    const bitmap = await createImageBitmap(file);
+    const scale = Math.min(1, 1600 / Math.max(bitmap.width, bitmap.height));
+    const canvas = document.createElement('canvas');
+    canvas.width = Math.round(bitmap.width * scale);
+    canvas.height = Math.round(bitmap.height * scale);
+    canvas.getContext('2d').drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+    const blob = await new Promise(res => canvas.toBlob(res, 'image/jpeg', 0.85));
+    if(!blob) return file;
+    return new File([blob], file.name.replace(/\.[^.]*$/, '') + '.jpg', { type: 'image/jpeg' });
+  } catch(err){
+    return file;
+  }
+}
+
 function resetComposerFields(){
   document.getElementById('qc-text').value = '';
   document.getElementById('qc-image').value = '';
@@ -2296,7 +2318,12 @@ document.getElementById('btnSubmitQuickPost').addEventListener('click', async ()
     : natValue;
   const bills_included = document.getElementById('qc-bills').checked;
   const whatsapp = waDigits(document.getElementById('qc-wa').value);
-  const videoFile = document.getElementById('qc-video').files[0];
+  // The room field takes a photo or a video; photos go to the same bucket and
+  // column (media_url) that tips posts already use, videos keep listing-videos.
+  const roomFile = document.getElementById('qc-video').files[0];
+  const roomIsImage = !!(roomFile && roomFile.type.startsWith('image/'));
+  const videoFile = roomFile && !roomIsImage ? roomFile : null;
+  const roomImageFile = roomIsImage ? roomFile : null;
 
   if(isHousing && !rent){ document.getElementById('qc-rent').focus(); return; }
   if(isHousing && !whatsapp){ document.getElementById('qc-wa').focus(); return; }
@@ -2308,8 +2335,9 @@ document.getElementById('btnSubmitQuickPost').addEventListener('click', async ()
     if (!SUPABASE_CONFIGURED) {
       const localImageUrl = imageFile ? URL.createObjectURL(imageFile) : null;
       const localVideoUrl = videoFile ? URL.createObjectURL(videoFile) : null;
+      const localRoomImageUrl = roomImageFile ? URL.createObjectURL(roomImageFile) : null;
       listings.unshift(isHousing
-        ? { id:'local-'+Date.now(), posterUserId: appUser.id, postType: 'housing', city, rent, type: room_type, gender: gender_pref, nat: nationality_pref, bills: bills_included, desc: text || '—', by: appUser.name, wa: whatsapp, video: localVideoUrl }
+        ? { id:'local-'+Date.now(), posterUserId: appUser.id, postType: 'housing', city, rent, type: room_type, gender: gender_pref, nat: nationality_pref, bills: bills_included, desc: text || '—', by: appUser.name, wa: whatsapp, video: localVideoUrl, media: localRoomImageUrl }
         : { id:'local-'+Date.now(), posterUserId: appUser.id, postType: postedCategory, desc: text, by: appUser.name, media: localImageUrl });
       resetComposerFields();
       setPostedTypeChip(postedCategory);
@@ -2321,8 +2349,10 @@ document.getElementById('btnSubmitQuickPost').addEventListener('click', async ()
       let row;
       if (isHousing) {
         let video_url = null;
+        let room_media_url = null;
         if (videoFile) {
           const statusEl = document.getElementById('qcVideoUploadStatus');
+          statusEl.textContent = t('uploadingVideo');
           statusEl.style.display = 'block';
           const path = `${Date.now()}_${videoFile.name.replace(/[^a-zA-Z0-9.\-_]/g, '_')}`;
           const { error: uploadError } = await supabaseClient.storage.from('listing-videos').upload(path, videoFile);
@@ -2330,10 +2360,21 @@ document.getElementById('btnSubmitQuickPost').addEventListener('click', async ()
           if (uploadError) console.error('Error uploading video:', uploadError);
           else video_url = supabaseClient.storage.from('listing-videos').getPublicUrl(path).data.publicUrl;
         }
+        if (roomImageFile) {
+          const statusEl = document.getElementById('qcVideoUploadStatus');
+          statusEl.textContent = t('uploadingImage');
+          statusEl.style.display = 'block';
+          const photo = await fitImageForUpload(roomImageFile);
+          const path = `${Date.now()}_${photo.name.replace(/[^a-zA-Z0-9.\-_]/g, '_')}`;
+          const { error: uploadError } = await supabaseClient.storage.from('post-images').upload(path, photo);
+          statusEl.style.display = 'none';
+          if (uploadError) console.error('Error uploading image:', uploadError);
+          else room_media_url = supabaseClient.storage.from('post-images').getPublicUrl(path).data.publicUrl;
+        }
         row = {
           p_post_type: 'housing', p_city: city, p_rent: rent, p_room_type: room_type, p_gender_pref: gender_pref,
           p_nationality_pref: nationality_pref, p_bills_included: bills_included,
-          p_description: text || '—', p_whatsapp: whatsapp, p_video_url: video_url
+          p_description: text || '—', p_whatsapp: whatsapp, p_video_url: video_url, p_media_url: room_media_url
         };
       } else {
         let media_url = null;
