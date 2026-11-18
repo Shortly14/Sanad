@@ -463,6 +463,15 @@ end;
 $$;
 revoke execute on function sanad_session_user(text) from public, anon, authenticated;
 
+-- A room can have several photos (swiped sideways in the feed). media_url
+-- keeps the first one, so anything that only reads media_url still works.
+alter table housing_listings add column if not exists media_urls text[];
+
+-- create_listing gained p_media_urls. Adding a parameter makes a new
+-- function next to the old one, and two versions confuse the API, so the
+-- old 12-argument version is removed first. It holds no data.
+drop function if exists create_listing(text, text, text, text, int, text, text, text, boolean, text, text, text);
+
 create or replace function create_listing(
   p_session_token text,
   p_post_type text,
@@ -475,14 +484,15 @@ create or replace function create_listing(
   p_bills_included boolean default null,
   p_whatsapp text default null,
   p_video_url text default null,
-  p_media_url text default null
+  p_media_url text default null,
+  p_media_urls text[] default null
 )
 returns uuid
 language plpgsql
 security definer
 set search_path = public, extensions
 as $$
-declare v_user record; v_id uuid;
+declare v_user record; v_id uuid; v_url text;
 begin
   select * into v_user from sanad_session_user(p_session_token);
   if length(coalesce(p_description, '')) > 2000 then raise exception 'Text is too long'; end if;
@@ -498,11 +508,20 @@ begin
   if p_media_url is not null and p_media_url !~ '^https?://[^/"''<>\s]+/storage/v1/object/public/post-images/[A-Za-z0-9._-]+$' then
     raise exception 'Invalid image link';
   end if;
+  if coalesce(array_length(p_media_urls, 1), 0) > 10 then
+    raise exception 'Too many photos';
+  end if;
+  foreach v_url in array coalesce(p_media_urls, '{}'::text[]) loop
+    if v_url is null or v_url !~ '^https?://[^/"''<>\s]+/storage/v1/object/public/post-images/[A-Za-z0-9._-]+$' then
+      raise exception 'Invalid image link';
+    end if;
+  end loop;
 
   insert into housing_listings (post_type, city, rent, room_type, gender_pref, nationality_pref, bills_included,
-                                description, whatsapp, video_url, media_url, poster_role, poster_user_id)
+                                description, whatsapp, video_url, media_url, media_urls, poster_role, poster_user_id)
   values (p_post_type, p_city, p_rent, p_room_type, p_gender_pref, p_nationality_pref, p_bills_included,
-          p_description, p_whatsapp, p_video_url, p_media_url, v_user.name, v_user.id)
+          p_description, p_whatsapp, p_video_url, coalesce(p_media_url, p_media_urls[1]),
+          nullif(p_media_urls, '{}'::text[]), v_user.name, v_user.id)
   returning housing_listings.id into v_id;
   return v_id;
 end;
@@ -588,7 +607,7 @@ begin
 end;
 $$;
 
-grant execute on function create_listing(text, text, text, text, int, text, text, text, boolean, text, text, text) to anon, authenticated;
+grant execute on function create_listing(text, text, text, text, int, text, text, text, boolean, text, text, text, text[]) to anon, authenticated;
 grant execute on function create_forum_post(text, text, text) to anon, authenticated;
 grant execute on function create_forum_reply(text, uuid, text) to anon, authenticated;
 grant execute on function create_buddy(text, text[], text, text) to anon, authenticated;
