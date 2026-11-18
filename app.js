@@ -71,7 +71,8 @@ en: {
   lblHelpAreas:"What can you help with?", helpHousing:"Finding housing", helpPaperwork:"Paperwork & procedures", helpOrientation:"General orientation",
   lblBio:"Short bio", bioPh:"e.g. Lived in Riyadh for 3 years, happy to help with Absher/Nafath setup...",
   buddyFormSubmit:"Publish my buddy profile", noBuddiesYet:"No buddies listed yet — be the first!", helpsWith:"Can help with",
-  videoLabel:"Room photo or video (optional)", videoHint:"A photo or a short walkthrough video gets far more replies.", uploadingVideo:"Uploading video...",
+  videoLabel:"Room photos or video (optional)", videoHint:"Add up to 10 photos, or one short walkthrough video. Rooms with pictures get far more replies.", uploadingVideo:"Uploading video...",
+  uploadingPhotoN:"Uploading photo {n} of {total}...", photoN:"Photo {n}",
   qcTextLabel:"What's on your mind?", qcTextPh:"Share a tip that could help someone new...",
   qcImageLabel:"Add a photo (optional)", uploadingImage:"Uploading image...",
   viewAndAnswer:"View & answer", fromCommunity:"From Community",
@@ -152,7 +153,8 @@ ar: {
   lblHelpAreas:"بماذا يمكنك المساعدة؟", helpHousing:"إيجاد السكن", helpPaperwork:"الأوراق والإجراءات", helpOrientation:"التوجيه العام",
   lblBio:"نبذة قصيرة", bioPh:"مثال: أعيش في الرياض منذ 3 سنوات، يسعدني المساعدة في إعداد أبشر ونفاذ...",
   buddyFormSubmit:"نشر ملفي كرفيق", noBuddiesYet:"لا يوجد رفقاء بعد — كن الأول!", helpsWith:"يمكنه المساعدة في",
-  videoLabel:"صورة أو فيديو للغرفة (اختياري)", videoHint:"صورة أو جولة قصيرة بالفيديو تحصل على ردود أكثر بكثير.", uploadingVideo:"جارٍ رفع الفيديو...",
+  videoLabel:"صور أو فيديو للغرفة (اختياري)", videoHint:"أضف حتى 10 صور، أو فيديو قصيراً واحداً. الغرف التي فيها صور تحصل على ردود أكثر بكثير.", uploadingVideo:"جارٍ رفع الفيديو...",
+  uploadingPhotoN:"جارٍ رفع الصورة {n} من {total}...", photoN:"صورة {n}",
   qcTextLabel:"ما الذي يدور في ذهنك؟", qcTextPh:"شارك نصيحة قد تفيد شخصاً جديداً...",
   qcImageLabel:"أضف صورة (اختياري)", uploadingImage:"جارٍ رفع الصورة...",
   viewAndAnswer:"عرض والإجابة", fromCommunity:"من المجتمع",
@@ -233,7 +235,8 @@ ur: {
   lblHelpAreas:"آپ کس چیز میں مدد کر سکتے ہیں؟", helpHousing:"رہائش تلاش کرنا", helpPaperwork:"کاغذی کارروائی اور طریقہ کار", helpOrientation:"عمومی رہنمائی",
   lblBio:"مختصر تعارف", bioPh:"مثلاً: 3 سال سے ریاض میں مقیم ہوں، ابشر/نفاذ سیٹ اپ میں مدد کے لیے تیار ہوں...",
   buddyFormSubmit:"میری ساتھی پروفائل شائع کریں", noBuddiesYet:"ابھی تک کوئی ساتھی نہیں — پہلے آپ بنیں!", helpsWith:"مدد کر سکتا ہے",
-  videoLabel:"کمرے کی تصویر یا ویڈیو (اختیاری)", videoHint:"ایک تصویر یا مختصر ویڈیو کہیں زیادہ جوابات لاتی ہے۔", uploadingVideo:"ویڈیو اپ لوڈ ہو رہی ہے...",
+  videoLabel:"کمرے کی تصاویر یا ویڈیو (اختیاری)", videoHint:"زیادہ سے زیادہ 10 تصاویر، یا ایک مختصر ویڈیو شامل کریں۔ تصاویر والے کمروں کو کہیں زیادہ جوابات ملتے ہیں۔", uploadingVideo:"ویڈیو اپ لوڈ ہو رہی ہے...",
+  uploadingPhotoN:"تصویر {n} از {total} اپ لوڈ ہو رہی ہے...", photoN:"تصویر {n}",
   qcTextLabel:"آپ کے ذہن میں کیا ہے؟", qcTextPh:"ایک تجویز شیئر کریں جو کسی نئے شخص کے کام آئے...",
   qcImageLabel:"تصویر شامل کریں (اختیاری)", uploadingImage:"تصویر اپ لوڈ ہو رہی ہے...",
   viewAndAnswer:"دیکھیں اور جواب دیں", fromCommunity:"کمیونٹی سے",
@@ -682,7 +685,9 @@ async function fetchAndRenderListings(){
       by: l.poster_role,
       wa: l.whatsapp,
       video: l.video_url,
-      media: l.media_url
+      media: l.media_url,
+      // Rooms posted with several photos have them all here; older rows only have media_url.
+      mediaList: (Array.isArray(l.media_urls) && l.media_urls.length) ? l.media_urls : (l.media_url ? [l.media_url] : [])
     }));
 
     renderListings();
@@ -776,11 +781,19 @@ function buildFeedCardHtml(l, i){
   const wa = waDigits(l.wa);
   const typeTagKey = postType==='inquiry' ? 'chipInquiries' : postType==='guide' ? 'chipGuides' : 'chipHousing';
   const typeIcon = postType==='inquiry' ? chatIconSvg : postType==='guide' ? bulbIconSvg : houseIconSvg;
+  // Several photos become a sideways-swipe gallery (TikTok photo mode); the feed itself still scrolls up/down.
+  const photos = safeUrl(l.video) ? [] : (l.mediaList || []).map(safeUrl).filter(Boolean);
+  const isGallery = photos.length > 1;
   const mediaHtml = safeUrl(l.video)
     ? `<video class="feed-media" src="${safeUrl(l.video)}" muted loop playsinline></video>`
-    : (safeUrl(l.media) ? `<img class="feed-media" src="${safeUrl(l.media)}" alt="">` : `<div class="feed-placeholder feed-placeholder--${postType}">${typeIcon}</div>`);
+    : isGallery
+      ? `<div class="feed-gallery" data-gallery>${photos.map((u,n)=>`<img class="feed-gallery-img" src="${u}" alt="" ${n ? 'loading="lazy"' : ''}>`).join('')}</div>`
+      : (safeUrl(l.media) ? `<img class="feed-media" src="${safeUrl(l.media)}" alt="">` : `<div class="feed-placeholder feed-placeholder--${postType}">${typeIcon}</div>`);
+  const dotsHtml = isGallery
+    ? `<div class="feed-dots">${photos.map((u,n)=>`<button class="feed-dot${n ? '' : ' active'}" data-gallery-dot="${n}" aria-label="${escapeHtml(fmt('photoN', { n: n+1 }))}"></button>`).join('')}</div>`
+    : '';
   return `
-  <div class="feed-card" data-idx="${i}" data-like-key="${key}" data-listing-id="${key}">
+  <div class="feed-card${isGallery ? ' feed-card--gallery' : ''}" data-idx="${i}" data-like-key="${key}" data-listing-id="${key}">
     ${mediaHtml}
     <div class="feed-scrim"></div>
     <div class="feed-heart-burst" data-heart-burst></div>
@@ -795,6 +808,7 @@ function buildFeedCardHtml(l, i){
       ${isMine ? `<div><button class="del" data-delete-post="${key}" data-delete-kind="${isForumInquiry ? 'forum' : 'listing'}" aria-label="${t('deleteLabel')}">${trashIconSvg}</button><div class="lbl">${t('deleteLabel')}</div></div>` : ''}
     </div>
     <div class="feed-content">
+      ${dotsHtml}
       <div class="feed-handle">
         <button class="feed-handle-link" ${hasProfile ? `data-view-profile="${posterId}"` : 'disabled'}>
           <span class="feed-avatar-sm">${avatarLetter}</span>
@@ -900,6 +914,24 @@ function bindFeedCardEvents(wrap, filtered){
         burstHeart(card);
       }
       lastTap = now;
+    });
+  });
+
+  // Photo galleries: keep the dots in step with the swipe, and let a dot jump to its photo.
+  // In RTL the gallery scrolls the other way and scrollLeft runs from 0 to negative.
+  wrap.querySelectorAll('[data-gallery]').forEach(gallery=>{
+    const card = gallery.closest('.feed-card');
+    const dots = card.querySelectorAll('[data-gallery-dot]');
+    const rtl = ()=> getComputedStyle(gallery).direction === 'rtl';
+    gallery.addEventListener('scroll', ()=>{
+      const idx = Math.round(Math.abs(gallery.scrollLeft) / gallery.clientWidth);
+      dots.forEach((d,n)=> d.classList.toggle('active', n===idx));
+    }, { passive: true });
+    dots.forEach(dot=>{
+      dot.addEventListener('click', ()=>{
+        const n = parseInt(dot.getAttribute('data-gallery-dot'));
+        gallery.scrollTo({ left: n * gallery.clientWidth * (rtl() ? -1 : 1), behavior: 'smooth' });
+      });
     });
   });
 
@@ -2183,6 +2215,7 @@ document.getElementById('qcInquiryCatRow').addEventListener('click', e=>{
    section 12), and phone cameras often produce bigger files or HEIC. Anything
    outside that is redrawn as a JPEG no wider/taller than 1600 px. If the
    browser can't decode it, the original goes up and Storage decides. */
+const MAX_ROOM_PHOTOS = 10; // create_listing in schema.sql refuses more than this
 async function fitImageForUpload(file){
   const okTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
   if(okTypes.includes(file.type) && file.size <= 5 * 1024 * 1024) return file;
@@ -2267,12 +2300,12 @@ document.getElementById('btnSubmitQuickPost').addEventListener('click', async ()
     : natValue;
   const bills_included = document.getElementById('qc-bills').checked;
   const whatsapp = waDigits(document.getElementById('qc-wa').value);
-  // The room field takes a photo or a video; photos go to the same bucket and
-  // column (media_url) that tips posts already use, videos keep listing-videos.
-  const roomFile = document.getElementById('qc-video').files[0];
-  const roomIsImage = !!(roomFile && roomFile.type.startsWith('image/'));
-  const videoFile = roomFile && !roomIsImage ? roomFile : null;
-  const roomImageFile = roomIsImage ? roomFile : null;
+  // The room field takes up to 10 photos or one video. Photos go to the same bucket
+  // (post-images) that tips posts use; a video keeps listing-videos. If a video is
+  // among the picked files, that video is used and the photos are left out.
+  const roomFiles = Array.from(document.getElementById('qc-video').files || []);
+  const videoFile = roomFiles.find(f => !f.type.startsWith('image/')) || null;
+  const roomImageFiles = videoFile ? [] : roomFiles.slice(0, MAX_ROOM_PHOTOS);
 
   if(isHousing && !rent){ document.getElementById('qc-rent').focus(); return; }
   if(isHousing && !whatsapp){ document.getElementById('qc-wa').focus(); return; }
@@ -2284,9 +2317,9 @@ document.getElementById('btnSubmitQuickPost').addEventListener('click', async ()
     if (!SUPABASE_CONFIGURED) {
       const localImageUrl = imageFile ? URL.createObjectURL(imageFile) : null;
       const localVideoUrl = videoFile ? URL.createObjectURL(videoFile) : null;
-      const localRoomImageUrl = roomImageFile ? URL.createObjectURL(roomImageFile) : null;
+      const localRoomImageUrls = roomImageFiles.map(f => URL.createObjectURL(f));
       listings.unshift(isHousing
-        ? { id:'local-'+Date.now(), posterUserId: appUser.id, postType: 'housing', city, rent, type: room_type, gender: gender_pref, nat: nationality_pref, bills: bills_included, desc: text || '—', by: appUser.name, wa: whatsapp, video: localVideoUrl, media: localRoomImageUrl }
+        ? { id:'local-'+Date.now(), posterUserId: appUser.id, postType: 'housing', city, rent, type: room_type, gender: gender_pref, nat: nationality_pref, bills: bills_included, desc: text || '—', by: appUser.name, wa: whatsapp, video: localVideoUrl, media: localRoomImageUrls[0] || null, mediaList: localRoomImageUrls }
         : { id:'local-'+Date.now(), posterUserId: appUser.id, postType: postedCategory, desc: text, by: appUser.name, media: localImageUrl });
       resetComposerFields();
       setPostedTypeChip(postedCategory);
@@ -2298,7 +2331,7 @@ document.getElementById('btnSubmitQuickPost').addEventListener('click', async ()
       let row;
       if (isHousing) {
         let video_url = null;
-        let room_media_url = null;
+        const room_media_urls = [];
         if (videoFile) {
           const statusEl = document.getElementById('qcVideoUploadStatus');
           statusEl.textContent = t('uploadingVideo');
@@ -2309,22 +2342,26 @@ document.getElementById('btnSubmitQuickPost').addEventListener('click', async ()
           if (uploadError) console.error('Error uploading video:', uploadError);
           else video_url = supabaseClient.storage.from('listing-videos').getPublicUrl(path).data.publicUrl;
         }
-        if (roomImageFile) {
-          const statusEl = document.getElementById('qcVideoUploadStatus');
-          statusEl.textContent = t('uploadingImage');
+        const statusEl = document.getElementById('qcVideoUploadStatus');
+        for (let n = 0; n < roomImageFiles.length; n++) {
+          statusEl.textContent = roomImageFiles.length > 1 ? fmt('uploadingPhotoN', { n: n+1, total: roomImageFiles.length }) : t('uploadingImage');
           statusEl.style.display = 'block';
-          const photo = await fitImageForUpload(roomImageFile);
-          const path = `${Date.now()}_${photo.name.replace(/[^a-zA-Z0-9.\-_]/g, '_')}`;
+          const photo = await fitImageForUpload(roomImageFiles[n]);
+          // n keeps two photos picked in the same millisecond from sharing a name.
+          const path = `${Date.now()}_${n}_${photo.name.replace(/[^a-zA-Z0-9.\-_]/g, '_')}`;
           const { error: uploadError } = await supabaseClient.storage.from('post-images').upload(path, photo);
-          statusEl.style.display = 'none';
           if (uploadError) console.error('Error uploading image:', uploadError);
-          else room_media_url = supabaseClient.storage.from('post-images').getPublicUrl(path).data.publicUrl;
+          else room_media_urls.push(supabaseClient.storage.from('post-images').getPublicUrl(path).data.publicUrl);
         }
+        statusEl.style.display = 'none';
         row = {
           p_post_type: 'housing', p_city: city, p_rent: rent, p_room_type: room_type, p_gender_pref: gender_pref,
           p_nationality_pref: nationality_pref, p_bills_included: bills_included,
-          p_description: text || '—', p_whatsapp: whatsapp, p_video_url: video_url, p_media_url: room_media_url
+          p_description: text || '—', p_whatsapp: whatsapp, p_video_url: video_url, p_media_url: room_media_urls[0] || null
         };
+        // Only sent with 2+ photos, so one-photo and video rooms work even before
+        // schema.sql adds p_media_urls (see the fallback below).
+        if (room_media_urls.length > 1) row.p_media_urls = room_media_urls;
       } else {
         let media_url = null;
         if (imageFile) {
@@ -2340,7 +2377,14 @@ document.getElementById('btnSubmitQuickPost').addEventListener('click', async ()
       }
 
       // The server fills in poster_user_id / poster_role from the session token.
-      const { error } = await supabaseClient.rpc('create_listing', { p_session_token: appUser.sessionToken, ...row });
+      let { error } = await supabaseClient.rpc('create_listing', { p_session_token: appUser.sessionToken, ...row });
+      // A database that hasn't run the multi-photo schema.sql yet doesn't know
+      // p_media_urls (PGRST202). Publish with the first photo rather than not at all.
+      if (error && error.code === 'PGRST202' && row.p_media_urls) {
+        console.warn('Sanad: create_listing has no p_media_urls yet — run schema.sql. Publishing with the first photo only.');
+        delete row.p_media_urls;
+        ({ error } = await supabaseClient.rpc('create_listing', { p_session_token: appUser.sessionToken, ...row }));
+      }
 
       if (error) {
         console.error('Error publishing post:', error);
