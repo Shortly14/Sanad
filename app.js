@@ -94,7 +94,7 @@ en: {
   backBtn:"Back", loadingProfile:"Loading…", publicProfileUnavailable:"Profile not available",
   communityTabLeaderboard:"Top Helpers", leaderboardMonthLabel:"Top Helpers —",
   lbFilterAll:"Everyone", lbFilterOpenToWork:"Open to work", lbStatReplies:"replies", lbStatVotes:"upvotes",
-  noHelpersYet:"No one's earned this yet this month — answer a question to be the first!",
+  noHelpersYet:"No one's earned this yet this month — answer a question to be the first!", noQuestionsYet:"No questions yet — be the first to ask!",
   badgeTopHelper:"Top Helper this month", shareMyRank:"Share my rank",
   openToWorkToggleLabel:"Visible to employers looking to hire",
   openToWorkHint:"Turning this on shows your name and lets employers message you on WhatsApp from the Top Helpers list.",
@@ -175,7 +175,7 @@ ar: {
   backBtn:"رجوع", loadingProfile:"جارٍ التحميل…", publicProfileUnavailable:"الملف الشخصي غير متاح",
   communityTabLeaderboard:"الأكثر مساعدة", leaderboardMonthLabel:"الأكثر مساعدة —",
   lbFilterAll:"الجميع", lbFilterOpenToWork:"متاح للعمل", lbStatReplies:"ردود", lbStatVotes:"إعجابات",
-  noHelpersYet:"لم يحقق أحد هذا بعد هذا الشهر — أجب عن سؤال لتكون الأول!",
+  noHelpersYet:"لم يحقق أحد هذا بعد هذا الشهر — أجب عن سؤال لتكون الأول!", noQuestionsYet:"لا توجد أسئلة بعد — كن أول من يسأل!",
   badgeTopHelper:"الأكثر مساعدة هذا الشهر", shareMyRank:"شارك ترتيبي",
   openToWorkToggleLabel:"مرئي لأصحاب العمل الباحثين عن موظفين",
   openToWorkHint:"تفعيل هذا يُظهر اسمك ويسمح لأصحاب العمل بمراسلتك عبر واتساب من قائمة الأكثر مساعدة.",
@@ -256,7 +256,7 @@ ur: {
   backBtn:"واپس", loadingProfile:"لوڈ ہو رہا ہے…", publicProfileUnavailable:"پروفائل دستیاب نہیں",
   communityTabLeaderboard:"ٹاپ ہیلپرز", leaderboardMonthLabel:"ٹاپ ہیلپرز —",
   lbFilterAll:"سب", lbFilterOpenToWork:"کام کے لیے دستیاب", lbStatReplies:"جوابات", lbStatVotes:"اپووٹس",
-  noHelpersYet:"اس مہینے ابھی تک کسی نے یہ حاصل نہیں کیا — پہلا بننے کے لیے کسی سوال کا جواب دیں!",
+  noHelpersYet:"اس مہینے ابھی تک کسی نے یہ حاصل نہیں کیا — پہلا بننے کے لیے کسی سوال کا جواب دیں!", noQuestionsYet:"ابھی تک کوئی سوال نہیں — پہلا سوال آپ پوچھیں!",
   badgeTopHelper:"اس مہینے کا ٹاپ ہیلپر", shareMyRank:"میری رینک شیئر کریں",
   openToWorkToggleLabel:"ملازمت دینے والوں کو نظر آئیں",
   openToWorkHint:"اسے آن کرنے سے آپ کا نام نظر آئے گا اور آجر ٹاپ ہیلپرز لسٹ سے آپ کو واٹس ایپ پر پیغام بھیج سکیں گے۔",
@@ -423,65 +423,19 @@ ur: [
 };
 
 /* ============================= Housing listings ============================= */
-/* Placeholder data shown briefly while the real rows load from Supabase (see fetchAndRenderListings). */
-let listings = [
- {id:"demo-1", city:"Riyadh", rent:550, type:"shared", gender:"male", nat:"Any", bills:true,
-  desc:"3-bedroom flat near Olaya, 15 min walk to metro. 2 flatmates already, both Pakistani. Kitchen shared, AC in every room.",
-  by:"Owner", wa:"966501234567"},
- {id:"demo-2", city:"Jeddah", rent:700, type:"private", gender:"any", nat:"Filipino", bills:false,
-  desc:"Private room in Al Rawdah, close to Corniche. Bills split evenly between 4 tenants. Prefer Filipino or Southeast Asian tenant.",
-  by:"Tenant", wa:"966502345678"},
- {id:"demo-3", city:"Dammam/Khobar", rent:450, type:"bed", gender:"male", nat:"Indian", bills:true,
-  desc:"Bed space in shared labor accommodation near Khobar Corniche, 6 beds total, cleaning rota in place, water and electricity included.",
-  by:"Tenant", wa:"966503456789"},
- {id:"demo-4", city:"Makkah", rent:900, type:"private", gender:"female", nat:"Arab", bills:true,
-  desc:"Furnished private room for a working woman, close to Haram bus route. Quiet building, Arabic-speaking flatmates preferred.",
-  by:"Owner", wa:"966504567890"},
- {id:"demo-5", city:"Madinah", rent:600, type:"shared", gender:"any", nat:"Any", bills:false,
-  desc:"Shared room available near King Fahd road, 2 people currently, open to any nationality. Bills split monthly by usage.",
-  by:"Tenant", wa:"966505678901"},
- {id:"demo-6", city:"Hail", rent:400, type:"bed", gender:"male", nat:"Bangladeshi", bills:true,
-  desc:"Simple bed space, factory workers' housing block, walking distance to industrial area. All utilities included in rent.",
-  by:"Owner", wa:"966506789012"},
- {id:"demo-7", city:"Riyadh", rent:1100, type:"private", gender:"any", nat:"Any", bills:true,
-  desc:"Modern private room in a new building near King Fahd Road, gym access included, professional flatmates, all bills covered.",
-  by:"Owner", wa:"966507890123"},
- {id:"demo-8", city:"Jeddah", rent:520, type:"shared", gender:"male", nat:"Indian", bills:true,
-  desc:"Shared room close to Al Balad, 3 Indian flatmates, walking distance to bus stop, water and electricity included in rent.",
-  by:"Tenant", wa:"966508901234"}
-];
+/* Filled from Supabase by fetchAndRenderListings. Starts empty: the old demo rooms (with made-up
+   WhatsApp numbers) showed up as real posts whenever the server was slow or unreachable. */
+let listings = [];
 
 /* ============================= Forum data ============================= */
-/* Placeholder data shown briefly while the real rows load from Supabase (see fetchAndRenderForum). */
-let forumPosts = [
- {cat:"Housing", q:"Can I share an Iqama address with roommates who aren't my family?", by:"New in Riyadh", votes:14,
-  replies:["Yes, many shared flats register the lease under one tenant's name — just make sure your municipal address on Absher matches where you actually live.",
-   "We did this for 2 years in Jeddah, no issues, just keep a copy of the rent agreement in case anyone asks."]},
- {cat:"Legal", q:"My employer is delaying my Iqama renewal — what should I do?", by:"Worried_Worker", votes:22,
-  replies:["Check your Iqama status directly on Muqeem first. If it's genuinely overdue, you can raise it through Qiwa's labor complaint feature."]},
- {cat:"Jobs", q:"Is it normal for a new employer to ask for a fee to process my transfer?", by:"Fahad_K", votes:31,
-  replies:["No — transfer of sponsorship fees paid by the worker are not standard practice. Verify everything through Qiwa directly rather than a middleman.",
-   "Be cautious, this is a common scam pattern. Ask your new employer to handle it officially."]},
- {cat:"General life", q:"Best way to send money home without high fees?", by:"RemitteeRiyadh", votes:18,
-  replies:["Compare rates between your bank's app and licensed remittance companies — rates change weekly, so check both before sending."]},
- {cat:"Housing", q:"Any tips for finding female-only shared housing in Makkah?", by:"Amina_S", votes:9,
-  replies:["Ask around at your workplace first — most listings for women-only flats circulate by word of mouth before they're posted anywhere."]},
- {cat:"Legal", q:"Do I need Nafath to open a bank account or just Absher?", by:"NewArrival22", votes:12,
-  replies:["You'll likely need both — Absher registration first, then Nafath for identity verification at the bank or in their app."]},
- {cat:"Jobs", q:"How long does a standard Qiwa contract transfer usually take?", by:"Sana_T", votes:7,
-  replies:["It varies, but once both employers confirm on Qiwa it's often processed within a couple of weeks. Follow up directly on the platform."]},
- {cat:"General life", q:"Which is cheaper for a first month — hotel or shared bed space?", by:"JustLanded", votes:15,
-  replies:["Bed space, by far, if you can find one through a trusted contact — hotels add up fast in the first two weeks."]}
-];
+/* Filled from Supabase by fetchAndRenderForum. Starts empty, like listings above. */
+let forumPosts = [];
 /* Reply ids the signed-in user has already upvoted this session (see fetchAndRenderForum). */
 let myReplyVotes = new Set();
 
 /* ============================= Buddies ============================= */
-/* Placeholder data shown briefly while the real rows load from Supabase (see fetchAndRenderBuddies). */
-let buddies = [
- {name:"Waseem A.", help:["Housing","Paperwork"], bio:"3 years in Riyadh, happy to help with Absher/Nafath setup and finding shared housing near Olaya.", wa:"966509012345"},
- {name:"Grace M.", help:["Orientation","Housing"], bio:"Been in Jeddah for 2 years, know the ropes around Al Balad and Corniche housing options.", wa:"966509123456"}
-];
+/* Filled from Supabase by fetchAndRenderBuddies. Starts empty, like listings above. */
+let buddies = [];
 
 /* ============================= Local persistence: likes & saves ============================= */
 /* Liking/saving never requires an account — kept in this browser only, exactly like a "downloaded to
@@ -751,15 +705,10 @@ const trashIconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
 const upvoteIconSvg ='<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 5l7 8H5l7-8z"/></svg>';
 const badgeIconSvg = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 5.6L21 8.5l-4.5 4.2L17.6 19 12 15.8 6.4 19l1.1-6.3L3 8.5l6.4-.9L12 2z"/></svg>';
 
-/* Deterministic "since forever" like counts so a listing's number doesn't jump on
-   every re-render — same feel as TikTok's counter without needing a backend. */
-function seedFromString(str){
-  let h = 0;
-  for(let i=0;i<str.length;i++){ h = (h*31 + str.charCodeAt(i)) >>> 0; }
-  return h;
-}
-function baseLikeCount(l){
-  return 40 + (seedFromString(l.city + l.rent + l.desc) % 260);
+/* Likes are kept only in this browser (see LIKED_STORAGE_KEY), so the only
+   honest count is this phone's own like: 1 or 0. */
+function likeCount(l, liked){
+  return liked ? 1 : 0;
 }
 function formatCount(n){
   return n >= 1000 ? (n/1000).toFixed(1).replace(/\.0$/,'') + 'k' : String(n);
@@ -819,7 +768,7 @@ function buildFeedCardHtml(l, i){
   const key = escapeHtml(l.id);
   const liked = !!state.feedLikes[key];
   const saved = !!state.feedSaves[key];
-  const count = baseLikeCount(l) + (liked ? 1 : 0);
+  const count = likeCount(l, liked);
   const hasProfile = !!l.posterUserId;
   const isMine = !!(appUser && l.posterUserId && l.posterUserId === appUser.id);
   const avatarLetter = escapeHtml(String(isHousing ? l.city : (l.by || l.city || '?')).charAt(0).toUpperCase());
@@ -912,7 +861,7 @@ function bindFeedCardEvents(wrap, filtered){
     if(btn){ btn.classList.toggle('active', liked); btn.setAttribute('aria-pressed', String(liked)); }
     if(lbl){
       const listing = filtered.find(l=> l.id === key);
-      if(listing) lbl.textContent = formatCount(baseLikeCount(listing) + (liked?1:0));
+      if(listing) lbl.textContent = formatCount(likeCount(listing, liked));
     }
   }
   function burstHeart(card){
@@ -1066,7 +1015,7 @@ function renderForum(){
       <div class="feed-card feed-card--empty">
         <div class="feed-placeholder feed-placeholder--inquiry">${chatIconSvg}</div>
         <div class="feed-empty">
-          <strong>${t('noHelpersYet')}</strong>
+          <strong>${t('noQuestionsYet')}</strong>
         </div>
       </div>`;
   } else {
