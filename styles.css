@@ -567,6 +567,17 @@
   }
   .feed-placeholder--guide svg{width:72px;height:72px;stroke:rgba(255,196,74,0.65);}
   .feed-scrim{position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(0,0,0,0.75) 100%);}
+  /* Several room photos: swipe sideways inside the card, the feed still scrolls up/down. */
+  .feed-gallery{
+    position:absolute;inset:0;display:flex;overflow-x:auto;overflow-y:hidden;
+    scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;
+  }
+  .feed-gallery::-webkit-scrollbar{display:none;}
+  .feed-gallery-img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;scroll-snap-align:start;scroll-snap-stop:always;}
+  .feed-card--gallery .feed-scrim{pointer-events:none;} /* let swipes reach the gallery underneath */
+  .feed-dots{display:flex;gap:6px;justify-content:center;margin-bottom:10px;}
+  .feed-dot{width:7px;height:7px;padding:0;border:none;border-radius:50%;background:currentColor;opacity:.35;transition:opacity .2s, transform .2s;cursor:pointer;}
+  .feed-dot.active{opacity:1;transform:scale(1.25);}
   .feed-mute{
     position:absolute;top:calc(14px + env(safe-area-inset-top));inset-inline-start:14px;
     width:32px;height:32px;border-radius:50%;z-index:3;
