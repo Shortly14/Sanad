@@ -88,7 +88,7 @@ en: {
   filtersLabel:"Filters", filtersReset:"Reset", filtersShow:"Show results",
   lblBudget:"Budget per month", lblNatShort:"Nationality", lblGenderShort:"Gender",
   noListingsTitle:"No rooms match these filters", noListingsSub:"Try a wider budget, or clear a filter or two.",
-  soundTicker:"Original sound · Sanad Housing", likeLabel:"Like", saveLabel:"Save",
+  likeLabel:"Like", saveLabel:"Save",
   deleteLabel:"Delete", deleteConfirm:"Delete this for good? This can't be undone.", deleteFailed:"Couldn't delete this. Check your connection, or sign out and sign in again, then try once more.", removeBuddyProfile:"Remove my buddy profile",
   statMyListings:"Listings", statMyQuestions:"Questions", statMyClicks:"Link clicks",
   tabMyPosts:"Posts", tabLiked:"Liked", memberSince:"Member since", memberFallback:"Member",
@@ -171,7 +171,7 @@ ar: {
   filtersLabel:"الفلاتر", filtersReset:"مسح", filtersShow:"عرض النتائج",
   lblBudget:"الميزانية بالشهر", lblNatShort:"الجنسية", lblGenderShort:"الجنس",
   noListingsTitle:"لا توجد غرف مطابقة لهذه الفلاتر", noListingsSub:"جرّب ميزانية أوسع أو أزل فلتراً أو اثنين.",
-  soundTicker:"صوت أصلي · سند للإسكان", likeLabel:"إعجاب", saveLabel:"احفظ",
+  likeLabel:"إعجاب", saveLabel:"احفظ",
   deleteLabel:"حذف", deleteConfirm:"هل تريد حذف هذا نهائيًا؟ لا يمكن التراجع عن ذلك.", deleteFailed:"تعذّر الحذف. تحقّق من اتصالك، أو سجّل الخروج ثم سجّل الدخول من جديد، وحاول مرة أخرى.", removeBuddyProfile:"إزالة ملفي كرفيق",
   statMyListings:"الإعلانات", statMyQuestions:"الأسئلة", statMyClicks:"نقرات الروابط",
   tabMyPosts:"إعلاناتي", tabLiked:"أعجبني", memberSince:"عضو منذ", memberFallback:"عضو",
@@ -254,7 +254,7 @@ ur: {
   filtersLabel:"فلٹرز", filtersReset:"ری سیٹ", filtersShow:"نتائج دیکھیں",
   lblBudget:"ماہانہ بجٹ", lblNatShort:"قومیت", lblGenderShort:"صنف",
   noListingsTitle:"ان فلٹرز سے کوئی کمرہ نہیں ملا", noListingsSub:"بجٹ بڑھائیں یا ایک دو فلٹر ہٹا دیں۔",
-  soundTicker:"اصل آواز · سند ہاؤسنگ", likeLabel:"پسند", saveLabel:"محفوظ کریں",
+  likeLabel:"پسند", saveLabel:"محفوظ کریں",
   deleteLabel:"حذف کریں", deleteConfirm:"کیا اسے ہمیشہ کے لیے حذف کر دیں؟ یہ واپس نہیں ہو سکتا۔", deleteFailed:"حذف نہیں ہو سکا۔ اپنا کنکشن چیک کریں، یا سائن آؤٹ کر کے دوبارہ سائن اِن کریں، پھر ایک بار اور کوشش کریں۔", removeBuddyProfile:"میری ساتھی پروفائل ہٹائیں",
   statMyListings:"لسٹنگز", statMyQuestions:"سوالات", statMyClicks:"لنک کلکس",
   tabMyPosts:"پوسٹس", tabLiked:"پسندیدہ", memberSince:"رکن بننے کی تاریخ", memberFallback:"رکن",
@@ -716,7 +716,6 @@ const shareIconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
 const houseIconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10l9-7 9 7"/><path d="M5 9v11h14V9"/></svg>';
 const heartIconSvg = '<svg viewBox="0 0 24 24"><path d="M12 21s-7.2-4.6-10-9.1C.5 8.6 1.8 5 5.3 4.1c2-.5 4 .3 5.2 2 .4.5.7 1 1 1.6.3-.6.6-1.1 1-1.6 1.2-1.7 3.2-2.5 5.2-2 3.5.9 4.8 4.5 3.3 7.8-2.8 4.5-10 9.1-10 9.1z"/></svg>';
 const bookmarkIconSvg = '<svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4.5L6 21V3z"/></svg>';
-const noteIconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>';
 const chatIconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 01-8.5 8.5c-1.35 0-2.61-.34-3.7-.94L3 21l1.94-5.8A8.5 8.5 0 1121 11.5z"/></svg>';
 const bulbIconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a6 6 0 00-3.5 10.9c.5.4.8 1 .8 1.6V16h5.4v-1.5c0-.6.3-1.2.8-1.6A6 6 0 0012 2z"/></svg>';
 const trashIconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M10 11v6M14 11v6"/><path d="M6 7l1 13h10l1-13"/><path d="M9 7V4h6v3"/></svg>';
@@ -798,57 +797,89 @@ function buildFeedCardHtml(l, i){
   // Several photos become a sideways-swipe gallery (TikTok photo mode); the feed itself still scrolls up/down.
   const photos = safeUrl(l.video) ? [] : (l.mediaList || []).map(safeUrl).filter(Boolean);
   const isGallery = photos.length > 1;
+  // Each photo or video sits in a .feed-slide. Once its size is known, fitFeedMedia() shows a
+  // landscape room photo whole (over a blurred copy of itself) instead of cropping its sides away.
+  const slide = (u, lazy) => `<div class="feed-slide"><img class="feed-backdrop" src="${u}" alt="" aria-hidden="true" draggable="false" ${lazy ? 'loading="lazy"' : ''}><img class="feed-media" data-fit-media src="${u}" alt="" draggable="false" ${lazy ? 'loading="lazy"' : ''}></div>`;
   const mediaHtml = safeUrl(l.video)
-    ? `<video class="feed-media" src="${safeUrl(l.video)}" muted loop playsinline></video>`
+    ? `<div class="feed-slide feed-slide--video"><video class="feed-media" data-fit-media src="${safeUrl(l.video)}" muted loop playsinline preload="metadata"></video></div>`
     : isGallery
-      ? `<div class="feed-gallery" data-gallery>${photos.map((u,n)=>`<img class="feed-gallery-img" src="${u}" alt="" draggable="false" ${n ? 'loading="lazy"' : ''}>`).join('')}</div>`
-      : (safeUrl(l.media) ? `<img class="feed-media" src="${safeUrl(l.media)}" alt="">` : `<div class="feed-placeholder feed-placeholder--${postType}">${typeIcon}</div>`);
+      ? `<div class="feed-gallery" data-gallery>${photos.map((u,n)=> slide(u, n > 0)).join('')}</div>`
+      : (safeUrl(l.media) ? slide(safeUrl(l.media), false) : `<div class="feed-placeholder feed-placeholder--${postType}">${typeIcon}</div>`);
   const dotsHtml = isGallery
     ? `<div class="feed-dots"><button class="feed-gallery-nav" data-gallery-step="-1" aria-label="${t('prevPhoto')}" disabled>${chevronIconSvg}</button>${photos.map((u,n)=>`<button class="feed-dot${n ? '' : ' active'}" data-gallery-dot="${n}" aria-label="${escapeHtml(fmt('photoN', { n: n+1 }))}"></button>`).join('')}<button class="feed-gallery-nav feed-gallery-nav--next" data-gallery-step="1" aria-label="${t('nextPhoto')}">${chevronIconSvg}</button></div>`
     : '';
+  // Rooms saved without a description store "—"; don't spend a line of the card on it.
+  const desc = String(l.desc || '').trim();
+  const hasDesc = desc !== '' && desc !== '—';
+  // Only tags that say something: "any gender" and "any nationality" are left out.
+  const roomTags = isHousing ? [
+    (l.gender && l.gender !== 'any') ? t(genderLabelKey[l.gender] || l.gender) : null,
+    (l.nat && l.nat !== 'Any') ? l.nat : null,
+    l.bills ? t('billsIncluded') : t('billsShared')
+  ].filter(Boolean) : [];
   return `
-  <div class="feed-card${isGallery ? ' feed-card--gallery' : ''}" data-idx="${i}" data-like-key="${key}" data-listing-id="${key}">
+  <div class="feed-card${isGallery ? ' feed-card--gallery' : ''}${isHousing ? ' feed-card--room' : ''}" data-idx="${i}" data-like-key="${key}" data-listing-id="${key}">
     ${mediaHtml}
     <div class="feed-scrim"></div>
     <div class="feed-heart-burst" data-heart-burst></div>
     ${safeUrl(l.video) ? `<button class="feed-mute" data-mute-toggle="${i}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 9v6h4l5 4V5l-5 4H5z"/><path d="M17 9a3 3 0 010 6" stroke-opacity="0.4"/></svg></button>` : ''}
     <div class="feed-rail">
-      <button class="feed-avatar-wrap" ${hasProfile ? `data-view-profile="${posterId}"` : 'disabled'}><div class="feed-avatar">${avatarLetter}</div></button>
-      <div><button class="lk ${liked?'active':''}" data-like="${key}" aria-pressed="${liked}">${heartIconSvg}</button><div class="lbl" data-like-count="${key}">${formatCount(count)}</div></div>
-      ${wa ? `<div><button class="wa" data-wa="${wa}">${waIconSvg}</button><div class="lbl">${t('contactWA')}</div></div>` : ''}
+      <div><button class="lk ${liked?'active':''}" data-like="${key}" aria-pressed="${liked}" aria-label="${t('likeLabel')}">${heartIconSvg}</button><div class="lbl" data-like-count="${key}">${formatCount(count)}</div></div>
+      ${wa ? `<div><button class="wa" data-wa="${wa}" aria-label="${t('contactWA')}">${waIconSvg}</button><div class="lbl">${t('contactWA')}</div></div>` : ''}
       ${isForumInquiry ? `<div><button class="ans" data-view-forum-post="${l.forumIndex}">${chatIconSvg}</button><div class="lbl">${t('viewAndAnswer')}</div></div>` : ''}
-      <div><button class="sv ${saved?'active':''}" data-save="${key}" aria-pressed="${saved}">${bookmarkIconSvg}</button><div class="lbl">${t('saveLabel')}</div></div>
-      <div><button class="sh" data-share-listing-id="${key}">${shareIconSvg}</button><div class="lbl">${t('shareLabel')}</div></div>
+      <div><button class="sv ${saved?'active':''}" data-save="${key}" aria-pressed="${saved}" aria-label="${t('saveLabel')}">${bookmarkIconSvg}</button><div class="lbl">${t('saveLabel')}</div></div>
+      <div><button class="sh" data-share-listing-id="${key}" aria-label="${t('shareLabel')}">${shareIconSvg}</button><div class="lbl">${t('shareLabel')}</div></div>
       ${isMine ? `<div><button class="del" data-delete-post="${key}" data-delete-kind="${isForumInquiry ? 'forum' : 'listing'}" aria-label="${t('deleteLabel')}">${trashIconSvg}</button><div class="lbl">${t('deleteLabel')}</div></div>` : ''}
     </div>
     <div class="feed-content">
       ${dotsHtml}
+      ${isHousing ? `
+      <div class="feed-title-row">
+        <h3>${escapeHtml(t(roomTypeLabelKey[l.type] || l.type))} · ${escapeHtml(l.city)}</h3>
+        <span class="feed-price-pill">${escapeHtml(l.rent)} ${t('sarLabel')}${t('perMonth')}</span>
+      </div>` : ''}
       <div class="feed-handle">
         <button class="feed-handle-link" ${hasProfile ? `data-view-profile="${posterId}"` : 'disabled'}>
           <span class="feed-avatar-sm">${avatarLetter}</span>
-          <span class="handle-name">${t('postedBy')} ${escapeHtml(l.by)}</span>
+          <span class="handle-name">${isHousing ? '' : t('postedBy') + ' '}${escapeHtml(l.by)}</span>
         </button>
         ${isHousing
-          ? `<span class="feed-price-pill">${escapeHtml(l.rent)} ${t('sarLabel')}${t('perMonth')}</span>`
+          ? roomTags.map(tag=>`<span class="feed-tag">${escapeHtml(tag)}</span>`).join('')
           : isForumInquiry
             ? `<span class="feed-price-pill feed-price-pill--muted">${chatIconSvg}${l.repliesCount}</span>`
             : `<span class="feed-tag">${t(typeTagKey)}</span>`}
       </div>
-      ${isHousing ? `<h3>${escapeHtml(t(roomTypeLabelKey[l.type] || l.type))} · ${escapeHtml(l.city)}</h3>` : ''}
-      <p class="feed-desc${isHousing ? '' : ' feed-desc--quote'}">${escapeHtml(l.desc)}</p>
-      ${isHousing ? `
-      <div class="feed-tag-row">
-        <span class="feed-tag">#${escapeHtml(String(t(genderLabelKey[l.gender] || l.gender)).replace(/\s+/g,''))}</span>
-        <span class="feed-tag">#${escapeHtml(String(l.nat==='Any' ? t('natAny') : l.nat).replace(/\s+/g,''))}</span>
-        <span class="feed-tag">#${(l.bills ? t('billsIncluded') : t('billsShared')).replace(/\s+/g,'')}</span>
-      </div>` : isForumInquiry
+      ${hasDesc ? `<p class="feed-desc${isHousing ? '' : ' feed-desc--quote'}" ${isHousing ? 'data-desc-toggle' : ''}>${escapeHtml(desc)}</p>` : ''}
+      ${isForumInquiry
         ? `<div class="feed-tag-row"><span class="feed-tag">${t('fromCommunity')}</span></div>`
-        : (l.natTarget ? `<div class="feed-tag-row"><span class="feed-tag">#${escapeHtml(l.natTarget.replace(/\s+/g,''))}</span></div>` : '')}
-      <div class="feed-sound"><span class="feed-sound-ic">${noteIconSvg}</span><span class="feed-sound-track"><span>${t('soundTicker')}</span><span>${t('soundTicker')}</span></span></div>
+        : (!isHousing && l.natTarget ? `<div class="feed-tag-row"><span class="feed-tag">#${escapeHtml(l.natTarget.replace(/\s+/g,''))}</span></div>` : '')}
     </div>
   </div>
 `;
 }
+
+/* Cover the card when that crops little (a tall phone photo or video); otherwise show the whole
+   photo or video. Room photos are usually landscape or 4:3, and cropping them to a tall phone
+   screen hid most of the room. */
+function fitFeedMedia(el){
+  const w = el.naturalWidth || el.videoWidth, h = el.naturalHeight || el.videoHeight;
+  const slide = el.closest('.feed-slide');
+  if(!w || !h || !slide || !slide.clientWidth || !slide.clientHeight) return;
+  const mediaRatio = w / h, boxRatio = slide.clientWidth / slide.clientHeight;
+  // Share of the photo that cover would cut off, on whichever side overflows.
+  const cut = mediaRatio > boxRatio ? 1 - boxRatio / mediaRatio : 1 - mediaRatio / boxRatio;
+  slide.dataset.fit = cut > 0.2 ? 'contain' : 'cover';
+}
+function bindFeedMediaFit(wrap){
+  wrap.querySelectorAll('[data-fit-media]').forEach(el=>{
+    const run = ()=> fitFeedMedia(el);
+    if(el.tagName === 'VIDEO'){
+      if(el.readyState >= 1) run(); else el.addEventListener('loadedmetadata', run, { once:true });
+    } else if(el.complete && el.naturalWidth){ run(); }
+    else el.addEventListener('load', run, { once:true });
+  });
+}
+window.addEventListener('resize', ()=> document.querySelectorAll('[data-fit-media]').forEach(fitFeedMedia));
 
 /* Wires up whatever a feed-scroll container of .feed-card elements needs — shared
    by the Feed's listingsGrid and Community's forumFeedScroll. */
@@ -917,19 +948,32 @@ function bindFeedCardEvents(wrap, filtered){
       btn.setAttribute('aria-pressed', String(nowSaved));
     });
   });
-  let lastTap = 0;
+  // One tap hides the card's text and buttons so the whole photo or video can be seen, and the
+  // next tap brings them back. A second tap within 320ms is a double tap, which likes instead.
+  let lastTap = 0, tapTimer = null;
   wrap.querySelectorAll('.feed-card[data-like-key]').forEach(card=>{
     card.addEventListener('click', (e)=>{
       if(e.target.closest('button')) return; // real controls handle their own taps
+      if(e.target.closest('[data-desc-toggle]')) return; // tapping the description opens it
+      if(Date.now() - (card._draggedAt || 0) < 400) return; // end of a mouse drag in a gallery
       const now = Date.now();
       if(now - lastTap < 320){
+        clearTimeout(tapTimer);
+        lastTap = 0;
         const key = card.getAttribute('data-like-key');
         setLiked(card, key, true);
         burstHeart(card);
+        return;
       }
       lastTap = now;
+      clearTimeout(tapTimer);
+      tapTimer = setTimeout(()=> card.classList.toggle('feed-card--clean'), 320);
     });
   });
+  wrap.querySelectorAll('[data-desc-toggle]').forEach(p=>{
+    p.addEventListener('click', ()=> p.classList.toggle('open'));
+  });
+  bindFeedMediaFit(wrap);
 
   // Photo galleries: keep the dots in step with the swipe, and let a dot jump to its photo.
   // In RTL the gallery scrolls the other way and scrollLeft runs from 0 to negative.
@@ -964,6 +1008,7 @@ function bindFeedCardEvents(wrap, filtered){
       const dx = e.clientX - dragX;
       dragX = null;
       if(Math.abs(dx) < 40) return; // a click or double-click, not a drag
+      card._draggedAt = Date.now();
       const forward = (dx < 0) !== rtl(); // dragging toward the reading start moves forward
       goTo(current() + (forward ? 1 : -1));
     });
