@@ -418,14 +418,14 @@
             <span class="composer-field-ic"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.001 3C9.096 3 3.5 8.596 3.5 15.5c0 2.34.63 4.53 1.73 6.42L3 29l7.27-2.19a12.4 12.4 0 005.73 1.4c6.905 0 12.5-5.596 12.5-12.5S22.906 3 16.001 3z"/></svg></span>
             <span data-i18n="lblWhatsapp">WhatsApp number</span>
           </div>
-          <input type="text" id="qc-wa" class="composer-plain-input" placeholder="+966 5x xxx xxxx">
+          <div class="composer-wa-row" dir="ltr">
+            <span class="composer-wa-prefix">+966</span>
+            <input type="tel" id="qc-wa" class="composer-plain-input" inputmode="numeric" autocomplete="tel-national" placeholder="5XXXXXXXX">
+          </div>
         </div>
 
-        <button class="composer-advanced-toggle" id="qcToggleAdvanced" type="button">
-          <span data-i18n="qcAdvancedToggle">Add more details (optional)</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div id="qcAdvancedFields" style="display:none;">
+        <p class="composer-field-label composer-more-title" data-i18n="qcMoreDetails">More details (optional)</p>
+        <div id="qcAdvancedFields">
           <div class="field-row">
             <div class="field">
               <label data-i18n="lblRoomType">Room type</label>
