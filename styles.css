@@ -229,6 +229,12 @@
     padding:10px 12px;font-size:13px;color:var(--ink);font-family:var(--font-body);
   }
   .field textarea{resize:vertical;min-height:64px;}
+  /* On iPhone, tapping a text box whose text is smaller than 16px zooms the whole page in, and
+     it often stays zoomed and shifted after typing, with buttons pushed off screen. 16px on
+     touch screens stops the zoom. (The big rent number is already larger.) */
+  @media (pointer:coarse){
+    input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not(#qc-rent), select, textarea{font-size:16px !important;}
+  }
   .field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
   .toggle-row{display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.04);border:1px solid var(--line);border-radius:var(--radius-sm);padding:10px 12px;margin-bottom:12px;}
   .toggle-row span{font-size:12.5px;color:var(--ink-soft);font-weight:600;}
@@ -268,6 +274,10 @@
     overflow-y:auto;
   }
   .quick-composer-scrim.open{display:block;position:fixed;inset:0;z-index:95;background:rgba(0,0,0,0.6);}
+  /* While a full-screen layer is open, swipes stay in it: the page behind used to scroll along,
+     so after closing it the page was somewhere else. */
+  .composer.open, .modal-overlay, .filter-bar, .feed-replies-panel{overscroll-behavior:contain;}
+  html:has(.composer.open), html:has(.modal-overlay[style*="flex"]), html:has(.filter-sheet.open){overflow:hidden;}
   .composer-step{padding:24px 20px 12px;flex:1;}
   .composer-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;}
   .composer-close,.composer-back{
@@ -452,7 +462,9 @@
     /* The fade-up transform would briefly re-anchor the fixed FABs — skip it here. */
     body.feed-mode section.view.active{animation:none;}
     body.feed-mode header.topbar{display:none;}
-    body.feed-mode .app{padding-bottom:0;}
+    /* min-height:100vh is taller than the visible screen on iOS (it counts the space under
+       Safari's bars), which left the Feed page a little scrollable and easy to get stuck. */
+    body.feed-mode .app{padding-bottom:0;min-height:0;}
     body.feed-mode footer.appfoot{display:none;}
 
     #view-housing .page-head-row,
@@ -460,6 +472,17 @@
     #view-housing .page-sub{
       display:none;
     }
+
+    /* Community: the questions box ends just above the tab bar (--qa-top is set by
+       fitCommunityFeed), so it is fully on screen and needs no page scroll to reach. At its
+       first or last question a swipe carries on to the page instead of getting stuck. */
+    #forumFeedScroll{
+      height:calc(100vh - var(--qa-top, 300px) - var(--tabbar-h) - env(safe-area-inset-bottom) - 12px);
+      height:calc(100dvh - var(--qa-top, 300px) - var(--tabbar-h) - env(safe-area-inset-bottom) - 12px);
+      min-height:300px; max-height:none; overscroll-behavior-y:auto;
+    }
+    /* The Feed page itself never scrolls (iOS ignores overflow:hidden on body alone). */
+    html:has(body.feed-mode){overflow:hidden;}
 
     #view-housing .feed-scroll{
       height:calc(100vh - var(--tabbar-h) - env(safe-area-inset-bottom));
@@ -606,12 +629,13 @@
   /* Arrows only where there's a mouse; phones swipe. */
   @media (hover:hover) and (pointer:fine){ .feed-gallery-nav{display:inline-flex;} }
   .feed-mute{
-    position:absolute;top:calc(14px + env(safe-area-inset-top));inset-inline-start:14px;
-    width:32px;height:32px;border-radius:50%;z-index:3;
+    /* Sits on top of the action rail: the top of the screen belongs to the language pill and chips. */
+    position:absolute;inset-inline-end:12px;bottom:calc(28px + 4 * 56px + 3 * 10px + 18px);
+    width:40px;height:40px;border-radius:50%;z-index:3;
     background:rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.25);
     display:flex;align-items:center;justify-content:center;color:#fff;
   }
-  .feed-mute svg{width:16px;height:16px;}
+  .feed-mute svg{width:18px;height:18px;}
   /* ---- Action rail: like · WhatsApp · save · share (the poster's avatar is in the card) ---- */
   .feed-rail{
     position:absolute;inset-inline-end:10px;bottom:28px;display:flex;flex-direction:column;gap:10px;align-items:center;z-index:3;
@@ -718,6 +742,11 @@
     padding:60px 18px 20px;display:none;overflow-y:auto;color:#fff;
   }
   .feed-replies-panel.open{display:block;}
+  /* The answer box stays pinned to the bottom of the panel, so it is reachable however long the thread is. */
+  .feed-replies-panel .reply-compose{
+    position:sticky;bottom:-20px;z-index:1;margin:12px -18px -20px;padding:10px 18px 14px;
+    background:rgb(6,10,9);
+  }
   .feed-replies-close{
     position:absolute;top:16px;inset-inline-end:16px;width:40px;height:40px;border-radius:50%;
     border:1px solid rgba(255,255,255,0.22);background:rgba(255,255,255,0.08);color:#fff;
@@ -989,6 +1018,7 @@
      dark text (and the green "Replied by") sat on a near-black panel and couldn't be read. */
   html[data-theme="light"] .feed-replies-panel{background:rgba(246,244,234,0.97);color:var(--ink);}
   html[data-theme="light"] .feed-replies-close{border-color:var(--line);background:var(--card);color:var(--ink);}
+  html[data-theme="light"] .feed-replies-panel .reply-compose{background:rgb(246,244,234);}
   html[data-theme="light"] .feed-replies-panel .reply{background:var(--card);border:1px solid var(--card-line);}
   html[data-theme="light"] .reply-compose input{background:var(--card);}
 

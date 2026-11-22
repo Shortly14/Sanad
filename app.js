@@ -590,6 +590,7 @@ function setTab(tab){
   document.querySelectorAll('nav.tabbar button[data-tab]').forEach(b=>b.classList.toggle('active', b.getAttribute('data-tab')===tab));
   window.scrollTo({top:0, behavior:'instant'});
   applyFeedMode();
+  if(tab==='community') fitCommunityFeed();
   closeFilters();
   setQuickComposerOpen(false);
   if(tab==='profile'){ if(appUser) fetchAndRenderProfileStats(); renderProfile(); }
@@ -604,6 +605,36 @@ function applyFeedMode(){
   document.body.classList.toggle('feed-mode', feedMode);
 }
 window.addEventListener('resize', ()=>{ applyFeedMode(); if(window.innerWidth >= 760) closeFilters(); });
+
+/* Brings a card to the top of its own feed box. scrollIntoView would also scroll the page, and in
+   the Feed (where the page itself can't be scrolled by hand) that left it stuck part-way. */
+function scrollCardIntoFeed(card, smooth){
+  const scroller = card && card.closest('.feed-scroll');
+  if(!scroller) return;
+  const top = card.getBoundingClientRect().top - scroller.getBoundingClientRect().top + scroller.scrollTop;
+  scroller.scrollTo({ top, behavior: smooth ? 'smooth' : 'instant' });
+}
+
+/* On a phone the Community questions box is sized to end just above the tab bar, so the whole
+   box is on screen and the page and the box don't fight over the same swipe. --qa-top is where
+   the box starts on the page; CSS does the rest. */
+function fitCommunityFeed(){
+  const box = document.getElementById('forumFeedScroll');
+  if(!box || !box.offsetParent) return;
+  const top = box.getBoundingClientRect().top + window.scrollY;
+  document.documentElement.style.setProperty('--qa-top', Math.round(top) + 'px');
+}
+window.addEventListener('resize', fitCommunityFeed);
+
+/* iOS scrolls the whole page up to make room for the keyboard and doesn't always scroll it back.
+   In the Feed the page can't be scrolled by hand, so it stayed stuck with the tab bar half off
+   screen. When typing ends, put it back. */
+document.addEventListener('focusout', ()=>{
+  setTimeout(()=>{
+    const typing = document.activeElement && document.activeElement.matches('input, textarea, select');
+    if(!typing && document.body.classList.contains('feed-mode') && window.scrollY !== 0) window.scrollTo(0, 0);
+  }, 120);
+});
 
 /* ---- Guide render ---- */
 function renderGuide(){
@@ -1108,6 +1139,7 @@ function renderCatChips(){
   row.querySelectorAll('[data-cat]').forEach(btn=>{
     btn.addEventListener('click', ()=>{
       state.forumCat = btn.getAttribute('data-cat');
+      document.getElementById('forumFeedScroll').scrollTop = 0;
       renderCatChips(); renderForum();
     });
   });
@@ -1119,6 +1151,9 @@ function renderCatChips(){
    in place, instead of jumping away. */
 function renderForum(){
   const wrap = document.getElementById('forumFeedScroll');
+  // Voting or replying re-renders the list: without this the open answers panel jumped back to
+  // its top after every tap.
+  const prevPanels = [...wrap.querySelectorAll('.feed-replies-panel.open')].map(p=> [p.id, p.scrollTop]);
   const items = (state.forumCat==='All' ? forumPosts : forumPosts.filter(p=>p.cat===state.forumCat))
     .map(p=>{
       const idx = forumPosts.indexOf(p);
@@ -1195,6 +1230,8 @@ function renderForum(){
     btn.addEventListener('click', ()=> deleteForumReply(btn.getAttribute('data-delete-reply')));
   });
 
+  prevPanels.forEach(([id, top])=>{ const p = document.getElementById(id); if(p) p.scrollTop = top; });
+
   // Community questions are mirrored into the Feed too (see forumFeedItems),
   // so any change here — a new question, a new reply count — needs to reach it.
   renderListings();
@@ -1238,7 +1275,7 @@ function jumpToForumPost(idx){
   state.openReplies[idx] = true;
   renderForum();
   const card = document.getElementById('feed-replies-'+idx);
-  if(card) card.closest('.feed-card-wrap').scrollIntoView({ behavior:'smooth', block:'start' });
+  if(card) scrollCardIntoFeed(card.closest('.feed-card-wrap'), true);
 }
 
 async function submitReply(post, text){
@@ -1726,7 +1763,7 @@ function viewFeedItem(l){
   setTab('housing');
   renderListings();
   const card = document.querySelector('.feed-card[data-listing-id="'+CSS.escape(l.id)+'"]');
-  if(card) card.scrollIntoView({ behavior:'smooth', block:'start' });
+  if(card) scrollCardIntoFeed(card, true);
 }
 
 function bindGridTileClicks(gridEl, items){
@@ -1986,7 +2023,7 @@ function openDeepLinkedListing(){
   if(!listingId) return;
   setTab('housing');
   const card = document.querySelector('.feed-card[data-listing-id="'+CSS.escape(listingId)+'"]');
-  if(card) card.scrollIntoView({ behavior:'instant', block:'start' });
+  if(card) scrollCardIntoFeed(card, false);
 }
 
 /* Same no-sign-in permalink pattern as openListingSharePanel, but for a
@@ -2697,6 +2734,7 @@ document.querySelectorAll('[data-subtab]').forEach(btn=>{
     document.getElementById('communityBuddies').style.display = state.communitySubTab==='buddies' ? 'block' : 'none';
     document.getElementById('communityLeaderboard').style.display = state.communitySubTab==='leaderboard' ? 'block' : 'none';
     applyFeedMode();
+    if(state.communitySubTab==='qa') fitCommunityFeed();
     if(state.communitySubTab==='leaderboard') renderLeaderboard();
   });
 });
