@@ -583,8 +583,11 @@
   </footer>
 </div>
 
-<!-- Supabase JS Client -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" onerror="console.warn('Sanad: Supabase CDN script failed to load (network/CORS/blocked) — app will run on local data only.')"></script>
+<!-- Supabase JS Client. Pinned to one exact version, and the integrity hash makes the browser
+     refuse the file if the CDN ever serves anything else. To upgrade, change the version in the
+     URL, then put "sha384-" followed by the output of this command in integrity:
+     curl -s <the new URL> | openssl dgst -sha384 -binary | openssl base64 -A -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.0/dist/umd/supabase.js" integrity="sha384-uteMfOloLDGt042uDz+xHGF3ym63/WQ6rFq7murQRG8Ih7QrXGEGNtWd8688sb4O" crossorigin="anonymous"></script>
 
 <script src="app.js" defer></script>
 </body>

@@ -8,7 +8,11 @@ const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5v
 // save anywhere or sync between visitors.
 const SUPABASE_CONFIGURED = !SUPABASE_URL.includes("YOUR_PROJECT_ID") && !SUPABASE_ANON_KEY.includes("YOUR_ANON_PUBLIC_KEY");
 
-const supabaseClient = SUPABASE_CONFIGURED ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
+// window.supabase is missing when the CDN script failed to load or failed its integrity check.
+if (SUPABASE_CONFIGURED && !window.supabase) {
+  console.warn('Sanad: Supabase CDN script failed to load (network/CORS/blocked) — app will run on local data only.');
+}
+const supabaseClient = SUPABASE_CONFIGURED && window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
 
 if (!SUPABASE_CONFIGURED) {
   console.warn("Sanad: Supabase isn't configured yet (still using the placeholder URL/key). Housing and forum posts will only live in this browser tab until you add your real project credentials at the top of the script.");
@@ -888,7 +892,7 @@ function bindFeedCardEvents(wrap, filtered){
     btn.addEventListener('click', ()=> jumpToForumPost(parseInt(btn.getAttribute('data-view-forum-post'))));
   });
   wrap.querySelectorAll('[data-wa]').forEach(btn=>{
-    btn.addEventListener('click', ()=> window.open('https://wa.me/'+btn.getAttribute('data-wa'), '_blank'));
+    btn.addEventListener('click', ()=> window.open('https://wa.me/'+btn.getAttribute('data-wa'), '_blank', 'noopener'));
   });
   wrap.querySelectorAll('[data-mute-toggle]').forEach(btn=>{
     btn.addEventListener('click', ()=>{
