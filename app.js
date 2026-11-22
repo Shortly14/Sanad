@@ -71,8 +71,9 @@ en: {
   lblHelpAreas:"What can you help with?", helpHousing:"Finding housing", helpPaperwork:"Paperwork & procedures", helpOrientation:"General orientation",
   lblBio:"Short bio", bioPh:"e.g. Lived in Riyadh for 3 years, happy to help with Absher/Nafath setup...",
   buddyFormSubmit:"Publish my buddy profile", noBuddiesYet:"No buddies listed yet — be the first!", helpsWith:"Can help with",
-  videoLabel:"Room photos or video (optional)", videoHint:"Add up to 10 photos, or one short walkthrough video. Rooms with pictures get far more replies.", uploadingVideo:"Uploading video...",
-  uploadingPhotoN:"Uploading photo {n} of {total}...", photoN:"Photo {n}", prevPhoto:"Previous photo", nextPhoto:"Next photo",
+  videoLabel:"Room photos or video (optional)", videoHint:"Up to 10 photos, or one video of up to 60 seconds and 50 MB. Photos are made smaller automatically so they upload fast.",
+  mediaVideoTooBig:"This video is {mb} MB. Videos can be up to 50 MB. Try a shorter clip, or record in 1080p instead of 4K.", mediaVideoTooLong:"This video is {s} seconds. Videos can be up to 60 seconds.", mediaTooManyPhotos:"You picked {n} photos. Only the first 10 will be posted.", mediaPhotosPicked:"{n} photos ready", mediaVideoPicked:"Video ready: {mb} MB, {s} seconds", uploadingPhotosProgress:"Uploading photos... {done} of {total}", uploadFailed:"Upload failed. Check your connection and try again.", publishFailed:"Couldn't publish. Please try again.", uploadingVideo:"Uploading video...",
+  photoN:"Photo {n}", prevPhoto:"Previous photo", nextPhoto:"Next photo",
   qcTextLabel:"What's on your mind?", qcTextPh:"Share a tip that could help someone new...",
   qcImageLabel:"Add a photo (optional)", uploadingImage:"Uploading image...",
   viewAndAnswer:"View & answer", fromCommunity:"From Community",
@@ -153,8 +154,9 @@ ar: {
   lblHelpAreas:"بماذا يمكنك المساعدة؟", helpHousing:"إيجاد السكن", helpPaperwork:"الأوراق والإجراءات", helpOrientation:"التوجيه العام",
   lblBio:"نبذة قصيرة", bioPh:"مثال: أعيش في الرياض منذ 3 سنوات، يسعدني المساعدة في إعداد أبشر ونفاذ...",
   buddyFormSubmit:"نشر ملفي كرفيق", noBuddiesYet:"لا يوجد رفقاء بعد — كن الأول!", helpsWith:"يمكنه المساعدة في",
-  videoLabel:"صور أو فيديو للغرفة (اختياري)", videoHint:"أضف حتى 10 صور، أو فيديو قصيراً واحداً. الغرف التي فيها صور تحصل على ردود أكثر بكثير.", uploadingVideo:"جارٍ رفع الفيديو...",
-  uploadingPhotoN:"جارٍ رفع الصورة {n} من {total}...", photoN:"صورة {n}", prevPhoto:"الصورة السابقة", nextPhoto:"الصورة التالية",
+  videoLabel:"صور أو فيديو للغرفة (اختياري)", videoHint:"حتى 10 صور، أو فيديو واحد مدته حتى 60 ثانية وحجمه حتى 50 ميغابايت. يتم تصغير الصور تلقائياً لترفع بسرعة.",
+  mediaVideoTooBig:"حجم هذا الفيديو {mb} ميغابايت. الحد الأقصى 50 ميغابايت. جرّب مقطعاً أقصر، أو صوّر بدقة 1080p بدلاً من 4K.", mediaVideoTooLong:"مدة هذا الفيديو {s} ثانية. الحد الأقصى 60 ثانية.", mediaTooManyPhotos:"اخترت {n} صور. سيتم نشر أول 10 صور فقط.", mediaPhotosPicked:"{n} صور جاهزة", mediaVideoPicked:"الفيديو جاهز: {mb} ميغابايت، {s} ثانية", uploadingPhotosProgress:"جارٍ رفع الصور... {done} من {total}", uploadFailed:"فشل الرفع. تحقق من اتصالك وحاول مرة أخرى.", publishFailed:"تعذّر النشر. حاول مرة أخرى.", uploadingVideo:"جارٍ رفع الفيديو...",
+  photoN:"صورة {n}", prevPhoto:"الصورة السابقة", nextPhoto:"الصورة التالية",
   qcTextLabel:"ما الذي يدور في ذهنك؟", qcTextPh:"شارك نصيحة قد تفيد شخصاً جديداً...",
   qcImageLabel:"أضف صورة (اختياري)", uploadingImage:"جارٍ رفع الصورة...",
   viewAndAnswer:"عرض والإجابة", fromCommunity:"من المجتمع",
@@ -235,8 +237,9 @@ ur: {
   lblHelpAreas:"آپ کس چیز میں مدد کر سکتے ہیں؟", helpHousing:"رہائش تلاش کرنا", helpPaperwork:"کاغذی کارروائی اور طریقہ کار", helpOrientation:"عمومی رہنمائی",
   lblBio:"مختصر تعارف", bioPh:"مثلاً: 3 سال سے ریاض میں مقیم ہوں، ابشر/نفاذ سیٹ اپ میں مدد کے لیے تیار ہوں...",
   buddyFormSubmit:"میری ساتھی پروفائل شائع کریں", noBuddiesYet:"ابھی تک کوئی ساتھی نہیں — پہلے آپ بنیں!", helpsWith:"مدد کر سکتا ہے",
-  videoLabel:"کمرے کی تصاویر یا ویڈیو (اختیاری)", videoHint:"زیادہ سے زیادہ 10 تصاویر، یا ایک مختصر ویڈیو شامل کریں۔ تصاویر والے کمروں کو کہیں زیادہ جوابات ملتے ہیں۔", uploadingVideo:"ویڈیو اپ لوڈ ہو رہی ہے...",
-  uploadingPhotoN:"تصویر {n} از {total} اپ لوڈ ہو رہی ہے...", photoN:"تصویر {n}", prevPhoto:"پچھلی تصویر", nextPhoto:"اگلی تصویر",
+  videoLabel:"کمرے کی تصاویر یا ویڈیو (اختیاری)", videoHint:"زیادہ سے زیادہ 10 تصاویر، یا ایک ویڈیو جو 60 سیکنڈ اور 50 MB تک ہو۔ تصاویر خود بخود چھوٹی کر دی جاتی ہیں تاکہ جلدی اپ لوڈ ہوں۔",
+  mediaVideoTooBig:"یہ ویڈیو {mb} MB کی ہے۔ ویڈیو زیادہ سے زیادہ 50 MB ہو سکتی ہے۔ چھوٹی ویڈیو آزمائیں، یا 4K کے بجائے 1080p میں ریکارڈ کریں۔", mediaVideoTooLong:"یہ ویڈیو {s} سیکنڈ کی ہے۔ ویڈیو زیادہ سے زیادہ 60 سیکنڈ ہو سکتی ہے۔", mediaTooManyPhotos:"آپ نے {n} تصاویر منتخب کیں۔ صرف پہلی 10 پوسٹ ہوں گی۔", mediaPhotosPicked:"{n} تصاویر تیار ہیں", mediaVideoPicked:"ویڈیو تیار ہے: {mb} MB، {s} سیکنڈ", uploadingPhotosProgress:"تصاویر اپ لوڈ ہو رہی ہیں... {total} میں سے {done}", uploadFailed:"اپ لوڈ ناکام ہو گیا۔ اپنا کنکشن چیک کریں اور دوبارہ کوشش کریں۔", publishFailed:"پوسٹ نہیں ہو سکی۔ دوبارہ کوشش کریں۔", uploadingVideo:"ویڈیو اپ لوڈ ہو رہی ہے...",
+  photoN:"تصویر {n}", prevPhoto:"پچھلی تصویر", nextPhoto:"اگلی تصویر",
   qcTextLabel:"آپ کے ذہن میں کیا ہے؟", qcTextPh:"ایک تجویز شیئر کریں جو کسی نئے شخص کے کام آئے...",
   qcImageLabel:"تصویر شامل کریں (اختیاری)", uploadingImage:"تصویر اپ لوڈ ہو رہی ہے...",
   viewAndAnswer:"دیکھیں اور جواب دیں", fromCommunity:"کمیونٹی سے",
@@ -2237,13 +2240,18 @@ document.getElementById('qcInquiryCatRow').addEventListener('click', e=>{
 });
 
 /* The post-images bucket only takes JPEG/PNG/WebP/GIF up to 5 MB (schema.sql
-   section 12), and phone cameras often produce bigger files or HEIC. Anything
-   outside that is redrawn as a JPEG no wider/taller than 1600 px. If the
-   browser can't decode it, the original goes up and Storage decides. */
+   section 12), and phone cameras produce 3-8 MB photos or HEIC. Every photo is
+   redrawn as a JPEG no wider/taller than 1600 px (usually 200-500 KB), which is
+   what makes uploads fast on mobile data and keeps the PC's disk small. GIFs
+   (may be animated) and photos the redraw doesn't shrink go up as they are; if
+   the browser can't decode a photo, the original goes up and Storage decides. */
 const MAX_ROOM_PHOTOS = 10; // create_listing in schema.sql refuses more than this
+const MAX_VIDEO_MB = 50;    // listing-videos bucket limit, schema.sql section 12
+const MAX_VIDEO_SECONDS = 60;
 async function fitImageForUpload(file){
   const okTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
-  if(okTypes.includes(file.type) && file.size <= 5 * 1024 * 1024) return file;
+  const fitsBucket = okTypes.includes(file.type) && file.size <= 5 * 1024 * 1024;
+  if(file.type === 'image/gif' && fitsBucket) return file;
   try{
     const bitmap = await createImageBitmap(file);
     const scale = Math.min(1, 1600 / Math.max(bitmap.width, bitmap.height));
@@ -2251,8 +2259,8 @@ async function fitImageForUpload(file){
     canvas.width = Math.round(bitmap.width * scale);
     canvas.height = Math.round(bitmap.height * scale);
     canvas.getContext('2d').drawImage(bitmap, 0, 0, canvas.width, canvas.height);
-    const blob = await new Promise(res => canvas.toBlob(res, 'image/jpeg', 0.85));
-    if(!blob) return file;
+    const blob = await new Promise(res => canvas.toBlob(res, 'image/jpeg', 0.82));
+    if(!blob || (fitsBucket && blob.size >= file.size)) return file;
     return new File([blob], file.name.replace(/\.[^.]*$/, '') + '.jpg', { type: 'image/jpeg' });
   } catch(err){
     return file;
@@ -2265,6 +2273,73 @@ document.getElementById('qc-wa').addEventListener('input', e=>{
   if(e.target.value !== cleaned) e.target.value = cleaned;
 });
 
+/* Room media is checked as soon as it's picked, so a too-big or too-long video is
+   refused before anyone waits for it to upload. roomMediaCheck resolves to false
+   once a picked video was refused: the next Publish tap only stops (so nobody
+   posts a room without the video they meant to add); a tap after that posts
+   without media. Picking files again starts over. */
+let roomMediaCheck = Promise.resolve(true);
+function showRoomMediaMessage(summary, error){
+  const sumEl = document.getElementById('qcMediaSummary');
+  const errEl = document.getElementById('qcMediaMsg');
+  sumEl.textContent = summary; sumEl.style.display = summary ? 'block' : 'none';
+  errEl.textContent = error; errEl.style.display = error ? 'block' : 'none';
+}
+function showPublishError(msg){
+  const el = document.getElementById('qcPublishError');
+  el.textContent = msg; el.style.display = msg ? 'block' : 'none';
+}
+function videoSeconds(file){
+  return new Promise(resolve=>{
+    const v = document.createElement('video');
+    const url = URL.createObjectURL(file);
+    const done = (sec)=>{ URL.revokeObjectURL(url); resolve(sec); };
+    v.preload = 'metadata';
+    v.onloadedmetadata = ()=> done(isFinite(v.duration) ? v.duration : null);
+    v.onerror = ()=> done(null); // unknown length: let the size limit decide
+    setTimeout(()=> done(null), 8000);
+    v.src = url;
+  });
+}
+document.getElementById('qc-video').addEventListener('change', e=>{
+  const input = e.target;
+  const files = Array.from(input.files || []);
+  const video = files.find(f => !f.type.startsWith('image/'));
+  showPublishError('');
+  if(!files.length){ roomMediaCheck = Promise.resolve(true); showRoomMediaMessage('', ''); return; }
+  if(!video){
+    roomMediaCheck = Promise.resolve(true);
+    const n = Math.min(files.length, MAX_ROOM_PHOTOS);
+    showRoomMediaMessage(fmt('mediaPhotosPicked', { n }), files.length > MAX_ROOM_PHOTOS ? fmt('mediaTooManyPhotos', { n: files.length }) : '');
+    return;
+  }
+  const mb = Math.max(0.1, Math.round(video.size / (1024 * 1024) * 10) / 10);
+  if(mb > MAX_VIDEO_MB){
+    input.value = '';
+    roomMediaCheck = Promise.resolve(false);
+    showRoomMediaMessage('', fmt('mediaVideoTooBig', { mb }));
+    return;
+  }
+  roomMediaCheck = videoSeconds(video).then(sec=>{
+    if(input.files[0] !== files[0]) return true; // picked something else meanwhile
+    if(sec !== null && sec > MAX_VIDEO_SECONDS + 0.5){
+      input.value = '';
+      showRoomMediaMessage('', fmt('mediaVideoTooLong', { s: Math.round(sec) }));
+      return false;
+    }
+    showRoomMediaMessage(fmt('mediaVideoPicked', { mb, s: sec === null ? '?' : Math.round(sec) }), '');
+    return true;
+  });
+});
+
+/* Uploads one file and returns its public URL, or null if it failed. */
+async function uploadToBucket(bucket, file, tag){
+  const path = `${Date.now()}_${tag}_${file.name.replace(/[^a-zA-Z0-9.\-_]/g, '_')}`;
+  const { error } = await supabaseClient.storage.from(bucket).upload(path, file);
+  if(error){ console.error('Error uploading to ' + bucket + ':', error); return null; }
+  return supabaseClient.storage.from(bucket).getPublicUrl(path).data.publicUrl;
+}
+
 function resetComposerFields(){
   document.getElementById('qc-text').value = '';
   document.getElementById('qc-image').value = '';
@@ -2276,6 +2351,9 @@ function resetComposerFields(){
   document.getElementById('qcNatOtherField').style.display = 'none';
   document.getElementById('qcImageUploadStatus').style.display = 'none';
   document.getElementById('qcVideoUploadStatus').style.display = 'none';
+  roomMediaCheck = Promise.resolve(true);
+  showRoomMediaMessage('', '');
+  showPublishError('');
   setQuickComposerOpen(false);
 }
 
@@ -2342,92 +2420,106 @@ document.getElementById('btnSubmitQuickPost').addEventListener('click', async ()
   if(isHousing && !rent){ document.getElementById('qc-rent').focus(); return; }
   if(isHousing && !whatsapp){ document.getElementById('qc-wa').focus(); return; }
   if(isHousing && !/^5\d{8}$/.test(waLocal)){ flagWaInput(document.getElementById('qc-wa'), 'waSaudiInvalid'); return; }
+  if(isHousing && !(await roomMediaCheck)){ roomMediaCheck = Promise.resolve(true); return; } // message is under the field
 
   requireSignIn(async ()=>{
     const postedCategory = category;
-
-    if (!SUPABASE_CONFIGURED) {
-      const localImageUrl = imageFile ? URL.createObjectURL(imageFile) : null;
-      const localVideoUrl = videoFile ? URL.createObjectURL(videoFile) : null;
-      const localRoomImageUrls = roomImageFiles.map(f => URL.createObjectURL(f));
-      listings.unshift(isHousing
-        ? { id:'local-'+Date.now(), posterUserId: appUser.id, postType: 'housing', city, rent, type: room_type, gender: gender_pref, nat: nationality_pref, bills: bills_included, desc: text || '—', by: appUser.name, wa: whatsapp, video: localVideoUrl, media: localRoomImageUrls[0] || null, mediaList: localRoomImageUrls }
-        : { id:'local-'+Date.now(), posterUserId: appUser.id, postType: postedCategory, desc: text, by: appUser.name, media: localImageUrl });
-      resetComposerFields();
-      setPostedTypeChip(postedCategory);
-      renderListings();
-      return;
-    }
-
+    const submitBtn = document.getElementById('btnSubmitQuickPost');
+    if(submitBtn.disabled) return; // already publishing — a second tap must not post twice
+    submitBtn.disabled = true;
+    showPublishError('');
     try {
-      let row;
-      if (isHousing) {
-        let video_url = null;
-        const room_media_urls = [];
-        if (videoFile) {
-          const statusEl = document.getElementById('qcVideoUploadStatus');
-          statusEl.textContent = t('uploadingVideo');
-          statusEl.style.display = 'block';
-          const path = `${Date.now()}_${videoFile.name.replace(/[^a-zA-Z0-9.\-_]/g, '_')}`;
-          const { error: uploadError } = await supabaseClient.storage.from('listing-videos').upload(path, videoFile);
-          statusEl.style.display = 'none';
-          if (uploadError) console.error('Error uploading video:', uploadError);
-          else video_url = supabaseClient.storage.from('listing-videos').getPublicUrl(path).data.publicUrl;
-        }
-        const statusEl = document.getElementById('qcVideoUploadStatus');
-        for (let n = 0; n < roomImageFiles.length; n++) {
-          statusEl.textContent = roomImageFiles.length > 1 ? fmt('uploadingPhotoN', { n: n+1, total: roomImageFiles.length }) : t('uploadingImage');
-          statusEl.style.display = 'block';
-          const photo = await fitImageForUpload(roomImageFiles[n]);
-          // n keeps two photos picked in the same millisecond from sharing a name.
-          const path = `${Date.now()}_${n}_${photo.name.replace(/[^a-zA-Z0-9.\-_]/g, '_')}`;
-          const { error: uploadError } = await supabaseClient.storage.from('post-images').upload(path, photo);
-          if (uploadError) console.error('Error uploading image:', uploadError);
-          else room_media_urls.push(supabaseClient.storage.from('post-images').getPublicUrl(path).data.publicUrl);
-        }
-        statusEl.style.display = 'none';
-        row = {
-          p_post_type: 'housing', p_city: city, p_rent: rent, p_room_type: room_type, p_gender_pref: gender_pref,
-          p_nationality_pref: nationality_pref, p_bills_included: bills_included,
-          p_description: text || '—', p_whatsapp: whatsapp, p_video_url: video_url, p_media_url: room_media_urls[0] || null
-        };
-        // Only sent with 2+ photos, so one-photo and video rooms work even before
-        // schema.sql adds p_media_urls (see the fallback below).
-        if (room_media_urls.length > 1) row.p_media_urls = room_media_urls;
-      } else {
-        let media_url = null;
-        if (imageFile) {
-          const statusEl = document.getElementById('qcImageUploadStatus');
-          statusEl.style.display = 'block';
-          const path = `${Date.now()}_${imageFile.name.replace(/[^a-zA-Z0-9.\-_]/g, '_')}`;
-          const { error: uploadError } = await supabaseClient.storage.from('post-images').upload(path, imageFile);
-          statusEl.style.display = 'none';
-          if (uploadError) console.error('Error uploading image:', uploadError);
-          else media_url = supabaseClient.storage.from('post-images').getPublicUrl(path).data.publicUrl;
-        }
-        row = { p_post_type: postedCategory, p_description: text, p_media_url: media_url };
-      }
-
-      // The server fills in poster_user_id / poster_role from the session token.
-      let { error } = await supabaseClient.rpc('create_listing', { p_session_token: appUser.sessionToken, ...row });
-      // A database that hasn't run the multi-photo schema.sql yet doesn't know
-      // p_media_urls (PGRST202). Publish with the first photo rather than not at all.
-      if (error && error.code === 'PGRST202' && row.p_media_urls) {
-        console.warn('Sanad: create_listing has no p_media_urls yet — run schema.sql. Publishing with the first photo only.');
-        delete row.p_media_urls;
-        ({ error } = await supabaseClient.rpc('create_listing', { p_session_token: appUser.sessionToken, ...row }));
-      }
-
-      if (error) {
-        console.error('Error publishing post:', error);
+      if (!SUPABASE_CONFIGURED) {
+        const localImageUrl = imageFile ? URL.createObjectURL(imageFile) : null;
+        const localVideoUrl = videoFile ? URL.createObjectURL(videoFile) : null;
+        const localRoomImageUrls = roomImageFiles.map(f => URL.createObjectURL(f));
+        listings.unshift(isHousing
+          ? { id:'local-'+Date.now(), posterUserId: appUser.id, postType: 'housing', city, rent, type: room_type, gender: gender_pref, nat: nationality_pref, bills: bills_included, desc: text || '—', by: appUser.name, wa: whatsapp, video: localVideoUrl, media: localRoomImageUrls[0] || null, mediaList: localRoomImageUrls }
+          : { id:'local-'+Date.now(), posterUserId: appUser.id, postType: postedCategory, desc: text, by: appUser.name, media: localImageUrl });
+        resetComposerFields();
+        setPostedTypeChip(postedCategory);
+        renderListings();
         return;
       }
 
-      resetComposerFields();
-      setPostedTypeChip(postedCategory);
-      await fetchAndRenderListings();
-    } catch (err) {
-      console.error('Could not reach Supabase to publish post:', err);
+      try {
+        let row;
+        if (isHousing) {
+          let video_url = null;
+          const room_media_urls = [];
+          const statusEl = document.getElementById('qcVideoUploadStatus');
+          if (videoFile) {
+            statusEl.textContent = t('uploadingVideo');
+            statusEl.style.display = 'block';
+            video_url = await uploadToBucket('listing-videos', videoFile, 'v');
+            statusEl.style.display = 'none';
+            if (!video_url) { showPublishError(t('uploadFailed')); return; }
+          }
+          if (roomImageFiles.length) {
+            // Three at a time: much faster than one by one, without flooding a slow connection.
+            // Each photo keeps its slot, so the gallery order matches the order picked.
+            const urls = new Array(roomImageFiles.length).fill(null);
+            let done = 0, nextIdx = 0;
+            const showProgress = ()=>{ statusEl.textContent = fmt('uploadingPhotosProgress', { done, total: roomImageFiles.length }); };
+            showProgress(); statusEl.style.display = 'block';
+            const worker = async ()=>{
+              while (nextIdx < roomImageFiles.length) {
+                const n = nextIdx++;
+                const photo = await fitImageForUpload(roomImageFiles[n]);
+                urls[n] = await uploadToBucket('post-images', photo, n);
+                done++; showProgress();
+              }
+            };
+            await Promise.all([worker(), worker(), worker()]);
+            statusEl.style.display = 'none';
+            if (urls.some(u => !u)) { showPublishError(t('uploadFailed')); return; }
+            room_media_urls.push(...urls);
+          }
+          row = {
+            p_post_type: 'housing', p_city: city, p_rent: rent, p_room_type: room_type, p_gender_pref: gender_pref,
+            p_nationality_pref: nationality_pref, p_bills_included: bills_included,
+            p_description: text || '—', p_whatsapp: whatsapp, p_video_url: video_url, p_media_url: room_media_urls[0] || null
+          };
+          // Only sent with 2+ photos, so one-photo and video rooms work even before
+          // schema.sql adds p_media_urls (see the fallback below).
+          if (room_media_urls.length > 1) row.p_media_urls = room_media_urls;
+        } else {
+          let media_url = null;
+          if (imageFile) {
+            const statusEl = document.getElementById('qcImageUploadStatus');
+            statusEl.style.display = 'block';
+            media_url = await uploadToBucket('post-images', await fitImageForUpload(imageFile), 't');
+            statusEl.style.display = 'none';
+            if (!media_url) { showPublishError(t('uploadFailed')); return; }
+          }
+          row = { p_post_type: postedCategory, p_description: text, p_media_url: media_url };
+        }
+
+        // The server fills in poster_user_id / poster_role from the session token.
+        let { error } = await supabaseClient.rpc('create_listing', { p_session_token: appUser.sessionToken, ...row });
+        // A database that hasn't run the multi-photo schema.sql yet doesn't know
+        // p_media_urls (PGRST202). Publish with the first photo rather than not at all.
+        if (error && error.code === 'PGRST202' && row.p_media_urls) {
+          console.warn('Sanad: create_listing has no p_media_urls yet — run schema.sql. Publishing with the first photo only.');
+          delete row.p_media_urls;
+          ({ error } = await supabaseClient.rpc('create_listing', { p_session_token: appUser.sessionToken, ...row }));
+        }
+
+        if (error) {
+          console.error('Error publishing post:', error);
+          showPublishError(t('publishFailed'));
+          return;
+        }
+
+        resetComposerFields();
+        setPostedTypeChip(postedCategory);
+        await fetchAndRenderListings();
+      } catch (err) {
+        console.error('Could not reach Supabase to publish post:', err);
+        showPublishError(t('publishFailed'));
+      }
+    } finally {
+      submitBtn.disabled = false;
     }
   });
 });

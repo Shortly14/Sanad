@@ -466,8 +466,10 @@
           </div>
           <div class="field">
             <label data-i18n="videoLabel">Room photos or video (optional)</label>
-            <p class="hint" style="margin:0 0 8px;" data-i18n="videoHint">Add up to 10 photos, or one short walkthrough video. Rooms with pictures get far more replies.</p>
+            <p class="hint" style="margin:0 0 8px;" data-i18n="videoHint">Up to 10 photos, or one video of up to 60 seconds and 50 MB. Photos are made smaller automatically so they upload fast.</p>
             <input type="file" id="qc-video" accept="image/*,video/*" multiple>
+            <p class="hint" id="qcMediaSummary" style="margin:6px 0 0;display:none;"></p>
+            <p class="auth-error" id="qcMediaMsg" style="margin:8px 0 0;display:none;"></p>
             <p class="hint" id="qcVideoUploadStatus" style="margin:6px 0 0;display:none;" data-i18n="uploadingVideo">Uploading video...</p>
           </div>
         </div>
@@ -501,6 +503,7 @@
     </div>
 
     <div class="composer-footer">
+      <p class="auth-error" id="qcPublishError" style="display:none;"></p>
       <button class="btn-primary composer-cta" id="btnQcNext" data-i18n="qcNext">Next</button>
       <button class="btn-primary composer-cta" id="btnSubmitQuickPost" style="display:none;" data-i18n="qcPublish">Publish</button>
     </div>
