@@ -51,7 +51,7 @@ en: {
   lblGender:"Gender preference", genAny:"Any", genMale:"Men only", genFemale:"Women only",
   lblNationality:"Nationality / language preference", natAny:"Any", natArab:"Arab",
   lblBills:"Electricity & water included", lblDesc:"Description", descPh:"e.g. Close to metro, quiet flat, 3 flatmates already...",
-  lblWhatsapp:"WhatsApp number", waInvalid:"Enter a valid WhatsApp number, for example 05XXXXXXXX.",
+  lblWhatsapp:"WhatsApp number", waInvalid:"Enter a valid WhatsApp number, for example 05XXXXXXXX.", waSaudiInvalid:"Enter a Saudi mobile number: 9 digits starting with 5.",
   filterAllCities:"All cities", filterAnyBudget:"Any budget", filterUnder500:"Under 500", filterBudget500to800:"500 – 800 SAR", filterBudget800to1200:"800 – 1,200 SAR",
   filterAnyNat:"Any nationality pref.",
   perMonth:"/ month", contactWA:"WhatsApp", billsIncluded:"Bills included", billsShared:"Bills shared",
@@ -72,7 +72,7 @@ en: {
   lblBio:"Short bio", bioPh:"e.g. Lived in Riyadh for 3 years, happy to help with Absher/Nafath setup...",
   buddyFormSubmit:"Publish my buddy profile", noBuddiesYet:"No buddies listed yet — be the first!", helpsWith:"Can help with",
   videoLabel:"Room photos or video (optional)", videoHint:"Add up to 10 photos, or one short walkthrough video. Rooms with pictures get far more replies.", uploadingVideo:"Uploading video...",
-  uploadingPhotoN:"Uploading photo {n} of {total}...", photoN:"Photo {n}",
+  uploadingPhotoN:"Uploading photo {n} of {total}...", photoN:"Photo {n}", prevPhoto:"Previous photo", nextPhoto:"Next photo",
   qcTextLabel:"What's on your mind?", qcTextPh:"Share a tip that could help someone new...",
   qcImageLabel:"Add a photo (optional)", uploadingImage:"Uploading image...",
   viewAndAnswer:"View & answer", fromCommunity:"From Community",
@@ -105,7 +105,7 @@ en: {
   qcOptHousingTitle:"Room or bed space", qcOptHousingSub:"You have a spare space and need a tenant",
   qcOptInquiryTitle:"Question", qcOptInquirySub:"Get an answer from people who've done it",
   qcOptGuideTitle:"Tip", qcOptGuideSub:"Something you learned that could help others",
-  qcAdvancedToggle:"Add more details (optional)", qcNext:"Next", qcPublish:"Publish", sarLabel:"SAR",
+  qcMoreDetails:"More details (optional)", qcNext:"Next", qcPublish:"Publish", sarLabel:"SAR",
   guestSavedLabel:"Saved", guestLanguageLabel:"Language", guestLanguageValue:"العربية · English · اردو",
   likedCountLabel:"{n} liked on this phone", savedCountLabel:"{n} saved on this phone",
   signInBtnShort:"Log in / Sign up",
@@ -133,7 +133,7 @@ ar: {
   lblGender:"تفضيل الجنس", genAny:"الكل", genMale:"رجال فقط", genFemale:"نساء فقط",
   lblNationality:"تفضيل الجنسية / اللغة", natAny:"أي جنسية", natArab:"عربي",
   lblBills:"الكهرباء والماء شاملة", lblDesc:"الوصف", descPh:"مثال: قريب من المترو، شقة هادئة، ٣ سكان حالياً...",
-  lblWhatsapp:"رقم واتساب", waInvalid:"أدخل رقم واتساب صحيحًا، مثل 05XXXXXXXX.",
+  lblWhatsapp:"رقم واتساب", waInvalid:"أدخل رقم واتساب صحيحًا، مثل 05XXXXXXXX.", waSaudiInvalid:"أدخل رقم جوال سعودي: 9 أرقام تبدأ بـ 5.",
   filterAllCities:"كل المدن", filterAnyBudget:"أي ميزانية", filterUnder500:"أقل من ٥٠٠", filterBudget500to800:"٥٠٠ – ٨٠٠ ريال", filterBudget800to1200:"٨٠٠ – ١٬٢٠٠ ريال",
   filterAnyNat:"أي تفضيل جنسية",
   perMonth:"/ شهرياً", contactWA:"واتساب", billsIncluded:"الفواتير شاملة", billsShared:"الفواتير مشتركة",
@@ -154,7 +154,7 @@ ar: {
   lblBio:"نبذة قصيرة", bioPh:"مثال: أعيش في الرياض منذ 3 سنوات، يسعدني المساعدة في إعداد أبشر ونفاذ...",
   buddyFormSubmit:"نشر ملفي كرفيق", noBuddiesYet:"لا يوجد رفقاء بعد — كن الأول!", helpsWith:"يمكنه المساعدة في",
   videoLabel:"صور أو فيديو للغرفة (اختياري)", videoHint:"أضف حتى 10 صور، أو فيديو قصيراً واحداً. الغرف التي فيها صور تحصل على ردود أكثر بكثير.", uploadingVideo:"جارٍ رفع الفيديو...",
-  uploadingPhotoN:"جارٍ رفع الصورة {n} من {total}...", photoN:"صورة {n}",
+  uploadingPhotoN:"جارٍ رفع الصورة {n} من {total}...", photoN:"صورة {n}", prevPhoto:"الصورة السابقة", nextPhoto:"الصورة التالية",
   qcTextLabel:"ما الذي يدور في ذهنك؟", qcTextPh:"شارك نصيحة قد تفيد شخصاً جديداً...",
   qcImageLabel:"أضف صورة (اختياري)", uploadingImage:"جارٍ رفع الصورة...",
   viewAndAnswer:"عرض والإجابة", fromCommunity:"من المجتمع",
@@ -187,7 +187,7 @@ ar: {
   qcOptHousingTitle:"غرفة أو سرير", qcOptHousingSub:"عندك مكان فاضي وتبغى ساكن",
   qcOptInquiryTitle:"سؤال", qcOptInquirySub:"احصل على إجابة من ناس جربوا قبلك",
   qcOptGuideTitle:"نصيحة", qcOptGuideSub:"شي تعلمته وتبغى غيرك يستفيد منه",
-  qcAdvancedToggle:"أضف تفاصيل إضافية (اختياري)", qcNext:"التالي", qcPublish:"انشر الآن", sarLabel:"ريال",
+  qcMoreDetails:"تفاصيل إضافية (اختياري)", qcNext:"التالي", qcPublish:"انشر الآن", sarLabel:"ريال",
   guestSavedLabel:"المحفوظات", guestLanguageLabel:"اللغة", guestLanguageValue:"العربية · English · اردو",
   likedCountLabel:"{n} إعجاب على هذا الجهاز", savedCountLabel:"{n} محفوظ على هذا الجهاز",
   signInBtnShort:"تسجيل الدخول / إنشاء حساب",
@@ -215,7 +215,7 @@ ur: {
   lblGender:"صنفی ترجیح", genAny:"کوئی بھی", genMale:"صرف مرد", genFemale:"صرف خواتین",
   lblNationality:"قومیت / زبان کی ترجیح", natAny:"کوئی بھی", natArab:"عرب",
   lblBills:"بجلی اور پانی شامل", lblDesc:"تفصیل", descPh:"مثلاً: میٹرو کے قریب، پرسکون فلیٹ، پہلے سے 3 ساتھی...",
-  lblWhatsapp:"واٹس ایپ نمبر", waInvalid:"درست واٹس ایپ نمبر درج کریں، مثلاً 05XXXXXXXX۔",
+  lblWhatsapp:"واٹس ایپ نمبر", waInvalid:"درست واٹس ایپ نمبر درج کریں، مثلاً 05XXXXXXXX۔", waSaudiInvalid:"سعودی موبائل نمبر درج کریں: 5 سے شروع ہونے والے 9 ہندسے۔",
   filterAllCities:"تمام شہر", filterAnyBudget:"کوئی بھی بجٹ", filterUnder500:"500 سے کم", filterBudget500to800:"500 – 800 SAR", filterBudget800to1200:"800 – 1,200 SAR",
   filterAnyNat:"کوئی بھی قومیت ترجیح",
   perMonth:"/ ماہانہ", contactWA:"واٹس ایپ", billsIncluded:"بلز شامل ہیں", billsShared:"بلز مشترکہ",
@@ -236,7 +236,7 @@ ur: {
   lblBio:"مختصر تعارف", bioPh:"مثلاً: 3 سال سے ریاض میں مقیم ہوں، ابشر/نفاذ سیٹ اپ میں مدد کے لیے تیار ہوں...",
   buddyFormSubmit:"میری ساتھی پروفائل شائع کریں", noBuddiesYet:"ابھی تک کوئی ساتھی نہیں — پہلے آپ بنیں!", helpsWith:"مدد کر سکتا ہے",
   videoLabel:"کمرے کی تصاویر یا ویڈیو (اختیاری)", videoHint:"زیادہ سے زیادہ 10 تصاویر، یا ایک مختصر ویڈیو شامل کریں۔ تصاویر والے کمروں کو کہیں زیادہ جوابات ملتے ہیں۔", uploadingVideo:"ویڈیو اپ لوڈ ہو رہی ہے...",
-  uploadingPhotoN:"تصویر {n} از {total} اپ لوڈ ہو رہی ہے...", photoN:"تصویر {n}",
+  uploadingPhotoN:"تصویر {n} از {total} اپ لوڈ ہو رہی ہے...", photoN:"تصویر {n}", prevPhoto:"پچھلی تصویر", nextPhoto:"اگلی تصویر",
   qcTextLabel:"آپ کے ذہن میں کیا ہے؟", qcTextPh:"ایک تجویز شیئر کریں جو کسی نئے شخص کے کام آئے...",
   qcImageLabel:"تصویر شامل کریں (اختیاری)", uploadingImage:"تصویر اپ لوڈ ہو رہی ہے...",
   viewAndAnswer:"دیکھیں اور جواب دیں", fromCommunity:"کمیونٹی سے",
@@ -269,7 +269,7 @@ ur: {
   qcOptHousingTitle:"کمرہ یا بیڈ اسپیس", qcOptHousingSub:"آپ کے پاس خالی جگہ ہے اور کرایہ دار چاہیے",
   qcOptInquiryTitle:"سوال", qcOptInquirySub:"تجربہ کار لوگوں سے جواب حاصل کریں",
   qcOptGuideTitle:"تجویز", qcOptGuideSub:"کچھ سیکھا جو دوسروں کے کام آ سکتا ہے",
-  qcAdvancedToggle:"مزید تفصیلات شامل کریں (اختیاری)", qcNext:"اگلا", qcPublish:"شائع کریں", sarLabel:"SAR",
+  qcMoreDetails:"مزید تفصیلات (اختیاری)", qcNext:"اگلا", qcPublish:"شائع کریں", sarLabel:"SAR",
   guestSavedLabel:"محفوظ شدہ", guestLanguageLabel:"زبان", guestLanguageValue:"العربية · English · اردو",
   likedCountLabel:"اس فون پر {n} پسند", savedCountLabel:"اس فون پر {n} محفوظ",
   signInBtnShort:"لاگ ان / اکاؤنٹ بنائیں",
@@ -528,14 +528,24 @@ function waDigits(value){
   else if(/^5\d{8}$/.test(d)) d = '966' + d;        // 5XXXXXXXX
   return d;
 }
+/* The 9 digits of a Saudi mobile after +966, from whatever was typed or pasted:
+   05XXXXXXXX, 5XXXXXXXX, +966 5X..., 00966..., Arabic/Urdu digits, spaces.
+   Never more than 9 digits, so the field can't hold a longer number. */
+function saudiMobileDigits(value){
+  let d = toLatinDigits(value).replace(/[^0-9]/g,'');
+  if(d.startsWith('00966')) d = d.slice(5);
+  else if(d.startsWith('966')) d = d.slice(3);
+  d = d.replace(/^0+/, '');
+  return d.slice(0, 9);
+}
 /* A number wa.me can open: 8–15 digits starting with a country code (never 0),
    and a Saudi one is 966 + 9 digits. */
 function waLooksValid(d){
   return /^[1-9][0-9]{7,14}$/.test(d) && (!d.startsWith('966') || d.length === 12);
 }
 /* Shows the problem on the field itself (the browser's own bubble), cleared on edit. */
-function flagWaInput(input){
-  input.setCustomValidity(t('waInvalid'));
+function flagWaInput(input, msgKey){
+  input.setCustomValidity(t(msgKey || 'waInvalid'));
   input.reportValidity();
   input.addEventListener('input', ()=> input.setCustomValidity(''), { once:true });
   input.focus();
@@ -708,6 +718,7 @@ const chatIconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" 
 const bulbIconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a6 6 0 00-3.5 10.9c.5.4.8 1 .8 1.6V16h5.4v-1.5c0-.6.3-1.2.8-1.6A6 6 0 0012 2z"/></svg>';
 const trashIconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M10 11v6M14 11v6"/><path d="M6 7l1 13h10l1-13"/><path d="M9 7V4h6v3"/></svg>';
 const upvoteIconSvg ='<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 5l7 8H5l7-8z"/></svg>';
+const chevronIconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>';
 const badgeIconSvg = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 5.6L21 8.5l-4.5 4.2L17.6 19 12 15.8 6.4 19l1.1-6.3L3 8.5l6.4-.9L12 2z"/></svg>';
 
 /* Likes are kept only in this browser (see LIKED_STORAGE_KEY), so the only
@@ -787,10 +798,10 @@ function buildFeedCardHtml(l, i){
   const mediaHtml = safeUrl(l.video)
     ? `<video class="feed-media" src="${safeUrl(l.video)}" muted loop playsinline></video>`
     : isGallery
-      ? `<div class="feed-gallery" data-gallery>${photos.map((u,n)=>`<img class="feed-gallery-img" src="${u}" alt="" ${n ? 'loading="lazy"' : ''}>`).join('')}</div>`
+      ? `<div class="feed-gallery" data-gallery>${photos.map((u,n)=>`<img class="feed-gallery-img" src="${u}" alt="" draggable="false" ${n ? 'loading="lazy"' : ''}>`).join('')}</div>`
       : (safeUrl(l.media) ? `<img class="feed-media" src="${safeUrl(l.media)}" alt="">` : `<div class="feed-placeholder feed-placeholder--${postType}">${typeIcon}</div>`);
   const dotsHtml = isGallery
-    ? `<div class="feed-dots">${photos.map((u,n)=>`<button class="feed-dot${n ? '' : ' active'}" data-gallery-dot="${n}" aria-label="${escapeHtml(fmt('photoN', { n: n+1 }))}"></button>`).join('')}</div>`
+    ? `<div class="feed-dots"><button class="feed-gallery-nav" data-gallery-step="-1" aria-label="${t('prevPhoto')}" disabled>${chevronIconSvg}</button>${photos.map((u,n)=>`<button class="feed-dot${n ? '' : ' active'}" data-gallery-dot="${n}" aria-label="${escapeHtml(fmt('photoN', { n: n+1 }))}"></button>`).join('')}<button class="feed-gallery-nav feed-gallery-nav--next" data-gallery-step="1" aria-label="${t('nextPhoto')}">${chevronIconSvg}</button></div>`
     : '';
   return `
   <div class="feed-card${isGallery ? ' feed-card--gallery' : ''}" data-idx="${i}" data-like-key="${key}" data-listing-id="${key}">
@@ -919,19 +930,39 @@ function bindFeedCardEvents(wrap, filtered){
 
   // Photo galleries: keep the dots in step with the swipe, and let a dot jump to its photo.
   // In RTL the gallery scrolls the other way and scrollLeft runs from 0 to negative.
+  // Fingers swipe the gallery natively; a mouse can't drag a scroll box, so on a
+  // computer a drag is turned into one step, and the arrows beside the dots step too.
   wrap.querySelectorAll('[data-gallery]').forEach(gallery=>{
     const card = gallery.closest('.feed-card');
     const dots = card.querySelectorAll('[data-gallery-dot]');
+    const prev = card.querySelector('[data-gallery-step="-1"]');
+    const next = card.querySelector('[data-gallery-step="1"]');
+    const last = dots.length - 1;
     const rtl = ()=> getComputedStyle(gallery).direction === 'rtl';
-    gallery.addEventListener('scroll', ()=>{
-      const idx = Math.round(Math.abs(gallery.scrollLeft) / gallery.clientWidth);
+    const current = ()=> Math.round(Math.abs(gallery.scrollLeft) / gallery.clientWidth);
+    const goTo = (n)=>{
+      n = Math.max(0, Math.min(last, n));
+      gallery.scrollTo({ left: n * gallery.clientWidth * (rtl() ? -1 : 1), behavior: 'smooth' });
+    };
+    const sync = ()=>{
+      const idx = current();
       dots.forEach((d,n)=> d.classList.toggle('active', n===idx));
-    }, { passive: true });
-    dots.forEach(dot=>{
-      dot.addEventListener('click', ()=>{
-        const n = parseInt(dot.getAttribute('data-gallery-dot'));
-        gallery.scrollTo({ left: n * gallery.clientWidth * (rtl() ? -1 : 1), behavior: 'smooth' });
-      });
+      if(prev) prev.disabled = idx <= 0;
+      if(next) next.disabled = idx >= last;
+    };
+    gallery.addEventListener('scroll', sync, { passive: true });
+    dots.forEach(dot=> dot.addEventListener('click', ()=> goTo(parseInt(dot.getAttribute('data-gallery-dot')))));
+    if(prev) prev.addEventListener('click', ()=> goTo(current() - 1));
+    if(next) next.addEventListener('click', ()=> goTo(current() + 1));
+    let dragX = null;
+    gallery.addEventListener('pointerdown', e=>{ if(e.pointerType === 'mouse') dragX = e.clientX; });
+    window.addEventListener('pointerup', e=>{
+      if(dragX === null) return;
+      const dx = e.clientX - dragX;
+      dragX = null;
+      if(Math.abs(dx) < 40) return; // a click or double-click, not a drag
+      const forward = (dx < 0) !== rtl(); // dragging toward the reading start moves forward
+      goTo(current() + (forward ? 1 : -1));
     });
   });
 
@@ -2190,12 +2221,6 @@ document.getElementById('btnQcNext').addEventListener('click', ()=>{
   showQcStep(2);
 });
 
-document.getElementById('qcToggleAdvanced').addEventListener('click', ()=>{
-  const panel = document.getElementById('qcAdvancedFields');
-  const open = panel.style.display === 'none';
-  panel.style.display = open ? 'block' : 'none';
-  document.getElementById('qcToggleAdvanced').classList.toggle('open', open);
-});
 document.getElementById('qc-nat').addEventListener('change', e=>{
   document.getElementById('qcNatOtherField').style.display = e.target.value === 'other' ? '' : 'none';
 });
@@ -2234,6 +2259,12 @@ async function fitImageForUpload(file){
   }
 }
 
+// Keep the room WhatsApp field to the 9 digits after +966 while typing or pasting.
+document.getElementById('qc-wa').addEventListener('input', e=>{
+  const cleaned = saudiMobileDigits(e.target.value);
+  if(e.target.value !== cleaned) e.target.value = cleaned;
+});
+
 function resetComposerFields(){
   document.getElementById('qc-text').value = '';
   document.getElementById('qc-image').value = '';
@@ -2245,7 +2276,6 @@ function resetComposerFields(){
   document.getElementById('qcNatOtherField').style.display = 'none';
   document.getElementById('qcImageUploadStatus').style.display = 'none';
   document.getElementById('qcVideoUploadStatus').style.display = 'none';
-  document.getElementById('qcAdvancedFields').style.display = 'none';
   setQuickComposerOpen(false);
 }
 
@@ -2299,7 +2329,9 @@ document.getElementById('btnSubmitQuickPost').addEventListener('click', async ()
     : natValue === 'other' ? (document.getElementById('qc-nat-other').value.trim() || t('natOther'))
     : natValue;
   const bills_included = document.getElementById('qc-bills').checked;
-  const whatsapp = waDigits(document.getElementById('qc-wa').value);
+  // Room posts take a Saudi mobile only: the field shows +966 and holds the 9 digits after it.
+  const waLocal = saudiMobileDigits(document.getElementById('qc-wa').value);
+  const whatsapp = waLocal ? '966' + waLocal : '';
   // The room field takes up to 10 photos or one video. Photos go to the same bucket
   // (post-images) that tips posts use; a video keeps listing-videos. If a video is
   // among the picked files, that video is used and the photos are left out.
@@ -2309,7 +2341,7 @@ document.getElementById('btnSubmitQuickPost').addEventListener('click', async ()
 
   if(isHousing && !rent){ document.getElementById('qc-rent').focus(); return; }
   if(isHousing && !whatsapp){ document.getElementById('qc-wa').focus(); return; }
-  if(isHousing && !waLooksValid(whatsapp)){ flagWaInput(document.getElementById('qc-wa')); return; }
+  if(isHousing && !/^5\d{8}$/.test(waLocal)){ flagWaInput(document.getElementById('qc-wa'), 'waSaudiInvalid'); return; }
 
   requireSignIn(async ()=>{
     const postedCategory = category;
