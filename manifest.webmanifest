@@ -1,0 +1,15 @@
+{
+  "name": "Sanad · سند",
+  "short_name": "Sanad",
+  "description": "Rooms, rights and answers for workers in Saudi Arabia, in English, Arabic and Urdu.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F6F4EA",
+  "theme_color": "#0F5C4E",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
