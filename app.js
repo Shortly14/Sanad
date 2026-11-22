@@ -2383,7 +2383,14 @@ document.getElementById('qc-video').addEventListener('change', e=>{
 
 /* Uploads one file and returns its public URL, or null if it failed. */
 async function uploadToBucket(bucket, file, tag){
-  const path = `${Date.now()}_${tag}_${file.name.replace(/[^a-zA-Z0-9.\-_]/g, '_')}`;
+  // The random part keeps names unguessable and unique; the database only accepts an upload
+  // whose exact name request_upload handed out to a signed-in member (schema.sql, section 12).
+  const rand = Array.from(crypto.getRandomValues(new Uint8Array(6)), b=> b.toString(16).padStart(2,'0')).join('');
+  const path = `${Date.now()}_${tag}_${rand}_${String(file.name || 'file').replace(/[^a-zA-Z0-9.\-_]/g, '_').slice(-60)}`;
+  const ticket = await supabaseClient.rpc('request_upload', { p_session_token: appUser && appUser.sessionToken, p_bucket: bucket, p_name: path });
+  // PGRST202: the database doesn't have request_upload yet (schema.sql not run), so the
+  // old upload rule still applies and the upload can go ahead without a ticket.
+  if(ticket.error && ticket.error.code !== 'PGRST202'){ console.error('Upload refused for ' + bucket + ':', ticket.error); return null; }
   const { error } = await supabaseClient.storage.from(bucket).upload(path, file);
   if(error){ console.error('Error uploading to ' + bucket + ':', error); return null; }
   return supabaseClient.storage.from(bucket).getPublicUrl(path).data.publicUrl;

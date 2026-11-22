@@ -659,6 +659,64 @@ end;
 $$;
 grant execute on function sanad_upload_budget_ok() to anon, authenticated;
 
+-- Uploads need a signed-in account. Before this, anyone on the internet could
+-- upload to both buckets without signing in, use up the site-wide budget above
+-- so real members couldn't upload, and keep filling the disk. Now the app first
+-- asks request_upload() for the exact file name it is about to upload; that
+-- checks the session and a per-person limit, and the upload policy below only
+-- accepts a file whose name was handed out that way in the last hour.
+create table if not exists upload_tickets (
+  name text primary key,
+  bucket text not null,
+  user_id uuid not null references app_users(id) on delete cascade,
+  created_at timestamptz default now()
+);
+create index if not exists idx_upload_tickets_created on upload_tickets(created_at);
+alter table upload_tickets enable row level security;
+revoke all on upload_tickets from anon, authenticated;
+
+create or replace function request_upload(p_session_token text, p_bucket text, p_name text)
+returns void
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare v_user record;
+begin
+  select * into v_user from sanad_session_user(p_session_token);
+  if p_bucket is null or p_bucket not in ('listing-videos', 'post-images') then
+    raise exception 'Unknown bucket';
+  end if;
+  if coalesce(p_name, '') !~ '^[A-Za-z0-9._-]{1,200}$' then
+    raise exception 'Invalid file name';
+  end if;
+  delete from upload_tickets where created_at < now() - interval '1 day';
+  -- A room post is up to 10 photos, so 60 an hour is several posts' worth.
+  perform sanad_rate_limit('upload', v_user.id::text, 60, interval '1 hour');
+  insert into upload_tickets (name, bucket, user_id) values (p_name, p_bucket, v_user.id);
+exception
+  when unique_violation then
+    raise exception 'Invalid file name';
+end;
+$$;
+grant execute on function request_upload(text, text, text) to anon, authenticated;
+
+-- Used by the upload policy, which runs as the uploader (anon), who can't
+-- read upload_tickets directly.
+create or replace function sanad_upload_ticket_ok(p_bucket text, p_name text)
+returns boolean
+language sql
+stable
+security definer
+set search_path = public, extensions
+as $$
+  select exists (
+    select 1 from upload_tickets t
+    where t.name = p_name and t.bucket = p_bucket and t.created_at > now() - interval '1 hour'
+  );
+$$;
+grant execute on function sanad_upload_ticket_ok(text, text) to anon, authenticated;
+
 do $$
 declare pol record;
 begin
@@ -693,6 +751,7 @@ begin
     with check (
       bucket_id in ('listing-videos', 'post-images')
       and position('/' in name) = 0
+      and public.sanad_upload_ticket_ok(bucket_id, name)
       and public.sanad_upload_budget_ok()
     );
 end $$;
