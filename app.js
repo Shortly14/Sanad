@@ -8,7 +8,11 @@ const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5v
 // save anywhere or sync between visitors.
 const SUPABASE_CONFIGURED = !SUPABASE_URL.includes("YOUR_PROJECT_ID") && !SUPABASE_ANON_KEY.includes("YOUR_ANON_PUBLIC_KEY");
 
-const supabaseClient = SUPABASE_CONFIGURED ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
+// window.supabase is missing when the CDN script failed to load or failed its integrity check.
+if (SUPABASE_CONFIGURED && !window.supabase) {
+  console.warn('Sanad: Supabase CDN script failed to load (network/CORS/blocked) — app will run on local data only.');
+}
+const supabaseClient = SUPABASE_CONFIGURED && window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
 
 if (!SUPABASE_CONFIGURED) {
   console.warn("Sanad: Supabase isn't configured yet (still using the placeholder URL/key). Housing and forum posts will only live in this browser tab until you add your real project credentials at the top of the script.");
@@ -71,8 +75,9 @@ en: {
   lblHelpAreas:"What can you help with?", helpHousing:"Finding housing", helpPaperwork:"Paperwork & procedures", helpOrientation:"General orientation",
   lblBio:"Short bio", bioPh:"e.g. Lived in Riyadh for 3 years, happy to help with Absher/Nafath setup...",
   buddyFormSubmit:"Publish my buddy profile", noBuddiesYet:"No buddies listed yet — be the first!", helpsWith:"Can help with",
-  videoLabel:"Room photos or video (optional)", videoHint:"Add up to 10 photos, or one short walkthrough video. Rooms with pictures get far more replies.", uploadingVideo:"Uploading video...",
-  uploadingPhotoN:"Uploading photo {n} of {total}...", photoN:"Photo {n}", prevPhoto:"Previous photo", nextPhoto:"Next photo",
+  videoLabel:"Room photos or video (optional)", videoHint:"Up to 10 photos, or one video of up to 60 seconds and 50 MB. Photos are made smaller automatically so they upload fast.",
+  mediaVideoTooBig:"This video is {mb} MB. Videos can be up to 50 MB. Try a shorter clip, or record in 1080p instead of 4K.", mediaVideoTooLong:"This video is {s} seconds. Videos can be up to 60 seconds.", mediaTooManyPhotos:"You picked {n} photos. Only the first 10 will be posted.", mediaPhotosPicked:"{n} photos ready", mediaVideoPicked:"Video ready: {mb} MB, {s} seconds", uploadingPhotosProgress:"Uploading photos... {done} of {total}", uploadFailed:"Upload failed. Check your connection and try again.", publishFailed:"Couldn't publish. Please try again.", uploadingVideo:"Uploading video...",
+  photoN:"Photo {n}", prevPhoto:"Previous photo", nextPhoto:"Next photo",
   qcTextLabel:"What's on your mind?", qcTextPh:"Share a tip that could help someone new...",
   qcImageLabel:"Add a photo (optional)", uploadingImage:"Uploading image...",
   viewAndAnswer:"View & answer", fromCommunity:"From Community",
@@ -87,7 +92,7 @@ en: {
   filtersLabel:"Filters", filtersReset:"Reset", filtersShow:"Show results",
   lblBudget:"Budget per month", lblNatShort:"Nationality", lblGenderShort:"Gender",
   noListingsTitle:"No rooms match these filters", noListingsSub:"Try a wider budget, or clear a filter or two.",
-  soundTicker:"Original sound · Sanad Housing", likeLabel:"Like", saveLabel:"Save",
+  likeLabel:"Like", saveLabel:"Save",
   deleteLabel:"Delete", deleteConfirm:"Delete this for good? This can't be undone.", deleteFailed:"Couldn't delete this. Check your connection, or sign out and sign in again, then try once more.", removeBuddyProfile:"Remove my buddy profile",
   statMyListings:"Listings", statMyQuestions:"Questions", statMyClicks:"Link clicks",
   tabMyPosts:"Posts", tabLiked:"Liked", memberSince:"Member since", memberFallback:"Member",
@@ -153,8 +158,9 @@ ar: {
   lblHelpAreas:"بماذا يمكنك المساعدة؟", helpHousing:"إيجاد السكن", helpPaperwork:"الأوراق والإجراءات", helpOrientation:"التوجيه العام",
   lblBio:"نبذة قصيرة", bioPh:"مثال: أعيش في الرياض منذ 3 سنوات، يسعدني المساعدة في إعداد أبشر ونفاذ...",
   buddyFormSubmit:"نشر ملفي كرفيق", noBuddiesYet:"لا يوجد رفقاء بعد — كن الأول!", helpsWith:"يمكنه المساعدة في",
-  videoLabel:"صور أو فيديو للغرفة (اختياري)", videoHint:"أضف حتى 10 صور، أو فيديو قصيراً واحداً. الغرف التي فيها صور تحصل على ردود أكثر بكثير.", uploadingVideo:"جارٍ رفع الفيديو...",
-  uploadingPhotoN:"جارٍ رفع الصورة {n} من {total}...", photoN:"صورة {n}", prevPhoto:"الصورة السابقة", nextPhoto:"الصورة التالية",
+  videoLabel:"صور أو فيديو للغرفة (اختياري)", videoHint:"حتى 10 صور، أو فيديو واحد مدته حتى 60 ثانية وحجمه حتى 50 ميغابايت. يتم تصغير الصور تلقائياً لترفع بسرعة.",
+  mediaVideoTooBig:"حجم هذا الفيديو {mb} ميغابايت. الحد الأقصى 50 ميغابايت. جرّب مقطعاً أقصر، أو صوّر بدقة 1080p بدلاً من 4K.", mediaVideoTooLong:"مدة هذا الفيديو {s} ثانية. الحد الأقصى 60 ثانية.", mediaTooManyPhotos:"اخترت {n} صور. سيتم نشر أول 10 صور فقط.", mediaPhotosPicked:"{n} صور جاهزة", mediaVideoPicked:"الفيديو جاهز: {mb} ميغابايت، {s} ثانية", uploadingPhotosProgress:"جارٍ رفع الصور... {done} من {total}", uploadFailed:"فشل الرفع. تحقق من اتصالك وحاول مرة أخرى.", publishFailed:"تعذّر النشر. حاول مرة أخرى.", uploadingVideo:"جارٍ رفع الفيديو...",
+  photoN:"صورة {n}", prevPhoto:"الصورة السابقة", nextPhoto:"الصورة التالية",
   qcTextLabel:"ما الذي يدور في ذهنك؟", qcTextPh:"شارك نصيحة قد تفيد شخصاً جديداً...",
   qcImageLabel:"أضف صورة (اختياري)", uploadingImage:"جارٍ رفع الصورة...",
   viewAndAnswer:"عرض والإجابة", fromCommunity:"من المجتمع",
@@ -169,7 +175,7 @@ ar: {
   filtersLabel:"الفلاتر", filtersReset:"مسح", filtersShow:"عرض النتائج",
   lblBudget:"الميزانية بالشهر", lblNatShort:"الجنسية", lblGenderShort:"الجنس",
   noListingsTitle:"لا توجد غرف مطابقة لهذه الفلاتر", noListingsSub:"جرّب ميزانية أوسع أو أزل فلتراً أو اثنين.",
-  soundTicker:"صوت أصلي · سند للإسكان", likeLabel:"إعجاب", saveLabel:"احفظ",
+  likeLabel:"إعجاب", saveLabel:"احفظ",
   deleteLabel:"حذف", deleteConfirm:"هل تريد حذف هذا نهائيًا؟ لا يمكن التراجع عن ذلك.", deleteFailed:"تعذّر الحذف. تحقّق من اتصالك، أو سجّل الخروج ثم سجّل الدخول من جديد، وحاول مرة أخرى.", removeBuddyProfile:"إزالة ملفي كرفيق",
   statMyListings:"الإعلانات", statMyQuestions:"الأسئلة", statMyClicks:"نقرات الروابط",
   tabMyPosts:"إعلاناتي", tabLiked:"أعجبني", memberSince:"عضو منذ", memberFallback:"عضو",
@@ -235,8 +241,9 @@ ur: {
   lblHelpAreas:"آپ کس چیز میں مدد کر سکتے ہیں؟", helpHousing:"رہائش تلاش کرنا", helpPaperwork:"کاغذی کارروائی اور طریقہ کار", helpOrientation:"عمومی رہنمائی",
   lblBio:"مختصر تعارف", bioPh:"مثلاً: 3 سال سے ریاض میں مقیم ہوں، ابشر/نفاذ سیٹ اپ میں مدد کے لیے تیار ہوں...",
   buddyFormSubmit:"میری ساتھی پروفائل شائع کریں", noBuddiesYet:"ابھی تک کوئی ساتھی نہیں — پہلے آپ بنیں!", helpsWith:"مدد کر سکتا ہے",
-  videoLabel:"کمرے کی تصاویر یا ویڈیو (اختیاری)", videoHint:"زیادہ سے زیادہ 10 تصاویر، یا ایک مختصر ویڈیو شامل کریں۔ تصاویر والے کمروں کو کہیں زیادہ جوابات ملتے ہیں۔", uploadingVideo:"ویڈیو اپ لوڈ ہو رہی ہے...",
-  uploadingPhotoN:"تصویر {n} از {total} اپ لوڈ ہو رہی ہے...", photoN:"تصویر {n}", prevPhoto:"پچھلی تصویر", nextPhoto:"اگلی تصویر",
+  videoLabel:"کمرے کی تصاویر یا ویڈیو (اختیاری)", videoHint:"زیادہ سے زیادہ 10 تصاویر، یا ایک ویڈیو جو 60 سیکنڈ اور 50 MB تک ہو۔ تصاویر خود بخود چھوٹی کر دی جاتی ہیں تاکہ جلدی اپ لوڈ ہوں۔",
+  mediaVideoTooBig:"یہ ویڈیو {mb} MB کی ہے۔ ویڈیو زیادہ سے زیادہ 50 MB ہو سکتی ہے۔ چھوٹی ویڈیو آزمائیں، یا 4K کے بجائے 1080p میں ریکارڈ کریں۔", mediaVideoTooLong:"یہ ویڈیو {s} سیکنڈ کی ہے۔ ویڈیو زیادہ سے زیادہ 60 سیکنڈ ہو سکتی ہے۔", mediaTooManyPhotos:"آپ نے {n} تصاویر منتخب کیں۔ صرف پہلی 10 پوسٹ ہوں گی۔", mediaPhotosPicked:"{n} تصاویر تیار ہیں", mediaVideoPicked:"ویڈیو تیار ہے: {mb} MB، {s} سیکنڈ", uploadingPhotosProgress:"تصاویر اپ لوڈ ہو رہی ہیں... {total} میں سے {done}", uploadFailed:"اپ لوڈ ناکام ہو گیا۔ اپنا کنکشن چیک کریں اور دوبارہ کوشش کریں۔", publishFailed:"پوسٹ نہیں ہو سکی۔ دوبارہ کوشش کریں۔", uploadingVideo:"ویڈیو اپ لوڈ ہو رہی ہے...",
+  photoN:"تصویر {n}", prevPhoto:"پچھلی تصویر", nextPhoto:"اگلی تصویر",
   qcTextLabel:"آپ کے ذہن میں کیا ہے؟", qcTextPh:"ایک تجویز شیئر کریں جو کسی نئے شخص کے کام آئے...",
   qcImageLabel:"تصویر شامل کریں (اختیاری)", uploadingImage:"تصویر اپ لوڈ ہو رہی ہے...",
   viewAndAnswer:"دیکھیں اور جواب دیں", fromCommunity:"کمیونٹی سے",
@@ -251,7 +258,7 @@ ur: {
   filtersLabel:"فلٹرز", filtersReset:"ری سیٹ", filtersShow:"نتائج دیکھیں",
   lblBudget:"ماہانہ بجٹ", lblNatShort:"قومیت", lblGenderShort:"صنف",
   noListingsTitle:"ان فلٹرز سے کوئی کمرہ نہیں ملا", noListingsSub:"بجٹ بڑھائیں یا ایک دو فلٹر ہٹا دیں۔",
-  soundTicker:"اصل آواز · سند ہاؤسنگ", likeLabel:"پسند", saveLabel:"محفوظ کریں",
+  likeLabel:"پسند", saveLabel:"محفوظ کریں",
   deleteLabel:"حذف کریں", deleteConfirm:"کیا اسے ہمیشہ کے لیے حذف کر دیں؟ یہ واپس نہیں ہو سکتا۔", deleteFailed:"حذف نہیں ہو سکا۔ اپنا کنکشن چیک کریں، یا سائن آؤٹ کر کے دوبارہ سائن اِن کریں، پھر ایک بار اور کوشش کریں۔", removeBuddyProfile:"میری ساتھی پروفائل ہٹائیں",
   statMyListings:"لسٹنگز", statMyQuestions:"سوالات", statMyClicks:"لنک کلکس",
   tabMyPosts:"پوسٹس", tabLiked:"پسندیدہ", memberSince:"رکن بننے کی تاریخ", memberFallback:"رکن",
@@ -583,6 +590,7 @@ function setTab(tab){
   document.querySelectorAll('nav.tabbar button[data-tab]').forEach(b=>b.classList.toggle('active', b.getAttribute('data-tab')===tab));
   window.scrollTo({top:0, behavior:'instant'});
   applyFeedMode();
+  if(tab==='community') fitCommunityFeed();
   closeFilters();
   setQuickComposerOpen(false);
   if(tab==='profile'){ if(appUser) fetchAndRenderProfileStats(); renderProfile(); }
@@ -597,6 +605,36 @@ function applyFeedMode(){
   document.body.classList.toggle('feed-mode', feedMode);
 }
 window.addEventListener('resize', ()=>{ applyFeedMode(); if(window.innerWidth >= 760) closeFilters(); });
+
+/* Brings a card to the top of its own feed box. scrollIntoView would also scroll the page, and in
+   the Feed (where the page itself can't be scrolled by hand) that left it stuck part-way. */
+function scrollCardIntoFeed(card, smooth){
+  const scroller = card && card.closest('.feed-scroll');
+  if(!scroller) return;
+  const top = card.getBoundingClientRect().top - scroller.getBoundingClientRect().top + scroller.scrollTop;
+  scroller.scrollTo({ top, behavior: smooth ? 'smooth' : 'instant' });
+}
+
+/* On a phone the Community questions box is sized to end just above the tab bar, so the whole
+   box is on screen and the page and the box don't fight over the same swipe. --qa-top is where
+   the box starts on the page; CSS does the rest. */
+function fitCommunityFeed(){
+  const box = document.getElementById('forumFeedScroll');
+  if(!box || !box.offsetParent) return;
+  const top = box.getBoundingClientRect().top + window.scrollY;
+  document.documentElement.style.setProperty('--qa-top', Math.round(top) + 'px');
+}
+window.addEventListener('resize', fitCommunityFeed);
+
+/* iOS scrolls the whole page up to make room for the keyboard and doesn't always scroll it back.
+   In the Feed the page can't be scrolled by hand, so it stayed stuck with the tab bar half off
+   screen. When typing ends, put it back. */
+document.addEventListener('focusout', ()=>{
+  setTimeout(()=>{
+    const typing = document.activeElement && document.activeElement.matches('input, textarea, select');
+    if(!typing && document.body.classList.contains('feed-mode') && window.scrollY !== 0) window.scrollTo(0, 0);
+  }, 120);
+});
 
 /* ---- Guide render ---- */
 function renderGuide(){
@@ -713,7 +751,6 @@ const shareIconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
 const houseIconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10l9-7 9 7"/><path d="M5 9v11h14V9"/></svg>';
 const heartIconSvg = '<svg viewBox="0 0 24 24"><path d="M12 21s-7.2-4.6-10-9.1C.5 8.6 1.8 5 5.3 4.1c2-.5 4 .3 5.2 2 .4.5.7 1 1 1.6.3-.6.6-1.1 1-1.6 1.2-1.7 3.2-2.5 5.2-2 3.5.9 4.8 4.5 3.3 7.8-2.8 4.5-10 9.1-10 9.1z"/></svg>';
 const bookmarkIconSvg = '<svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4.5L6 21V3z"/></svg>';
-const noteIconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>';
 const chatIconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 01-8.5 8.5c-1.35 0-2.61-.34-3.7-.94L3 21l1.94-5.8A8.5 8.5 0 1121 11.5z"/></svg>';
 const bulbIconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a6 6 0 00-3.5 10.9c.5.4.8 1 .8 1.6V16h5.4v-1.5c0-.6.3-1.2.8-1.6A6 6 0 0012 2z"/></svg>';
 const trashIconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M10 11v6M14 11v6"/><path d="M6 7l1 13h10l1-13"/><path d="M9 7V4h6v3"/></svg>';
@@ -795,57 +832,89 @@ function buildFeedCardHtml(l, i){
   // Several photos become a sideways-swipe gallery (TikTok photo mode); the feed itself still scrolls up/down.
   const photos = safeUrl(l.video) ? [] : (l.mediaList || []).map(safeUrl).filter(Boolean);
   const isGallery = photos.length > 1;
+  // Each photo or video sits in a .feed-slide. Once its size is known, fitFeedMedia() shows a
+  // landscape room photo whole (over a blurred copy of itself) instead of cropping its sides away.
+  const slide = (u, lazy) => `<div class="feed-slide"><img class="feed-backdrop" src="${u}" alt="" aria-hidden="true" draggable="false" ${lazy ? 'loading="lazy"' : ''}><img class="feed-media" data-fit-media src="${u}" alt="" draggable="false" ${lazy ? 'loading="lazy"' : ''}></div>`;
   const mediaHtml = safeUrl(l.video)
-    ? `<video class="feed-media" src="${safeUrl(l.video)}" muted loop playsinline></video>`
+    ? `<div class="feed-slide feed-slide--video"><video class="feed-media" data-fit-media src="${safeUrl(l.video)}" muted loop playsinline preload="metadata"></video></div>`
     : isGallery
-      ? `<div class="feed-gallery" data-gallery>${photos.map((u,n)=>`<img class="feed-gallery-img" src="${u}" alt="" draggable="false" ${n ? 'loading="lazy"' : ''}>`).join('')}</div>`
-      : (safeUrl(l.media) ? `<img class="feed-media" src="${safeUrl(l.media)}" alt="">` : `<div class="feed-placeholder feed-placeholder--${postType}">${typeIcon}</div>`);
+      ? `<div class="feed-gallery" data-gallery>${photos.map((u,n)=> slide(u, n > 0)).join('')}</div>`
+      : (safeUrl(l.media) ? slide(safeUrl(l.media), false) : `<div class="feed-placeholder feed-placeholder--${postType}">${typeIcon}</div>`);
   const dotsHtml = isGallery
     ? `<div class="feed-dots"><button class="feed-gallery-nav" data-gallery-step="-1" aria-label="${t('prevPhoto')}" disabled>${chevronIconSvg}</button>${photos.map((u,n)=>`<button class="feed-dot${n ? '' : ' active'}" data-gallery-dot="${n}" aria-label="${escapeHtml(fmt('photoN', { n: n+1 }))}"></button>`).join('')}<button class="feed-gallery-nav feed-gallery-nav--next" data-gallery-step="1" aria-label="${t('nextPhoto')}">${chevronIconSvg}</button></div>`
     : '';
+  // Rooms saved without a description store "—"; don't spend a line of the card on it.
+  const desc = String(l.desc || '').trim();
+  const hasDesc = desc !== '' && desc !== '—';
+  // Only tags that say something: "any gender" and "any nationality" are left out.
+  const roomTags = isHousing ? [
+    (l.gender && l.gender !== 'any') ? t(genderLabelKey[l.gender] || l.gender) : null,
+    (l.nat && l.nat !== 'Any') ? l.nat : null,
+    l.bills ? t('billsIncluded') : t('billsShared')
+  ].filter(Boolean) : [];
   return `
-  <div class="feed-card${isGallery ? ' feed-card--gallery' : ''}" data-idx="${i}" data-like-key="${key}" data-listing-id="${key}">
+  <div class="feed-card${isGallery ? ' feed-card--gallery' : ''}${isHousing ? ' feed-card--room' : ''}" data-idx="${i}" data-like-key="${key}" data-listing-id="${key}">
     ${mediaHtml}
     <div class="feed-scrim"></div>
     <div class="feed-heart-burst" data-heart-burst></div>
     ${safeUrl(l.video) ? `<button class="feed-mute" data-mute-toggle="${i}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 9v6h4l5 4V5l-5 4H5z"/><path d="M17 9a3 3 0 010 6" stroke-opacity="0.4"/></svg></button>` : ''}
     <div class="feed-rail">
-      <button class="feed-avatar-wrap" ${hasProfile ? `data-view-profile="${posterId}"` : 'disabled'}><div class="feed-avatar">${avatarLetter}</div></button>
-      <div><button class="lk ${liked?'active':''}" data-like="${key}" aria-pressed="${liked}">${heartIconSvg}</button><div class="lbl" data-like-count="${key}">${formatCount(count)}</div></div>
-      ${wa ? `<div><button class="wa" data-wa="${wa}">${waIconSvg}</button><div class="lbl">${t('contactWA')}</div></div>` : ''}
+      <div><button class="lk ${liked?'active':''}" data-like="${key}" aria-pressed="${liked}" aria-label="${t('likeLabel')}">${heartIconSvg}</button><div class="lbl" data-like-count="${key}">${formatCount(count)}</div></div>
+      ${wa ? `<div><button class="wa" data-wa="${wa}" aria-label="${t('contactWA')}">${waIconSvg}</button><div class="lbl">${t('contactWA')}</div></div>` : ''}
       ${isForumInquiry ? `<div><button class="ans" data-view-forum-post="${l.forumIndex}">${chatIconSvg}</button><div class="lbl">${t('viewAndAnswer')}</div></div>` : ''}
-      <div><button class="sv ${saved?'active':''}" data-save="${key}" aria-pressed="${saved}">${bookmarkIconSvg}</button><div class="lbl">${t('saveLabel')}</div></div>
-      <div><button class="sh" data-share-listing-id="${key}">${shareIconSvg}</button><div class="lbl">${t('shareLabel')}</div></div>
+      <div><button class="sv ${saved?'active':''}" data-save="${key}" aria-pressed="${saved}" aria-label="${t('saveLabel')}">${bookmarkIconSvg}</button><div class="lbl">${t('saveLabel')}</div></div>
+      <div><button class="sh" data-share-listing-id="${key}" aria-label="${t('shareLabel')}">${shareIconSvg}</button><div class="lbl">${t('shareLabel')}</div></div>
       ${isMine ? `<div><button class="del" data-delete-post="${key}" data-delete-kind="${isForumInquiry ? 'forum' : 'listing'}" aria-label="${t('deleteLabel')}">${trashIconSvg}</button><div class="lbl">${t('deleteLabel')}</div></div>` : ''}
     </div>
     <div class="feed-content">
       ${dotsHtml}
+      ${isHousing ? `
+      <div class="feed-title-row">
+        <h3>${escapeHtml(t(roomTypeLabelKey[l.type] || l.type))} · ${escapeHtml(l.city)}</h3>
+        <span class="feed-price-pill">${escapeHtml(l.rent)} ${t('sarLabel')}${t('perMonth')}</span>
+      </div>` : ''}
       <div class="feed-handle">
         <button class="feed-handle-link" ${hasProfile ? `data-view-profile="${posterId}"` : 'disabled'}>
           <span class="feed-avatar-sm">${avatarLetter}</span>
-          <span class="handle-name">${t('postedBy')} ${escapeHtml(l.by)}</span>
+          <span class="handle-name">${isHousing ? '' : t('postedBy') + ' '}${escapeHtml(l.by)}</span>
         </button>
         ${isHousing
-          ? `<span class="feed-price-pill">${escapeHtml(l.rent)} ${t('sarLabel')}${t('perMonth')}</span>`
+          ? roomTags.map(tag=>`<span class="feed-tag">${escapeHtml(tag)}</span>`).join('')
           : isForumInquiry
             ? `<span class="feed-price-pill feed-price-pill--muted">${chatIconSvg}${l.repliesCount}</span>`
             : `<span class="feed-tag">${t(typeTagKey)}</span>`}
       </div>
-      ${isHousing ? `<h3>${escapeHtml(t(roomTypeLabelKey[l.type] || l.type))} · ${escapeHtml(l.city)}</h3>` : ''}
-      <p class="feed-desc${isHousing ? '' : ' feed-desc--quote'}">${escapeHtml(l.desc)}</p>
-      ${isHousing ? `
-      <div class="feed-tag-row">
-        <span class="feed-tag">#${escapeHtml(String(t(genderLabelKey[l.gender] || l.gender)).replace(/\s+/g,''))}</span>
-        <span class="feed-tag">#${escapeHtml(String(l.nat==='Any' ? t('natAny') : l.nat).replace(/\s+/g,''))}</span>
-        <span class="feed-tag">#${(l.bills ? t('billsIncluded') : t('billsShared')).replace(/\s+/g,'')}</span>
-      </div>` : isForumInquiry
+      ${hasDesc ? `<p class="feed-desc${isHousing ? '' : ' feed-desc--quote'}" ${isHousing ? 'data-desc-toggle' : ''}>${escapeHtml(desc)}</p>` : ''}
+      ${isForumInquiry
         ? `<div class="feed-tag-row"><span class="feed-tag">${t('fromCommunity')}</span></div>`
-        : (l.natTarget ? `<div class="feed-tag-row"><span class="feed-tag">#${escapeHtml(l.natTarget.replace(/\s+/g,''))}</span></div>` : '')}
-      <div class="feed-sound"><span class="feed-sound-ic">${noteIconSvg}</span><span class="feed-sound-track"><span>${t('soundTicker')}</span><span>${t('soundTicker')}</span></span></div>
+        : (!isHousing && l.natTarget ? `<div class="feed-tag-row"><span class="feed-tag">#${escapeHtml(l.natTarget.replace(/\s+/g,''))}</span></div>` : '')}
     </div>
   </div>
 `;
 }
+
+/* Cover the card when that crops little (a tall phone photo or video); otherwise show the whole
+   photo or video. Room photos are usually landscape or 4:3, and cropping them to a tall phone
+   screen hid most of the room. */
+function fitFeedMedia(el){
+  const w = el.naturalWidth || el.videoWidth, h = el.naturalHeight || el.videoHeight;
+  const slide = el.closest('.feed-slide');
+  if(!w || !h || !slide || !slide.clientWidth || !slide.clientHeight) return;
+  const mediaRatio = w / h, boxRatio = slide.clientWidth / slide.clientHeight;
+  // Share of the photo that cover would cut off, on whichever side overflows.
+  const cut = mediaRatio > boxRatio ? 1 - boxRatio / mediaRatio : 1 - mediaRatio / boxRatio;
+  slide.dataset.fit = cut > 0.2 ? 'contain' : 'cover';
+}
+function bindFeedMediaFit(wrap){
+  wrap.querySelectorAll('[data-fit-media]').forEach(el=>{
+    const run = ()=> fitFeedMedia(el);
+    if(el.tagName === 'VIDEO'){
+      if(el.readyState >= 1) run(); else el.addEventListener('loadedmetadata', run, { once:true });
+    } else if(el.complete && el.naturalWidth){ run(); }
+    else el.addEventListener('load', run, { once:true });
+  });
+}
+window.addEventListener('resize', ()=> document.querySelectorAll('[data-fit-media]').forEach(fitFeedMedia));
 
 /* Wires up whatever a feed-scroll container of .feed-card elements needs — shared
    by the Feed's listingsGrid and Community's forumFeedScroll. */
@@ -854,7 +923,7 @@ function bindFeedCardEvents(wrap, filtered){
     btn.addEventListener('click', ()=> jumpToForumPost(parseInt(btn.getAttribute('data-view-forum-post'))));
   });
   wrap.querySelectorAll('[data-wa]').forEach(btn=>{
-    btn.addEventListener('click', ()=> window.open('https://wa.me/'+btn.getAttribute('data-wa'), '_blank'));
+    btn.addEventListener('click', ()=> window.open('https://wa.me/'+btn.getAttribute('data-wa'), '_blank', 'noopener'));
   });
   wrap.querySelectorAll('[data-mute-toggle]').forEach(btn=>{
     btn.addEventListener('click', ()=>{
@@ -914,19 +983,32 @@ function bindFeedCardEvents(wrap, filtered){
       btn.setAttribute('aria-pressed', String(nowSaved));
     });
   });
-  let lastTap = 0;
+  // One tap hides the card's text and buttons so the whole photo or video can be seen, and the
+  // next tap brings them back. A second tap within 320ms is a double tap, which likes instead.
+  let lastTap = 0, tapTimer = null;
   wrap.querySelectorAll('.feed-card[data-like-key]').forEach(card=>{
     card.addEventListener('click', (e)=>{
       if(e.target.closest('button')) return; // real controls handle their own taps
+      if(e.target.closest('[data-desc-toggle]')) return; // tapping the description opens it
+      if(Date.now() - (card._draggedAt || 0) < 400) return; // end of a mouse drag in a gallery
       const now = Date.now();
       if(now - lastTap < 320){
+        clearTimeout(tapTimer);
+        lastTap = 0;
         const key = card.getAttribute('data-like-key');
         setLiked(card, key, true);
         burstHeart(card);
+        return;
       }
       lastTap = now;
+      clearTimeout(tapTimer);
+      tapTimer = setTimeout(()=> card.classList.toggle('feed-card--clean'), 320);
     });
   });
+  wrap.querySelectorAll('[data-desc-toggle]').forEach(p=>{
+    p.addEventListener('click', ()=> p.classList.toggle('open'));
+  });
+  bindFeedMediaFit(wrap);
 
   // Photo galleries: keep the dots in step with the swipe, and let a dot jump to its photo.
   // In RTL the gallery scrolls the other way and scrollLeft runs from 0 to negative.
@@ -961,6 +1043,7 @@ function bindFeedCardEvents(wrap, filtered){
       const dx = e.clientX - dragX;
       dragX = null;
       if(Math.abs(dx) < 40) return; // a click or double-click, not a drag
+      card._draggedAt = Date.now();
       const forward = (dx < 0) !== rtl(); // dragging toward the reading start moves forward
       goTo(current() + (forward ? 1 : -1));
     });
@@ -1056,6 +1139,7 @@ function renderCatChips(){
   row.querySelectorAll('[data-cat]').forEach(btn=>{
     btn.addEventListener('click', ()=>{
       state.forumCat = btn.getAttribute('data-cat');
+      document.getElementById('forumFeedScroll').scrollTop = 0;
       renderCatChips(); renderForum();
     });
   });
@@ -1067,6 +1151,9 @@ function renderCatChips(){
    in place, instead of jumping away. */
 function renderForum(){
   const wrap = document.getElementById('forumFeedScroll');
+  // Voting or replying re-renders the list: without this the open answers panel jumped back to
+  // its top after every tap.
+  const prevPanels = [...wrap.querySelectorAll('.feed-replies-panel.open')].map(p=> [p.id, p.scrollTop]);
   const items = (state.forumCat==='All' ? forumPosts : forumPosts.filter(p=>p.cat===state.forumCat))
     .map(p=>{
       const idx = forumPosts.indexOf(p);
@@ -1143,6 +1230,8 @@ function renderForum(){
     btn.addEventListener('click', ()=> deleteForumReply(btn.getAttribute('data-delete-reply')));
   });
 
+  prevPanels.forEach(([id, top])=>{ const p = document.getElementById(id); if(p) p.scrollTop = top; });
+
   // Community questions are mirrored into the Feed too (see forumFeedItems),
   // so any change here — a new question, a new reply count — needs to reach it.
   renderListings();
@@ -1186,7 +1275,7 @@ function jumpToForumPost(idx){
   state.openReplies[idx] = true;
   renderForum();
   const card = document.getElementById('feed-replies-'+idx);
-  if(card) card.closest('.feed-card-wrap').scrollIntoView({ behavior:'smooth', block:'start' });
+  if(card) scrollCardIntoFeed(card.closest('.feed-card-wrap'), true);
 }
 
 async function submitReply(post, text){
@@ -1674,7 +1763,7 @@ function viewFeedItem(l){
   setTab('housing');
   renderListings();
   const card = document.querySelector('.feed-card[data-listing-id="'+CSS.escape(l.id)+'"]');
-  if(card) card.scrollIntoView({ behavior:'smooth', block:'start' });
+  if(card) scrollCardIntoFeed(card, true);
 }
 
 function bindGridTileClicks(gridEl, items){
@@ -1934,7 +2023,7 @@ function openDeepLinkedListing(){
   if(!listingId) return;
   setTab('housing');
   const card = document.querySelector('.feed-card[data-listing-id="'+CSS.escape(listingId)+'"]');
-  if(card) card.scrollIntoView({ behavior:'instant', block:'start' });
+  if(card) scrollCardIntoFeed(card, false);
 }
 
 /* Same no-sign-in permalink pattern as openListingSharePanel, but for a
@@ -2237,13 +2326,18 @@ document.getElementById('qcInquiryCatRow').addEventListener('click', e=>{
 });
 
 /* The post-images bucket only takes JPEG/PNG/WebP/GIF up to 5 MB (schema.sql
-   section 12), and phone cameras often produce bigger files or HEIC. Anything
-   outside that is redrawn as a JPEG no wider/taller than 1600 px. If the
-   browser can't decode it, the original goes up and Storage decides. */
+   section 12), and phone cameras produce 3-8 MB photos or HEIC. Every photo is
+   redrawn as a JPEG no wider/taller than 1600 px (usually 200-500 KB), which is
+   what makes uploads fast on mobile data and keeps the PC's disk small. GIFs
+   (may be animated) and photos the redraw doesn't shrink go up as they are; if
+   the browser can't decode a photo, the original goes up and Storage decides. */
 const MAX_ROOM_PHOTOS = 10; // create_listing in schema.sql refuses more than this
+const MAX_VIDEO_MB = 50;    // listing-videos bucket limit, schema.sql section 12
+const MAX_VIDEO_SECONDS = 60;
 async function fitImageForUpload(file){
   const okTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
-  if(okTypes.includes(file.type) && file.size <= 5 * 1024 * 1024) return file;
+  const fitsBucket = okTypes.includes(file.type) && file.size <= 5 * 1024 * 1024;
+  if(file.type === 'image/gif' && fitsBucket) return file;
   try{
     const bitmap = await createImageBitmap(file);
     const scale = Math.min(1, 1600 / Math.max(bitmap.width, bitmap.height));
@@ -2251,8 +2345,8 @@ async function fitImageForUpload(file){
     canvas.width = Math.round(bitmap.width * scale);
     canvas.height = Math.round(bitmap.height * scale);
     canvas.getContext('2d').drawImage(bitmap, 0, 0, canvas.width, canvas.height);
-    const blob = await new Promise(res => canvas.toBlob(res, 'image/jpeg', 0.85));
-    if(!blob) return file;
+    const blob = await new Promise(res => canvas.toBlob(res, 'image/jpeg', 0.82));
+    if(!blob || (fitsBucket && blob.size >= file.size)) return file;
     return new File([blob], file.name.replace(/\.[^.]*$/, '') + '.jpg', { type: 'image/jpeg' });
   } catch(err){
     return file;
@@ -2265,6 +2359,80 @@ document.getElementById('qc-wa').addEventListener('input', e=>{
   if(e.target.value !== cleaned) e.target.value = cleaned;
 });
 
+/* Room media is checked as soon as it's picked, so a too-big or too-long video is
+   refused before anyone waits for it to upload. roomMediaCheck resolves to false
+   once a picked video was refused: the next Publish tap only stops (so nobody
+   posts a room without the video they meant to add); a tap after that posts
+   without media. Picking files again starts over. */
+let roomMediaCheck = Promise.resolve(true);
+function showRoomMediaMessage(summary, error){
+  const sumEl = document.getElementById('qcMediaSummary');
+  const errEl = document.getElementById('qcMediaMsg');
+  sumEl.textContent = summary; sumEl.style.display = summary ? 'block' : 'none';
+  errEl.textContent = error; errEl.style.display = error ? 'block' : 'none';
+}
+function showPublishError(msg){
+  const el = document.getElementById('qcPublishError');
+  el.textContent = msg; el.style.display = msg ? 'block' : 'none';
+}
+function videoSeconds(file){
+  return new Promise(resolve=>{
+    const v = document.createElement('video');
+    const url = URL.createObjectURL(file);
+    const done = (sec)=>{ URL.revokeObjectURL(url); resolve(sec); };
+    v.preload = 'metadata';
+    v.onloadedmetadata = ()=> done(isFinite(v.duration) ? v.duration : null);
+    v.onerror = ()=> done(null); // unknown length: let the size limit decide
+    setTimeout(()=> done(null), 8000);
+    v.src = url;
+  });
+}
+document.getElementById('qc-video').addEventListener('change', e=>{
+  const input = e.target;
+  const files = Array.from(input.files || []);
+  const video = files.find(f => !f.type.startsWith('image/'));
+  showPublishError('');
+  if(!files.length){ roomMediaCheck = Promise.resolve(true); showRoomMediaMessage('', ''); return; }
+  if(!video){
+    roomMediaCheck = Promise.resolve(true);
+    const n = Math.min(files.length, MAX_ROOM_PHOTOS);
+    showRoomMediaMessage(fmt('mediaPhotosPicked', { n }), files.length > MAX_ROOM_PHOTOS ? fmt('mediaTooManyPhotos', { n: files.length }) : '');
+    return;
+  }
+  const mb = Math.max(0.1, Math.round(video.size / (1024 * 1024) * 10) / 10);
+  if(mb > MAX_VIDEO_MB){
+    input.value = '';
+    roomMediaCheck = Promise.resolve(false);
+    showRoomMediaMessage('', fmt('mediaVideoTooBig', { mb }));
+    return;
+  }
+  roomMediaCheck = videoSeconds(video).then(sec=>{
+    if(input.files[0] !== files[0]) return true; // picked something else meanwhile
+    if(sec !== null && sec > MAX_VIDEO_SECONDS + 0.5){
+      input.value = '';
+      showRoomMediaMessage('', fmt('mediaVideoTooLong', { s: Math.round(sec) }));
+      return false;
+    }
+    showRoomMediaMessage(fmt('mediaVideoPicked', { mb, s: sec === null ? '?' : Math.round(sec) }), '');
+    return true;
+  });
+});
+
+/* Uploads one file and returns its public URL, or null if it failed. */
+async function uploadToBucket(bucket, file, tag){
+  // The random part keeps names unguessable and unique; the database only accepts an upload
+  // whose exact name request_upload handed out to a signed-in member (schema.sql, section 12).
+  const rand = Array.from(crypto.getRandomValues(new Uint8Array(6)), b=> b.toString(16).padStart(2,'0')).join('');
+  const path = `${Date.now()}_${tag}_${rand}_${String(file.name || 'file').replace(/[^a-zA-Z0-9.\-_]/g, '_').slice(-60)}`;
+  const ticket = await supabaseClient.rpc('request_upload', { p_session_token: appUser && appUser.sessionToken, p_bucket: bucket, p_name: path });
+  // PGRST202: the database doesn't have request_upload yet (schema.sql not run), so the
+  // old upload rule still applies and the upload can go ahead without a ticket.
+  if(ticket.error && ticket.error.code !== 'PGRST202'){ console.error('Upload refused for ' + bucket + ':', ticket.error); return null; }
+  const { error } = await supabaseClient.storage.from(bucket).upload(path, file);
+  if(error){ console.error('Error uploading to ' + bucket + ':', error); return null; }
+  return supabaseClient.storage.from(bucket).getPublicUrl(path).data.publicUrl;
+}
+
 function resetComposerFields(){
   document.getElementById('qc-text').value = '';
   document.getElementById('qc-image').value = '';
@@ -2276,6 +2444,9 @@ function resetComposerFields(){
   document.getElementById('qcNatOtherField').style.display = 'none';
   document.getElementById('qcImageUploadStatus').style.display = 'none';
   document.getElementById('qcVideoUploadStatus').style.display = 'none';
+  roomMediaCheck = Promise.resolve(true);
+  showRoomMediaMessage('', '');
+  showPublishError('');
   setQuickComposerOpen(false);
 }
 
@@ -2342,92 +2513,106 @@ document.getElementById('btnSubmitQuickPost').addEventListener('click', async ()
   if(isHousing && !rent){ document.getElementById('qc-rent').focus(); return; }
   if(isHousing && !whatsapp){ document.getElementById('qc-wa').focus(); return; }
   if(isHousing && !/^5\d{8}$/.test(waLocal)){ flagWaInput(document.getElementById('qc-wa'), 'waSaudiInvalid'); return; }
+  if(isHousing && !(await roomMediaCheck)){ roomMediaCheck = Promise.resolve(true); return; } // message is under the field
 
   requireSignIn(async ()=>{
     const postedCategory = category;
-
-    if (!SUPABASE_CONFIGURED) {
-      const localImageUrl = imageFile ? URL.createObjectURL(imageFile) : null;
-      const localVideoUrl = videoFile ? URL.createObjectURL(videoFile) : null;
-      const localRoomImageUrls = roomImageFiles.map(f => URL.createObjectURL(f));
-      listings.unshift(isHousing
-        ? { id:'local-'+Date.now(), posterUserId: appUser.id, postType: 'housing', city, rent, type: room_type, gender: gender_pref, nat: nationality_pref, bills: bills_included, desc: text || '—', by: appUser.name, wa: whatsapp, video: localVideoUrl, media: localRoomImageUrls[0] || null, mediaList: localRoomImageUrls }
-        : { id:'local-'+Date.now(), posterUserId: appUser.id, postType: postedCategory, desc: text, by: appUser.name, media: localImageUrl });
-      resetComposerFields();
-      setPostedTypeChip(postedCategory);
-      renderListings();
-      return;
-    }
-
+    const submitBtn = document.getElementById('btnSubmitQuickPost');
+    if(submitBtn.disabled) return; // already publishing — a second tap must not post twice
+    submitBtn.disabled = true;
+    showPublishError('');
     try {
-      let row;
-      if (isHousing) {
-        let video_url = null;
-        const room_media_urls = [];
-        if (videoFile) {
-          const statusEl = document.getElementById('qcVideoUploadStatus');
-          statusEl.textContent = t('uploadingVideo');
-          statusEl.style.display = 'block';
-          const path = `${Date.now()}_${videoFile.name.replace(/[^a-zA-Z0-9.\-_]/g, '_')}`;
-          const { error: uploadError } = await supabaseClient.storage.from('listing-videos').upload(path, videoFile);
-          statusEl.style.display = 'none';
-          if (uploadError) console.error('Error uploading video:', uploadError);
-          else video_url = supabaseClient.storage.from('listing-videos').getPublicUrl(path).data.publicUrl;
-        }
-        const statusEl = document.getElementById('qcVideoUploadStatus');
-        for (let n = 0; n < roomImageFiles.length; n++) {
-          statusEl.textContent = roomImageFiles.length > 1 ? fmt('uploadingPhotoN', { n: n+1, total: roomImageFiles.length }) : t('uploadingImage');
-          statusEl.style.display = 'block';
-          const photo = await fitImageForUpload(roomImageFiles[n]);
-          // n keeps two photos picked in the same millisecond from sharing a name.
-          const path = `${Date.now()}_${n}_${photo.name.replace(/[^a-zA-Z0-9.\-_]/g, '_')}`;
-          const { error: uploadError } = await supabaseClient.storage.from('post-images').upload(path, photo);
-          if (uploadError) console.error('Error uploading image:', uploadError);
-          else room_media_urls.push(supabaseClient.storage.from('post-images').getPublicUrl(path).data.publicUrl);
-        }
-        statusEl.style.display = 'none';
-        row = {
-          p_post_type: 'housing', p_city: city, p_rent: rent, p_room_type: room_type, p_gender_pref: gender_pref,
-          p_nationality_pref: nationality_pref, p_bills_included: bills_included,
-          p_description: text || '—', p_whatsapp: whatsapp, p_video_url: video_url, p_media_url: room_media_urls[0] || null
-        };
-        // Only sent with 2+ photos, so one-photo and video rooms work even before
-        // schema.sql adds p_media_urls (see the fallback below).
-        if (room_media_urls.length > 1) row.p_media_urls = room_media_urls;
-      } else {
-        let media_url = null;
-        if (imageFile) {
-          const statusEl = document.getElementById('qcImageUploadStatus');
-          statusEl.style.display = 'block';
-          const path = `${Date.now()}_${imageFile.name.replace(/[^a-zA-Z0-9.\-_]/g, '_')}`;
-          const { error: uploadError } = await supabaseClient.storage.from('post-images').upload(path, imageFile);
-          statusEl.style.display = 'none';
-          if (uploadError) console.error('Error uploading image:', uploadError);
-          else media_url = supabaseClient.storage.from('post-images').getPublicUrl(path).data.publicUrl;
-        }
-        row = { p_post_type: postedCategory, p_description: text, p_media_url: media_url };
-      }
-
-      // The server fills in poster_user_id / poster_role from the session token.
-      let { error } = await supabaseClient.rpc('create_listing', { p_session_token: appUser.sessionToken, ...row });
-      // A database that hasn't run the multi-photo schema.sql yet doesn't know
-      // p_media_urls (PGRST202). Publish with the first photo rather than not at all.
-      if (error && error.code === 'PGRST202' && row.p_media_urls) {
-        console.warn('Sanad: create_listing has no p_media_urls yet — run schema.sql. Publishing with the first photo only.');
-        delete row.p_media_urls;
-        ({ error } = await supabaseClient.rpc('create_listing', { p_session_token: appUser.sessionToken, ...row }));
-      }
-
-      if (error) {
-        console.error('Error publishing post:', error);
+      if (!SUPABASE_CONFIGURED) {
+        const localImageUrl = imageFile ? URL.createObjectURL(imageFile) : null;
+        const localVideoUrl = videoFile ? URL.createObjectURL(videoFile) : null;
+        const localRoomImageUrls = roomImageFiles.map(f => URL.createObjectURL(f));
+        listings.unshift(isHousing
+          ? { id:'local-'+Date.now(), posterUserId: appUser.id, postType: 'housing', city, rent, type: room_type, gender: gender_pref, nat: nationality_pref, bills: bills_included, desc: text || '—', by: appUser.name, wa: whatsapp, video: localVideoUrl, media: localRoomImageUrls[0] || null, mediaList: localRoomImageUrls }
+          : { id:'local-'+Date.now(), posterUserId: appUser.id, postType: postedCategory, desc: text, by: appUser.name, media: localImageUrl });
+        resetComposerFields();
+        setPostedTypeChip(postedCategory);
+        renderListings();
         return;
       }
 
-      resetComposerFields();
-      setPostedTypeChip(postedCategory);
-      await fetchAndRenderListings();
-    } catch (err) {
-      console.error('Could not reach Supabase to publish post:', err);
+      try {
+        let row;
+        if (isHousing) {
+          let video_url = null;
+          const room_media_urls = [];
+          const statusEl = document.getElementById('qcVideoUploadStatus');
+          if (videoFile) {
+            statusEl.textContent = t('uploadingVideo');
+            statusEl.style.display = 'block';
+            video_url = await uploadToBucket('listing-videos', videoFile, 'v');
+            statusEl.style.display = 'none';
+            if (!video_url) { showPublishError(t('uploadFailed')); return; }
+          }
+          if (roomImageFiles.length) {
+            // Three at a time: much faster than one by one, without flooding a slow connection.
+            // Each photo keeps its slot, so the gallery order matches the order picked.
+            const urls = new Array(roomImageFiles.length).fill(null);
+            let done = 0, nextIdx = 0;
+            const showProgress = ()=>{ statusEl.textContent = fmt('uploadingPhotosProgress', { done, total: roomImageFiles.length }); };
+            showProgress(); statusEl.style.display = 'block';
+            const worker = async ()=>{
+              while (nextIdx < roomImageFiles.length) {
+                const n = nextIdx++;
+                const photo = await fitImageForUpload(roomImageFiles[n]);
+                urls[n] = await uploadToBucket('post-images', photo, n);
+                done++; showProgress();
+              }
+            };
+            await Promise.all([worker(), worker(), worker()]);
+            statusEl.style.display = 'none';
+            if (urls.some(u => !u)) { showPublishError(t('uploadFailed')); return; }
+            room_media_urls.push(...urls);
+          }
+          row = {
+            p_post_type: 'housing', p_city: city, p_rent: rent, p_room_type: room_type, p_gender_pref: gender_pref,
+            p_nationality_pref: nationality_pref, p_bills_included: bills_included,
+            p_description: text || '—', p_whatsapp: whatsapp, p_video_url: video_url, p_media_url: room_media_urls[0] || null
+          };
+          // Only sent with 2+ photos, so one-photo and video rooms work even before
+          // schema.sql adds p_media_urls (see the fallback below).
+          if (room_media_urls.length > 1) row.p_media_urls = room_media_urls;
+        } else {
+          let media_url = null;
+          if (imageFile) {
+            const statusEl = document.getElementById('qcImageUploadStatus');
+            statusEl.style.display = 'block';
+            media_url = await uploadToBucket('post-images', await fitImageForUpload(imageFile), 't');
+            statusEl.style.display = 'none';
+            if (!media_url) { showPublishError(t('uploadFailed')); return; }
+          }
+          row = { p_post_type: postedCategory, p_description: text, p_media_url: media_url };
+        }
+
+        // The server fills in poster_user_id / poster_role from the session token.
+        let { error } = await supabaseClient.rpc('create_listing', { p_session_token: appUser.sessionToken, ...row });
+        // A database that hasn't run the multi-photo schema.sql yet doesn't know
+        // p_media_urls (PGRST202). Publish with the first photo rather than not at all.
+        if (error && error.code === 'PGRST202' && row.p_media_urls) {
+          console.warn('Sanad: create_listing has no p_media_urls yet — run schema.sql. Publishing with the first photo only.');
+          delete row.p_media_urls;
+          ({ error } = await supabaseClient.rpc('create_listing', { p_session_token: appUser.sessionToken, ...row }));
+        }
+
+        if (error) {
+          console.error('Error publishing post:', error);
+          showPublishError(t('publishFailed'));
+          return;
+        }
+
+        resetComposerFields();
+        setPostedTypeChip(postedCategory);
+        await fetchAndRenderListings();
+      } catch (err) {
+        console.error('Could not reach Supabase to publish post:', err);
+        showPublishError(t('publishFailed'));
+      }
+    } finally {
+      submitBtn.disabled = false;
     }
   });
 });
@@ -2549,6 +2734,7 @@ document.querySelectorAll('[data-subtab]').forEach(btn=>{
     document.getElementById('communityBuddies').style.display = state.communitySubTab==='buddies' ? 'block' : 'none';
     document.getElementById('communityLeaderboard').style.display = state.communitySubTab==='leaderboard' ? 'block' : 'none';
     applyFeedMode();
+    if(state.communitySubTab==='qa') fitCommunityFeed();
     if(state.communitySubTab==='leaderboard') renderLeaderboard();
   });
 });
