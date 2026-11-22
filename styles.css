@@ -985,6 +985,12 @@
      light-theme title and links. */
   html[data-theme="light"] .modal-box{background:var(--card);box-shadow:0 20px 50px rgba(20,35,29,0.18);}
   html[data-theme="light"] .modal-box .hint{color:var(--ink-soft);}
+  /* Community answers panel: it was always dark, so in the light theme the reply box's
+     dark text (and the green "Replied by") sat on a near-black panel and couldn't be read. */
+  html[data-theme="light"] .feed-replies-panel{background:rgba(246,244,234,0.97);color:var(--ink);}
+  html[data-theme="light"] .feed-replies-close{border-color:var(--line);background:var(--card);color:var(--ink);}
+  html[data-theme="light"] .feed-replies-panel .reply{background:var(--card);border:1px solid var(--card-line);}
+  html[data-theme="light"] .reply-compose input{background:var(--card);}
 
   /* ---- Feed: caption moves into a white card, so the dark scrim goes away ---- */
   html[data-theme="light"] .feed-card + .feed-card,
