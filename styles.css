@@ -769,6 +769,8 @@
   .tag-row{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 4px;}
   .tag{font-size:10.5px;font-weight:600;padding:4px 9px;border-radius:999px;background:var(--green-tint);color:var(--accent-mint);}
   .tag.alt{background:var(--gold-tint);color:var(--accent-gold-bright);}
+  .buddy-verified{display:inline-flex;align-items:center;gap:4px;flex-shrink:0;}
+  .buddy-verified svg{width:11px;height:11px;}
   .wa-btn{
     display:flex;align-items:center;gap:7px;background:#128C4A;color:#fff;border:none;
     padding:9px 14px;border-radius:999px;font-size:12.5px;font-weight:700;
