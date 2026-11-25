@@ -229,6 +229,11 @@
     padding:10px 12px;font-size:13px;color:var(--ink);font-family:var(--font-body);
   }
   .field textarea{resize:vertical;min-height:64px;}
+  /* A checkbox with its label beside it. The general ".field input" rule above makes inputs full
+     width, which pushed the label text off the edge of the screen; checkboxes keep their own size. */
+  .field .check-option{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink-soft);margin-bottom:0;cursor:pointer;}
+  .field .check-option input{flex:none;width:20px;height:20px;margin:0;padding:0;accent-color:var(--green);}
+  .field .check-option span{flex:1;min-width:0;}
   /* On iPhone, tapping a text box whose text is smaller than 16px zooms the whole page in, and
      it often stays zoomed and shifted after typing, with buttons pushed off screen. 16px on
      touch screens stops the zoom. (The big rent number is already larger.) */
