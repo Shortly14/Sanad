@@ -94,6 +94,7 @@ en: {
   noListingsTitle:"No rooms match these filters", noListingsSub:"Try a wider budget, or clear a filter or two.",
   likeLabel:"Like", saveLabel:"Save",
   deleteLabel:"Delete", deleteConfirm:"Delete this for good? This can't be undone.", deleteFailed:"Couldn't delete this. Check your connection, or sign out and sign in again, then try once more.", removeBuddyProfile:"Remove my buddy profile",
+  adminAddBuddyBtn:"Add a verified buddy (admin)", adminBuddyFormTitle:"Add a buddy", adminBuddyFormHint:"Only admins see this. The buddy gets a Verified badge. Ask them first before you publish their WhatsApp number.", lblBuddyName:"Name", lblAdminHelpAreas:"What can they help with?", adminBuddyFormSubmit:"Publish buddy", buddyNameMissing:"Enter the buddy's name.", adminAddBuddyFailed:"Couldn't add this buddy. Check your connection and try again.", verifiedBadge:"Verified", adminRemoveBuddy:"Remove (admin)",
   statMyListings:"Listings", statMyQuestions:"Questions", statMyClicks:"Link clicks",
   tabMyPosts:"Posts", tabLiked:"Liked", memberSince:"Member since", memberFallback:"Member",
   noPostsYet:"No listings posted yet", noLikedYet:"Rooms you like will show up here", noSavedYet:"Things you save will show up here",
@@ -177,6 +178,7 @@ ar: {
   noListingsTitle:"لا توجد غرف مطابقة لهذه الفلاتر", noListingsSub:"جرّب ميزانية أوسع أو أزل فلتراً أو اثنين.",
   likeLabel:"إعجاب", saveLabel:"احفظ",
   deleteLabel:"حذف", deleteConfirm:"هل تريد حذف هذا نهائيًا؟ لا يمكن التراجع عن ذلك.", deleteFailed:"تعذّر الحذف. تحقّق من اتصالك، أو سجّل الخروج ثم سجّل الدخول من جديد، وحاول مرة أخرى.", removeBuddyProfile:"إزالة ملفي كرفيق",
+  adminAddBuddyBtn:"إضافة رفيق موثّق (للمشرف)", adminBuddyFormTitle:"إضافة رفيق", adminBuddyFormHint:"يظهر هذا للمشرفين فقط. سيحصل الرفيق على شارة «موثّق». اطلب موافقته قبل نشر رقم واتساب الخاص به.", lblBuddyName:"الاسم", lblAdminHelpAreas:"بماذا يمكنه المساعدة؟", adminBuddyFormSubmit:"نشر الرفيق", buddyNameMissing:"أدخل اسم الرفيق.", adminAddBuddyFailed:"تعذّرت إضافة هذا الرفيق. تحقّق من اتصالك وحاول مرة أخرى.", verifiedBadge:"موثّق", adminRemoveBuddy:"إزالة (مشرف)",
   statMyListings:"الإعلانات", statMyQuestions:"الأسئلة", statMyClicks:"نقرات الروابط",
   tabMyPosts:"إعلاناتي", tabLiked:"أعجبني", memberSince:"عضو منذ", memberFallback:"عضو",
   noPostsYet:"لم تنشر أي إعلان بعد", noLikedYet:"الغرف التي تعجبك ستظهر هنا", noSavedYet:"الأشياء التي تحفظها ستظهر هنا",
@@ -260,6 +262,7 @@ ur: {
   noListingsTitle:"ان فلٹرز سے کوئی کمرہ نہیں ملا", noListingsSub:"بجٹ بڑھائیں یا ایک دو فلٹر ہٹا دیں۔",
   likeLabel:"پسند", saveLabel:"محفوظ کریں",
   deleteLabel:"حذف کریں", deleteConfirm:"کیا اسے ہمیشہ کے لیے حذف کر دیں؟ یہ واپس نہیں ہو سکتا۔", deleteFailed:"حذف نہیں ہو سکا۔ اپنا کنکشن چیک کریں، یا سائن آؤٹ کر کے دوبارہ سائن اِن کریں، پھر ایک بار اور کوشش کریں۔", removeBuddyProfile:"میری ساتھی پروفائل ہٹائیں",
+  adminAddBuddyBtn:"تصدیق شدہ ساتھی شامل کریں (ایڈمن)", adminBuddyFormTitle:"ساتھی شامل کریں", adminBuddyFormHint:"یہ صرف ایڈمنز کو نظر آتا ہے۔ ساتھی کو «تصدیق شدہ» کا نشان ملے گا۔ ان کا واٹس ایپ نمبر شائع کرنے سے پہلے ان سے اجازت لیں۔", lblBuddyName:"نام", lblAdminHelpAreas:"یہ کس چیز میں مدد کر سکتے ہیں؟", adminBuddyFormSubmit:"ساتھی شائع کریں", buddyNameMissing:"ساتھی کا نام درج کریں۔", adminAddBuddyFailed:"یہ ساتھی شامل نہیں ہو سکا۔ اپنا کنکشن چیک کریں اور دوبارہ کوشش کریں۔", verifiedBadge:"تصدیق شدہ", adminRemoveBuddy:"ہٹائیں (ایڈمن)",
   statMyListings:"لسٹنگز", statMyQuestions:"سوالات", statMyClicks:"لنک کلکس",
   tabMyPosts:"پوسٹس", tabLiked:"پسندیدہ", memberSince:"رکن بننے کی تاریخ", memberFallback:"رکن",
   noPostsYet:"ابھی تک کوئی لسٹنگ پوسٹ نہیں کی گئی", noLikedYet:"آپ کے پسندیدہ کمرے یہاں نظر آئیں گے", noSavedYet:"آپ کی محفوظ کردہ چیزیں یہاں نظر آئیں گی",
@@ -446,6 +449,7 @@ let myReplyVotes = new Set();
 /* ============================= Buddies ============================= */
 /* Filled from Supabase by fetchAndRenderBuddies. Starts empty, like listings above. */
 let buddies = [];
+let appUserIsAdmin = false; // see refreshAdminStatus
 
 /* ============================= Local persistence: likes & saves ============================= */
 /* Liking/saving never requires an account — kept in this browser only, exactly like a "downloaded to
@@ -1661,7 +1665,7 @@ async function finishSignIn(user){
   // Refetch anything that depends on "who's signed in" — forum vote state,
   // leaderboard/open-to-work status, share links — so it isn't stale from
   // whatever it looked like before this login (e.g. signed-out placeholders).
-  await Promise.all([fetchAndRenderShareLinks(), fetchAndRenderProfileStats(), fetchAndRenderForum(), fetchLeaderboardData()]);
+  await Promise.all([fetchAndRenderShareLinks(), fetchAndRenderProfileStats(), fetchAndRenderForum(), fetchLeaderboardData(), refreshAdminStatus()]);
   renderProfile();
   renderLeaderboard();
   renderBuddies();
@@ -1698,7 +1702,7 @@ function signOut(){
   renderProfile();
   // Drop the Delete buttons that were only shown on this user's own posts.
   renderForum();
-  renderBuddies();
+  refreshAdminStatus(); // signed out: hides the admin form and buttons, then re-renders buddies
 }
 
 /* ---- Profile stats + "Posts"/"Liked"/"Saved" grids ---- */
@@ -2067,14 +2071,16 @@ function renderBuddies(){
   const helpKeyMap = {Housing:'helpHousing', Paperwork:'helpPaperwork', Orientation:'helpOrientation'};
   wrap.innerHTML = buddies.map(b=>`
     <div class="buddy-card">
-      <div class="buddy-top"><h3>${escapeHtml(b.name)}</h3></div>
+      <div class="buddy-top"><h3>${escapeHtml(b.name)}</h3>${b.verified ? `<span class="tag alt buddy-verified">${verifiedIconSvg}${t('verifiedBadge')}</span>` : ''}</div>
       <div class="tag-row">${(b.help||[]).map(h=>`<span class="tag">${escapeHtml(t(helpKeyMap[h]||h))}</span>`).join('')}</div>
       <p class="buddy-desc">${escapeHtml(b.bio)}</p>
       <a class="wa-btn" href="https://wa.me/${waDigits(b.wa)}" target="_blank" rel="noopener">${waIconSvg}${t('contactWA')}</a>
-      ${appUser && b.userId === appUser.id ? `<button class="buddy-remove" data-delete-buddy>${trashIconSvg}${t('removeBuddyProfile')}</button>` : ''}
+      ${appUser && b.userId === appUser.id ? `<button class="buddy-remove" data-delete-buddy>${trashIconSvg}${t('removeBuddyProfile')}</button>`
+        : appUserIsAdmin && b.id ? `<button class="buddy-remove" data-admin-delete-buddy="${escapeHtml(b.id)}">${trashIconSvg}${t('adminRemoveBuddy')}</button>` : ''}
     </div>
   `).join('');
   wrap.querySelectorAll('[data-delete-buddy]').forEach(btn=> btn.addEventListener('click', deleteBuddyProfile));
+  wrap.querySelectorAll('[data-admin-delete-buddy]').forEach(btn=> btn.addEventListener('click', ()=> adminDeleteBuddy(btn.getAttribute('data-admin-delete-buddy'))));
 }
 
 async function fetchAndRenderBuddies(){
@@ -2082,7 +2088,8 @@ async function fetchAndRenderBuddies(){
   try{
     const { data, error } = await supabaseClient.from('buddies').select('*, app_users(name)').order('created_at', { ascending:false });
     if(error){ console.error('Error loading buddies:', error); renderBuddies(); return; }
-    buddies = data.map(b=>({ userId: b.user_id, name: (b.app_users && b.app_users.name) || 'Buddy', help: b.help_areas || [], bio: b.bio, wa: b.whatsapp }));
+    // A card an admin added has no user_id, so its name is on the card (display_name).
+    buddies = data.map(b=>({ id: b.id, userId: b.user_id, name: (b.app_users && b.app_users.name) || b.display_name || 'Buddy', help: b.help_areas || [], bio: b.bio, wa: b.whatsapp, verified: b.verified === true }));
     renderBuddies();
   } catch(err){
     console.error('Could not reach Supabase for buddies, showing local data instead:', err);
@@ -2114,6 +2121,69 @@ async function submitBuddy(){
     } catch(err){
       console.error('Could not reach Supabase to publish buddy profile:', err);
     }
+  });
+}
+
+/* ---- Admin-added buddies (schema.sql §16) ----
+   appUserIsAdmin only decides what is shown; admin_create_buddy and
+   admin_delete_buddy check the session again on the server. */
+const verifiedIconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+
+async function refreshAdminStatus(){
+  let isAdmin = false;
+  if(appUser && SUPABASE_CONFIGURED && !String(appUser.id).startsWith('local-')){
+    try{
+      const { data, error } = await supabaseClient.rpc('am_i_admin', { p_session_token: appUser.sessionToken });
+      // PGRST202: schema.sql §16 not run on this database yet — nobody is an admin.
+      if(error){ if(error.code !== 'PGRST202') console.error('Sanad: am_i_admin failed:', error); }
+      else isAdmin = data === true;
+    } catch(err){
+      console.error('Sanad: could not check admin status:', err);
+    }
+  }
+  appUserIsAdmin = isAdmin;
+  document.getElementById('btnOpenAdminBuddy').style.display = isAdmin ? '' : 'none';
+  if(!isAdmin) document.getElementById('adminBuddyForm').style.display = 'none';
+  renderBuddies();
+}
+
+async function submitAdminBuddy(){
+  const nameInput = document.getElementById('admin-buddy-name');
+  const name = nameInput.value.trim();
+  const help = [...document.querySelectorAll('.admin-buddy-help:checked')].map(c=>c.value);
+  const bioInput = document.getElementById('admin-buddy-bio');
+  const bio = bioInput.value.trim() || '—';
+  const waInput = document.getElementById('admin-buddy-wa');
+  const wa = waDigits(waInput.value);
+  if(!name){ flagWaInput(nameInput, 'buddyNameMissing'); return; }
+  if(!help.length){ return; }
+  if(!waLooksValid(wa)){ flagWaInput(waInput); return; }
+  if(!appUser || !appUserIsAdmin) return;
+  try{
+    const { error } = await supabaseClient.rpc('admin_create_buddy', { p_session_token: appUser.sessionToken, p_name: name, p_help_areas: help, p_bio: bio, p_whatsapp: wa });
+    if(error){
+      console.error('Error adding buddy as admin:', error);
+      window.alert(t('adminAddBuddyFailed'));
+      return;
+    }
+    nameInput.value = ''; bioInput.value = ''; waInput.value = '';
+    document.querySelectorAll('.admin-buddy-help').forEach(c=>{ c.checked = false; });
+    document.getElementById('adminBuddyForm').style.display = 'none';
+    await fetchAndRenderBuddies();
+  } catch(err){
+    console.error('Could not reach Supabase to add buddy as admin:', err);
+    window.alert(t('adminAddBuddyFailed'));
+  }
+}
+
+function adminDeleteBuddy(buddyId){
+  requireSignIn(async ()=>{
+    const ok = await runOwnDelete('admin_delete_buddy', { p_buddy_id: buddyId }, ()=>{
+      buddies = buddies.filter(b=> b.id !== buddyId);
+    });
+    if(!ok) return;
+    await Promise.all([fetchAndRenderBuddies(), fetchLeaderboardData()]);
+    renderLeaderboard();
   });
 }
 
@@ -2651,6 +2721,10 @@ document.getElementById('btnOpenBuddy').addEventListener('click', ()=>{
   const p = document.getElementById('buddyForm');
   p.style.display = p.style.display==='none' ? 'block' : 'none';
 });
+document.getElementById('btnOpenAdminBuddy').addEventListener('click', ()=>{
+  const p = document.getElementById('adminBuddyForm');
+  p.style.display = p.style.display==='none' ? 'block' : 'none';
+});
 
 /* Delegated: every button inside a [data-filter-group] wrapper sets that
    one state.filters key and toggles .active within its own group only. */
@@ -2748,6 +2822,7 @@ document.querySelectorAll('[data-lb-filter]').forEach(btn=>{
 });
 
 document.getElementById('btnSubmitBuddy').addEventListener('click', submitBuddy);
+document.getElementById('btnSubmitAdminBuddy').addEventListener('click', submitAdminBuddy);
 
 document.querySelectorAll('#feedTypeChips [data-feed-type]').forEach(btn=>{
   btn.addEventListener('click', ()=>{
@@ -2781,6 +2856,8 @@ async function initApp(){
   applyFeedMode();
   await trackIncomingShareCode();
   await Promise.all([fetchAndRenderListings(), fetchAndRenderForum(), fetchAndRenderBuddies(), validateStoredSession()]);
+  // After validateStoredSession, which may have signed a dead session out.
+  await refreshAdminStatus();
   // Depends on buddies (isBuddy bonus) being loaded above, so it runs after.
   await fetchLeaderboardData();
   renderLeaderboard();

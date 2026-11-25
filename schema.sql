@@ -1162,3 +1162,102 @@ grant execute on function verify_email_code(text, text, text) to anon, authentic
 grant execute on function session_status(text) to anon, authenticated;
 grant execute on function set_my_name(text, text) to anon, authenticated;
 grant execute on function sign_out(text) to anon, authenticated;
+
+-- ============================================================
+-- 16. Buddies added by an admin. An admin can publish a buddy
+--     card for someone who has no Sanad account (they give their
+--     name, help areas and WhatsApp to the admin in person), and
+--     can remove any buddy card. Cards an admin adds carry a
+--     Verified badge; self sign-ups through create_buddy never do.
+--     is_admin is only ever set here in the SQL editor — no API
+--     function changes it, and the column grant in section 3
+--     keeps it unreadable through the API:
+--       update app_users set is_admin = true where email = '<your email>';
+-- ============================================================
+
+alter table app_users add column if not exists is_admin boolean not null default false;
+
+-- An admin-added card has no user_id, so its name lives on the card itself.
+alter table buddies add column if not exists display_name text;
+alter table buddies add column if not exists verified boolean not null default false;
+alter table buddies add column if not exists added_by uuid references app_users(id) on delete set null;
+
+-- Internal helper — not callable through the API. Same lookup as
+-- sanad_session_user, then refuses anyone who isn't an admin.
+create or replace function sanad_admin_user(p_session_token text)
+returns table(id uuid, name text)
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare v_user record;
+begin
+  select * into v_user from sanad_session_user(p_session_token);
+  if not exists (select 1 from app_users u where u.id = v_user.id and u.is_admin) then
+    raise exception 'Only an admin can do this';
+  end if;
+  return query select v_user.id, v_user.name;
+end;
+$$;
+revoke execute on function sanad_admin_user(text) from public, anon, authenticated;
+
+-- Lets the app decide whether to show the admin form. Never raises: a
+-- signed-out or expired session is simply not an admin. The functions
+-- below check again on every write, so this only controls what is shown.
+create or replace function am_i_admin(p_session_token text)
+returns boolean
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+begin
+  perform sanad_admin_user(p_session_token);
+  return true;
+exception when others then
+  return false;
+end;
+$$;
+
+create or replace function admin_create_buddy(p_session_token text, p_name text, p_help_areas text[], p_bio text, p_whatsapp text)
+returns uuid
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare v_admin record; v_id uuid;
+begin
+  select * into v_admin from sanad_admin_user(p_session_token);
+  if length(trim(coalesce(p_name, ''))) = 0 then raise exception 'Name is empty'; end if;
+  if length(trim(p_name)) > 40 then raise exception 'Text is too long'; end if;
+  if length(coalesce(p_bio, '')) > 500 then raise exception 'Text is too long'; end if;
+  -- Same rule the app's waLooksValid uses: a number wa.me can open.
+  if coalesce(p_whatsapp, '') !~ '^[1-9][0-9]{7,14}$' then raise exception 'Invalid WhatsApp number'; end if;
+  if coalesce(array_length(p_help_areas, 1), 0) = 0 then raise exception 'Pick at least one help area'; end if;
+  if array_length(p_help_areas, 1) > 10 then raise exception 'Too many help areas'; end if;
+
+  insert into buddies (user_id, display_name, help_areas, bio, whatsapp, verified, added_by)
+  values (null, trim(p_name), p_help_areas, p_bio, p_whatsapp, true, v_admin.id)
+  returning buddies.id into v_id;
+  return v_id;
+end;
+$$;
+
+-- Removes any one buddy card — an admin-added one, or a self sign-up
+-- that turned out to be spam or a wrong number.
+create or replace function admin_delete_buddy(p_session_token text, p_buddy_id uuid)
+returns void
+language plpgsql
+security definer
+set search_path = public, extensions
+as $$
+declare v_admin record;
+begin
+  select * into v_admin from sanad_admin_user(p_session_token);
+  delete from buddies where buddies.id = p_buddy_id;
+  if not found then raise exception 'That buddy no longer exists'; end if;
+end;
+$$;
+
+grant execute on function am_i_admin(text) to anon, authenticated;
+grant execute on function admin_create_buddy(text, text, text[], text, text) to anon, authenticated;
+grant execute on function admin_delete_buddy(text, uuid) to anon, authenticated;

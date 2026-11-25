@@ -233,6 +233,38 @@
           <button class="btn-primary" id="btnSubmitBuddy" data-i18n="buddyFormSubmit">Publish my buddy profile</button>
         </div>
 
+        <!-- Shown only when the signed-in account is an admin (am_i_admin); the server checks again on submit. -->
+        <button class="toggle-open" id="btnOpenAdminBuddy" style="display:none;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          <span data-i18n="adminAddBuddyBtn">Add a verified buddy (admin)</span>
+        </button>
+
+        <div class="panel" id="adminBuddyForm" style="display:none;">
+          <h3 data-i18n="adminBuddyFormTitle">Add a buddy</h3>
+          <p class="hint" data-i18n="adminBuddyFormHint">Only admins see this. The buddy gets a Verified badge. Ask them first before you publish their WhatsApp number.</p>
+          <div class="field">
+            <label data-i18n="lblBuddyName">Name</label>
+            <input type="text" id="admin-buddy-name" maxlength="40">
+          </div>
+          <div class="field">
+            <label data-i18n="lblAdminHelpAreas">What can they help with?</label>
+            <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;">
+              <label class="check-option"><input type="checkbox" class="admin-buddy-help" value="Housing"><span data-i18n="helpHousing">Finding housing</span></label>
+              <label class="check-option"><input type="checkbox" class="admin-buddy-help" value="Paperwork"><span data-i18n="helpPaperwork">Paperwork &amp; procedures</span></label>
+              <label class="check-option"><input type="checkbox" class="admin-buddy-help" value="Orientation"><span data-i18n="helpOrientation">General orientation</span></label>
+            </div>
+          </div>
+          <div class="field">
+            <label data-i18n="lblBio">Short bio</label>
+            <textarea id="admin-buddy-bio" data-i18n-ph="bioPh" maxlength="500"></textarea>
+          </div>
+          <div class="field">
+            <label data-i18n="lblWhatsapp">WhatsApp number</label>
+            <input type="text" id="admin-buddy-wa" placeholder="+966 5x xxx xxxx">
+          </div>
+          <button class="btn-primary" id="btnSubmitAdminBuddy" data-i18n="adminBuddyFormSubmit">Publish buddy</button>
+        </div>
+
         <div id="buddyList"></div>
       </div>
 
