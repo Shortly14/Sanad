@@ -126,14 +126,16 @@ If you genuinely believe the stack is insufficient, follow §14: document and st
 
 ## 5. Internationalisation Is Not Optional
 
-Sanad ships in **English, Arabic and Urdu**. Arabic and Urdu are **right-to-left**.
+Sanad ships in **English, Arabic, Urdu, Hindi and Bengali**. Arabic and Urdu are **right-to-left**;
+Hindi (Devanagari script) and Bengali (Bengali script) are left-to-right.
 
 Every user-facing string you add:
 
-- **MUST** be added to all three dictionaries in `app.js` (`en`, `ar`, `ur`) under the same key;
+- **MUST** be added to all five dictionaries in `app.js` (`en`, `ar`, `ur`, `hi`, `bn`) under the
+  same key;
 - **MUST** be rendered through the existing `data-i18n` mechanism, never hardcoded into
   `index.html` or into a JavaScript template literal;
-- **MUST NOT** be left as an English placeholder in the `ar` or `ur` dictionary. If you cannot
+- **MUST NOT** be left as an English placeholder in the `ar`, `ur`, `hi` or `bn` dictionary. If you cannot
   produce a correct translation, say so explicitly in the PR and flag it for a human — do not
   silently ship English text under an Arabic key.
 
@@ -169,7 +171,7 @@ Testing must cover **the actual behaviour being changed**. Exercise the applicat
 - test normal behaviour;
 - test important edge cases — empty lists, long text, missing fields, no results;
 - test failure and recovery — signed out, Supabase unreachable, CDN blocked;
-- switch to Arabic and Urdu and repeat;
+- switch to Arabic, Urdu, Hindi and Bengali and repeat;
 - check a mobile viewport (~390 px);
 - confirm the browser console is clean;
 - verify the other tabs still work.
@@ -188,7 +190,7 @@ Whenever practical, the PR should require a real human verification step. Includ
 ```markdown
 ### Human verification
 - [ ] Tested by a human
-- [ ] Works in English, Arabic and Urdu
+- [ ] Works in English, Arabic, Urdu, Hindi and Bengali
 - [ ] Checked on a phone-sized viewport
 - [ ] No obvious regression observed
 ```
@@ -359,7 +361,7 @@ investigation** rather than making the PR body unreadable.
 - [ ] Implementation is complete
 - [ ] Tested in a real browser with a hard refresh
 - [ ] Console is clean
-- [ ] Verified in English, Arabic and Urdu
+- [ ] Verified in English, Arabic, Urdu, Hindi and Bengali
 - [ ] RTL layout verified
 - [ ] Mobile viewport verified
 - [ ] Signed-out and signed-in paths verified

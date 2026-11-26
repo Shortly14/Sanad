@@ -1,5 +1,5 @@
 // Supabase Edge Function: send-code
-// Body: { email: string, lang?: "en" | "ar" | "ur" }
+// Body: { email: string, lang?: "en" | "ar" | "ur" | "hi" | "bn" }
 // otp_create() in schema.sql makes a 6-digit code (or refuses when an email,
 // an IP or the whole site has asked for too many), and this function emails
 // it through Resend (resend.com). The browser then checks the code with the
@@ -40,6 +40,18 @@ const MESSAGES: Record<string, { subject: string; body: string; ignore: string; 
     body: "سند میں سائن اِن کرنے کا آپ کا کوڈ {code} ہے۔ یہ ۱۰ منٹ میں ختم ہو جائے گا۔",
     ignore: "اگر آپ نے یہ کوڈ نہیں مانگا تو اس ای میل کو نظر انداز کر دیں۔",
     dir: "rtl",
+  },
+  hi: {
+    subject: "आपका सनद कोड: {code}",
+    body: "सनद में साइन इन करने का आपका कोड {code} है। यह 10 मिनट में ख़त्म हो जाएगा।",
+    ignore: "अगर आपने यह कोड नहीं माँगा था, तो इस ईमेल को अनदेखा कर दें।",
+    dir: "ltr",
+  },
+  bn: {
+    subject: "আপনার সনদ কোড: {code}",
+    body: "সনদে সাইন ইন করার জন্য আপনার কোড {code}। এটি ১০ মিনিটের মধ্যে মেয়াদ শেষ হয়ে যাবে।",
+    ignore: "আপনি যদি এই কোড না চেয়ে থাকেন, তাহলে এই ইমেইলটি উপেক্ষা করুন।",
+    dir: "ltr",
   },
 };
 
@@ -106,7 +118,7 @@ Deno.serve(async (req) => {
     const code = await createRes.json();
     if (typeof code !== "string") return json({ error: "too_many" }, 429);
 
-    const sendRes = await sendEmail(email, code, ["en", "ar", "ur"].includes(lang) ? lang : "en");
+    const sendRes = await sendEmail(email, code, Object.hasOwn(MESSAGES, lang) ? lang : "en");
     if (!sendRes.ok) {
       const detail = await sendRes.text();
       console.error("Resend send failed:", sendRes.status, detail);

@@ -13,6 +13,7 @@
 - [ ] English (LTR)
 - [ ] Arabic (RTL)
 - [ ] Urdu (RTL)
+- [ ] Hindi and Bengali (LTR)
 - [ ] Mobile viewport (~390px)
 - [ ] Signed out
 - [ ] Signed in
@@ -40,7 +41,7 @@ After:
 
 ### Human verification
 - [ ] Tested by a human
-- [ ] Works in English, Arabic and Urdu
+- [ ] Works in English, Arabic, Urdu, Hindi and Bengali
 - [ ] No obvious regression observed
 
 ## Known limitations / risks
@@ -50,6 +51,6 @@ After:
 - [ ] Branched from `develop`, targeting `develop`
 - [ ] One clear responsibility, no unrelated changes, no reformatting
 - [ ] No framework, build step or dependency introduced
-- [ ] Every new string added to `en`, `ar` and `ur`
+- [ ] Every new string added to `en`, `ar`, `ur`, `hi` and `bn`
 - [ ] No secrets, keys or real user data
 - [ ] Temporary diagnostics removed
