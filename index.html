@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sanad · سند — Your support system in Saudi Arabia</title>
-<meta name="description" content="Find a room, learn your rights and ask the community. Sanad helps workers in Saudi Arabia, in English, Arabic and Urdu.">
+<meta name="description" content="Find a room, learn your rights and ask the community. Sanad helps workers in Saudi Arabia, in English, Arabic, Urdu, Hindi and Bengali.">
 <meta name="theme-color" content="#0F5C4E">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="icon-192.png" type="image/png" sizes="192x192">
@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Sanad · سند">
 <meta property="og:title" content="Sanad · سند — Your support system in Saudi Arabia">
-<meta property="og:description" content="Find a room, learn your rights and ask the community. In English, Arabic and Urdu.">
+<meta property="og:description" content="Find a room, learn your rights and ask the community. In English, Arabic, Urdu, Hindi and Bengali.">
 <meta property="og:url" content="https://thesannad.com/">
 <meta property="og:image" content="https://thesannad.com/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -24,9 +24,11 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ar_SA">
 <meta property="og:locale:alternate" content="ur_PK">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:locale:alternate" content="bn_BD">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script>
 /* Applied before the stylesheet paints so the app never flashes the wrong palette.
    Light is the default look; dark is opt-in and remembered per device. Wrapped in
@@ -40,7 +42,7 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<noscript><p style="margin:0;padding:14px 18px;background:#0F5C4E;color:#fff;font:14px/1.5 system-ui,sans-serif;text-align:center;">Sanad needs JavaScript to work. Please turn it on in your browser settings. · يحتاج سند إلى JavaScript ليعمل. · سند کو چلنے کے لیے JavaScript درکار ہے۔</p></noscript>
+<noscript><p style="margin:0;padding:14px 18px;background:#0F5C4E;color:#fff;font:14px/1.5 system-ui,sans-serif;text-align:center;">Sanad needs JavaScript to work. Please turn it on in your browser settings. · يحتاج سند إلى JavaScript ليعمل. · سند کو چلنے کے لیے JavaScript درکار ہے۔ · सनद को चलाने के लिए JavaScript ज़रूरी है। · সনদ চালাতে JavaScript দরকার।</p></noscript>
 <div class="app" id="app">
 
   <header class="topbar">
@@ -54,11 +56,18 @@
       </div>
     </div>
     <div class="topbar-actions">
-      <div class="lang-switch">
-        <button data-lang-btn="en">EN</button>
-        <button data-lang-btn="ar">عربي</button>
-        <button data-lang-btn="ur">اردو</button>
-      </div>
+      <label class="lang-select">
+        <svg class="lang-select-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9M12 3c-2.5 2.6-3.8 5.6-3.8 9s1.3 6.4 3.8 9"/></svg>
+        <span class="lang-select-current" data-lang-current aria-hidden="true">EN</span>
+        <svg class="lang-select-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+        <select data-lang-select data-i18n-title="langMenuLabel" aria-label="Change language" title="Change language">
+          <option value="en" lang="en">English</option>
+          <option value="ar" lang="ar">العربية</option>
+          <option value="ur" lang="ur">اردو</option>
+          <option value="hi" lang="hi">हिंदी</option>
+          <option value="bn" lang="bn">বাংলা</option>
+        </select>
+      </label>
       <button class="theme-toggle" data-theme-toggle type="button">
         <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg>
         <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.2 8.2 0 019.5 4 8.3 8.3 0 1020 14.5z"/></svg>
@@ -150,11 +159,18 @@
       </div>
 
       <div class="explore-chip-bar">
-        <div class="lang-switch lang-switch--floating">
-          <button data-lang-btn="en">EN</button>
-          <button data-lang-btn="ar">عربي</button>
-          <button data-lang-btn="ur">اردو</button>
-        </div>
+        <label class="lang-select lang-select--floating">
+          <svg class="lang-select-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9M12 3c-2.5 2.6-3.8 5.6-3.8 9s1.3 6.4 3.8 9"/></svg>
+          <span class="lang-select-current" data-lang-current aria-hidden="true">EN</span>
+          <svg class="lang-select-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+          <select data-lang-select data-i18n-title="langMenuLabel" aria-label="Change language" title="Change language">
+            <option value="en" lang="en">English</option>
+            <option value="ar" lang="ar">العربية</option>
+            <option value="ur" lang="ur">اردو</option>
+            <option value="hi" lang="hi">हिंदी</option>
+            <option value="bn" lang="bn">বাংলা</option>
+          </select>
+        </label>
         <button class="theme-toggle theme-toggle--floating" data-theme-toggle type="button">
         <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg>
         <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.2 8.2 0 019.5 4 8.3 8.3 0 1020 14.5z"/></svg>
@@ -272,13 +288,15 @@
 
           <button class="guest-row" id="btnGuestLanguage">
             <span class="guest-row-ic guest-row-ic--gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></span>
-            <span class="guest-row-body"><strong data-i18n="guestLanguageLabel">Language</strong><span data-i18n="guestLanguageValue">العربية · English · اردو</span></span>
+            <span class="guest-row-body"><strong data-i18n="guestLanguageLabel">Language</strong><span data-i18n="guestLanguageValue">العربية · English · اردو · हिंदी · বাংলা</span></span>
             <svg class="guest-row-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="guest-inline-lang" id="guestLanguageRow" style="display:none;">
-            <button data-lang-btn="en">EN</button>
-            <button data-lang-btn="ar">عربي</button>
-            <button data-lang-btn="ur">اردو</button>
+            <button data-lang-btn="en" lang="en">EN</button>
+            <button data-lang-btn="ar" lang="ar">عربي</button>
+            <button data-lang-btn="ur" lang="ur">اردو</button>
+            <button data-lang-btn="hi" lang="hi">हिंदी</button>
+            <button data-lang-btn="bn" lang="bn">বাংলা</button>
           </div>
         </div>
 

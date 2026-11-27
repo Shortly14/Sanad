@@ -53,6 +53,14 @@
     --font-display: 'Noto Nastaliq Urdu', serif;
     --font-body: 'Noto Nastaliq Urdu', serif;
   }
+  html[data-lang="hi"]{
+    --font-display: 'Noto Sans Devanagari', 'Space Grotesk', sans-serif;
+    --font-body: 'Noto Sans Devanagari', 'Inter', sans-serif;
+  }
+  html[data-lang="bn"]{
+    --font-display: 'Noto Sans Bengali', 'Space Grotesk', sans-serif;
+    --font-body: 'Noto Sans Bengali', 'Inter', sans-serif;
+  }
   *{box-sizing:border-box;}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);-webkit-font-smoothing:antialiased;}
   h1,h2,h3,h4,button,.display{font-family:var(--font-display);}
@@ -88,20 +96,28 @@
   .brand-mark svg{width:20px;height:20px;}
   .brand-text .name{font-size:16px;font-weight:700;line-height:1.1;letter-spacing:0.2px;}
   .brand-text .tag{font-size:10.5px;color:#C9D9D2;margin-top:2px;font-family:var(--font-body);}
-  .lang-switch{display:flex;background:rgba(243,241,230,0.12);border-radius:999px;padding:3px;gap:2px;}
-  .lang-switch button{
-    border:none;background:transparent;color:#C9D9D2;
-    font-size:11.5px;font-weight:600;padding:6px 9px;border-radius:999px;
-    transition:background .15s,color .15s;
+  /* Language switcher: a compact pill (globe + current language) over a real <select>,
+     so phones open their own native list of the five languages. The select is
+     transparent and covers the whole pill; the pill is only its visible face. */
+  .lang-select{
+    position:relative;flex:none;display:inline-flex;align-items:center;gap:5px;
+    height:34px;padding:0 10px;border-radius:999px;
+    border:1px solid rgba(243,241,230,0.28);background:rgba(243,241,230,0.12);color:#F3F1E6;
+    font-size:12.5px;font-weight:700;line-height:1;white-space:nowrap;
   }
-  .lang-switch button.active{background:var(--gold);color:#2A1D08;}
-  /* Floating variant used on top of the dark Feed itself (glass pill over video). */
-  .lang-switch--floating{
-    background:rgba(0,0,0,0.45);border:1px solid rgba(255,255,255,0.22);
+  .lang-select svg{flex:none;width:16px;height:16px;}
+  .lang-select .lang-select-chev{width:12px;height:12px;opacity:0.75;}
+  .lang-select select{
+    position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer;
+    -webkit-appearance:none;appearance:none;border:none;
+    font-size:16px; /* under 16px, iOS zooms the page in when the list opens */
+  }
+  .lang-select:has(select:focus-visible){outline:2px solid var(--gold);outline-offset:2px;}
+  /* Floating variant used on top of the Feed itself (glass pill over photos and video). */
+  .lang-select--floating{
+    height:38px;background:rgba(0,0,0,0.45);border-color:rgba(255,255,255,0.22);color:#fff;
     -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
   }
-  .lang-switch--floating button{color:#fff;}
-  .lang-switch--floating button.active{background:var(--gold);color:#2A1D08;}
 
   /* ---------- Tabs: bottom nav with a raised center "post" button ---------- */
   nav.tabbar{
@@ -128,6 +144,8 @@
   html[dir="rtl"] nav.tabbar button[data-tab]{font-size:12.5px;}
   html[dir="rtl"][data-lang="ur"] nav.tabbar button[data-tab]{font-size:14px;font-weight:700;line-height:1.3;}
   html[dir="rtl"][data-lang="ur"]{--tabbar-h:70px;}
+  html[data-lang="hi"] nav.tabbar button[data-tab],
+  html[data-lang="bn"] nav.tabbar button[data-tab]{font-size:11.5px;line-height:1.3;}
   .tabbar-post{
     flex:none;align-self:flex-start;margin-top:-22px;
     display:flex;align-items:center;justify-content:center;
@@ -1008,10 +1026,9 @@
   }
   html[data-theme="light"] nav.tabbar button[data-tab]{color:var(--ink-faint);}
   html[data-theme="light"] nav.tabbar button[data-tab] svg{stroke:var(--ink-faint);}
-  html[data-theme="light"] .lang-switch--floating{
-    background:rgba(255,255,255,0.86);border:1px solid var(--line);
+  html[data-theme="light"] .lang-select--floating{
+    background:rgba(255,255,255,0.86);border-color:var(--line);color:var(--ink);
   }
-  html[data-theme="light"] .lang-switch--floating button{color:var(--ink-soft);}
   /* The header stays dark green, but the tagline also picks up the generic .tag
      pill, whose light-theme tint made it pale text on a pale pill. */
   html[data-theme="light"] .brand-text .tag{background:rgba(255,255,255,0.1);}
@@ -1212,6 +1229,5 @@
      selected look; each is scoped with .active so it outranks its base rule. */
   html[data-theme="light"] nav.tabbar button[data-tab].active{color:var(--green);}
   html[data-theme="light"] nav.tabbar button[data-tab].active svg{stroke:var(--green);}
-  html[data-theme="light"] .lang-switch--floating button.active{color:#2A1D08;}
   html[data-theme="light"] .feed-rail .lk.active svg{fill:var(--feed-pink);stroke:var(--feed-pink);}
   html[data-theme="light"] .feed-rail .sv.active svg{fill:var(--green);stroke:var(--green);}

@@ -111,7 +111,7 @@ en: {
   qcOptInquiryTitle:"Question", qcOptInquirySub:"Get an answer from people who've done it",
   qcOptGuideTitle:"Tip", qcOptGuideSub:"Something you learned that could help others",
   qcMoreDetails:"More details (optional)", qcNext:"Next", qcPublish:"Publish", sarLabel:"SAR",
-  guestSavedLabel:"Saved", guestLanguageLabel:"Language", guestLanguageValue:"العربية · English · اردو",
+  guestSavedLabel:"Saved", guestLanguageLabel:"Language", guestLanguageValue:"العربية · English · اردو · हिंदी · বাংলা",
   likedCountLabel:"{n} liked on this phone", savedCountLabel:"{n} saved on this phone",
   signInBtnShort:"Log in / Sign up",
   authErrorInvalid:"Wrong username or password.", authErrorTooMany:"Too many wrong attempts. Wait 15 minutes and try again.", authErrorTooOften:"Too many new accounts from this network. Try again in an hour.", authErrorMissing:"Enter a username and password.", authErrorNetwork:"Couldn't reach the server — try again.", authErrorShort:"Password must be at least 6 characters.", authErrorTaken:"That username is already taken.", loginHint:"Log in with your username and password.", loginTabLabel:"Log in", signInSubmit:"Log in", signupHint:"Pick a username and password — that's all you need.", signupTabLabel:"Sign up",
@@ -119,7 +119,7 @@ en: {
   authTitle:"Sign in", lblEmail:"Email", sendCode:"Send code", useUsernameLogin:"I have a username and password", lblCode:"Code", verifyCode:"Verify", resendCode:"Send a new code", changeEmail:"Change email", continueLabel:"Continue", useEmailLogin:"Sign in with email instead",
   authHintEmail:"Enter your email. We'll send you a code to sign in or create your account.", authHintLink:"One more step: add your email to keep your account safe. We'll send you a code there.", authHintCode:"Enter the code we emailed to {email}. If you can't find it, check your spam folder.", authHintName:"Welcome to Sanad! What name should other people see?", codeResent:"We emailed you a new code.",
   authErrorEmail:"Enter a valid email, for example name@example.com.", authErrorCode:"Enter the code from the email.", authErrorWrongCode:"That code is wrong. Check it and try again.", authErrorCodeExpired:"That code has expired. Tap \"Send a new code\".", authErrorTooManyCodes:"Too many tries. Wait 15 minutes and try again.", authErrorSendFailed:"We couldn't send a code to this email. Check it and try again.", authErrorEmailTaken:"This email already belongs to another account. Sign in with email instead.", authErrorName:"Enter a name.",
-  themeToDark:"Switch to dark mode", themeToLight:"Switch to light mode",
+  themeToDark:"Switch to dark mode", themeToLight:"Switch to light mode", langMenuLabel:"Change language",
 },
 ar: {
   brandName:"سند · Sanad", brandTag:"سندك في السعودية",
@@ -194,7 +194,7 @@ ar: {
   qcOptInquiryTitle:"سؤال", qcOptInquirySub:"احصل على إجابة من ناس جربوا قبلك",
   qcOptGuideTitle:"نصيحة", qcOptGuideSub:"شي تعلمته وتبغى غيرك يستفيد منه",
   qcMoreDetails:"تفاصيل إضافية (اختياري)", qcNext:"التالي", qcPublish:"انشر الآن", sarLabel:"ريال",
-  guestSavedLabel:"المحفوظات", guestLanguageLabel:"اللغة", guestLanguageValue:"العربية · English · اردو",
+  guestSavedLabel:"المحفوظات", guestLanguageLabel:"اللغة", guestLanguageValue:"العربية · English · اردو · हिंदी · বাংলা",
   likedCountLabel:"{n} إعجاب على هذا الجهاز", savedCountLabel:"{n} محفوظ على هذا الجهاز",
   signInBtnShort:"تسجيل الدخول / إنشاء حساب",
   authErrorInvalid:"اسم المستخدم أو كلمة المرور غير صحيحة.", authErrorTooMany:"محاولات خاطئة كثيرة. انتظر ١٥ دقيقة ثم حاول مرة أخرى.", authErrorTooOften:"تم إنشاء حسابات كثيرة من هذه الشبكة. حاول مرة أخرى بعد ساعة.", authErrorMissing:"أدخل اسم المستخدم وكلمة المرور.", authErrorNetwork:"تعذر الوصول إلى الخادم — حاول مرة أخرى.", authErrorShort:"يجب أن تتكون كلمة المرور من ٦ أحرف على الأقل.", authErrorTaken:"اسم المستخدم هذا مُستخدم بالفعل.", loginHint:"سجّل الدخول باسم المستخدم وكلمة المرور.", loginTabLabel:"تسجيل الدخول", signInSubmit:"تسجيل الدخول", signupHint:"اختر اسم مستخدم وكلمة مرور — هذا كل ما تحتاجه.", signupTabLabel:"إنشاء حساب",
@@ -202,7 +202,7 @@ ar: {
   authTitle:"تسجيل الدخول", lblEmail:"البريد الإلكتروني", sendCode:"أرسل الرمز", useUsernameLogin:"لدي اسم مستخدم وكلمة مرور", lblCode:"الرمز", verifyCode:"تحقّق", resendCode:"أرسل رمزًا جديدًا", changeEmail:"غيّر البريد", continueLabel:"متابعة", useEmailLogin:"سجّل الدخول بالبريد الإلكتروني بدلًا من ذلك",
   authHintEmail:"أدخل بريدك الإلكتروني. سنرسل إليك رمزًا لتسجيل الدخول أو إنشاء حسابك.", authHintLink:"خطوة أخيرة: أضف بريدك الإلكتروني لحماية حسابك. سنرسل إليك رمزًا هناك.", authHintCode:"أدخل الرمز الذي أرسلناه إلى {email}. إذا لم تجده، تحقّق من مجلد الرسائل غير المرغوب فيها.", authHintName:"أهلًا بك في سند! ما الاسم الذي تريد أن يراه الآخرون؟", codeResent:"أرسلنا إليك رمزًا جديدًا بالبريد.",
   authErrorEmail:"أدخل بريدًا إلكترونيًا صحيحًا، مثل name@example.com.", authErrorCode:"أدخل الرمز الذي وصلك في البريد.", authErrorWrongCode:"الرمز غير صحيح. تحقّق منه وحاول مرة أخرى.", authErrorCodeExpired:"انتهت صلاحية الرمز. اضغط \"أرسل رمزًا جديدًا\".", authErrorTooManyCodes:"محاولات كثيرة. انتظر ١٥ دقيقة ثم حاول مرة أخرى.", authErrorSendFailed:"تعذّر إرسال رمز إلى هذا البريد. تحقّق منه وحاول مرة أخرى.", authErrorEmailTaken:"هذا البريد مرتبط بحساب آخر. سجّل الدخول بالبريد الإلكتروني بدلًا من ذلك.", authErrorName:"أدخل اسمًا.",
-  themeToDark:"التبديل إلى الوضع الداكن", themeToLight:"التبديل إلى الوضع الفاتح",
+  themeToDark:"التبديل إلى الوضع الداكن", themeToLight:"التبديل إلى الوضع الفاتح", langMenuLabel:"تغيير اللغة",
 },
 ur: {
   brandName:"سند · Sanad", brandTag:"سعودی عرب میں آپ کا سہارا",
@@ -277,7 +277,7 @@ ur: {
   qcOptInquiryTitle:"سوال", qcOptInquirySub:"تجربہ کار لوگوں سے جواب حاصل کریں",
   qcOptGuideTitle:"تجویز", qcOptGuideSub:"کچھ سیکھا جو دوسروں کے کام آ سکتا ہے",
   qcMoreDetails:"مزید تفصیلات (اختیاری)", qcNext:"اگلا", qcPublish:"شائع کریں", sarLabel:"SAR",
-  guestSavedLabel:"محفوظ شدہ", guestLanguageLabel:"زبان", guestLanguageValue:"العربية · English · اردو",
+  guestSavedLabel:"محفوظ شدہ", guestLanguageLabel:"زبان", guestLanguageValue:"العربية · English · اردو · हिंदी · বাংলা",
   likedCountLabel:"اس فون پر {n} پسند", savedCountLabel:"اس فون پر {n} محفوظ",
   signInBtnShort:"لاگ ان / اکاؤنٹ بنائیں",
   authErrorInvalid:"غلط یوزرنیم یا پاس ورڈ۔", authErrorTooMany:"بہت زیادہ غلط کوششیں۔ ۱۵ منٹ انتظار کریں اور دوبارہ کوشش کریں۔", authErrorTooOften:"اس نیٹ ورک سے بہت زیادہ نئے اکاؤنٹ بنائے گئے ہیں۔ ایک گھنٹے بعد دوبارہ کوشش کریں۔", authErrorMissing:"یوزرنیم اور پاس ورڈ درج کریں۔", authErrorNetwork:"سرور تک رسائی نہیں ہو سکی — دوبارہ کوشش کریں۔", authErrorShort:"پاس ورڈ کم از کم ۶ حروف کا ہونا چاہیے۔", authErrorTaken:"یہ یوزرنیم پہلے سے لیا جا چکا ہے۔", loginHint:"اپنے یوزرنیم اور پاس ورڈ سے لاگ ان کریں۔", loginTabLabel:"لاگ ان", signInSubmit:"لاگ ان", signupHint:"ایک یوزرنیم اور پاس ورڈ منتخب کریں — بس اتنا ہی چاہیے۔", signupTabLabel:"اکاؤنٹ بنائیں",
@@ -285,7 +285,179 @@ ur: {
   authTitle:"سائن اِن", lblEmail:"ای میل", sendCode:"کوڈ بھیجیں", useUsernameLogin:"میرے پاس یوزرنیم اور پاس ورڈ ہے", lblCode:"کوڈ", verifyCode:"تصدیق کریں", resendCode:"نیا کوڈ بھیجیں", changeEmail:"ای میل بدلیں", continueLabel:"جاری رکھیں", useEmailLogin:"اس کے بجائے ای میل سے سائن اِن کریں",
   authHintEmail:"اپنی ای میل درج کریں۔ سائن اِن کرنے یا اکاؤنٹ بنانے کے لیے ہم آپ کو ایک کوڈ بھیجیں گے۔", authHintLink:"ایک آخری قدم: اپنے اکاؤنٹ کو محفوظ رکھنے کے لیے اپنی ای میل شامل کریں۔ ہم وہاں آپ کو ایک کوڈ بھیجیں گے۔", authHintCode:"وہ کوڈ درج کریں جو ہم نے {email} پر بھیجا ہے۔ اگر نہ ملے تو اسپام فولڈر دیکھیں۔", authHintName:"سند میں خوش آمدید! دوسرے لوگ آپ کا کون سا نام دیکھیں؟", codeResent:"ہم نے آپ کو ای میل پر نیا کوڈ بھیج دیا ہے۔",
   authErrorEmail:"درست ای میل درج کریں، مثلاً name@example.com۔", authErrorCode:"ای میل میں آنے والا کوڈ درج کریں۔", authErrorWrongCode:"یہ کوڈ غلط ہے۔ اسے چیک کر کے دوبارہ کوشش کریں۔", authErrorCodeExpired:"اس کوڈ کی مدت ختم ہو گئی ہے۔ \"نیا کوڈ بھیجیں\" پر ٹیپ کریں۔", authErrorTooManyCodes:"بہت زیادہ کوششیں۔ ۱۵ منٹ انتظار کریں اور دوبارہ کوشش کریں۔", authErrorSendFailed:"اس ای میل پر کوڈ نہیں بھیجا جا سکا۔ اسے چیک کر کے دوبارہ کوشش کریں۔", authErrorEmailTaken:"یہ ای میل پہلے سے کسی اور اکاؤنٹ کی ہے۔ اس کے بجائے ای میل سے سائن اِن کریں۔", authErrorName:"ایک نام درج کریں۔",
-  themeToDark:"ڈارک موڈ پر جائیں", themeToLight:"لائٹ موڈ پر جائیں",
+  themeToDark:"ڈارک موڈ پر جائیں", themeToLight:"لائٹ موڈ پر جائیں", langMenuLabel:"زبان تبدیل کریں",
+},
+hi: {
+  brandName:"Sanad · سند", brandTag:"सऊदी अरब में आपका सहारा",
+  navHome:"होम", navGuide:"गाइड", navHousing:"फ़ीड", navCommunity:"कम्युनिटी",
+  chipAll:"सभी", chipHousing:"कमरे", chipInquiries:"सवाल", chipGuides:"टिप्स",
+  qnGuideTitle:"अपने अधिकार जानें", qnGuideSub:"श्रम क़ानून, क़िवा, इक़ामा और बैंकिंग — आसान भाषा में",
+  qnHousingTitle:"कमरा ढूंढें", qnHousingSub:"6 बड़े शहरों में शेयरिंग वाले कमरे",
+  qnCommunityTitle:"कम्युनिटी से पूछें", qnCommunitySub:"यहाँ पहले से रह रहे लोगों के सच्चे जवाब — कोई अनजान फ़ेसबुक ग्रुप नहीं",
+  guideEyebrow:"जानकारी गाइड", guideTitle:"सिस्टम को समझें, इससे पहले कि वह आपको उलझा दे",
+  guideSub:"हर कामगार को कभी न कभी जिन बातों की ज़रूरत पड़ती है, उनकी छोटी और आसान जानकारी।",
+  housingEyebrow:"रूममेट और शेयरिंग कमरों का बोर्ड", housingTitle:"अपना अगला कमरा ढूंढें",
+  housingSub:"किरायेदारों और मकान-मालिकों के असली विज्ञापन। सीधे व्हाट्सऐप पर बात करें — कोई बिचौलिया नहीं।",
+  housingPostBtn:"नई पोस्ट",
+  lblCity:"शहर", lblRent:"महीने का किराया (रियाल)", lblRoomType:"कमरे का प्रकार",
+  rtShared:"शेयरिंग कमरा", rtPrivate:"अलग कमरा", rtBed:"सिर्फ़ बेड",
+  lblGender:"किसके लिए", genAny:"कोई भी", genMale:"सिर्फ़ पुरुष", genFemale:"सिर्फ़ महिलाएँ",
+  lblNationality:"राष्ट्रीयता / भाषा की पसंद", natAny:"कोई भी", natArab:"अरब",
+  lblBills:"बिजली और पानी शामिल", lblDesc:"विवरण", descPh:"जैसे: मेट्रो के पास, शांत फ़्लैट, पहले से 3 लोग रहते हैं...",
+  lblWhatsapp:"व्हाट्सऐप नंबर", waInvalid:"सही व्हाट्सऐप नंबर डालें, जैसे 05XXXXXXXX।", waSaudiInvalid:"सऊदी मोबाइल नंबर डालें: 5 से शुरू होने वाले 9 अंक।",
+  filterAllCities:"सभी शहर", filterAnyBudget:"कोई भी बजट", filterUnder500:"500 से कम", filterBudget500to800:"500 – 800 रियाल", filterBudget800to1200:"800 – 1,200 रियाल",
+  filterAnyNat:"कोई भी राष्ट्रीयता",
+  perMonth:"/ महीना", contactWA:"व्हाट्सऐप", billsIncluded:"बिल शामिल", billsShared:"बिल बाँटकर",
+  postedBy:"पोस्ट करने वाले",
+  communityEyebrow:"कम्युनिटी सवाल-जवाब", communityTitle:"उन लोगों से पूछें जो यह सब पहले से समझ चुके हैं",
+  communitySub:"कमरे, क़ानूनी सवाल, नौकरी और रोज़मर्रा की ज़िंदगी पर साथियों के जवाब।",
+  lblCategory:"श्रेणी", catHousing:"कमरे", catLegal:"क़ानूनी", catJobs:"नौकरी", catLife:"आम ज़िंदगी",
+  lblQuestion:"आपका सवाल", questionPh:"अपना सवाल यहाँ लिखें...",
+  catAll:"सभी", replies:"जवाब", viewReplies:"जवाब देखें", hideReplies:"जवाब छिपाएँ",
+  repliedBy:"जवाब देने वाले", replyPh:"कोई मददगार जवाब लिखें...", replySubmit:"जवाब दें", replySignInHint:"इस सवाल का जवाब देने के लिए साइन इन करें।",
+  footNote:"सनद एक कम्युनिटी प्लैटफ़ॉर्म है। सरकारी प्रक्रियाओं की पुष्टि हमेशा क़िवा, अबशर और मुक़ीम जैसे सरकारी पोर्टल पर करें।",
+  emergencyTitle:"आपातकालीन नंबर", em911:"इमरजेंसी (पुलिस)", em998:"सिविल डिफ़ेंस (आग)", em997:"एम्बुलेंस (रेड क्रिसेंट)", em19911:"मानव संसाधन मंत्रालय — श्रम संबंधी पूछताछ",
+  navProfile:"प्रोफ़ाइल", shareLabel:"शेयर", copyLink:"लिंक कॉपी करें", linkCopied:"लिंक कॉपी हो गया!", shareViaWhatsapp:"व्हाट्सऐप पर शेयर करें", shareThisPage:"यह पेज शेयर करें",
+  lblName:"आपका नाम", signOutBtn:"साइन आउट",
+  communityTabQA:"सवाल-जवाब", communityTabBuddies:"साथी", becomeBuddyBtn:"साथी बनें — नए लोगों की मदद करें",
+  buddyFormTitle:"साथी के रूप में जुड़ें", buddyFormHint:"नए आने वाले आपकी प्रोफ़ाइल देख सकेंगे और व्हाट्सऐप पर आपसे संपर्क कर सकेंगे।",
+  lblHelpAreas:"आप किस चीज़ में मदद कर सकते हैं?", helpHousing:"कमरा ढूंढना", helpPaperwork:"काग़ज़ात और प्रक्रियाएँ", helpOrientation:"सामान्य मार्गदर्शन",
+  lblBio:"छोटा परिचय", bioPh:"जैसे: 3 साल से रियाद में हूँ, अबशर/नफ़ाद सेटअप में मदद कर सकता हूँ...",
+  buddyFormSubmit:"मेरी साथी प्रोफ़ाइल प्रकाशित करें", noBuddiesYet:"अभी कोई साथी नहीं है — पहले आप बनें!", helpsWith:"इसमें मदद कर सकते हैं",
+  videoLabel:"कमरे की फ़ोटो या वीडियो (वैकल्पिक)", videoHint:"ज़्यादा से ज़्यादा 10 फ़ोटो, या 60 सेकंड और 50 MB तक का एक वीडियो। फ़ोटो अपने-आप छोटी की जाती हैं ताकि जल्दी अपलोड हों।",
+  mediaVideoTooBig:"यह वीडियो {mb} MB का है। वीडियो 50 MB तक हो सकता है। छोटी क्लिप आज़माएँ, या 4K की जगह 1080p में रिकॉर्ड करें।", mediaVideoTooLong:"यह वीडियो {s} सेकंड का है। वीडियो 60 सेकंड तक हो सकता है।", mediaTooManyPhotos:"आपने {n} फ़ोटो चुनीं। सिर्फ़ पहली 10 पोस्ट होंगी।", mediaPhotosPicked:"{n} फ़ोटो तैयार", mediaVideoPicked:"वीडियो तैयार: {mb} MB, {s} सेकंड", uploadingPhotosProgress:"फ़ोटो अपलोड हो रही हैं... {total} में से {done}", uploadFailed:"अपलोड नहीं हो सका। अपना कनेक्शन जाँचें और फिर से कोशिश करें।", publishFailed:"प्रकाशित नहीं हो सका। फिर से कोशिश करें।", uploadingVideo:"वीडियो अपलोड हो रहा है...",
+  photoN:"फ़ोटो {n}", prevPhoto:"पिछली फ़ोटो", nextPhoto:"अगली फ़ोटो",
+  qcTextLabel:"आप क्या कहना चाहते हैं?", qcTextPh:"कोई ऐसी टिप शेयर करें जो किसी नए व्यक्ति के काम आए...",
+  qcImageLabel:"एक फ़ोटो जोड़ें (वैकल्पिक)", uploadingImage:"फ़ोटो अपलोड हो रही है...",
+  viewAndAnswer:"देखें और जवाब दें", fromCommunity:"कम्युनिटी से",
+  requiredTag:"(ज़रूरी)", optionalTag:"(वैकल्पिक)", natOther:"अन्य", lblNatOther:"राष्ट्रीयता / भाषा लिखें",
+  profileEyebrow:"आपका अकाउंट",
+  profileTitleSignedOut:"आप मेहमान के रूप में देख रहे हैं",
+  profileSubSignedOut:"देखना, पसंद करना और सेव करना — सब बिना अकाउंट के होता है। अकाउंट सिर्फ़ पोस्ट करने या किसी से संपर्क करने के लिए चाहिए।",
+  myLinksTitle:"मेरे शेयर लिंक", myLinksHint:"किसी भी सेक्शन के लिए अपना लिंक बनाएँ — आप देख पाएँगे कि हर लिंक कितनी बार खोला गया।",
+  generateLinkBtn:"लिंक पाएँ", clicksLabel:"क्लिक",
+  filterAnyGender:"सभी के लिए", filterMaleOnly:"सिर्फ़ पुरुष", filterFemaleOnly:"सिर्फ़ महिलाएँ",
+  filterAnyRoom:"कोई भी कमरा", filterShared:"शेयरिंग", filterPrivate:"अलग", filterBed:"बेड",
+  filtersLabel:"फ़िल्टर", filtersReset:"रीसेट", filtersShow:"नतीजे देखें",
+  lblBudget:"महीने का बजट", lblNatShort:"राष्ट्रीयता", lblGenderShort:"किसके लिए",
+  noListingsTitle:"इन फ़िल्टर से कोई कमरा नहीं मिला", noListingsSub:"बजट बढ़ाकर देखें, या एक-दो फ़िल्टर हटा दें।",
+  likeLabel:"पसंद", saveLabel:"सेव",
+  deleteLabel:"हटाएँ", deleteConfirm:"इसे हमेशा के लिए हटा दें? यह वापस नहीं होगा।", deleteFailed:"इसे हटाया नहीं जा सका। अपना कनेक्शन जाँचें, या साइन आउट करके फिर साइन इन करें, फिर एक बार और कोशिश करें।", removeBuddyProfile:"मेरी साथी प्रोफ़ाइल हटाएँ",
+  statMyListings:"विज्ञापन", statMyQuestions:"सवाल", statMyClicks:"लिंक क्लिक",
+  tabMyPosts:"पोस्ट", tabLiked:"पसंद किए", memberSince:"सदस्यता की शुरुआत", memberFallback:"सदस्य",
+  noPostsYet:"अभी तक कोई विज्ञापन पोस्ट नहीं किया", noLikedYet:"आपको पसंद आए कमरे यहाँ दिखेंगे", noSavedYet:"आपकी सेव की हुई चीज़ें यहाँ दिखेंगी",
+  backBtn:"वापस", loadingProfile:"लोड हो रहा है…", publicProfileUnavailable:"प्रोफ़ाइल उपलब्ध नहीं है",
+  communityTabLeaderboard:"टॉप मददगार", leaderboardMonthLabel:"टॉप मददगार —",
+  lbFilterAll:"सभी", lbFilterOpenToWork:"काम के लिए उपलब्ध", lbStatReplies:"जवाब", lbStatVotes:"वोट",
+  noHelpersYet:"इस महीने अभी तक किसी ने यह हासिल नहीं किया — किसी सवाल का जवाब देकर पहले बनें!", noQuestionsYet:"अभी कोई सवाल नहीं — पहला सवाल आप पूछें!",
+  badgeTopHelper:"इस महीने के टॉप मददगार", shareMyRank:"मेरी रैंक शेयर करें",
+  openToWorkToggleLabel:"नौकरी देने वालों को दिखाई दें",
+  openToWorkHint:"इसे चालू करने पर आपका नाम दिखेगा और नौकरी देने वाले टॉप मददगार सूची से आपको व्हाट्सऐप पर मैसेज कर सकेंगे।",
+  openToWorkWhatsappLabel:"नौकरी देने वालों को दिखाने के लिए व्हाट्सऐप नंबर", saveBtn:"सेव करें",
+  composerNewPost:"नई पोस्ट",
+  qcStep1Title:"आप क्या पोस्ट करना चाहते हैं?", qcStep1Sub:"एक चुनें — भेजने से पहले आप कभी भी बदल सकते हैं।",
+  qcOptHousingTitle:"कमरा या बेड", qcOptHousingSub:"आपके पास खाली जगह है और किरायेदार चाहिए",
+  qcOptInquiryTitle:"सवाल", qcOptInquirySub:"उन लोगों से जवाब पाएँ जो यह कर चुके हैं",
+  qcOptGuideTitle:"टिप", qcOptGuideSub:"आपने जो सीखा, वह दूसरों के काम आ सकता है",
+  qcMoreDetails:"और जानकारी (वैकल्पिक)", qcNext:"आगे", qcPublish:"प्रकाशित करें", sarLabel:"रियाल",
+  guestSavedLabel:"सेव किए", guestLanguageLabel:"भाषा", guestLanguageValue:"العربية · English · اردو · हिंदी · বাংলা",
+  likedCountLabel:"इस फ़ोन पर {n} पसंद", savedCountLabel:"इस फ़ोन पर {n} सेव",
+  signInBtnShort:"लॉग इन / साइन अप",
+  authErrorInvalid:"यूज़रनेम या पासवर्ड गलत है।", authErrorTooMany:"बहुत ज़्यादा गलत कोशिशें। 15 मिनट रुककर फिर कोशिश करें।", authErrorTooOften:"इस नेटवर्क से बहुत ज़्यादा नए अकाउंट बने हैं। एक घंटे बाद फिर कोशिश करें।", authErrorMissing:"यूज़रनेम और पासवर्ड डालें।", authErrorNetwork:"सर्वर तक नहीं पहुँच सके — फिर से कोशिश करें।", authErrorShort:"पासवर्ड कम से कम 6 अक्षरों का होना चाहिए।", authErrorTaken:"यह यूज़रनेम पहले से लिया जा चुका है।", loginHint:"अपने यूज़रनेम और पासवर्ड से लॉग इन करें।", loginTabLabel:"लॉग इन", signInSubmit:"लॉग इन", signupHint:"एक यूज़रनेम और पासवर्ड चुनें — बस इतना ही चाहिए।", signupTabLabel:"साइन अप",
+  lblUsername:"यूज़रनेम", lblPassword:"पासवर्ड",
+  authTitle:"साइन इन", lblEmail:"ईमेल", sendCode:"कोड भेजें", useUsernameLogin:"मेरे पास यूज़रनेम और पासवर्ड है", lblCode:"कोड", verifyCode:"पुष्टि करें", resendCode:"नया कोड भेजें", changeEmail:"ईमेल बदलें", continueLabel:"जारी रखें", useEmailLogin:"इसकी जगह ईमेल से साइन इन करें",
+  authHintEmail:"अपना ईमेल डालें। साइन इन करने या अकाउंट बनाने के लिए हम आपको एक कोड भेजेंगे।", authHintLink:"बस एक कदम और: अपना अकाउंट सुरक्षित रखने के लिए ईमेल जोड़ें। हम वहाँ आपको एक कोड भेजेंगे।", authHintCode:"हमने {email} पर जो कोड भेजा है, उसे डालें। न मिले तो स्पैम फ़ोल्डर देखें।", authHintName:"सनद में आपका स्वागत है! दूसरों को आपका कौन-सा नाम दिखे?", codeResent:"हमने आपको नया कोड ईमेल कर दिया है।",
+  authErrorEmail:"सही ईमेल डालें, जैसे name@example.com।", authErrorCode:"ईमेल में आया कोड डालें।", authErrorWrongCode:"यह कोड गलत है। जाँचकर फिर कोशिश करें।", authErrorCodeExpired:"इस कोड का समय खत्म हो गया है। \"नया कोड भेजें\" दबाएँ।", authErrorTooManyCodes:"बहुत ज़्यादा कोशिशें। 15 मिनट रुककर फिर कोशिश करें।", authErrorSendFailed:"हम इस ईमेल पर कोड नहीं भेज सके। ईमेल जाँचकर फिर कोशिश करें।", authErrorEmailTaken:"यह ईमेल पहले से किसी दूसरे अकाउंट का है। इसकी जगह ईमेल से साइन इन करें।", authErrorName:"एक नाम डालें।",
+  themeToDark:"डार्क मोड चालू करें", themeToLight:"लाइट मोड चालू करें", langMenuLabel:"भाषा बदलें",
+  // Admin buddy keys from the open admin-buddies pull request (#37), so its
+  // strings are already translated whichever of the two merges first.
+  adminAddBuddyBtn:"सत्यापित साथी जोड़ें (एडमिन)", adminBuddyFormTitle:"साथी जोड़ें", adminBuddyFormHint:"यह सिर्फ़ एडमिन को दिखता है। साथी को \"सत्यापित\" बैज मिलेगा। उनका व्हाट्सऐप नंबर प्रकाशित करने से पहले उनसे पूछ लें।", lblBuddyName:"नाम", lblAdminHelpAreas:"वे किस चीज़ में मदद कर सकते हैं?", adminBuddyFormSubmit:"साथी प्रकाशित करें", buddyNameMissing:"साथी का नाम डालें।", adminAddBuddyFailed:"यह साथी जोड़ा नहीं जा सका। अपना कनेक्शन जाँचें और फिर कोशिश करें।", verifiedBadge:"सत्यापित", adminRemoveBuddy:"हटाएँ (एडमिन)",
+},
+bn: {
+  brandName:"Sanad · سند", brandTag:"সৌদি আরবে আপনার সহায়",
+  navHome:"হোম", navGuide:"গাইড", navHousing:"ফিড", navCommunity:"কমিউনিটি",
+  chipAll:"সব", chipHousing:"বাসা", chipInquiries:"প্রশ্ন", chipGuides:"টিপস",
+  qnGuideTitle:"আপনার অধিকার জানুন", qnGuideSub:"শ্রম আইন, কিওয়া, ইকামা ও ব্যাংকিং — সহজ ভাষায়",
+  qnHousingTitle:"রুম খুঁজুন", qnHousingSub:"৬টি বড় শহরে শেয়ারে থাকার জায়গা",
+  qnCommunityTitle:"কমিউনিটিকে জিজ্ঞেস করুন", qnCommunitySub:"যারা এখানে আগে থেকেই থাকেন তাদের সত্যিকারের উত্তর — কোনো অচেনা ফেসবুক গ্রুপ নয়",
+  guideEyebrow:"তথ্য গাইড", guideTitle:"নিয়মকানুন বুঝে নিন, বিভ্রান্ত হওয়ার আগেই",
+  guideSub:"প্রত্যেক কর্মীর কোনো না কোনো সময় যা লাগে, সেসব বিষয়ের ছোট ও সহজ ব্যাখ্যা।",
+  housingEyebrow:"রুমমেট ও শেয়ার্ড বাসার বোর্ড", housingTitle:"আপনার পরের রুম খুঁজুন",
+  housingSub:"ভাড়াটিয়া ও বাড়ির মালিকদের আসল বিজ্ঞাপন। সরাসরি হোয়াটসঅ্যাপে যোগাযোগ করুন — কোনো দালাল নেই।",
+  housingPostBtn:"নতুন পোস্ট",
+  lblCity:"শহর", lblRent:"মাসিক ভাড়া (রিয়াল)", lblRoomType:"রুমের ধরন",
+  rtShared:"শেয়ার্ড রুম", rtPrivate:"আলাদা রুম", rtBed:"শুধু বেড",
+  lblGender:"কার জন্য", genAny:"যেকোনো", genMale:"শুধু পুরুষ", genFemale:"শুধু মহিলা",
+  lblNationality:"জাতীয়তা / ভাষার পছন্দ", natAny:"যেকোনো", natArab:"আরব",
+  lblBills:"বিদ্যুৎ ও পানি সহ", lblDesc:"বিবরণ", descPh:"যেমন: মেট্রোর কাছে, শান্ত ফ্ল্যাট, আগে থেকে ৩ জন থাকেন...",
+  lblWhatsapp:"হোয়াটসঅ্যাপ নম্বর", waInvalid:"সঠিক হোয়াটসঅ্যাপ নম্বর দিন, যেমন 05XXXXXXXX।", waSaudiInvalid:"সৌদি মোবাইল নম্বর দিন: 5 দিয়ে শুরু হওয়া 9 অঙ্কের নম্বর।",
+  filterAllCities:"সব শহর", filterAnyBudget:"যেকোনো বাজেট", filterUnder500:"৫০০-এর কম", filterBudget500to800:"৫০০ – ৮০০ রিয়াল", filterBudget800to1200:"৮০০ – ১,২০০ রিয়াল",
+  filterAnyNat:"যেকোনো জাতীয়তা",
+  perMonth:"/ মাস", contactWA:"হোয়াটসঅ্যাপ", billsIncluded:"বিল সহ", billsShared:"বিল ভাগাভাগি",
+  postedBy:"পোস্ট করেছেন",
+  communityEyebrow:"কমিউনিটি প্রশ্নোত্তর", communityTitle:"যারা আগেই সব বুঝে নিয়েছেন, তাদের জিজ্ঞেস করুন",
+  communitySub:"বাসা, আইনি প্রশ্ন, কাজ আর দৈনন্দিন জীবন নিয়ে সহকর্মীদের উত্তর।",
+  lblCategory:"বিভাগ", catHousing:"বাসা", catLegal:"আইনি", catJobs:"কাজ", catLife:"সাধারণ জীবন",
+  lblQuestion:"আপনার প্রশ্ন", questionPh:"আপনার প্রশ্ন এখানে লিখুন...",
+  catAll:"সব", replies:"উত্তর", viewReplies:"উত্তর দেখুন", hideReplies:"উত্তর লুকান",
+  repliedBy:"উত্তরদাতা", replyPh:"একটি সহায়ক উত্তর লিখুন...", replySubmit:"উত্তর দিন", replySignInHint:"এই প্রশ্নের উত্তর দিতে সাইন ইন করুন।",
+  footNote:"সনদ একটি কমিউনিটি প্ল্যাটফর্ম। সরকারি নিয়মকানুন সবসময় কিওয়া, আবশের ও মুকিমের মতো সরকারি পোর্টালে যাচাই করুন।",
+  emergencyTitle:"জরুরি নম্বর", em911:"জরুরি (পুলিশ)", em998:"সিভিল ডিফেন্স (আগুন)", em997:"অ্যাম্বুলেন্স (রেড ক্রিসেন্ট)", em19911:"মানবসম্পদ মন্ত্রণালয় — শ্রম বিষয়ক তথ্য",
+  navProfile:"প্রোফাইল", shareLabel:"শেয়ার", copyLink:"লিংক কপি করুন", linkCopied:"লিংক কপি হয়েছে!", shareViaWhatsapp:"হোয়াটসঅ্যাপে শেয়ার করুন", shareThisPage:"এই পেজ শেয়ার করুন",
+  lblName:"আপনার নাম", signOutBtn:"সাইন আউট",
+  communityTabQA:"প্রশ্নোত্তর", communityTabBuddies:"সাথী", becomeBuddyBtn:"সাথী হোন — নতুনদের সাহায্য করুন",
+  buddyFormTitle:"সাথী হিসেবে যোগ দিন", buddyFormHint:"নতুনরা আপনার প্রোফাইল দেখতে পাবেন এবং হোয়াটসঅ্যাপে আপনার সাথে যোগাযোগ করতে পারবেন।",
+  lblHelpAreas:"আপনি কোন বিষয়ে সাহায্য করতে পারেন?", helpHousing:"বাসা খোঁজা", helpPaperwork:"কাগজপত্র ও প্রক্রিয়া", helpOrientation:"সাধারণ দিকনির্দেশনা",
+  lblBio:"সংক্ষিপ্ত পরিচয়", bioPh:"যেমন: ৩ বছর ধরে রিয়াদে আছি, আবশের/নাফাদ সেটআপে সাহায্য করতে পারি...",
+  buddyFormSubmit:"আমার সাথী প্রোফাইল প্রকাশ করুন", noBuddiesYet:"এখনো কোনো সাথী নেই — আপনিই প্রথম হোন!", helpsWith:"যে বিষয়ে সাহায্য করতে পারেন",
+  videoLabel:"রুমের ছবি বা ভিডিও (ঐচ্ছিক)", videoHint:"সর্বোচ্চ ১০টি ছবি, অথবা ৬০ সেকেন্ড ও ৫০ MB পর্যন্ত একটি ভিডিও। ছবিগুলো নিজে থেকেই ছোট করা হয় যাতে দ্রুত আপলোড হয়।",
+  mediaVideoTooBig:"এই ভিডিওটি {mb} MB। ভিডিও সর্বোচ্চ ৫০ MB হতে পারে। ছোট ক্লিপ দিন, অথবা 4K-এর বদলে 1080p-তে রেকর্ড করুন।", mediaVideoTooLong:"এই ভিডিওটি {s} সেকেন্ডের। ভিডিও সর্বোচ্চ ৬০ সেকেন্ড হতে পারে।", mediaTooManyPhotos:"আপনি {n}টি ছবি বেছেছেন। শুধু প্রথম ১০টি পোস্ট হবে।", mediaPhotosPicked:"{n}টি ছবি তৈরি", mediaVideoPicked:"ভিডিও তৈরি: {mb} MB, {s} সেকেন্ড", uploadingPhotosProgress:"ছবি আপলোড হচ্ছে... {total}টির মধ্যে {done}টি", uploadFailed:"আপলোড হয়নি। আপনার সংযোগ দেখে আবার চেষ্টা করুন।", publishFailed:"প্রকাশ করা যায়নি। আবার চেষ্টা করুন।", uploadingVideo:"ভিডিও আপলোড হচ্ছে...",
+  photoN:"ছবি {n}", prevPhoto:"আগের ছবি", nextPhoto:"পরের ছবি",
+  qcTextLabel:"আপনি কী বলতে চান?", qcTextPh:"এমন একটি টিপস শেয়ার করুন যা নতুন কারও কাজে লাগবে...",
+  qcImageLabel:"একটি ছবি যোগ করুন (ঐচ্ছিক)", uploadingImage:"ছবি আপলোড হচ্ছে...",
+  viewAndAnswer:"দেখুন ও উত্তর দিন", fromCommunity:"কমিউনিটি থেকে",
+  requiredTag:"(আবশ্যক)", optionalTag:"(ঐচ্ছিক)", natOther:"অন্যান্য", lblNatOther:"জাতীয়তা / ভাষা লিখুন",
+  profileEyebrow:"আপনার অ্যাকাউন্ট",
+  profileTitleSignedOut:"আপনি অতিথি হিসেবে দেখছেন",
+  profileSubSignedOut:"দেখা, পছন্দ করা ও সেভ করা — সবই অ্যাকাউন্ট ছাড়া চলে। শুধু পোস্ট করতে বা কারও সাথে যোগাযোগ করতে অ্যাকাউন্ট লাগে।",
+  myLinksTitle:"আমার শেয়ার লিংক", myLinksHint:"যেকোনো অংশের জন্য নিজের লিংক তৈরি করুন — প্রতিটি লিংক কতবার খোলা হলো তা দেখতে পাবেন।",
+  generateLinkBtn:"লিংক নিন", clicksLabel:"ক্লিক",
+  filterAnyGender:"সবার জন্য", filterMaleOnly:"শুধু পুরুষ", filterFemaleOnly:"শুধু মহিলা",
+  filterAnyRoom:"যেকোনো রুম", filterShared:"শেয়ার্ড", filterPrivate:"আলাদা", filterBed:"বেড",
+  filtersLabel:"ফিল্টার", filtersReset:"রিসেট", filtersShow:"ফলাফল দেখুন",
+  lblBudget:"মাসিক বাজেট", lblNatShort:"জাতীয়তা", lblGenderShort:"কার জন্য",
+  noListingsTitle:"এই ফিল্টারে কোনো রুম পাওয়া যায়নি", noListingsSub:"বাজেট বাড়িয়ে দেখুন, অথবা এক-দুটি ফিল্টার সরিয়ে দিন।",
+  likeLabel:"পছন্দ", saveLabel:"সেভ",
+  deleteLabel:"মুছুন", deleteConfirm:"এটি চিরতরে মুছে ফেলবেন? এটি আর ফেরানো যাবে না।", deleteFailed:"এটি মোছা যায়নি। আপনার সংযোগ দেখুন, অথবা সাইন আউট করে আবার সাইন ইন করুন, তারপর আরেকবার চেষ্টা করুন।", removeBuddyProfile:"আমার সাথী প্রোফাইল সরান",
+  statMyListings:"বিজ্ঞাপন", statMyQuestions:"প্রশ্ন", statMyClicks:"লিংক ক্লিক",
+  tabMyPosts:"পোস্ট", tabLiked:"পছন্দের", memberSince:"সদস্যপদ শুরু", memberFallback:"সদস্য",
+  noPostsYet:"এখনো কোনো বিজ্ঞাপন পোস্ট করা হয়নি", noLikedYet:"আপনার পছন্দের রুমগুলো এখানে দেখা যাবে", noSavedYet:"আপনার সেভ করা জিনিস এখানে দেখা যাবে",
+  backBtn:"ফিরে যান", loadingProfile:"লোড হচ্ছে…", publicProfileUnavailable:"প্রোফাইল পাওয়া যাচ্ছে না",
+  communityTabLeaderboard:"সেরা সাহায্যকারী", leaderboardMonthLabel:"সেরা সাহায্যকারী —",
+  lbFilterAll:"সবাই", lbFilterOpenToWork:"কাজের জন্য প্রস্তুত", lbStatReplies:"উত্তর", lbStatVotes:"ভোট",
+  noHelpersYet:"এই মাসে এখনো কেউ এটি পাননি — একটি প্রশ্নের উত্তর দিয়ে প্রথম হোন!", noQuestionsYet:"এখনো কোনো প্রশ্ন নেই — প্রথম প্রশ্নটি আপনিই করুন!",
+  badgeTopHelper:"এই মাসের সেরা সাহায্যকারী", shareMyRank:"আমার র‍্যাংক শেয়ার করুন",
+  openToWorkToggleLabel:"নিয়োগকর্তাদের কাছে দৃশ্যমান থাকুন",
+  openToWorkHint:"এটি চালু করলে আপনার নাম দেখা যাবে এবং নিয়োগকর্তারা সেরা সাহায্যকারীর তালিকা থেকে হোয়াটসঅ্যাপে আপনাকে মেসেজ করতে পারবেন।",
+  openToWorkWhatsappLabel:"নিয়োগকর্তাদের দেখানোর জন্য হোয়াটসঅ্যাপ নম্বর", saveBtn:"সেভ করুন",
+  composerNewPost:"নতুন পোস্ট",
+  qcStep1Title:"আপনি কী পোস্ট করতে চান?", qcStep1Sub:"একটি বেছে নিন — জমা দেওয়ার আগে যেকোনো সময় বদলাতে পারবেন।",
+  qcOptHousingTitle:"রুম বা বেড", qcOptHousingSub:"আপনার কাছে খালি জায়গা আছে, ভাড়াটিয়া দরকার",
+  qcOptInquiryTitle:"প্রশ্ন", qcOptInquirySub:"যারা এটা আগে করেছেন তাদের কাছ থেকে উত্তর নিন",
+  qcOptGuideTitle:"টিপস", qcOptGuideSub:"আপনি যা শিখেছেন, তা অন্যদের কাজে লাগতে পারে",
+  qcMoreDetails:"আরও তথ্য (ঐচ্ছিক)", qcNext:"পরবর্তী", qcPublish:"প্রকাশ করুন", sarLabel:"রিয়াল",
+  guestSavedLabel:"সেভ করা", guestLanguageLabel:"ভাষা", guestLanguageValue:"العربية · English · اردو · हिंदी · বাংলা",
+  likedCountLabel:"এই ফোনে {n}টি পছন্দ", savedCountLabel:"এই ফোনে {n}টি সেভ করা",
+  signInBtnShort:"লগ ইন / সাইন আপ",
+  authErrorInvalid:"ইউজারনেম বা পাসওয়ার্ড ভুল।", authErrorTooMany:"অনেকবার ভুল চেষ্টা হয়েছে। ১৫ মিনিট অপেক্ষা করে আবার চেষ্টা করুন।", authErrorTooOften:"এই নেটওয়ার্ক থেকে অনেক নতুন অ্যাকাউন্ট খোলা হয়েছে। এক ঘণ্টা পরে আবার চেষ্টা করুন।", authErrorMissing:"ইউজারনেম ও পাসওয়ার্ড দিন।", authErrorNetwork:"সার্ভারে পৌঁছানো যায়নি — আবার চেষ্টা করুন।", authErrorShort:"পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের হতে হবে।", authErrorTaken:"এই ইউজারনেম আগেই নেওয়া হয়েছে।", loginHint:"আপনার ইউজারনেম ও পাসওয়ার্ড দিয়ে লগ ইন করুন।", loginTabLabel:"লগ ইন", signInSubmit:"লগ ইন", signupHint:"একটি ইউজারনেম ও পাসওয়ার্ড বেছে নিন — এটুকুই যথেষ্ট।", signupTabLabel:"সাইন আপ",
+  lblUsername:"ইউজারনেম", lblPassword:"পাসওয়ার্ড",
+  authTitle:"সাইন ইন", lblEmail:"ইমেইল", sendCode:"কোড পাঠান", useUsernameLogin:"আমার ইউজারনেম ও পাসওয়ার্ড আছে", lblCode:"কোড", verifyCode:"যাচাই করুন", resendCode:"নতুন কোড পাঠান", changeEmail:"ইমেইল বদলান", continueLabel:"চালিয়ে যান", useEmailLogin:"বরং ইমেইল দিয়ে সাইন ইন করুন",
+  authHintEmail:"আপনার ইমেইল দিন। সাইন ইন বা অ্যাকাউন্ট খোলার জন্য আমরা একটি কোড পাঠাব।", authHintLink:"আর এক ধাপ: অ্যাকাউন্ট নিরাপদ রাখতে আপনার ইমেইল যোগ করুন। আমরা সেখানে একটি কোড পাঠাব।", authHintCode:"{email}-এ পাঠানো কোডটি দিন। খুঁজে না পেলে স্প্যাম ফোল্ডার দেখুন।", authHintName:"সনদে স্বাগতম! অন্যরা আপনার কোন নাম দেখবেন?", codeResent:"আমরা আপনাকে নতুন কোড ইমেইল করেছি।",
+  authErrorEmail:"সঠিক ইমেইল দিন, যেমন name@example.com।", authErrorCode:"ইমেইলে আসা কোডটি দিন।", authErrorWrongCode:"কোডটি ভুল। দেখে আবার চেষ্টা করুন।", authErrorCodeExpired:"কোডটির মেয়াদ শেষ। \"নতুন কোড পাঠান\" চাপুন।", authErrorTooManyCodes:"অনেকবার চেষ্টা হয়েছে। ১৫ মিনিট অপেক্ষা করে আবার চেষ্টা করুন।", authErrorSendFailed:"এই ইমেইলে কোড পাঠানো যায়নি। ইমেইলটি দেখে আবার চেষ্টা করুন।", authErrorEmailTaken:"এই ইমেইলটি অন্য একটি অ্যাকাউন্টের। বরং ইমেইল দিয়ে সাইন ইন করুন।", authErrorName:"একটি নাম দিন।",
+  themeToDark:"ডার্ক মোডে যান", themeToLight:"লাইট মোডে যান", langMenuLabel:"ভাষা বদলান",
+  // Admin buddy keys from the open admin-buddies pull request (#37), so its
+  // strings are already translated whichever of the two merges first.
+  adminAddBuddyBtn:"যাচাই করা সাথী যোগ করুন (অ্যাডমিন)", adminBuddyFormTitle:"সাথী যোগ করুন", adminBuddyFormHint:"এটি শুধু অ্যাডমিনরা দেখেন। সাথী \"যাচাইকৃত\" ব্যাজ পাবেন। তার হোয়াটসঅ্যাপ নম্বর প্রকাশের আগে তার অনুমতি নিন।", lblBuddyName:"নাম", lblAdminHelpAreas:"তিনি কোন বিষয়ে সাহায্য করতে পারেন?", adminBuddyFormSubmit:"সাথী প্রকাশ করুন", buddyNameMissing:"সাথীর নাম দিন।", adminAddBuddyFailed:"এই সাথীকে যোগ করা যায়নি। আপনার সংযোগ দেখে আবার চেষ্টা করুন।", verifiedBadge:"যাচাইকৃত", adminRemoveBuddy:"সরান (অ্যাডমিন)",
 }
 };
 
@@ -429,6 +601,92 @@ ur: [
    <li>اپنی ریکروٹمنٹ ایجنسی کا لائسنس نمبر اور آجر کا سرکاری کمپنی نام محفوظ رکھیں۔</li>
    <li>پاسپورٹ، معاہدے اور میڈیکل کلیئرنس سرٹیفکیٹ کی ڈیجیٹل اور فزیکل کاپیاں ساتھ لائیں۔</li>
  </ul>`}
+],
+hi: [
+ {k:"labor", title:"श्रम क़ानून और कॉन्ट्रैक्ट", sub:"जानें आपके कॉन्ट्रैक्ट में क्या-क्या होना चाहिए", body:`<ul>
+   <li>आपके काम के कॉन्ट्रैक्ट में पद का नाम, तनख्वाह, काम के घंटे और कॉन्ट्रैक्ट की अवधि लिखी होनी चाहिए — इसकी एक कॉपी ऐसी भाषा में लें जो आप समझते हों।</li>
+   <li>आम तौर पर काम के घंटे दिन में 8 या हफ़्ते में 48 होते हैं, और रमज़ान में मुस्लिम कामगारों के लिए कम हो जाते हैं।</li>
+   <li>ज़्यादातर क्षेत्रों में मालिक क़ानूनी तौर पर आपका पासपोर्ट अपने पास नहीं रख सकता — ऐसा हो तो अपने अधिकारों के बारे में पूछें।</li>
+   <li>सेवा-समाप्ति लाभ (ग्रेच्युटी) नौकरी के सालों के हिसाब से तय होता है — अपनी शुरुआत की तारीख और तनख्वाह में हुए बदलावों का अपना रिकॉर्ड रखें।</li>
+ </ul>`},
+ {k:"qiwa", title:"क़िवा प्लैटफ़ॉर्म", sub:"सऊदी अरब का श्रम सेवाओं का पोर्टल", body:`<ul>
+   <li>क़िवा काम के कॉन्ट्रैक्ट, ट्रांसफ़र और श्रम शिकायतों के लिए आधिकारिक प्लैटफ़ॉर्म है — ऐप या वेबसाइट, दोनों से।</li>
+   <li>मालिक के कॉन्ट्रैक्ट दर्ज करने के बाद आप क़िवा पर अपने कॉन्ट्रैक्ट की जानकारी देख सकते हैं और उसकी पुष्टि कर सकते हैं।</li>
+   <li>नौकरी/मालिक बदलने का अनुरोध और बकाया तनख्वाह की शिकायत — दोनों क़िवा से शुरू किए जा सकते हैं।</li>
+   <li>अपने कॉन्ट्रैक्ट की स्थिति के लिए किसी दलाल की बात पर नहीं, हमेशा सीधे क़िवा पर देखें।</li>
+ </ul>`},
+ {k:"bank", title:"बैंकिंग और पैसे भेजना", sub:"खाता खोलना, अबशर और नफ़ाद की बुनियादी बातें", body:`<ul>
+   <li>ज़्यादातर बैंक खाता खोलने के लिए वैध इक़ामा माँगते हैं; कुछ बैंक नए आने वालों को सीमित सुविधाओं वाला खाता देते हैं।</li>
+   <li><strong>अबशर</strong> नागरिकों और निवासियों के लिए सरकार का मुख्य ऑनलाइन सेवा प्लैटफ़ॉर्म है — सरकारी सेवाएँ ऑनलाइन लेने के लिए अपना इक़ामा और फ़ोन नंबर जोड़ें।</li>
+   <li><strong>नफ़ाद</strong> राष्ट्रीय डिजिटल पहचान ऐप है, जिससे बैंक, सरकारी और कई निजी सेवाओं में आपकी पहचान की पुष्टि होती है — इसे जल्दी इंस्टॉल करके सत्यापन पूरा कर लें, क्योंकि अब कई सेवाओं में इसकी ज़रूरत पड़ती है।</li>
+   <li>पैसे भेजने के लिए लाइसेंस वाली मनी-ट्रांसफ़र कंपनियाँ या अपने बैंक का ऐप इस्तेमाल करें — अनौपचारिक एजेंटों से बचें।</li>
+ </ul>`},
+ {k:"iqama", title:"इक़ामा और सरकारी सेवाएँ", sub:"आपका रेज़िडेंसी परमिट, आसान भाषा में", body:`<ul>
+   <li>इक़ामा आपका रेज़िडेंसी आईडी है — इसे हमेशा साथ रखें, सिम कार्ड से लेकर किराये तक लगभग हर काम में इसकी ज़रूरत पड़ती है।</li>
+   <li>आम तौर पर इक़ामा समय पर रिन्यू कराना आपके मालिक की ज़िम्मेदारी है — जुर्माने से बचने के लिए इसकी मियाद खत्म होने से पहले पूछते रहें।</li>
+   <li>मुक़ीम वह ऑनलाइन पोर्टल है जहाँ इक़ामा की स्थिति, एग्ज़िट/री-एंट्री वीज़ा और परिवार के रिकॉर्ड देखे जाते हैं।</li>
+   <li>इक़ामा की मियाद खत्म होने से यात्रा, खाता खोलने या ड्राइविंग लाइसेंस रिन्यू कराने में दिक्कत हो सकती है।</li>
+ </ul>`},
+ {k:"health", title:"इलाज और स्वास्थ्य", sub:"बीमा और इलाज कहाँ कराएँ", body:`<ul>
+   <li>प्राइवेट सेक्टर के मालिकों को आम तौर पर मेडिकल बीमा देना होता है — HR से अपना बीमा कार्ड और नेटवर्क अस्पतालों की सूची माँगें।</li>
+   <li>सरकारी अस्पतालों में गैर-नागरिकों के लिए अलग प्रक्रिया हो सकती है; प्राइवेट क्लिनिक और बीमा-नेटवर्क वाले अस्पताल आम तौर पर आसानी से मिल जाते हैं।</li>
+   <li>अपने बीमा कार्ड और पॉलिसी नंबर की डिजिटल कॉपी फ़ोन में सेव रखें।</li>
+ </ul>`},
+ {k:"emergency", title:"आपातकालीन नंबर", sub:"ये नंबर अभी सेव कर लें", body:`<div class="emergency-grid">
+   <div class="em-item"><div class="num">911</div><div class="lbl">इमरजेंसी (पुलिस)</div></div>
+   <div class="em-item"><div class="num">998</div><div class="lbl">सिविल डिफ़ेंस (आग)</div></div>
+   <div class="em-item"><div class="num">997</div><div class="lbl">एम्बुलेंस (रेड क्रिसेंट)</div></div>
+   <div class="em-item"><div class="num">19911</div><div class="lbl">मानव संसाधन मंत्रालय — श्रम संबंधी पूछताछ</div></div>
+ </div>`},
+ {k:"travel", title:"सफ़र से पहले की चेकलिस्ट", sub:"जो सऊदी आने की तैयारी कर रहे हैं", body:`<ul>
+   <li>हो सके तो सफ़र से पहले अपनी नौकरी के ऑफ़र और कॉन्ट्रैक्ट की शर्तें सीधे क़िवा से जाँच लें।</li>
+   <li>वीज़ा, टिकट और शुरुआती रहने का खर्च कौन देगा — यह लिखित में पक्का कर लें।</li>
+   <li>अपनी भर्ती एजेंसी का लाइसेंस नंबर और अपने मालिक की कंपनी का आधिकारिक नाम सेव कर लें।</li>
+   <li>अपने पासपोर्ट, कॉन्ट्रैक्ट और मेडिकल सर्टिफ़िकेट की डिजिटल और काग़ज़ी कॉपी साथ लाएँ।</li>
+ </ul>`}
+],
+bn: [
+ {k:"labor", title:"শ্রম আইন ও চুক্তি", sub:"আপনার চুক্তিতে কী কী থাকতেই হবে জানুন", body:`<ul>
+   <li>আপনার কাজের চুক্তিতে পদের নাম, বেতন, কাজের সময় ও চুক্তির মেয়াদ লেখা থাকতে হবে — এমন ভাষায় একটি কপি নিন যা আপনি বোঝেন।</li>
+   <li>সাধারণ কাজের সময় দিনে ৮ ঘণ্টা বা সপ্তাহে ৪৮ ঘণ্টা; রমজানে মুসলিম কর্মীদের জন্য কমে যায়।</li>
+   <li>বেশিরভাগ খাতে নিয়োগকর্তা আইনত আপনার পাসপোর্ট নিজের কাছে রাখতে পারেন না — এমন হলে আপনার অধিকার সম্পর্কে জেনে নিন।</li>
+   <li>চাকরি শেষের সুবিধা (গ্র্যাচুইটি) চাকরির বছরের হিসাবে ঠিক হয় — আপনার যোগদানের তারিখ ও বেতন বদলের নিজস্ব রেকর্ড রাখুন।</li>
+ </ul>`},
+ {k:"qiwa", title:"কিওয়া প্ল্যাটফর্ম", sub:"সৌদি আরবের শ্রম সেবার পোর্টাল", body:`<ul>
+   <li>কিওয়া হলো কাজের চুক্তি, বদলি ও শ্রম অভিযোগের সরকারি প্ল্যাটফর্ম — অ্যাপ বা ওয়েবসাইট দুটোতেই পাওয়া যায়।</li>
+   <li>নিয়োগকর্তা চুক্তি নিবন্ধন করলে আপনি কিওয়াতে নিজের চুক্তির বিবরণ দেখতে ও নিশ্চিত করতে পারবেন।</li>
+   <li>চাকরি/নিয়োগকর্তা বদলের আবেদন এবং বকেয়া বেতনের অভিযোগ — দুটোই কিওয়া থেকে শুরু করা যায়।</li>
+   <li>চুক্তির অবস্থা জানতে দালালের কথায় নয়, সবসময় সরাসরি কিওয়াতে দেখুন।</li>
+ </ul>`},
+ {k:"bank", title:"ব্যাংকিং ও টাকা পাঠানো", sub:"অ্যাকাউন্ট খোলা, আবশের ও নাফাদের মূল কথা", body:`<ul>
+   <li>বেশিরভাগ ব্যাংক অ্যাকাউন্ট খুলতে বৈধ ইকামা চায়; কিছু ব্যাংক নতুনদের সীমিত সুবিধার অ্যাকাউন্ট দেয়।</li>
+   <li><strong>আবশের</strong> নাগরিক ও বাসিন্দাদের জন্য সরকারের প্রধান ই-সেবা প্ল্যাটফর্ম — অনলাইনে সরকারি সেবা পেতে আপনার ইকামা ও ফোন নম্বর যুক্ত করুন।</li>
+   <li><strong>নাফাদ</strong> হলো জাতীয় ডিজিটাল পরিচয় অ্যাপ, যা ব্যাংক, সরকারি ও অনেক বেসরকারি সেবায় আপনার পরিচয় যাচাই করে — আগেভাগে ইনস্টল করে যাচাই শেষ করুন, কারণ এখন অনেক সেবায় এটি লাগে।</li>
+   <li>টাকা পাঠাতে লাইসেন্সপ্রাপ্ত মানি ট্রান্সফার প্রতিষ্ঠান বা আপনার ব্যাংকের অ্যাপ ব্যবহার করুন — অনানুষ্ঠানিক এজেন্ট এড়িয়ে চলুন।</li>
+ </ul>`},
+ {k:"iqama", title:"ইকামা ও সরকারি সেবা", sub:"আপনার বসবাসের অনুমতিপত্র, সহজ ভাষায়", body:`<ul>
+   <li>ইকামা আপনার বসবাসের পরিচয়পত্র — সবসময় সাথে রাখুন, সিম কার্ড থেকে বাসা ভাড়া পর্যন্ত প্রায় সব কাজে এটি লাগে।</li>
+   <li>সাধারণত সময়মতো ইকামা নবায়নের দায়িত্ব নিয়োগকর্তার — জরিমানা এড়াতে মেয়াদ শেষ হওয়ার আগেই খোঁজ নিন।</li>
+   <li>মুকিম হলো অনলাইন পোর্টাল, যেখানে ইকামার অবস্থা, এক্সিট/রি-এন্ট্রি ভিসা ও পরিবারের রেকর্ড দেখা যায়।</li>
+   <li>মেয়াদোত্তীর্ণ ইকামায় ভ্রমণ, অ্যাকাউন্ট খোলা বা ড্রাইভিং লাইসেন্স নবায়নে সমস্যা হতে পারে।</li>
+ </ul>`},
+ {k:"health", title:"চিকিৎসা", sub:"বিমা এবং কোথায় চিকিৎসা নেবেন", body:`<ul>
+   <li>বেসরকারি খাতের নিয়োগকর্তাদের সাধারণত মেডিকেল বিমা দিতে হয় — HR-এর কাছে আপনার বিমা কার্ড ও নেটওয়ার্ক হাসপাতালের তালিকা চান।</li>
+   <li>সরকারি হাসপাতালে অ-নাগরিকদের জন্য আলাদা নিয়ম থাকতে পারে; বেসরকারি ক্লিনিক ও বিমা-নেটওয়ার্কের হাসপাতালে সাধারণত সহজে সেবা পাওয়া যায়।</li>
+   <li>আপনার বিমা কার্ড ও পলিসি নম্বরের ডিজিটাল কপি ফোনে সেভ করে রাখুন।</li>
+ </ul>`},
+ {k:"emergency", title:"জরুরি নম্বর", sub:"এই নম্বরগুলো এখনই সেভ করুন", body:`<div class="emergency-grid">
+   <div class="em-item"><div class="num">911</div><div class="lbl">জরুরি (পুলিশ)</div></div>
+   <div class="em-item"><div class="num">998</div><div class="lbl">সিভিল ডিফেন্স (আগুন)</div></div>
+   <div class="em-item"><div class="num">997</div><div class="lbl">অ্যাম্বুলেন্স (রেড ক্রিসেন্ট)</div></div>
+   <div class="em-item"><div class="num">19911</div><div class="lbl">মানবসম্পদ মন্ত্রণালয় — শ্রম বিষয়ক তথ্য</div></div>
+ </div>`},
+ {k:"travel", title:"যাত্রার আগের চেকলিস্ট", sub:"যারা সৌদি আসার প্রস্তুতি নিচ্ছেন", body:`<ul>
+   <li>সম্ভব হলে যাত্রার আগে চাকরির অফার ও চুক্তির শর্ত সরাসরি কিওয়াতে যাচাই করুন।</li>
+   <li>ভিসা, বিমান টিকিট ও শুরুর থাকার খরচ কে দেবে — লিখিতভাবে নিশ্চিত হয়ে নিন।</li>
+   <li>আপনার রিক্রুটিং এজেন্সির লাইসেন্স নম্বর ও নিয়োগকর্তার কোম্পানির সরকারি নাম সেভ করে রাখুন।</li>
+   <li>পাসপোর্ট, চুক্তি ও মেডিকেল সার্টিফিকেটের ডিজিটাল ও কাগজের কপি সাথে আনুন।</li>
+ </ul>`}
 ]
 };
 
@@ -491,9 +749,32 @@ function syncThemeToggles(){
   });
 }
 
+/* ============================= Language ============================= */
+/* Arabic and Urdu read right-to-left. The choice is remembered on the device, so a
+   worker who reads Hindi or Bengali doesn't have to find it again on every visit. */
+const LANG_STORAGE_KEY = 'sanad_lang';
+const SUPPORTED_LANGS = ['en','ar','ur','hi','bn'];
+const RTL_LANGS = ['ar','ur'];
+// The closed language switcher shows this; its list shows each language's own name.
+const LANG_SHORT = {en:'EN', ar:'عربي', ur:'اردو', hi:'हिंदी', bn:'বাংলা'};
+
+function savedLang(){
+  try{
+    const saved = localStorage.getItem(LANG_STORAGE_KEY);
+    return SUPPORTED_LANGS.includes(saved) ? saved : 'en';
+  } catch(err){ return 'en'; }
+}
+function setLang(lang){
+  if(!SUPPORTED_LANGS.includes(lang)) return;
+  state.lang = lang;
+  try{ localStorage.setItem(LANG_STORAGE_KEY, lang); }
+  catch(err){ /* storage disabled — the language still applies for this visit */ }
+  renderAll();
+}
+
 /* ============================= State & render ============================= */
 let state = {
-  lang:'en', tab:'housing',
+  lang:savedLang(), tab:'housing',
   guideOpen:{},
   filters:{postType:'all', city:'all', budget:'all', nat:'all', gender:'all', roomType:'all'},
   forumCat:'All', openReplies:{}, communitySubTab:'qa',
@@ -560,7 +841,7 @@ function flagWaInput(input, msgKey){
 
 function applyI18n(){
   document.documentElement.lang = state.lang;
-  document.documentElement.dir = (state.lang==='ar'||state.lang==='ur') ? 'rtl' : 'ltr';
+  document.documentElement.dir = RTL_LANGS.includes(state.lang) ? 'rtl' : 'ltr';
   document.documentElement.setAttribute('data-lang', state.lang);
   document.querySelectorAll('[data-i18n]').forEach(el=>{
     const k = el.getAttribute('data-i18n');
@@ -578,8 +859,12 @@ function applyI18n(){
     }
   });
   document.querySelectorAll('[data-lang-btn]').forEach(b=>{
-    b.classList.toggle('active', b.getAttribute('data-lang-btn')===state.lang);
+    const on = b.getAttribute('data-lang-btn')===state.lang;
+    b.classList.toggle('active', on);
+    b.setAttribute('aria-pressed', on ? 'true' : 'false');
   });
+  document.querySelectorAll('[data-lang-select]').forEach(s=>{ s.value = state.lang; });
+  document.querySelectorAll('[data-lang-current]').forEach(el=>{ el.textContent = LANG_SHORT[state.lang]; });
   document.title = state.lang==='en' ? "Sanad · سند — Your support system in Saudi Arabia" : translations[state.lang].brandName + " — " + translations[state.lang].brandTag;
 }
 
@@ -664,13 +949,17 @@ const CITY_KEYS = ["Riyadh","Jeddah","Dammam/Khobar","Makkah","Madinah","Hail"];
 const CITY_LABELS = {
   en:CITY_KEYS,
   ar:["الرياض","جدة","الدمام/الخبر","مكة","المدينة","حائل"],
-  ur:["ریاض","جدہ","دمام/خبر","مکہ","مدینہ","حائل"]
+  ur:["ریاض","جدہ","دمام/خبر","مکہ","مدینہ","حائل"],
+  hi:["रियाद","जेद्दा","दम्माम/ख़ोबर","मक्का","मदीना","हाइल"],
+  bn:["রিয়াদ","জেদ্দা","দাম্মাম/খোবার","মক্কা","মদিনা","হাইল"]
 };
 const NAT_KEYS = ["Any","Indian","Pakistani","Filipino","Arab","Bangladeshi"];
 const NAT_LABELS = {
   en:["Any nationality pref.","Indian","Pakistani","Filipino","Arab","Bangladeshi"],
   ar:["أي جنسية","هندي","باكستاني","فلبيني","عربي","بنغلاديشي"],
-  ur:["کوئی بھی قومیت","بھارتی","پاکستانی","فلپائنی","عرب","بنگلہ دیشی"]
+  ur:["کوئی بھی قومیت","بھارتی","پاکستانی","فلپائنی","عرب","بنگلہ دیشی"],
+  hi:["कोई भी राष्ट्रीयता","भारतीय","पाकिस्तानी","फ़िलिपीनी","अरब","बांग्लादेशी"],
+  bn:["যেকোনো জাতীয়তা","ভারতীয়","পাকিস্তানি","ফিলিপিনো","আরব","বাংলাদেশি"]
 };
 
 /* ---- Housing render ---- */
@@ -1475,11 +1764,13 @@ function restoreAppUser(){
   } catch(err){ appUser = null; }
 }
 
-/* Codes may be typed with Arabic or Urdu digits. */
+/* Codes may be typed with Arabic, Urdu, Hindi (Devanagari) or Bengali digits. */
 function toLatinDigits(value){
   return String(value||'')
     .replace(/[٠-٩]/g, d=> String('٠١٢٣٤٥٦٧٨٩'.indexOf(d)))
-    .replace(/[۰-۹]/g, d=> String('۰۱۲۳۴۵۶۷۸۹'.indexOf(d)));
+    .replace(/[۰-۹]/g, d=> String('۰۱۲۳۴۵۶۷۸۹'.indexOf(d)))
+    .replace(/[०-९]/g, d=> String('०१२३४५६७८९'.indexOf(d)))
+    .replace(/[০-৯]/g, d=> String('০১২৩৪৫৬৭৮৯'.indexOf(d)));
 }
 // Same rule as sanad_clean_email in schema.sql.
 function normalizeEmail(raw){
@@ -2127,7 +2418,9 @@ function currentMonthLabel(){
   const months = {
     en:["January","February","March","April","May","June","July","August","September","October","November","December"],
     ar:["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"],
-    ur:["جنوری","فروری","مارچ","اپریل","مئی","جون","جولائی","اگست","ستمبر","اکتوبر","نومبر","دسمبر"]
+    ur:["جنوری","فروری","مارچ","اپریل","مئی","جون","جولائی","اگست","ستمبر","اکتوبر","نومبر","دسمبر"],
+    hi:["जनवरी","फ़रवरी","मार्च","अप्रैल","मई","जून","जुलाई","अगस्त","सितंबर","अक्टूबर","नवंबर","दिसंबर"],
+    bn:["জানুয়ারি","ফেব্রুয়ারি","মার্চ","এপ্রিল","মে","জুন","জুলাই","আগস্ট","সেপ্টেম্বর","অক্টোবর","নভেম্বর","ডিসেম্বর"]
   };
   const now = new Date();
   return months[state.lang][now.getMonth()] + ' ' + now.getFullYear();
@@ -2255,10 +2548,10 @@ document.querySelectorAll('[data-theme-toggle]').forEach(btn=>{
   btn.addEventListener('click', ()=> applyTheme(currentTheme() === 'dark' ? 'light' : 'dark'));
 });
 document.querySelectorAll('[data-lang-btn]').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    state.lang = btn.getAttribute('data-lang-btn');
-    renderAll();
-  });
+  btn.addEventListener('click', ()=> setLang(btn.getAttribute('data-lang-btn')));
+});
+document.querySelectorAll('[data-lang-select]').forEach(sel=>{
+  sel.addEventListener('change', ()=> setLang(sel.value));
 });
 document.querySelectorAll('nav.tabbar button[data-tab]').forEach(btn=>{
   btn.addEventListener('click', ()=> setTab(btn.getAttribute('data-tab')));
