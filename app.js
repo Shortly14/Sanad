@@ -111,7 +111,7 @@ en: {
   qcOptInquiryTitle:"Question", qcOptInquirySub:"Get an answer from people who've done it",
   qcOptGuideTitle:"Tip", qcOptGuideSub:"Something you learned that could help others",
   qcMoreDetails:"More details (optional)", qcNext:"Next", qcPublish:"Publish", sarLabel:"SAR",
-  guestSavedLabel:"Saved", guestLanguageLabel:"Language", guestLanguageValue:"العربية · English · اردو",
+  guestSavedLabel:"Saved", guestLanguageLabel:"Language", guestLanguageValue:"العربية · English · اردو · हिंदी · বাংলা",
   likedCountLabel:"{n} liked on this phone", savedCountLabel:"{n} saved on this phone",
   signInBtnShort:"Log in / Sign up",
   authErrorInvalid:"Wrong username or password.", authErrorTooMany:"Too many wrong attempts. Wait 15 minutes and try again.", authErrorTooOften:"Too many new accounts from this network. Try again in an hour.", authErrorMissing:"Enter a username and password.", authErrorNetwork:"Couldn't reach the server — try again.", authErrorShort:"Password must be at least 6 characters.", authErrorTaken:"That username is already taken.", loginHint:"Log in with your username and password.", loginTabLabel:"Log in", signInSubmit:"Log in", signupHint:"Pick a username and password — that's all you need.", signupTabLabel:"Sign up",
@@ -119,7 +119,35 @@ en: {
   authTitle:"Sign in", lblEmail:"Email", sendCode:"Send code", useUsernameLogin:"I have a username and password", lblCode:"Code", verifyCode:"Verify", resendCode:"Send a new code", changeEmail:"Change email", continueLabel:"Continue", useEmailLogin:"Sign in with email instead",
   authHintEmail:"Enter your email. We'll send you a code to sign in or create your account.", authHintLink:"One more step: add your email to keep your account safe. We'll send you a code there.", authHintCode:"Enter the code we emailed to {email}. If you can't find it, check your spam folder.", authHintName:"Welcome to Sanad! What name should other people see?", codeResent:"We emailed you a new code.",
   authErrorEmail:"Enter a valid email, for example name@example.com.", authErrorCode:"Enter the code from the email.", authErrorWrongCode:"That code is wrong. Check it and try again.", authErrorCodeExpired:"That code has expired. Tap \"Send a new code\".", authErrorTooManyCodes:"Too many tries. Wait 15 minutes and try again.", authErrorSendFailed:"We couldn't send a code to this email. Check it and try again.", authErrorEmailTaken:"This email already belongs to another account. Sign in with email instead.", authErrorName:"Enter a name.",
-  themeToDark:"Switch to dark mode", themeToLight:"Switch to light mode",
+  themeToDark:"Switch to dark mode", themeToLight:"Switch to light mode", langMenuLabel:"Change language",
+  // "Looking for work?": first-visit question, entry points, work page and offer check
+  welcomeTitle:"Welcome to Sanad", welcomeLangLabel:"Your language", welcomeQuestion:"Where are you now?",
+  welcomeInSaudi:"I'm in Saudi Arabia", welcomeInSaudiSub:"Find a room, know your rights, ask other workers",
+  welcomeAbroad:"I'm outside Saudi Arabia and want to work there", welcomeAbroadSub:"Come the legal way and spot fake job offers", welcomeSkip:"Skip for now",
+  workPillLabel:"Looking for work?", workEntryTitle:"Looking for work in Saudi Arabia?", workEntrySub:"Start here before you pay anyone",
+  workEyebrow:"Coming to Saudi Arabia", workTitle:"Looking for work in Saudi Arabia?",
+  workSub:"Start here before you pay anyone. Sanad does not recruit workers, does not sell visas and never asks you for money.",
+  workCountryLabel:"Which country are you coming from?", workCountryPK:"Pakistan", workCountryIN:"India", workCountryOther:"Another country", workCountryHint:"Choose your country to see its steps.", workSaudiLabel:"Saudi Arabia",
+  checkTitle:"Check your job offer", checkSub:"6 quick questions. Your answers stay on your phone.", checkStart:"Start the check", checkProgress:"Question {n} of {total}", ansYes:"Yes", ansNo:"No", ansUnsure:"Not sure",
+  checkQ1:"Did anyone ask you to pay for the visa?",
+  checkE1:"In Saudi Arabia the employer pays the recruitment fees, the work permit and the iqama (Labor Law, Article 40). Being asked for a \"visa price\" is a common sign of a scam. A licensed agent in your own country may take only a fixed service charge, with a receipt.",
+  checkQ2:"Did they offer a \"free visa\" (Azad visa) that lets you work for anyone?",
+  checkE2:"A work visa is issued for one employer. There is no legal \"free visa\" that lets you work for anyone.",
+  checkQ3:"Is it a work visa (not a visit, Umrah, Hajj or family visa)?",
+  checkE3:"Working on a visit, Umrah, Hajj or family visa is not allowed. People who do it can be detained, fined, deported and banned from coming back.",
+  checkQ4:"Is your agent licensed by your own government?",
+  checkE4:"Only a licensed agent may arrange a job abroad: in Pakistan a licensed Overseas Employment Promoter (OEP), in India a Recruiting Agent registered on eMigrate. A travel agent is not one.",
+  checkQ5:"Have you read the written contract, in a language you understand?",
+  checkE5:"Before you travel, check the job title, salary, working hours, housing and contract length. Keep a copy, and never sign a blank paper.",
+  checkQ6:"Do you know the name of the company or person you will work for?",
+  checkE6:"A real job has a named employer. The employer on your visa, your contract and your offer should be the same.",
+  resultDangerTitle:"Stop: this offer has serious warning signs", resultDangerBody:"Don't pay any more money or hand over documents until you have checked. Ask workers already in Saudi Arabia on Sanad, or call your government's helpline.",
+  resultCautionTitle:"Be careful: check these first", resultCautionBody:"Some answers need checking before you pay anything or travel.",
+  resultOkTitle:"No warning signs in your answers", resultOkBody:"Good. Still check your visa on the official website and keep copies of your contract and receipts before you travel.",
+  resultFlagsLabel:"What to check", resultYourAnswer:"Your answer: {answer}", checkAgain:"Check another offer",
+  workAskTitle:"Ask workers who are already in Saudi Arabia", workAskSub:"Post your question in Community. Answers come from other workers, not officials. Never pay anyone who messages you about a visa.",
+  workAskBtn:"Ask a question", workSeeQuestionsBtn:"See questions", catArrival:"Before arrival",
+  workDisclaimer:"Sanad is not a recruitment agency. We checked this page against official government sources in November 2026, but rules change: always confirm on the official websites.",
 },
 ar: {
   brandName:"سند · Sanad", brandTag:"سندك في السعودية",
@@ -194,7 +222,7 @@ ar: {
   qcOptInquiryTitle:"سؤال", qcOptInquirySub:"احصل على إجابة من ناس جربوا قبلك",
   qcOptGuideTitle:"نصيحة", qcOptGuideSub:"شي تعلمته وتبغى غيرك يستفيد منه",
   qcMoreDetails:"تفاصيل إضافية (اختياري)", qcNext:"التالي", qcPublish:"انشر الآن", sarLabel:"ريال",
-  guestSavedLabel:"المحفوظات", guestLanguageLabel:"اللغة", guestLanguageValue:"العربية · English · اردو",
+  guestSavedLabel:"المحفوظات", guestLanguageLabel:"اللغة", guestLanguageValue:"العربية · English · اردو · हिंदी · বাংলা",
   likedCountLabel:"{n} إعجاب على هذا الجهاز", savedCountLabel:"{n} محفوظ على هذا الجهاز",
   signInBtnShort:"تسجيل الدخول / إنشاء حساب",
   authErrorInvalid:"اسم المستخدم أو كلمة المرور غير صحيحة.", authErrorTooMany:"محاولات خاطئة كثيرة. انتظر ١٥ دقيقة ثم حاول مرة أخرى.", authErrorTooOften:"تم إنشاء حسابات كثيرة من هذه الشبكة. حاول مرة أخرى بعد ساعة.", authErrorMissing:"أدخل اسم المستخدم وكلمة المرور.", authErrorNetwork:"تعذر الوصول إلى الخادم — حاول مرة أخرى.", authErrorShort:"يجب أن تتكون كلمة المرور من ٦ أحرف على الأقل.", authErrorTaken:"اسم المستخدم هذا مُستخدم بالفعل.", loginHint:"سجّل الدخول باسم المستخدم وكلمة المرور.", loginTabLabel:"تسجيل الدخول", signInSubmit:"تسجيل الدخول", signupHint:"اختر اسم مستخدم وكلمة مرور — هذا كل ما تحتاجه.", signupTabLabel:"إنشاء حساب",
@@ -202,7 +230,35 @@ ar: {
   authTitle:"تسجيل الدخول", lblEmail:"البريد الإلكتروني", sendCode:"أرسل الرمز", useUsernameLogin:"لدي اسم مستخدم وكلمة مرور", lblCode:"الرمز", verifyCode:"تحقّق", resendCode:"أرسل رمزًا جديدًا", changeEmail:"غيّر البريد", continueLabel:"متابعة", useEmailLogin:"سجّل الدخول بالبريد الإلكتروني بدلًا من ذلك",
   authHintEmail:"أدخل بريدك الإلكتروني. سنرسل إليك رمزًا لتسجيل الدخول أو إنشاء حسابك.", authHintLink:"خطوة أخيرة: أضف بريدك الإلكتروني لحماية حسابك. سنرسل إليك رمزًا هناك.", authHintCode:"أدخل الرمز الذي أرسلناه إلى {email}. إذا لم تجده، تحقّق من مجلد الرسائل غير المرغوب فيها.", authHintName:"أهلًا بك في سند! ما الاسم الذي تريد أن يراه الآخرون؟", codeResent:"أرسلنا إليك رمزًا جديدًا بالبريد.",
   authErrorEmail:"أدخل بريدًا إلكترونيًا صحيحًا، مثل name@example.com.", authErrorCode:"أدخل الرمز الذي وصلك في البريد.", authErrorWrongCode:"الرمز غير صحيح. تحقّق منه وحاول مرة أخرى.", authErrorCodeExpired:"انتهت صلاحية الرمز. اضغط \"أرسل رمزًا جديدًا\".", authErrorTooManyCodes:"محاولات كثيرة. انتظر ١٥ دقيقة ثم حاول مرة أخرى.", authErrorSendFailed:"تعذّر إرسال رمز إلى هذا البريد. تحقّق منه وحاول مرة أخرى.", authErrorEmailTaken:"هذا البريد مرتبط بحساب آخر. سجّل الدخول بالبريد الإلكتروني بدلًا من ذلك.", authErrorName:"أدخل اسمًا.",
-  themeToDark:"التبديل إلى الوضع الداكن", themeToLight:"التبديل إلى الوضع الفاتح",
+  themeToDark:"التبديل إلى الوضع الداكن", themeToLight:"التبديل إلى الوضع الفاتح", langMenuLabel:"تغيير اللغة",
+  // "Looking for work?": first-visit question, entry points, work page and offer check
+  welcomeTitle:"أهلًا بك في سند", welcomeLangLabel:"لغتك", welcomeQuestion:"أين أنت الآن؟",
+  welcomeInSaudi:"أنا في السعودية", welcomeInSaudiSub:"ابحث عن سكن، اعرف حقوقك، واسأل العمال",
+  welcomeAbroad:"أنا خارج السعودية وأبغى أشتغل فيها", welcomeAbroadSub:"تعال بالطريقة النظامية واكشف عروض العمل الوهمية", welcomeSkip:"تخطَّ الآن",
+  workPillLabel:"تدور عن عمل؟", workEntryTitle:"تدور عن عمل في السعودية؟", workEntrySub:"ابدأ من هنا قبل أن تدفع لأي أحد",
+  workEyebrow:"القدوم إلى السعودية", workTitle:"تدور عن عمل في السعودية؟",
+  workSub:"ابدأ من هنا قبل أن تدفع لأي أحد. سند لا يستقدم العمال ولا يبيع التأشيرات ولا يطلب منك أي مال.",
+  workCountryLabel:"من أي بلد ستأتي؟", workCountryPK:"باكستان", workCountryIN:"الهند", workCountryOther:"بلد آخر", workCountryHint:"اختر بلدك لتظهر لك خطواته.", workSaudiLabel:"السعودية",
+  checkTitle:"افحص عرض العمل", checkSub:"٦ أسئلة سريعة. إجاباتك تبقى في جوالك.", checkStart:"ابدأ الفحص", checkProgress:"السؤال {n} من {total}", ansYes:"نعم", ansNo:"لا", ansUnsure:"لست متأكدًا",
+  checkQ1:"هل طلب منك أحد أن تدفع قيمة التأشيرة؟",
+  checkE1:"في السعودية يتحمل صاحب العمل رسوم الاستقدام ورخصة العمل والإقامة (نظام العمل، المادة ٤٠). طلب «قيمة فيزا» من العامل علامة احتيال شائعة. الوكيل المرخّص في بلدك قد يأخذ رسوم خدمة محددة فقط، مع إيصال.",
+  checkQ2:"هل عرضوا عليك «فيزا حرة» تسمح لك بالعمل عند أي أحد؟",
+  checkE2:"تأشيرة العمل تصدر لصاحب عمل واحد. لا توجد «فيزا حرة» نظامية تسمح لك بالعمل عند أي أحد.",
+  checkQ3:"هل هي تأشيرة عمل (وليست زيارة أو عمرة أو حج أو زيارة عائلية)؟",
+  checkE3:"العمل بتأشيرة زيارة أو عمرة أو حج أو زيارة عائلية غير مسموح. من يفعل ذلك قد يُحتجز ويُغرَّم ويُرحَّل ويُمنع من العودة.",
+  checkQ4:"هل وكيلك مرخّص من حكومة بلدك؟",
+  checkE4:"لا يحق ترتيب العمل في الخارج إلا لوكيل مرخّص: في باكستان «مروّج توظيف خارجي» مرخّص (OEP)، وفي الهند وكيل توظيف مسجّل في منصة eMigrate. وكيل السفر ليس منهم.",
+  checkQ5:"هل قرأت العقد المكتوب بلغة تفهمها؟",
+  checkE5:"قبل السفر تأكد من المسمى الوظيفي والراتب وساعات العمل والسكن ومدة العقد. احتفظ بنسخة، ولا توقّع ورقة فارغة أبدًا.",
+  checkQ6:"هل تعرف اسم الشركة أو الشخص الذي ستعمل عنده؟",
+  checkE6:"العمل الحقيقي له صاحب عمل معروف بالاسم. يجب أن يكون صاحب العمل نفسه في التأشيرة والعقد والعرض.",
+  resultDangerTitle:"توقّف: في هذا العرض علامات خطر واضحة", resultDangerBody:"لا تدفع أي مال إضافي ولا تسلّم أوراقك حتى تتحقق. اسأل العمال الموجودين في السعودية على سند، أو اتصل بخط المساعدة في حكومة بلدك.",
+  resultCautionTitle:"انتبه: تحقّق من هذه أولًا", resultCautionBody:"بعض الإجابات تحتاج تحققًا قبل أن تدفع أي شيء أو تسافر.",
+  resultOkTitle:"لا توجد علامات خطر في إجاباتك", resultOkBody:"جيد. ومع ذلك تحقّق من تأشيرتك في الموقع الرسمي، واحتفظ بنسخ من العقد والإيصالات قبل السفر.",
+  resultFlagsLabel:"ما يجب التحقق منه", resultYourAnswer:"إجابتك: {answer}", checkAgain:"افحص عرضًا آخر",
+  workAskTitle:"اسأل العمال الموجودين في السعودية", workAskSub:"انشر سؤالك في المجتمع. الإجابات من عمال مثلك وليست من جهات رسمية. لا تدفع أبدًا لمن يراسلك بخصوص تأشيرة.",
+  workAskBtn:"اطرح سؤالًا", workSeeQuestionsBtn:"شاهد الأسئلة", catArrival:"قبل القدوم",
+  workDisclaimer:"سند ليس مكتب استقدام. راجعنا هذه الصفحة على مصادر حكومية رسمية في نوفمبر ٢٠٢٦، لكن الأنظمة تتغير، فتأكد دائمًا من المواقع الرسمية.",
 },
 ur: {
   brandName:"سند · Sanad", brandTag:"سعودی عرب میں آپ کا سہارا",
@@ -277,7 +333,7 @@ ur: {
   qcOptInquiryTitle:"سوال", qcOptInquirySub:"تجربہ کار لوگوں سے جواب حاصل کریں",
   qcOptGuideTitle:"تجویز", qcOptGuideSub:"کچھ سیکھا جو دوسروں کے کام آ سکتا ہے",
   qcMoreDetails:"مزید تفصیلات (اختیاری)", qcNext:"اگلا", qcPublish:"شائع کریں", sarLabel:"SAR",
-  guestSavedLabel:"محفوظ شدہ", guestLanguageLabel:"زبان", guestLanguageValue:"العربية · English · اردو",
+  guestSavedLabel:"محفوظ شدہ", guestLanguageLabel:"زبان", guestLanguageValue:"العربية · English · اردو · हिंदी · বাংলা",
   likedCountLabel:"اس فون پر {n} پسند", savedCountLabel:"اس فون پر {n} محفوظ",
   signInBtnShort:"لاگ ان / اکاؤنٹ بنائیں",
   authErrorInvalid:"غلط یوزرنیم یا پاس ورڈ۔", authErrorTooMany:"بہت زیادہ غلط کوششیں۔ ۱۵ منٹ انتظار کریں اور دوبارہ کوشش کریں۔", authErrorTooOften:"اس نیٹ ورک سے بہت زیادہ نئے اکاؤنٹ بنائے گئے ہیں۔ ایک گھنٹے بعد دوبارہ کوشش کریں۔", authErrorMissing:"یوزرنیم اور پاس ورڈ درج کریں۔", authErrorNetwork:"سرور تک رسائی نہیں ہو سکی — دوبارہ کوشش کریں۔", authErrorShort:"پاس ورڈ کم از کم ۶ حروف کا ہونا چاہیے۔", authErrorTaken:"یہ یوزرنیم پہلے سے لیا جا چکا ہے۔", loginHint:"اپنے یوزرنیم اور پاس ورڈ سے لاگ ان کریں۔", loginTabLabel:"لاگ ان", signInSubmit:"لاگ ان", signupHint:"ایک یوزرنیم اور پاس ورڈ منتخب کریں — بس اتنا ہی چاہیے۔", signupTabLabel:"اکاؤنٹ بنائیں",
@@ -285,7 +341,263 @@ ur: {
   authTitle:"سائن اِن", lblEmail:"ای میل", sendCode:"کوڈ بھیجیں", useUsernameLogin:"میرے پاس یوزرنیم اور پاس ورڈ ہے", lblCode:"کوڈ", verifyCode:"تصدیق کریں", resendCode:"نیا کوڈ بھیجیں", changeEmail:"ای میل بدلیں", continueLabel:"جاری رکھیں", useEmailLogin:"اس کے بجائے ای میل سے سائن اِن کریں",
   authHintEmail:"اپنی ای میل درج کریں۔ سائن اِن کرنے یا اکاؤنٹ بنانے کے لیے ہم آپ کو ایک کوڈ بھیجیں گے۔", authHintLink:"ایک آخری قدم: اپنے اکاؤنٹ کو محفوظ رکھنے کے لیے اپنی ای میل شامل کریں۔ ہم وہاں آپ کو ایک کوڈ بھیجیں گے۔", authHintCode:"وہ کوڈ درج کریں جو ہم نے {email} پر بھیجا ہے۔ اگر نہ ملے تو اسپام فولڈر دیکھیں۔", authHintName:"سند میں خوش آمدید! دوسرے لوگ آپ کا کون سا نام دیکھیں؟", codeResent:"ہم نے آپ کو ای میل پر نیا کوڈ بھیج دیا ہے۔",
   authErrorEmail:"درست ای میل درج کریں، مثلاً name@example.com۔", authErrorCode:"ای میل میں آنے والا کوڈ درج کریں۔", authErrorWrongCode:"یہ کوڈ غلط ہے۔ اسے چیک کر کے دوبارہ کوشش کریں۔", authErrorCodeExpired:"اس کوڈ کی مدت ختم ہو گئی ہے۔ \"نیا کوڈ بھیجیں\" پر ٹیپ کریں۔", authErrorTooManyCodes:"بہت زیادہ کوششیں۔ ۱۵ منٹ انتظار کریں اور دوبارہ کوشش کریں۔", authErrorSendFailed:"اس ای میل پر کوڈ نہیں بھیجا جا سکا۔ اسے چیک کر کے دوبارہ کوشش کریں۔", authErrorEmailTaken:"یہ ای میل پہلے سے کسی اور اکاؤنٹ کی ہے۔ اس کے بجائے ای میل سے سائن اِن کریں۔", authErrorName:"ایک نام درج کریں۔",
-  themeToDark:"ڈارک موڈ پر جائیں", themeToLight:"لائٹ موڈ پر جائیں",
+  themeToDark:"ڈارک موڈ پر جائیں", themeToLight:"لائٹ موڈ پر جائیں", langMenuLabel:"زبان تبدیل کریں",
+  // "Looking for work?": first-visit question, entry points, work page and offer check
+  welcomeTitle:"سند میں خوش آمدید", welcomeLangLabel:"آپ کی زبان", welcomeQuestion:"آپ اس وقت کہاں ہیں؟",
+  welcomeInSaudi:"میں سعودی عرب میں ہوں", welcomeInSaudiSub:"کمرہ ڈھونڈیں، اپنے حقوق جانیں، دوسرے ورکرز سے پوچھیں",
+  welcomeAbroad:"میں سعودی عرب سے باہر ہوں اور مجھے وہاں کام چاہیے", welcomeAbroadSub:"قانونی طریقے سے آئیں اور جعلی نوکری کی پیشکش پہچانیں", welcomeSkip:"ابھی چھوڑ دیں",
+  workPillLabel:"کام کی تلاش ہے؟", workEntryTitle:"سعودی عرب میں کام کی تلاش ہے؟", workEntrySub:"کسی کو پیسے دینے سے پہلے یہاں سے شروع کریں",
+  workEyebrow:"سعودی عرب آنا", workTitle:"سعودی عرب میں کام کی تلاش ہے؟",
+  workSub:"کسی کو پیسے دینے سے پہلے یہاں سے شروع کریں۔ سند ورکرز بھرتی نہیں کرتا، ویزے نہیں بیچتا اور آپ سے کبھی پیسے نہیں مانگتا۔",
+  workCountryLabel:"آپ کس ملک سے آ رہے ہیں؟", workCountryPK:"پاکستان", workCountryIN:"بھارت", workCountryOther:"کوئی اور ملک", workCountryHint:"اپنے ملک کے مراحل دیکھنے کے لیے اپنا ملک چنیں۔", workSaudiLabel:"سعودی عرب",
+  checkTitle:"اپنی نوکری کی پیشکش چیک کریں", checkSub:"6 آسان سوال۔ آپ کے جواب آپ کے فون میں ہی رہتے ہیں۔", checkStart:"چیک شروع کریں", checkProgress:"{total} میں سے سوال {n}", ansYes:"ہاں", ansNo:"نہیں", ansUnsure:"پتا نہیں",
+  checkQ1:"کیا کسی نے آپ سے ویزے کے پیسے مانگے؟",
+  checkE1:"سعودی عرب میں بھرتی کی فیس، ورک پرمٹ اور اقامہ کا خرچ آجر دیتا ہے (لیبر قانون، آرٹیکل 40)۔ ورکر سے \"ویزے کی قیمت\" مانگنا فراڈ کی عام نشانی ہے۔ آپ کے اپنے ملک کا لائسنس یافتہ ایجنٹ صرف مقررہ سروس چارج، رسید کے ساتھ، لے سکتا ہے۔",
+  checkQ2:"کیا انہوں نے \"آزاد ویزا\" کی پیشکش کی جس پر آپ کسی کے پاس بھی کام کر سکیں؟",
+  checkE2:"ورک ویزا ایک ہی آجر کے لیے جاری ہوتا ہے۔ کوئی قانونی \"آزاد ویزا\" نہیں جس پر آپ کسی کے پاس بھی کام کر سکیں۔",
+  checkQ3:"کیا یہ ورک ویزا ہے (وزٹ، عمرہ، حج یا فیملی ویزا نہیں)؟",
+  checkE3:"وزٹ، عمرہ، حج یا فیملی ویزا پر کام کرنے کی اجازت نہیں۔ ایسا کرنے والوں کو حراست، جرمانہ، ملک بدری اور دوبارہ آنے پر پابندی ہو سکتی ہے۔",
+  checkQ4:"کیا آپ کا ایجنٹ آپ کی اپنی حکومت سے لائسنس یافتہ ہے؟",
+  checkE4:"بیرون ملک نوکری صرف لائسنس یافتہ ایجنٹ ہی دلوا سکتا ہے: پاکستان میں لائسنس یافتہ اوورسیز ایمپلائمنٹ پروموٹر (OEP)، بھارت میں eMigrate پر رجسٹرڈ ریکروٹنگ ایجنٹ۔ ٹریول ایجنٹ ان میں شامل نہیں۔",
+  checkQ5:"کیا آپ نے تحریری معاہدہ ایسی زبان میں پڑھا ہے جو آپ سمجھتے ہیں؟",
+  checkE5:"سفر سے پہلے جاب ٹائٹل، تنخواہ، کام کے اوقات، رہائش اور معاہدے کی مدت چیک کریں۔ ایک کاپی اپنے پاس رکھیں اور کبھی خالی کاغذ پر دستخط نہ کریں۔",
+  checkQ6:"کیا آپ اس کمپنی یا شخص کا نام جانتے ہیں جس کے پاس آپ کام کریں گے؟",
+  checkE6:"اصل نوکری کا آجر نام سے معلوم ہوتا ہے۔ ویزے، معاہدے اور پیشکش میں آجر ایک ہی ہونا چاہیے۔",
+  resultDangerTitle:"رک جائیں: اس پیشکش میں خطرے کی واضح نشانیاں ہیں", resultDangerBody:"تصدیق کرنے تک مزید پیسے نہ دیں اور اپنے کاغذات حوالے نہ کریں۔ سند پر سعودی عرب میں موجود ورکرز سے پوچھیں، یا اپنی حکومت کی ہیلپ لائن پر رابطہ کریں۔",
+  resultCautionTitle:"محتاط رہیں: پہلے یہ چیک کریں", resultCautionBody:"کچھ جواب ایسے ہیں جنہیں پیسے دینے یا سفر کرنے سے پہلے چیک کرنا ضروری ہے۔",
+  resultOkTitle:"آپ کے جوابات میں خطرے کی کوئی نشانی نہیں", resultOkBody:"اچھا ہے۔ پھر بھی سفر سے پہلے سرکاری ویب سائٹ پر اپنا ویزا چیک کریں اور معاہدے اور رسیدوں کی کاپیاں رکھیں۔",
+  resultFlagsLabel:"کیا چیک کرنا ہے", resultYourAnswer:"آپ کا جواب: {answer}", checkAgain:"کوئی اور پیشکش چیک کریں",
+  workAskTitle:"سعودی عرب میں موجود ورکرز سے پوچھیں", workAskSub:"کمیونٹی میں اپنا سوال پوسٹ کریں۔ جواب دوسرے ورکرز دیتے ہیں، سرکاری ادارے نہیں۔ ویزے کے بارے میں پیغام بھیجنے والے کسی کو کبھی پیسے نہ دیں۔",
+  workAskBtn:"سوال پوچھیں", workSeeQuestionsBtn:"سوالات دیکھیں", catArrival:"آنے سے پہلے",
+  workDisclaimer:"سند کوئی ریکروٹمنٹ ایجنسی نہیں۔ ہم نے نومبر 2026 میں یہ صفحہ سرکاری ذرائع سے چیک کیا، لیکن قوانین بدلتے رہتے ہیں، اس لیے ہمیشہ سرکاری ویب سائٹس پر تصدیق کریں۔",
+},
+hi: {
+  brandName:"Sanad · سند", brandTag:"सऊदी अरब में आपका सहारा",
+  navHome:"होम", navGuide:"गाइड", navHousing:"फ़ीड", navCommunity:"कम्युनिटी",
+  chipAll:"सभी", chipHousing:"कमरे", chipInquiries:"सवाल", chipGuides:"टिप्स",
+  qnGuideTitle:"अपने अधिकार जानें", qnGuideSub:"श्रम क़ानून, क़िवा, इक़ामा और बैंकिंग — आसान भाषा में",
+  qnHousingTitle:"कमरा ढूंढें", qnHousingSub:"6 बड़े शहरों में शेयरिंग वाले कमरे",
+  qnCommunityTitle:"कम्युनिटी से पूछें", qnCommunitySub:"यहाँ पहले से रह रहे लोगों के सच्चे जवाब — कोई अनजान फ़ेसबुक ग्रुप नहीं",
+  guideEyebrow:"जानकारी गाइड", guideTitle:"सिस्टम को समझें, इससे पहले कि वह आपको उलझा दे",
+  guideSub:"हर कामगार को कभी न कभी जिन बातों की ज़रूरत पड़ती है, उनकी छोटी और आसान जानकारी।",
+  housingEyebrow:"रूममेट और शेयरिंग कमरों का बोर्ड", housingTitle:"अपना अगला कमरा ढूंढें",
+  housingSub:"किरायेदारों और मकान-मालिकों के असली विज्ञापन। सीधे व्हाट्सऐप पर बात करें — कोई बिचौलिया नहीं।",
+  housingPostBtn:"नई पोस्ट",
+  lblCity:"शहर", lblRent:"महीने का किराया (रियाल)", lblRoomType:"कमरे का प्रकार",
+  rtShared:"शेयरिंग कमरा", rtPrivate:"अलग कमरा", rtBed:"सिर्फ़ बेड",
+  lblGender:"किसके लिए", genAny:"कोई भी", genMale:"सिर्फ़ पुरुष", genFemale:"सिर्फ़ महिलाएँ",
+  lblNationality:"राष्ट्रीयता / भाषा की पसंद", natAny:"कोई भी", natArab:"अरब",
+  lblBills:"बिजली और पानी शामिल", lblDesc:"विवरण", descPh:"जैसे: मेट्रो के पास, शांत फ़्लैट, पहले से 3 लोग रहते हैं...",
+  lblWhatsapp:"व्हाट्सऐप नंबर", waInvalid:"सही व्हाट्सऐप नंबर डालें, जैसे 05XXXXXXXX।", waSaudiInvalid:"सऊदी मोबाइल नंबर डालें: 5 से शुरू होने वाले 9 अंक।",
+  filterAllCities:"सभी शहर", filterAnyBudget:"कोई भी बजट", filterUnder500:"500 से कम", filterBudget500to800:"500 – 800 रियाल", filterBudget800to1200:"800 – 1,200 रियाल",
+  filterAnyNat:"कोई भी राष्ट्रीयता",
+  perMonth:"/ महीना", contactWA:"व्हाट्सऐप", billsIncluded:"बिल शामिल", billsShared:"बिल बाँटकर",
+  postedBy:"पोस्ट करने वाले",
+  communityEyebrow:"कम्युनिटी सवाल-जवाब", communityTitle:"उन लोगों से पूछें जो यह सब पहले से समझ चुके हैं",
+  communitySub:"कमरे, क़ानूनी सवाल, नौकरी और रोज़मर्रा की ज़िंदगी पर साथियों के जवाब।",
+  lblCategory:"श्रेणी", catHousing:"कमरे", catLegal:"क़ानूनी", catJobs:"नौकरी", catLife:"आम ज़िंदगी",
+  lblQuestion:"आपका सवाल", questionPh:"अपना सवाल यहाँ लिखें...",
+  catAll:"सभी", replies:"जवाब", viewReplies:"जवाब देखें", hideReplies:"जवाब छिपाएँ",
+  repliedBy:"जवाब देने वाले", replyPh:"कोई मददगार जवाब लिखें...", replySubmit:"जवाब दें", replySignInHint:"इस सवाल का जवाब देने के लिए साइन इन करें।",
+  footNote:"सनद एक कम्युनिटी प्लैटफ़ॉर्म है। सरकारी प्रक्रियाओं की पुष्टि हमेशा क़िवा, अबशर और मुक़ीम जैसे सरकारी पोर्टल पर करें।",
+  emergencyTitle:"आपातकालीन नंबर", em911:"इमरजेंसी (पुलिस)", em998:"सिविल डिफ़ेंस (आग)", em997:"एम्बुलेंस (रेड क्रिसेंट)", em19911:"मानव संसाधन मंत्रालय — श्रम संबंधी पूछताछ",
+  navProfile:"प्रोफ़ाइल", shareLabel:"शेयर", copyLink:"लिंक कॉपी करें", linkCopied:"लिंक कॉपी हो गया!", shareViaWhatsapp:"व्हाट्सऐप पर शेयर करें", shareThisPage:"यह पेज शेयर करें",
+  lblName:"आपका नाम", signOutBtn:"साइन आउट",
+  communityTabQA:"सवाल-जवाब", communityTabBuddies:"साथी", becomeBuddyBtn:"साथी बनें — नए लोगों की मदद करें",
+  buddyFormTitle:"साथी के रूप में जुड़ें", buddyFormHint:"नए आने वाले आपकी प्रोफ़ाइल देख सकेंगे और व्हाट्सऐप पर आपसे संपर्क कर सकेंगे।",
+  lblHelpAreas:"आप किस चीज़ में मदद कर सकते हैं?", helpHousing:"कमरा ढूंढना", helpPaperwork:"काग़ज़ात और प्रक्रियाएँ", helpOrientation:"सामान्य मार्गदर्शन",
+  lblBio:"छोटा परिचय", bioPh:"जैसे: 3 साल से रियाद में हूँ, अबशर/नफ़ाद सेटअप में मदद कर सकता हूँ...",
+  buddyFormSubmit:"मेरी साथी प्रोफ़ाइल प्रकाशित करें", noBuddiesYet:"अभी कोई साथी नहीं है — पहले आप बनें!", helpsWith:"इसमें मदद कर सकते हैं",
+  videoLabel:"कमरे की फ़ोटो या वीडियो (वैकल्पिक)", videoHint:"ज़्यादा से ज़्यादा 10 फ़ोटो, या 60 सेकंड और 50 MB तक का एक वीडियो। फ़ोटो अपने-आप छोटी की जाती हैं ताकि जल्दी अपलोड हों।",
+  mediaVideoTooBig:"यह वीडियो {mb} MB का है। वीडियो 50 MB तक हो सकता है। छोटी क्लिप आज़माएँ, या 4K की जगह 1080p में रिकॉर्ड करें।", mediaVideoTooLong:"यह वीडियो {s} सेकंड का है। वीडियो 60 सेकंड तक हो सकता है।", mediaTooManyPhotos:"आपने {n} फ़ोटो चुनीं। सिर्फ़ पहली 10 पोस्ट होंगी।", mediaPhotosPicked:"{n} फ़ोटो तैयार", mediaVideoPicked:"वीडियो तैयार: {mb} MB, {s} सेकंड", uploadingPhotosProgress:"फ़ोटो अपलोड हो रही हैं... {total} में से {done}", uploadFailed:"अपलोड नहीं हो सका। अपना कनेक्शन जाँचें और फिर से कोशिश करें।", publishFailed:"प्रकाशित नहीं हो सका। फिर से कोशिश करें।", uploadingVideo:"वीडियो अपलोड हो रहा है...",
+  photoN:"फ़ोटो {n}", prevPhoto:"पिछली फ़ोटो", nextPhoto:"अगली फ़ोटो",
+  qcTextLabel:"आप क्या कहना चाहते हैं?", qcTextPh:"कोई ऐसी टिप शेयर करें जो किसी नए व्यक्ति के काम आए...",
+  qcImageLabel:"एक फ़ोटो जोड़ें (वैकल्पिक)", uploadingImage:"फ़ोटो अपलोड हो रही है...",
+  viewAndAnswer:"देखें और जवाब दें", fromCommunity:"कम्युनिटी से",
+  requiredTag:"(ज़रूरी)", optionalTag:"(वैकल्पिक)", natOther:"अन्य", lblNatOther:"राष्ट्रीयता / भाषा लिखें",
+  profileEyebrow:"आपका अकाउंट",
+  profileTitleSignedOut:"आप मेहमान के रूप में देख रहे हैं",
+  profileSubSignedOut:"देखना, पसंद करना और सेव करना — सब बिना अकाउंट के होता है। अकाउंट सिर्फ़ पोस्ट करने या किसी से संपर्क करने के लिए चाहिए।",
+  myLinksTitle:"मेरे शेयर लिंक", myLinksHint:"किसी भी सेक्शन के लिए अपना लिंक बनाएँ — आप देख पाएँगे कि हर लिंक कितनी बार खोला गया।",
+  generateLinkBtn:"लिंक पाएँ", clicksLabel:"क्लिक",
+  filterAnyGender:"सभी के लिए", filterMaleOnly:"सिर्फ़ पुरुष", filterFemaleOnly:"सिर्फ़ महिलाएँ",
+  filterAnyRoom:"कोई भी कमरा", filterShared:"शेयरिंग", filterPrivate:"अलग", filterBed:"बेड",
+  filtersLabel:"फ़िल्टर", filtersReset:"रीसेट", filtersShow:"नतीजे देखें",
+  lblBudget:"महीने का बजट", lblNatShort:"राष्ट्रीयता", lblGenderShort:"किसके लिए",
+  noListingsTitle:"इन फ़िल्टर से कोई कमरा नहीं मिला", noListingsSub:"बजट बढ़ाकर देखें, या एक-दो फ़िल्टर हटा दें।",
+  likeLabel:"पसंद", saveLabel:"सेव",
+  deleteLabel:"हटाएँ", deleteConfirm:"इसे हमेशा के लिए हटा दें? यह वापस नहीं होगा।", deleteFailed:"इसे हटाया नहीं जा सका। अपना कनेक्शन जाँचें, या साइन आउट करके फिर साइन इन करें, फिर एक बार और कोशिश करें।", removeBuddyProfile:"मेरी साथी प्रोफ़ाइल हटाएँ",
+  statMyListings:"विज्ञापन", statMyQuestions:"सवाल", statMyClicks:"लिंक क्लिक",
+  tabMyPosts:"पोस्ट", tabLiked:"पसंद किए", memberSince:"सदस्यता की शुरुआत", memberFallback:"सदस्य",
+  noPostsYet:"अभी तक कोई विज्ञापन पोस्ट नहीं किया", noLikedYet:"आपको पसंद आए कमरे यहाँ दिखेंगे", noSavedYet:"आपकी सेव की हुई चीज़ें यहाँ दिखेंगी",
+  backBtn:"वापस", loadingProfile:"लोड हो रहा है…", publicProfileUnavailable:"प्रोफ़ाइल उपलब्ध नहीं है",
+  communityTabLeaderboard:"टॉप मददगार", leaderboardMonthLabel:"टॉप मददगार —",
+  lbFilterAll:"सभी", lbFilterOpenToWork:"काम के लिए उपलब्ध", lbStatReplies:"जवाब", lbStatVotes:"वोट",
+  noHelpersYet:"इस महीने अभी तक किसी ने यह हासिल नहीं किया — किसी सवाल का जवाब देकर पहले बनें!", noQuestionsYet:"अभी कोई सवाल नहीं — पहला सवाल आप पूछें!",
+  badgeTopHelper:"इस महीने के टॉप मददगार", shareMyRank:"मेरी रैंक शेयर करें",
+  openToWorkToggleLabel:"नौकरी देने वालों को दिखाई दें",
+  openToWorkHint:"इसे चालू करने पर आपका नाम दिखेगा और नौकरी देने वाले टॉप मददगार सूची से आपको व्हाट्सऐप पर मैसेज कर सकेंगे।",
+  openToWorkWhatsappLabel:"नौकरी देने वालों को दिखाने के लिए व्हाट्सऐप नंबर", saveBtn:"सेव करें",
+  composerNewPost:"नई पोस्ट",
+  qcStep1Title:"आप क्या पोस्ट करना चाहते हैं?", qcStep1Sub:"एक चुनें — भेजने से पहले आप कभी भी बदल सकते हैं।",
+  qcOptHousingTitle:"कमरा या बेड", qcOptHousingSub:"आपके पास खाली जगह है और किरायेदार चाहिए",
+  qcOptInquiryTitle:"सवाल", qcOptInquirySub:"उन लोगों से जवाब पाएँ जो यह कर चुके हैं",
+  qcOptGuideTitle:"टिप", qcOptGuideSub:"आपने जो सीखा, वह दूसरों के काम आ सकता है",
+  qcMoreDetails:"और जानकारी (वैकल्पिक)", qcNext:"आगे", qcPublish:"प्रकाशित करें", sarLabel:"रियाल",
+  guestSavedLabel:"सेव किए", guestLanguageLabel:"भाषा", guestLanguageValue:"العربية · English · اردو · हिंदी · বাংলা",
+  likedCountLabel:"इस फ़ोन पर {n} पसंद", savedCountLabel:"इस फ़ोन पर {n} सेव",
+  signInBtnShort:"लॉग इन / साइन अप",
+  authErrorInvalid:"यूज़रनेम या पासवर्ड गलत है।", authErrorTooMany:"बहुत ज़्यादा गलत कोशिशें। 15 मिनट रुककर फिर कोशिश करें।", authErrorTooOften:"इस नेटवर्क से बहुत ज़्यादा नए अकाउंट बने हैं। एक घंटे बाद फिर कोशिश करें।", authErrorMissing:"यूज़रनेम और पासवर्ड डालें।", authErrorNetwork:"सर्वर तक नहीं पहुँच सके — फिर से कोशिश करें।", authErrorShort:"पासवर्ड कम से कम 6 अक्षरों का होना चाहिए।", authErrorTaken:"यह यूज़रनेम पहले से लिया जा चुका है।", loginHint:"अपने यूज़रनेम और पासवर्ड से लॉग इन करें।", loginTabLabel:"लॉग इन", signInSubmit:"लॉग इन", signupHint:"एक यूज़रनेम और पासवर्ड चुनें — बस इतना ही चाहिए।", signupTabLabel:"साइन अप",
+  lblUsername:"यूज़रनेम", lblPassword:"पासवर्ड",
+  authTitle:"साइन इन", lblEmail:"ईमेल", sendCode:"कोड भेजें", useUsernameLogin:"मेरे पास यूज़रनेम और पासवर्ड है", lblCode:"कोड", verifyCode:"पुष्टि करें", resendCode:"नया कोड भेजें", changeEmail:"ईमेल बदलें", continueLabel:"जारी रखें", useEmailLogin:"इसकी जगह ईमेल से साइन इन करें",
+  authHintEmail:"अपना ईमेल डालें। साइन इन करने या अकाउंट बनाने के लिए हम आपको एक कोड भेजेंगे।", authHintLink:"बस एक कदम और: अपना अकाउंट सुरक्षित रखने के लिए ईमेल जोड़ें। हम वहाँ आपको एक कोड भेजेंगे।", authHintCode:"हमने {email} पर जो कोड भेजा है, उसे डालें। न मिले तो स्पैम फ़ोल्डर देखें।", authHintName:"सनद में आपका स्वागत है! दूसरों को आपका कौन-सा नाम दिखे?", codeResent:"हमने आपको नया कोड ईमेल कर दिया है।",
+  authErrorEmail:"सही ईमेल डालें, जैसे name@example.com।", authErrorCode:"ईमेल में आया कोड डालें।", authErrorWrongCode:"यह कोड गलत है। जाँचकर फिर कोशिश करें।", authErrorCodeExpired:"इस कोड का समय खत्म हो गया है। \"नया कोड भेजें\" दबाएँ।", authErrorTooManyCodes:"बहुत ज़्यादा कोशिशें। 15 मिनट रुककर फिर कोशिश करें।", authErrorSendFailed:"हम इस ईमेल पर कोड नहीं भेज सके। ईमेल जाँचकर फिर कोशिश करें।", authErrorEmailTaken:"यह ईमेल पहले से किसी दूसरे अकाउंट का है। इसकी जगह ईमेल से साइन इन करें।", authErrorName:"एक नाम डालें।",
+  themeToDark:"डार्क मोड चालू करें", themeToLight:"लाइट मोड चालू करें", langMenuLabel:"भाषा बदलें",
+  // "Looking for work?": first-visit question, entry points, work page and offer check
+  welcomeTitle:"सनद में आपका स्वागत है", welcomeLangLabel:"आपकी भाषा", welcomeQuestion:"आप अभी कहाँ हैं?",
+  welcomeInSaudi:"मैं सऊदी अरब में हूँ", welcomeInSaudiSub:"कमरा ढूंढें, अपने अधिकार जानें, दूसरे कामगारों से पूछें",
+  welcomeAbroad:"मैं सऊदी अरब से बाहर हूँ और मुझे वहाँ काम चाहिए", welcomeAbroadSub:"क़ानूनी रास्ते से आएँ और नकली नौकरी के ऑफ़र पहचानें", welcomeSkip:"अभी छोड़ें",
+  workPillLabel:"काम ढूंढ रहे हैं?", workEntryTitle:"सऊदी अरब में काम ढूंढ रहे हैं?", workEntrySub:"किसी को पैसे देने से पहले यहाँ से शुरू करें",
+  workEyebrow:"सऊदी अरब आना", workTitle:"सऊदी अरब में काम ढूंढ रहे हैं?",
+  workSub:"किसी को पैसे देने से पहले यहाँ से शुरू करें। सनद कामगारों की भर्ती नहीं करता, वीज़ा नहीं बेचता और आपसे कभी पैसे नहीं माँगता।",
+  workCountryLabel:"आप किस देश से आ रहे हैं?", workCountryPK:"पाकिस्तान", workCountryIN:"भारत", workCountryOther:"कोई और देश", workCountryHint:"अपने देश के कदम देखने के लिए अपना देश चुनें।", workSaudiLabel:"सऊदी अरब",
+  checkTitle:"अपना नौकरी का ऑफ़र जाँचें", checkSub:"6 छोटे सवाल। आपके जवाब आपके फ़ोन में ही रहते हैं।", checkStart:"जाँच शुरू करें", checkProgress:"{total} में से सवाल {n}", ansYes:"हाँ", ansNo:"नहीं", ansUnsure:"पता नहीं",
+  checkQ1:"क्या किसी ने आपसे वीज़ा के पैसे माँगे?",
+  checkE1:"सऊदी अरब में भर्ती की फ़ीस, वर्क परमिट और इक़ामा का ख़र्च मालिक देता है (श्रम क़ानून, अनुच्छेद 40)। कामगार से \"वीज़ा की क़ीमत\" माँगना धोखे की आम निशानी है। आपके अपने देश का लाइसेंस वाला एजेंट सिर्फ़ तय सर्विस चार्ज, रसीद के साथ, ले सकता है।",
+  checkQ2:"क्या उन्होंने \"आज़ाद वीज़ा\" (फ़्री वीज़ा) दिया, जिस पर आप किसी के भी पास काम कर सकें?",
+  checkE2:"वर्क वीज़ा एक ही मालिक के लिए जारी होता है। ऐसा कोई क़ानूनी \"आज़ाद वीज़ा\" नहीं है जिस पर आप किसी के भी पास काम कर सकें।",
+  checkQ3:"क्या यह वर्क वीज़ा है (विज़िट, उमरा, हज या फ़ैमिली वीज़ा नहीं)?",
+  checkE3:"विज़िट, उमरा, हज या फ़ैमिली वीज़ा पर काम करने की इजाज़त नहीं है। ऐसा करने वालों को हिरासत, जुर्माना, देश से निकाला और दोबारा आने पर रोक हो सकती है।",
+  checkQ4:"क्या आपका एजेंट आपकी अपनी सरकार से लाइसेंस वाला है?",
+  checkE4:"विदेश में नौकरी सिर्फ़ लाइसेंस वाला एजेंट दिला सकता है: पाकिस्तान में लाइसेंस वाला ओवरसीज़ एम्प्लॉयमेंट प्रमोटर (OEP), भारत में eMigrate पर रजिस्टर्ड रिक्रूटिंग एजेंट। ट्रैवल एजेंट इनमें नहीं आता।",
+  checkQ5:"क्या आपने लिखा हुआ कॉन्ट्रैक्ट ऐसी भाषा में पढ़ा है जो आप समझते हैं?",
+  checkE5:"सफ़र से पहले पद का नाम, तनख्वाह, काम के घंटे, रहने की जगह और कॉन्ट्रैक्ट की अवधि जाँचें। एक कॉपी अपने पास रखें और कभी ख़ाली काग़ज़ पर दस्तख़त न करें।",
+  checkQ6:"क्या आप उस कंपनी या व्यक्ति का नाम जानते हैं जिसके पास आप काम करेंगे?",
+  checkE6:"असली नौकरी का मालिक नाम से पता होता है। वीज़ा, कॉन्ट्रैक्ट और ऑफ़र में मालिक एक ही होना चाहिए।",
+  resultDangerTitle:"रुकिए: इस ऑफ़र में ख़तरे के साफ़ निशान हैं", resultDangerBody:"जाँच पूरी होने तक और पैसे न दें और अपने काग़ज़ात न सौंपें। सनद पर सऊदी अरब में मौजूद कामगारों से पूछें, या अपनी सरकार की हेल्पलाइन पर बात करें।",
+  resultCautionTitle:"सावधान रहें: पहले ये जाँचें", resultCautionBody:"कुछ जवाब ऐसे हैं जिन्हें पैसे देने या सफ़र करने से पहले जाँचना ज़रूरी है।",
+  resultOkTitle:"आपके जवाबों में ख़तरे का कोई निशान नहीं", resultOkBody:"अच्छा है। फिर भी सफ़र से पहले सरकारी वेबसाइट पर अपना वीज़ा जाँचें और कॉन्ट्रैक्ट व रसीदों की कॉपियाँ रखें।",
+  resultFlagsLabel:"क्या जाँचना है", resultYourAnswer:"आपका जवाब: {answer}", checkAgain:"कोई और ऑफ़र जाँचें",
+  workAskTitle:"सऊदी अरब में मौजूद कामगारों से पूछें", workAskSub:"कम्युनिटी में अपना सवाल पोस्ट करें। जवाब दूसरे कामगार देते हैं, सरकारी अधिकारी नहीं। वीज़ा के बारे में मैसेज करने वाले किसी को कभी पैसे न दें।",
+  workAskBtn:"सवाल पूछें", workSeeQuestionsBtn:"सवाल देखें", catArrival:"आने से पहले",
+  workDisclaimer:"सनद कोई भर्ती एजेंसी नहीं है। हमने नवंबर 2026 में यह पेज सरकारी स्रोतों से जाँचा, लेकिन नियम बदलते रहते हैं, इसलिए हमेशा सरकारी वेबसाइटों पर पुष्टि करें।",
+  // Admin buddy keys from the open admin-buddies pull request (#37), so its
+  // strings are already translated whichever of the two merges first.
+  adminAddBuddyBtn:"सत्यापित साथी जोड़ें (एडमिन)", adminBuddyFormTitle:"साथी जोड़ें", adminBuddyFormHint:"यह सिर्फ़ एडमिन को दिखता है। साथी को \"सत्यापित\" बैज मिलेगा। उनका व्हाट्सऐप नंबर प्रकाशित करने से पहले उनसे पूछ लें।", lblBuddyName:"नाम", lblAdminHelpAreas:"वे किस चीज़ में मदद कर सकते हैं?", adminBuddyFormSubmit:"साथी प्रकाशित करें", buddyNameMissing:"साथी का नाम डालें।", adminAddBuddyFailed:"यह साथी जोड़ा नहीं जा सका। अपना कनेक्शन जाँचें और फिर कोशिश करें।", verifiedBadge:"सत्यापित", adminRemoveBuddy:"हटाएँ (एडमिन)",
+},
+bn: {
+  brandName:"Sanad · سند", brandTag:"সৌদি আরবে আপনার সহায়",
+  navHome:"হোম", navGuide:"গাইড", navHousing:"ফিড", navCommunity:"কমিউনিটি",
+  chipAll:"সব", chipHousing:"বাসা", chipInquiries:"প্রশ্ন", chipGuides:"টিপস",
+  qnGuideTitle:"আপনার অধিকার জানুন", qnGuideSub:"শ্রম আইন, কিওয়া, ইকামা ও ব্যাংকিং — সহজ ভাষায়",
+  qnHousingTitle:"রুম খুঁজুন", qnHousingSub:"৬টি বড় শহরে শেয়ারে থাকার জায়গা",
+  qnCommunityTitle:"কমিউনিটিকে জিজ্ঞেস করুন", qnCommunitySub:"যারা এখানে আগে থেকেই থাকেন তাদের সত্যিকারের উত্তর — কোনো অচেনা ফেসবুক গ্রুপ নয়",
+  guideEyebrow:"তথ্য গাইড", guideTitle:"নিয়মকানুন বুঝে নিন, বিভ্রান্ত হওয়ার আগেই",
+  guideSub:"প্রত্যেক কর্মীর কোনো না কোনো সময় যা লাগে, সেসব বিষয়ের ছোট ও সহজ ব্যাখ্যা।",
+  housingEyebrow:"রুমমেট ও শেয়ার্ড বাসার বোর্ড", housingTitle:"আপনার পরের রুম খুঁজুন",
+  housingSub:"ভাড়াটিয়া ও বাড়ির মালিকদের আসল বিজ্ঞাপন। সরাসরি হোয়াটসঅ্যাপে যোগাযোগ করুন — কোনো দালাল নেই।",
+  housingPostBtn:"নতুন পোস্ট",
+  lblCity:"শহর", lblRent:"মাসিক ভাড়া (রিয়াল)", lblRoomType:"রুমের ধরন",
+  rtShared:"শেয়ার্ড রুম", rtPrivate:"আলাদা রুম", rtBed:"শুধু বেড",
+  lblGender:"কার জন্য", genAny:"যেকোনো", genMale:"শুধু পুরুষ", genFemale:"শুধু মহিলা",
+  lblNationality:"জাতীয়তা / ভাষার পছন্দ", natAny:"যেকোনো", natArab:"আরব",
+  lblBills:"বিদ্যুৎ ও পানি সহ", lblDesc:"বিবরণ", descPh:"যেমন: মেট্রোর কাছে, শান্ত ফ্ল্যাট, আগে থেকে ৩ জন থাকেন...",
+  lblWhatsapp:"হোয়াটসঅ্যাপ নম্বর", waInvalid:"সঠিক হোয়াটসঅ্যাপ নম্বর দিন, যেমন 05XXXXXXXX।", waSaudiInvalid:"সৌদি মোবাইল নম্বর দিন: 5 দিয়ে শুরু হওয়া 9 অঙ্কের নম্বর।",
+  filterAllCities:"সব শহর", filterAnyBudget:"যেকোনো বাজেট", filterUnder500:"৫০০-এর কম", filterBudget500to800:"৫০০ – ৮০০ রিয়াল", filterBudget800to1200:"৮০০ – ১,২০০ রিয়াল",
+  filterAnyNat:"যেকোনো জাতীয়তা",
+  perMonth:"/ মাস", contactWA:"হোয়াটসঅ্যাপ", billsIncluded:"বিল সহ", billsShared:"বিল ভাগাভাগি",
+  postedBy:"পোস্ট করেছেন",
+  communityEyebrow:"কমিউনিটি প্রশ্নোত্তর", communityTitle:"যারা আগেই সব বুঝে নিয়েছেন, তাদের জিজ্ঞেস করুন",
+  communitySub:"বাসা, আইনি প্রশ্ন, কাজ আর দৈনন্দিন জীবন নিয়ে সহকর্মীদের উত্তর।",
+  lblCategory:"বিভাগ", catHousing:"বাসা", catLegal:"আইনি", catJobs:"কাজ", catLife:"সাধারণ জীবন",
+  lblQuestion:"আপনার প্রশ্ন", questionPh:"আপনার প্রশ্ন এখানে লিখুন...",
+  catAll:"সব", replies:"উত্তর", viewReplies:"উত্তর দেখুন", hideReplies:"উত্তর লুকান",
+  repliedBy:"উত্তরদাতা", replyPh:"একটি সহায়ক উত্তর লিখুন...", replySubmit:"উত্তর দিন", replySignInHint:"এই প্রশ্নের উত্তর দিতে সাইন ইন করুন।",
+  footNote:"সনদ একটি কমিউনিটি প্ল্যাটফর্ম। সরকারি নিয়মকানুন সবসময় কিওয়া, আবশের ও মুকিমের মতো সরকারি পোর্টালে যাচাই করুন।",
+  emergencyTitle:"জরুরি নম্বর", em911:"জরুরি (পুলিশ)", em998:"সিভিল ডিফেন্স (আগুন)", em997:"অ্যাম্বুলেন্স (রেড ক্রিসেন্ট)", em19911:"মানবসম্পদ মন্ত্রণালয় — শ্রম বিষয়ক তথ্য",
+  navProfile:"প্রোফাইল", shareLabel:"শেয়ার", copyLink:"লিংক কপি করুন", linkCopied:"লিংক কপি হয়েছে!", shareViaWhatsapp:"হোয়াটসঅ্যাপে শেয়ার করুন", shareThisPage:"এই পেজ শেয়ার করুন",
+  lblName:"আপনার নাম", signOutBtn:"সাইন আউট",
+  communityTabQA:"প্রশ্নোত্তর", communityTabBuddies:"সাথী", becomeBuddyBtn:"সাথী হোন — নতুনদের সাহায্য করুন",
+  buddyFormTitle:"সাথী হিসেবে যোগ দিন", buddyFormHint:"নতুনরা আপনার প্রোফাইল দেখতে পাবেন এবং হোয়াটসঅ্যাপে আপনার সাথে যোগাযোগ করতে পারবেন।",
+  lblHelpAreas:"আপনি কোন বিষয়ে সাহায্য করতে পারেন?", helpHousing:"বাসা খোঁজা", helpPaperwork:"কাগজপত্র ও প্রক্রিয়া", helpOrientation:"সাধারণ দিকনির্দেশনা",
+  lblBio:"সংক্ষিপ্ত পরিচয়", bioPh:"যেমন: ৩ বছর ধরে রিয়াদে আছি, আবশের/নাফাদ সেটআপে সাহায্য করতে পারি...",
+  buddyFormSubmit:"আমার সাথী প্রোফাইল প্রকাশ করুন", noBuddiesYet:"এখনো কোনো সাথী নেই — আপনিই প্রথম হোন!", helpsWith:"যে বিষয়ে সাহায্য করতে পারেন",
+  videoLabel:"রুমের ছবি বা ভিডিও (ঐচ্ছিক)", videoHint:"সর্বোচ্চ ১০টি ছবি, অথবা ৬০ সেকেন্ড ও ৫০ MB পর্যন্ত একটি ভিডিও। ছবিগুলো নিজে থেকেই ছোট করা হয় যাতে দ্রুত আপলোড হয়।",
+  mediaVideoTooBig:"এই ভিডিওটি {mb} MB। ভিডিও সর্বোচ্চ ৫০ MB হতে পারে। ছোট ক্লিপ দিন, অথবা 4K-এর বদলে 1080p-তে রেকর্ড করুন।", mediaVideoTooLong:"এই ভিডিওটি {s} সেকেন্ডের। ভিডিও সর্বোচ্চ ৬০ সেকেন্ড হতে পারে।", mediaTooManyPhotos:"আপনি {n}টি ছবি বেছেছেন। শুধু প্রথম ১০টি পোস্ট হবে।", mediaPhotosPicked:"{n}টি ছবি তৈরি", mediaVideoPicked:"ভিডিও তৈরি: {mb} MB, {s} সেকেন্ড", uploadingPhotosProgress:"ছবি আপলোড হচ্ছে... {total}টির মধ্যে {done}টি", uploadFailed:"আপলোড হয়নি। আপনার সংযোগ দেখে আবার চেষ্টা করুন।", publishFailed:"প্রকাশ করা যায়নি। আবার চেষ্টা করুন।", uploadingVideo:"ভিডিও আপলোড হচ্ছে...",
+  photoN:"ছবি {n}", prevPhoto:"আগের ছবি", nextPhoto:"পরের ছবি",
+  qcTextLabel:"আপনি কী বলতে চান?", qcTextPh:"এমন একটি টিপস শেয়ার করুন যা নতুন কারও কাজে লাগবে...",
+  qcImageLabel:"একটি ছবি যোগ করুন (ঐচ্ছিক)", uploadingImage:"ছবি আপলোড হচ্ছে...",
+  viewAndAnswer:"দেখুন ও উত্তর দিন", fromCommunity:"কমিউনিটি থেকে",
+  requiredTag:"(আবশ্যক)", optionalTag:"(ঐচ্ছিক)", natOther:"অন্যান্য", lblNatOther:"জাতীয়তা / ভাষা লিখুন",
+  profileEyebrow:"আপনার অ্যাকাউন্ট",
+  profileTitleSignedOut:"আপনি অতিথি হিসেবে দেখছেন",
+  profileSubSignedOut:"দেখা, পছন্দ করা ও সেভ করা — সবই অ্যাকাউন্ট ছাড়া চলে। শুধু পোস্ট করতে বা কারও সাথে যোগাযোগ করতে অ্যাকাউন্ট লাগে।",
+  myLinksTitle:"আমার শেয়ার লিংক", myLinksHint:"যেকোনো অংশের জন্য নিজের লিংক তৈরি করুন — প্রতিটি লিংক কতবার খোলা হলো তা দেখতে পাবেন।",
+  generateLinkBtn:"লিংক নিন", clicksLabel:"ক্লিক",
+  filterAnyGender:"সবার জন্য", filterMaleOnly:"শুধু পুরুষ", filterFemaleOnly:"শুধু মহিলা",
+  filterAnyRoom:"যেকোনো রুম", filterShared:"শেয়ার্ড", filterPrivate:"আলাদা", filterBed:"বেড",
+  filtersLabel:"ফিল্টার", filtersReset:"রিসেট", filtersShow:"ফলাফল দেখুন",
+  lblBudget:"মাসিক বাজেট", lblNatShort:"জাতীয়তা", lblGenderShort:"কার জন্য",
+  noListingsTitle:"এই ফিল্টারে কোনো রুম পাওয়া যায়নি", noListingsSub:"বাজেট বাড়িয়ে দেখুন, অথবা এক-দুটি ফিল্টার সরিয়ে দিন।",
+  likeLabel:"পছন্দ", saveLabel:"সেভ",
+  deleteLabel:"মুছুন", deleteConfirm:"এটি চিরতরে মুছে ফেলবেন? এটি আর ফেরানো যাবে না।", deleteFailed:"এটি মোছা যায়নি। আপনার সংযোগ দেখুন, অথবা সাইন আউট করে আবার সাইন ইন করুন, তারপর আরেকবার চেষ্টা করুন।", removeBuddyProfile:"আমার সাথী প্রোফাইল সরান",
+  statMyListings:"বিজ্ঞাপন", statMyQuestions:"প্রশ্ন", statMyClicks:"লিংক ক্লিক",
+  tabMyPosts:"পোস্ট", tabLiked:"পছন্দের", memberSince:"সদস্যপদ শুরু", memberFallback:"সদস্য",
+  noPostsYet:"এখনো কোনো বিজ্ঞাপন পোস্ট করা হয়নি", noLikedYet:"আপনার পছন্দের রুমগুলো এখানে দেখা যাবে", noSavedYet:"আপনার সেভ করা জিনিস এখানে দেখা যাবে",
+  backBtn:"ফিরে যান", loadingProfile:"লোড হচ্ছে…", publicProfileUnavailable:"প্রোফাইল পাওয়া যাচ্ছে না",
+  communityTabLeaderboard:"সেরা সাহায্যকারী", leaderboardMonthLabel:"সেরা সাহায্যকারী —",
+  lbFilterAll:"সবাই", lbFilterOpenToWork:"কাজের জন্য প্রস্তুত", lbStatReplies:"উত্তর", lbStatVotes:"ভোট",
+  noHelpersYet:"এই মাসে এখনো কেউ এটি পাননি — একটি প্রশ্নের উত্তর দিয়ে প্রথম হোন!", noQuestionsYet:"এখনো কোনো প্রশ্ন নেই — প্রথম প্রশ্নটি আপনিই করুন!",
+  badgeTopHelper:"এই মাসের সেরা সাহায্যকারী", shareMyRank:"আমার র‍্যাংক শেয়ার করুন",
+  openToWorkToggleLabel:"নিয়োগকর্তাদের কাছে দৃশ্যমান থাকুন",
+  openToWorkHint:"এটি চালু করলে আপনার নাম দেখা যাবে এবং নিয়োগকর্তারা সেরা সাহায্যকারীর তালিকা থেকে হোয়াটসঅ্যাপে আপনাকে মেসেজ করতে পারবেন।",
+  openToWorkWhatsappLabel:"নিয়োগকর্তাদের দেখানোর জন্য হোয়াটসঅ্যাপ নম্বর", saveBtn:"সেভ করুন",
+  composerNewPost:"নতুন পোস্ট",
+  qcStep1Title:"আপনি কী পোস্ট করতে চান?", qcStep1Sub:"একটি বেছে নিন — জমা দেওয়ার আগে যেকোনো সময় বদলাতে পারবেন।",
+  qcOptHousingTitle:"রুম বা বেড", qcOptHousingSub:"আপনার কাছে খালি জায়গা আছে, ভাড়াটিয়া দরকার",
+  qcOptInquiryTitle:"প্রশ্ন", qcOptInquirySub:"যারা এটা আগে করেছেন তাদের কাছ থেকে উত্তর নিন",
+  qcOptGuideTitle:"টিপস", qcOptGuideSub:"আপনি যা শিখেছেন, তা অন্যদের কাজে লাগতে পারে",
+  qcMoreDetails:"আরও তথ্য (ঐচ্ছিক)", qcNext:"পরবর্তী", qcPublish:"প্রকাশ করুন", sarLabel:"রিয়াল",
+  guestSavedLabel:"সেভ করা", guestLanguageLabel:"ভাষা", guestLanguageValue:"العربية · English · اردو · हिंदी · বাংলা",
+  likedCountLabel:"এই ফোনে {n}টি পছন্দ", savedCountLabel:"এই ফোনে {n}টি সেভ করা",
+  signInBtnShort:"লগ ইন / সাইন আপ",
+  authErrorInvalid:"ইউজারনেম বা পাসওয়ার্ড ভুল।", authErrorTooMany:"অনেকবার ভুল চেষ্টা হয়েছে। ১৫ মিনিট অপেক্ষা করে আবার চেষ্টা করুন।", authErrorTooOften:"এই নেটওয়ার্ক থেকে অনেক নতুন অ্যাকাউন্ট খোলা হয়েছে। এক ঘণ্টা পরে আবার চেষ্টা করুন।", authErrorMissing:"ইউজারনেম ও পাসওয়ার্ড দিন।", authErrorNetwork:"সার্ভারে পৌঁছানো যায়নি — আবার চেষ্টা করুন।", authErrorShort:"পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের হতে হবে।", authErrorTaken:"এই ইউজারনেম আগেই নেওয়া হয়েছে।", loginHint:"আপনার ইউজারনেম ও পাসওয়ার্ড দিয়ে লগ ইন করুন।", loginTabLabel:"লগ ইন", signInSubmit:"লগ ইন", signupHint:"একটি ইউজারনেম ও পাসওয়ার্ড বেছে নিন — এটুকুই যথেষ্ট।", signupTabLabel:"সাইন আপ",
+  lblUsername:"ইউজারনেম", lblPassword:"পাসওয়ার্ড",
+  authTitle:"সাইন ইন", lblEmail:"ইমেইল", sendCode:"কোড পাঠান", useUsernameLogin:"আমার ইউজারনেম ও পাসওয়ার্ড আছে", lblCode:"কোড", verifyCode:"যাচাই করুন", resendCode:"নতুন কোড পাঠান", changeEmail:"ইমেইল বদলান", continueLabel:"চালিয়ে যান", useEmailLogin:"বরং ইমেইল দিয়ে সাইন ইন করুন",
+  authHintEmail:"আপনার ইমেইল দিন। সাইন ইন বা অ্যাকাউন্ট খোলার জন্য আমরা একটি কোড পাঠাব।", authHintLink:"আর এক ধাপ: অ্যাকাউন্ট নিরাপদ রাখতে আপনার ইমেইল যোগ করুন। আমরা সেখানে একটি কোড পাঠাব।", authHintCode:"{email}-এ পাঠানো কোডটি দিন। খুঁজে না পেলে স্প্যাম ফোল্ডার দেখুন।", authHintName:"সনদে স্বাগতম! অন্যরা আপনার কোন নাম দেখবেন?", codeResent:"আমরা আপনাকে নতুন কোড ইমেইল করেছি।",
+  authErrorEmail:"সঠিক ইমেইল দিন, যেমন name@example.com।", authErrorCode:"ইমেইলে আসা কোডটি দিন।", authErrorWrongCode:"কোডটি ভুল। দেখে আবার চেষ্টা করুন।", authErrorCodeExpired:"কোডটির মেয়াদ শেষ। \"নতুন কোড পাঠান\" চাপুন।", authErrorTooManyCodes:"অনেকবার চেষ্টা হয়েছে। ১৫ মিনিট অপেক্ষা করে আবার চেষ্টা করুন।", authErrorSendFailed:"এই ইমেইলে কোড পাঠানো যায়নি। ইমেইলটি দেখে আবার চেষ্টা করুন।", authErrorEmailTaken:"এই ইমেইলটি অন্য একটি অ্যাকাউন্টের। বরং ইমেইল দিয়ে সাইন ইন করুন।", authErrorName:"একটি নাম দিন।",
+  themeToDark:"ডার্ক মোডে যান", themeToLight:"লাইট মোডে যান", langMenuLabel:"ভাষা বদলান",
+  // "Looking for work?": first-visit question, entry points, work page and offer check
+  welcomeTitle:"সনদে স্বাগতম", welcomeLangLabel:"আপনার ভাষা", welcomeQuestion:"আপনি এখন কোথায়?",
+  welcomeInSaudi:"আমি সৌদি আরবে আছি", welcomeInSaudiSub:"বাসা খুঁজুন, অধিকার জানুন, অন্য কর্মীদের জিজ্ঞেস করুন",
+  welcomeAbroad:"আমি সৌদি আরবের বাইরে আছি, সেখানে কাজ চাই", welcomeAbroadSub:"আইনি পথে আসুন, ভুয়া চাকরির অফার চিনে নিন", welcomeSkip:"এখন থাক",
+  workPillLabel:"কাজ খুঁজছেন?", workEntryTitle:"সৌদি আরবে কাজ খুঁজছেন?", workEntrySub:"কাউকে টাকা দেওয়ার আগে এখান থেকে শুরু করুন",
+  workEyebrow:"সৌদি আরবে আসা", workTitle:"সৌদি আরবে কাজ খুঁজছেন?",
+  workSub:"কাউকে টাকা দেওয়ার আগে এখান থেকে শুরু করুন। সনদ কর্মী নিয়োগ করে না, ভিসা বিক্রি করে না এবং আপনার কাছে কখনো টাকা চায় না।",
+  workCountryLabel:"আপনি কোন দেশ থেকে আসছেন?", workCountryPK:"পাকিস্তান", workCountryIN:"ভারত", workCountryOther:"অন্য দেশ", workCountryHint:"আপনার দেশের ধাপগুলো দেখতে দেশ বেছে নিন।", workSaudiLabel:"সৌদি আরব",
+  checkTitle:"আপনার চাকরির অফার যাচাই করুন", checkSub:"৬টি ছোট প্রশ্ন। আপনার উত্তর আপনার ফোনেই থাকে।", checkStart:"যাচাই শুরু করুন", checkProgress:"{total}টির মধ্যে প্রশ্ন {n}", ansYes:"হ্যাঁ", ansNo:"না", ansUnsure:"জানি না",
+  checkQ1:"কেউ কি আপনার কাছে ভিসার টাকা চেয়েছে?",
+  checkE1:"সৌদি আরবে নিয়োগ ফি, ওয়ার্ক পারমিট আর ইকামার খরচ নিয়োগকর্তা দেন (শ্রম আইন, ধারা ৪০)। কর্মীর কাছে \"ভিসার দাম\" চাওয়া প্রতারণার সাধারণ লক্ষণ। আপনার নিজের দেশের লাইসেন্সধারী এজেন্ট শুধু নির্ধারিত সার্ভিস চার্জ নিতে পারেন, রসিদসহ।",
+  checkQ2:"তারা কি \"ফ্রি ভিসা\" (আজাদ ভিসা) দিতে চেয়েছে, যাতে যে কারো কাছে কাজ করা যায়?",
+  checkE2:"ওয়ার্ক ভিসা একজন নির্দিষ্ট নিয়োগকর্তার জন্য দেওয়া হয়। যে কারো কাছে কাজ করার মতো কোনো আইনি \"ফ্রি ভিসা\" নেই।",
+  checkQ3:"এটা কি ওয়ার্ক ভিসা (ভিজিট, উমরাহ, হজ বা ফ্যামিলি ভিসা নয়)?",
+  checkE3:"ভিজিট, উমরাহ, হজ বা ফ্যামিলি ভিসায় কাজ করার অনুমতি নেই। যারা এমন করে, তাদের আটক, জরিমানা, দেশে ফেরত পাঠানো এবং আবার আসায় নিষেধাজ্ঞা হতে পারে।",
+  checkQ4:"আপনার এজেন্ট কি আপনার নিজের সরকারের লাইসেন্সধারী?",
+  checkE4:"বিদেশে চাকরি শুধু লাইসেন্সধারী এজেন্টই দিতে পারেন: পাকিস্তানে লাইসেন্সধারী ওভারসিজ এমপ্লয়মেন্ট প্রমোটার (OEP), ভারতে eMigrate-এ নিবন্ধিত রিক্রুটিং এজেন্ট। ট্রাভেল এজেন্ট এদের মধ্যে পড়ে না।",
+  checkQ5:"আপনি কি লিখিত চুক্তিটি এমন ভাষায় পড়েছেন যা আপনি বোঝেন?",
+  checkE5:"যাওয়ার আগে পদের নাম, বেতন, কাজের সময়, থাকার ব্যবস্থা আর চুক্তির মেয়াদ দেখে নিন। একটি কপি নিজের কাছে রাখুন, আর কখনো ফাঁকা কাগজে সই করবেন না।",
+  checkQ6:"আপনি কি সেই কোম্পানি বা ব্যক্তির নাম জানেন, যার কাছে কাজ করবেন?",
+  checkE6:"আসল চাকরির নিয়োগকর্তার নাম জানা থাকে। ভিসা, চুক্তি আর অফারে একই নিয়োগকর্তা থাকা উচিত।",
+  resultDangerTitle:"থামুন: এই অফারে বিপদের স্পষ্ট লক্ষণ আছে", resultDangerBody:"যাচাই না করা পর্যন্ত আর কোনো টাকা দেবেন না, কাগজপত্রও কাউকে দেবেন না। সনদে সৌদি আরবে থাকা কর্মীদের জিজ্ঞেস করুন, অথবা আপনার সরকারের হেল্পলাইনে যোগাযোগ করুন।",
+  resultCautionTitle:"সাবধান: আগে এগুলো যাচাই করুন", resultCautionBody:"কিছু উত্তর টাকা দেওয়া বা যাত্রার আগে যাচাই করা দরকার।",
+  resultOkTitle:"আপনার উত্তরে বিপদের কোনো লক্ষণ নেই", resultOkBody:"ভালো। তবু যাওয়ার আগে সরকারি ওয়েবসাইটে ভিসা যাচাই করুন, আর চুক্তি ও রসিদের কপি রাখুন।",
+  resultFlagsLabel:"যা যাচাই করবেন", resultYourAnswer:"আপনার উত্তর: {answer}", checkAgain:"আরেকটি অফার যাচাই করুন",
+  workAskTitle:"সৌদি আরবে থাকা কর্মীদের জিজ্ঞেস করুন", workAskSub:"কমিউনিটিতে আপনার প্রশ্ন পোস্ট করুন। উত্তর দেন অন্য কর্মীরা, সরকারি কর্মকর্তা নন। ভিসা নিয়ে মেসেজ করা কাউকে কখনো টাকা দেবেন না।",
+  workAskBtn:"প্রশ্ন করুন", workSeeQuestionsBtn:"প্রশ্নগুলো দেখুন", catArrival:"আসার আগে",
+  workDisclaimer:"সনদ কোনো রিক্রুটিং এজেন্সি নয়। আমরা নভেম্বর ২০২৬-এ সরকারি সূত্র থেকে এই পাতা যাচাই করেছি, তবে নিয়ম বদলায়, তাই সবসময় সরকারি ওয়েবসাইটে নিশ্চিত হয়ে নিন।",
+  // Admin buddy keys from the open admin-buddies pull request (#37), so its
+  // strings are already translated whichever of the two merges first.
+  adminAddBuddyBtn:"যাচাই করা সাথী যোগ করুন (অ্যাডমিন)", adminBuddyFormTitle:"সাথী যোগ করুন", adminBuddyFormHint:"এটি শুধু অ্যাডমিনরা দেখেন। সাথী \"যাচাইকৃত\" ব্যাজ পাবেন। তার হোয়াটসঅ্যাপ নম্বর প্রকাশের আগে তার অনুমতি নিন।", lblBuddyName:"নাম", lblAdminHelpAreas:"তিনি কোন বিষয়ে সাহায্য করতে পারেন?", adminBuddyFormSubmit:"সাথী প্রকাশ করুন", buddyNameMissing:"সাথীর নাম দিন।", adminAddBuddyFailed:"এই সাথীকে যোগ করা যায়নি। আপনার সংযোগ দেখে আবার চেষ্টা করুন।", verifiedBadge:"যাচাইকৃত", adminRemoveBuddy:"সরান (অ্যাডমিন)",
 }
 };
 
@@ -429,7 +741,410 @@ ur: [
    <li>اپنی ریکروٹمنٹ ایجنسی کا لائسنس نمبر اور آجر کا سرکاری کمپنی نام محفوظ رکھیں۔</li>
    <li>پاسپورٹ، معاہدے اور میڈیکل کلیئرنس سرٹیفکیٹ کی ڈیجیٹل اور فزیکل کاپیاں ساتھ لائیں۔</li>
  </ul>`}
+],
+hi: [
+ {k:"labor", title:"श्रम क़ानून और कॉन्ट्रैक्ट", sub:"जानें आपके कॉन्ट्रैक्ट में क्या-क्या होना चाहिए", body:`<ul>
+   <li>आपके काम के कॉन्ट्रैक्ट में पद का नाम, तनख्वाह, काम के घंटे और कॉन्ट्रैक्ट की अवधि लिखी होनी चाहिए — इसकी एक कॉपी ऐसी भाषा में लें जो आप समझते हों।</li>
+   <li>आम तौर पर काम के घंटे दिन में 8 या हफ़्ते में 48 होते हैं, और रमज़ान में मुस्लिम कामगारों के लिए कम हो जाते हैं।</li>
+   <li>ज़्यादातर क्षेत्रों में मालिक क़ानूनी तौर पर आपका पासपोर्ट अपने पास नहीं रख सकता — ऐसा हो तो अपने अधिकारों के बारे में पूछें।</li>
+   <li>सेवा-समाप्ति लाभ (ग्रेच्युटी) नौकरी के सालों के हिसाब से तय होता है — अपनी शुरुआत की तारीख और तनख्वाह में हुए बदलावों का अपना रिकॉर्ड रखें।</li>
+ </ul>`},
+ {k:"qiwa", title:"क़िवा प्लैटफ़ॉर्म", sub:"सऊदी अरब का श्रम सेवाओं का पोर्टल", body:`<ul>
+   <li>क़िवा काम के कॉन्ट्रैक्ट, ट्रांसफ़र और श्रम शिकायतों के लिए आधिकारिक प्लैटफ़ॉर्म है — ऐप या वेबसाइट, दोनों से।</li>
+   <li>मालिक के कॉन्ट्रैक्ट दर्ज करने के बाद आप क़िवा पर अपने कॉन्ट्रैक्ट की जानकारी देख सकते हैं और उसकी पुष्टि कर सकते हैं।</li>
+   <li>नौकरी/मालिक बदलने का अनुरोध और बकाया तनख्वाह की शिकायत — दोनों क़िवा से शुरू किए जा सकते हैं।</li>
+   <li>अपने कॉन्ट्रैक्ट की स्थिति के लिए किसी दलाल की बात पर नहीं, हमेशा सीधे क़िवा पर देखें।</li>
+ </ul>`},
+ {k:"bank", title:"बैंकिंग और पैसे भेजना", sub:"खाता खोलना, अबशर और नफ़ाद की बुनियादी बातें", body:`<ul>
+   <li>ज़्यादातर बैंक खाता खोलने के लिए वैध इक़ामा माँगते हैं; कुछ बैंक नए आने वालों को सीमित सुविधाओं वाला खाता देते हैं।</li>
+   <li><strong>अबशर</strong> नागरिकों और निवासियों के लिए सरकार का मुख्य ऑनलाइन सेवा प्लैटफ़ॉर्म है — सरकारी सेवाएँ ऑनलाइन लेने के लिए अपना इक़ामा और फ़ोन नंबर जोड़ें।</li>
+   <li><strong>नफ़ाद</strong> राष्ट्रीय डिजिटल पहचान ऐप है, जिससे बैंक, सरकारी और कई निजी सेवाओं में आपकी पहचान की पुष्टि होती है — इसे जल्दी इंस्टॉल करके सत्यापन पूरा कर लें, क्योंकि अब कई सेवाओं में इसकी ज़रूरत पड़ती है।</li>
+   <li>पैसे भेजने के लिए लाइसेंस वाली मनी-ट्रांसफ़र कंपनियाँ या अपने बैंक का ऐप इस्तेमाल करें — अनौपचारिक एजेंटों से बचें।</li>
+ </ul>`},
+ {k:"iqama", title:"इक़ामा और सरकारी सेवाएँ", sub:"आपका रेज़िडेंसी परमिट, आसान भाषा में", body:`<ul>
+   <li>इक़ामा आपका रेज़िडेंसी आईडी है — इसे हमेशा साथ रखें, सिम कार्ड से लेकर किराये तक लगभग हर काम में इसकी ज़रूरत पड़ती है।</li>
+   <li>आम तौर पर इक़ामा समय पर रिन्यू कराना आपके मालिक की ज़िम्मेदारी है — जुर्माने से बचने के लिए इसकी मियाद खत्म होने से पहले पूछते रहें।</li>
+   <li>मुक़ीम वह ऑनलाइन पोर्टल है जहाँ इक़ामा की स्थिति, एग्ज़िट/री-एंट्री वीज़ा और परिवार के रिकॉर्ड देखे जाते हैं।</li>
+   <li>इक़ामा की मियाद खत्म होने से यात्रा, खाता खोलने या ड्राइविंग लाइसेंस रिन्यू कराने में दिक्कत हो सकती है।</li>
+ </ul>`},
+ {k:"health", title:"इलाज और स्वास्थ्य", sub:"बीमा और इलाज कहाँ कराएँ", body:`<ul>
+   <li>प्राइवेट सेक्टर के मालिकों को आम तौर पर मेडिकल बीमा देना होता है — HR से अपना बीमा कार्ड और नेटवर्क अस्पतालों की सूची माँगें।</li>
+   <li>सरकारी अस्पतालों में गैर-नागरिकों के लिए अलग प्रक्रिया हो सकती है; प्राइवेट क्लिनिक और बीमा-नेटवर्क वाले अस्पताल आम तौर पर आसानी से मिल जाते हैं।</li>
+   <li>अपने बीमा कार्ड और पॉलिसी नंबर की डिजिटल कॉपी फ़ोन में सेव रखें।</li>
+ </ul>`},
+ {k:"emergency", title:"आपातकालीन नंबर", sub:"ये नंबर अभी सेव कर लें", body:`<div class="emergency-grid">
+   <div class="em-item"><div class="num">911</div><div class="lbl">इमरजेंसी (पुलिस)</div></div>
+   <div class="em-item"><div class="num">998</div><div class="lbl">सिविल डिफ़ेंस (आग)</div></div>
+   <div class="em-item"><div class="num">997</div><div class="lbl">एम्बुलेंस (रेड क्रिसेंट)</div></div>
+   <div class="em-item"><div class="num">19911</div><div class="lbl">मानव संसाधन मंत्रालय — श्रम संबंधी पूछताछ</div></div>
+ </div>`},
+ {k:"travel", title:"सफ़र से पहले की चेकलिस्ट", sub:"जो सऊदी आने की तैयारी कर रहे हैं", body:`<ul>
+   <li>हो सके तो सफ़र से पहले अपनी नौकरी के ऑफ़र और कॉन्ट्रैक्ट की शर्तें सीधे क़िवा से जाँच लें।</li>
+   <li>वीज़ा, टिकट और शुरुआती रहने का खर्च कौन देगा — यह लिखित में पक्का कर लें।</li>
+   <li>अपनी भर्ती एजेंसी का लाइसेंस नंबर और अपने मालिक की कंपनी का आधिकारिक नाम सेव कर लें।</li>
+   <li>अपने पासपोर्ट, कॉन्ट्रैक्ट और मेडिकल सर्टिफ़िकेट की डिजिटल और काग़ज़ी कॉपी साथ लाएँ।</li>
+ </ul>`}
+],
+bn: [
+ {k:"labor", title:"শ্রম আইন ও চুক্তি", sub:"আপনার চুক্তিতে কী কী থাকতেই হবে জানুন", body:`<ul>
+   <li>আপনার কাজের চুক্তিতে পদের নাম, বেতন, কাজের সময় ও চুক্তির মেয়াদ লেখা থাকতে হবে — এমন ভাষায় একটি কপি নিন যা আপনি বোঝেন।</li>
+   <li>সাধারণ কাজের সময় দিনে ৮ ঘণ্টা বা সপ্তাহে ৪৮ ঘণ্টা; রমজানে মুসলিম কর্মীদের জন্য কমে যায়।</li>
+   <li>বেশিরভাগ খাতে নিয়োগকর্তা আইনত আপনার পাসপোর্ট নিজের কাছে রাখতে পারেন না — এমন হলে আপনার অধিকার সম্পর্কে জেনে নিন।</li>
+   <li>চাকরি শেষের সুবিধা (গ্র্যাচুইটি) চাকরির বছরের হিসাবে ঠিক হয় — আপনার যোগদানের তারিখ ও বেতন বদলের নিজস্ব রেকর্ড রাখুন।</li>
+ </ul>`},
+ {k:"qiwa", title:"কিওয়া প্ল্যাটফর্ম", sub:"সৌদি আরবের শ্রম সেবার পোর্টাল", body:`<ul>
+   <li>কিওয়া হলো কাজের চুক্তি, বদলি ও শ্রম অভিযোগের সরকারি প্ল্যাটফর্ম — অ্যাপ বা ওয়েবসাইট দুটোতেই পাওয়া যায়।</li>
+   <li>নিয়োগকর্তা চুক্তি নিবন্ধন করলে আপনি কিওয়াতে নিজের চুক্তির বিবরণ দেখতে ও নিশ্চিত করতে পারবেন।</li>
+   <li>চাকরি/নিয়োগকর্তা বদলের আবেদন এবং বকেয়া বেতনের অভিযোগ — দুটোই কিওয়া থেকে শুরু করা যায়।</li>
+   <li>চুক্তির অবস্থা জানতে দালালের কথায় নয়, সবসময় সরাসরি কিওয়াতে দেখুন।</li>
+ </ul>`},
+ {k:"bank", title:"ব্যাংকিং ও টাকা পাঠানো", sub:"অ্যাকাউন্ট খোলা, আবশের ও নাফাদের মূল কথা", body:`<ul>
+   <li>বেশিরভাগ ব্যাংক অ্যাকাউন্ট খুলতে বৈধ ইকামা চায়; কিছু ব্যাংক নতুনদের সীমিত সুবিধার অ্যাকাউন্ট দেয়।</li>
+   <li><strong>আবশের</strong> নাগরিক ও বাসিন্দাদের জন্য সরকারের প্রধান ই-সেবা প্ল্যাটফর্ম — অনলাইনে সরকারি সেবা পেতে আপনার ইকামা ও ফোন নম্বর যুক্ত করুন।</li>
+   <li><strong>নাফাদ</strong> হলো জাতীয় ডিজিটাল পরিচয় অ্যাপ, যা ব্যাংক, সরকারি ও অনেক বেসরকারি সেবায় আপনার পরিচয় যাচাই করে — আগেভাগে ইনস্টল করে যাচাই শেষ করুন, কারণ এখন অনেক সেবায় এটি লাগে।</li>
+   <li>টাকা পাঠাতে লাইসেন্সপ্রাপ্ত মানি ট্রান্সফার প্রতিষ্ঠান বা আপনার ব্যাংকের অ্যাপ ব্যবহার করুন — অনানুষ্ঠানিক এজেন্ট এড়িয়ে চলুন।</li>
+ </ul>`},
+ {k:"iqama", title:"ইকামা ও সরকারি সেবা", sub:"আপনার বসবাসের অনুমতিপত্র, সহজ ভাষায়", body:`<ul>
+   <li>ইকামা আপনার বসবাসের পরিচয়পত্র — সবসময় সাথে রাখুন, সিম কার্ড থেকে বাসা ভাড়া পর্যন্ত প্রায় সব কাজে এটি লাগে।</li>
+   <li>সাধারণত সময়মতো ইকামা নবায়নের দায়িত্ব নিয়োগকর্তার — জরিমানা এড়াতে মেয়াদ শেষ হওয়ার আগেই খোঁজ নিন।</li>
+   <li>মুকিম হলো অনলাইন পোর্টাল, যেখানে ইকামার অবস্থা, এক্সিট/রি-এন্ট্রি ভিসা ও পরিবারের রেকর্ড দেখা যায়।</li>
+   <li>মেয়াদোত্তীর্ণ ইকামায় ভ্রমণ, অ্যাকাউন্ট খোলা বা ড্রাইভিং লাইসেন্স নবায়নে সমস্যা হতে পারে।</li>
+ </ul>`},
+ {k:"health", title:"চিকিৎসা", sub:"বিমা এবং কোথায় চিকিৎসা নেবেন", body:`<ul>
+   <li>বেসরকারি খাতের নিয়োগকর্তাদের সাধারণত মেডিকেল বিমা দিতে হয় — HR-এর কাছে আপনার বিমা কার্ড ও নেটওয়ার্ক হাসপাতালের তালিকা চান।</li>
+   <li>সরকারি হাসপাতালে অ-নাগরিকদের জন্য আলাদা নিয়ম থাকতে পারে; বেসরকারি ক্লিনিক ও বিমা-নেটওয়ার্কের হাসপাতালে সাধারণত সহজে সেবা পাওয়া যায়।</li>
+   <li>আপনার বিমা কার্ড ও পলিসি নম্বরের ডিজিটাল কপি ফোনে সেভ করে রাখুন।</li>
+ </ul>`},
+ {k:"emergency", title:"জরুরি নম্বর", sub:"এই নম্বরগুলো এখনই সেভ করুন", body:`<div class="emergency-grid">
+   <div class="em-item"><div class="num">911</div><div class="lbl">জরুরি (পুলিশ)</div></div>
+   <div class="em-item"><div class="num">998</div><div class="lbl">সিভিল ডিফেন্স (আগুন)</div></div>
+   <div class="em-item"><div class="num">997</div><div class="lbl">অ্যাম্বুলেন্স (রেড ক্রিসেন্ট)</div></div>
+   <div class="em-item"><div class="num">19911</div><div class="lbl">মানবসম্পদ মন্ত্রণালয় — শ্রম বিষয়ক তথ্য</div></div>
+ </div>`},
+ {k:"travel", title:"যাত্রার আগের চেকলিস্ট", sub:"যারা সৌদি আসার প্রস্তুতি নিচ্ছেন", body:`<ul>
+   <li>সম্ভব হলে যাত্রার আগে চাকরির অফার ও চুক্তির শর্ত সরাসরি কিওয়াতে যাচাই করুন।</li>
+   <li>ভিসা, বিমান টিকিট ও শুরুর থাকার খরচ কে দেবে — লিখিতভাবে নিশ্চিত হয়ে নিন।</li>
+   <li>আপনার রিক্রুটিং এজেন্সির লাইসেন্স নম্বর ও নিয়োগকর্তার কোম্পানির সরকারি নাম সেভ করে রাখুন।</li>
+   <li>পাসপোর্ট, চুক্তি ও মেডিকেল সার্টিফিকেটের ডিজিটাল ও কাগজের কপি সাথে আনুন।</li>
+ </ul>`}
 ]
+};
+
+/* ============================= "Looking for work?" content ============================= */
+/* The work page's cards in all five languages. Every rule is from an official government source
+   (the pull request that added the page lists them), and the amounts, phone numbers and links
+   are the same in every language. */
+const workData = {
+en: {
+ legal:{title:"The legal way, step by step", sub:"From job offer to iqama", body:`<ol>
+   <li><strong>A real job offer</strong> from a named employer in Saudi Arabia: a company, or a household for home jobs such as house driver or housemaid.</li>
+   <li><strong>A licensed agent</strong> in your own country. Check the licence on your government's official list before you pay anything.</li>
+   <li><strong>A written contract.</strong> Read it before you travel and keep a copy.</li>
+   <li><strong>A work visa.</strong> You can check an issued visa with the Ministry of Foreign Affairs visa enquiry service. Some skilled trades also need a skills test (Skill Verification Program): ask your agent if yours does.</li>
+   <li><strong>Your country's exit steps</strong>, such as emigration registration and insurance. Choose your country above to see them.</li>
+   <li><strong>After you arrive</strong>, your employer gets your iqama. For company jobs the contract is recorded on Qiwa, and you can accept it, reject it or ask for changes from your own Qiwa account. Home jobs (domestic workers) go through Musaned.</li>
+ </ol>`},
+ signs:{title:"Warning signs of a fake offer", sub:"If you see one, stop and check", body:`<ul>
+   <li>Someone asks you to pay for the visa (a "visa price").</li>
+   <li>A "free visa" or "Azad visa" that lets you work for anyone.</li>
+   <li>A travel agent or a "visa dealer" offers you a job. Only licensed recruitment agents may.</li>
+   <li>You are told to come on a visit, Umrah or Hajj visa and "change it later".</li>
+   <li>No written contract, or a contract different from what you were promised.</li>
+   <li>The agent can't show you a licence number that you can check on the official list.</li>
+   <li>You are told the employer will keep your passport. That is illegal: keep your passport yourself.</li>
+ </ul>`},
+ fees:{title:"Who pays for what", sub:"What the law says", body:`<ul>
+   <li><strong>In Saudi Arabia:</strong> the employer pays the recruitment fees, the iqama and work permit fees and their renewal, and your ticket home when the job ends (Labor Law, Article 40). If you leave the job without a valid reason, you may have to pay your own ticket home.</li>
+   <li><strong>Home jobs:</strong> recruitment offices may not ask a domestic worker for money for recruitment.</li>
+   <li><strong>Pakistan:</strong> the licensed agent's service charge is Rs 15,000, paid into a bank. Other real costs (ticket, medical, visa, documents) only with receipts.</li>
+   <li><strong>India:</strong> the agent's service charge can be at most Rs 30,000 + 18% GST, with a receipt.</li>
+   <li>Always ask for a receipt, and never pay a "visa price".</li>
+ </ul>`},
+ pk:{title:"Steps in Pakistan", sub:"Bureau of Emigration rules", body:`<ol>
+   <li><strong>Use only a licensed OEP</strong> (Overseas Employment Promoter). Only a licensed OEP may arrange a job abroad. Check the licence with the Bureau of Emigration &amp; Overseas Employment (BE&amp;OE). Don't pay a travel agent for a work visa.</li>
+   <li><strong>Service charge: Rs 15,000, paid into a bank.</strong> Don't hand it to the agent in cash. The bank gives you a certificate. The agent gets the money only after you join the job, and you get it back if the job doesn't happen.</li>
+   <li><strong>Other costs only with receipts.</strong> The agent may charge only real costs (air ticket, medical, visa, documents), with numbered receipts.</li>
+   <li><strong>Register with the Protector of Emigrants</strong> before you fly. It is a required step for workers going abroad.</li>
+   <li><strong>Problems with an agent?</strong> Complain to BE&amp;OE.</li>
+ </ol>`},
+ in:{title:"Steps in India", sub:"Ministry of External Affairs rules", body:`<ol>
+   <li><strong>Use only a Recruiting Agent registered on eMigrate.</strong> Check the "List of active RA" on emigrate.gov.in. The licence number must be shown in the agent's office and adverts.</li>
+   <li><strong>Service charge: at most Rs 30,000 + 18% GST,</strong> and the agent must give you a receipt.</li>
+   <li><strong>ECR passport?</strong> If your passport is marked "Emigration Check Required" (ECR), you need emigration clearance through eMigrate before you go to work in Saudi Arabia.</li>
+   <li><strong>Insurance:</strong> ECR workers must take Pravasi Bharatiya Bima Yojana (PBBY): Rs 275 for 2 years or Rs 375 for 3 years, with Rs 10 lakh cover for accidental death or permanent disability.</li>
+   <li><strong>Help:</strong> call the 24x7 helpline 1800 11 3090 (toll-free in India). From Saudi Arabia, you can raise a problem with the Indian Embassy on MADAD.</li>
+ </ol>`},
+ other:{title:"Steps in your country", sub:"Ask your own government first", body:`<ul>
+   <li>Your own government may have rules for working abroad, such as licensed agents, limits on fees and registration before you leave. Ask its labour or emigration office before you pay anyone.</li>
+   <li>The Saudi rules on this page apply to you too: the employer pays the recruitment and iqama fees, and you need a real work visa and a written contract.</li>
+   <li>Sanad has country steps for Pakistan and India for now.</li>
+ </ul>`},
+ links:{title:"Official websites", sub:"Check everything here, not on WhatsApp",
+  sa:`<ul class="work-links">
+   <li><a href="https://www.mofa.gov.sa/en/eservices/Pages/svc89.aspx" target="_blank" rel="noopener">Ministry of Foreign Affairs: check an issued visa</a></li>
+   <li><a href="https://qiwa.sa" target="_blank" rel="noopener">Qiwa: work contracts for company jobs</a></li>
+   <li><a href="https://musaned.gov.sa" target="_blank" rel="noopener">Musaned: home jobs and licensed recruitment offices</a></li>
+   <li><a href="https://www.hrsd.gov.sa/en/knowledge-centre/articles/64434" target="_blank" rel="noopener">Ministry of Human Resources: what the employer pays (Article 40)</a></li>
+   <li>Labour helpline: <a href="tel:19911">19911</a></li>
+ </ul>`,
+  pk:`<ul class="work-links">
+   <li><a href="https://beoe.gov.pk" target="_blank" rel="noopener">Bureau of Emigration &amp; Overseas Employment (BE&amp;OE)</a></li>
+ </ul>`,
+  in:`<ul class="work-links">
+   <li><a href="https://www.emigrate.gov.in/" target="_blank" rel="noopener">eMigrate: registered agents and emigration clearance</a></li>
+   <li><a href="https://www.mea.gov.in/pbby.htm" target="_blank" rel="noopener">PBBY insurance</a></li>
+   <li><a href="https://www.madad.gov.in/madad/" target="_blank" rel="noopener">MADAD: help from the Indian Embassy</a></li>
+   <li>Helpline (toll-free in India): <a href="tel:18001113090">1800 11 3090</a></li>
+ </ul>`}
+},
+ar: {
+ legal:{title:"الطريق النظامي خطوة بخطوة", sub:"من عرض العمل حتى الإقامة", body:`<ol>
+   <li><strong>عرض عمل حقيقي</strong> من صاحب عمل معروف بالاسم في السعودية: شركة، أو أسرة في العمالة المنزلية مثل السائق الخاص أو العاملة المنزلية.</li>
+   <li><strong>وكيل مرخّص</strong> في بلدك. تحقّق من رخصته في القائمة الرسمية لحكومتك قبل أن تدفع أي شيء.</li>
+   <li><strong>عقد مكتوب.</strong> اقرأه قبل السفر واحتفظ بنسخة منه.</li>
+   <li><strong>تأشيرة عمل.</strong> تستطيع الاستعلام عن التأشيرة الصادرة عبر خدمة وزارة الخارجية. بعض المهن الفنية تحتاج أيضًا اختبار مهارات (برنامج الفحص المهني)، فاسأل وكيلك إن كانت مهنتك منها.</li>
+   <li><strong>خطوات الخروج في بلدك</strong> مثل تسجيل الهجرة والتأمين. اختر بلدك في الأعلى لتظهر لك.</li>
+   <li><strong>بعد الوصول</strong> يستخرج صاحب العمل إقامتك. في عمل الشركات يُوثَّق العقد في منصة قوى، وتستطيع قبوله أو رفضه أو طلب تعديله من حسابك في قوى. العمالة المنزلية تتم عبر منصة مساند.</li>
+ </ol>`},
+ signs:{title:"علامات عرض العمل الوهمي", sub:"إذا رأيت واحدة منها، توقّف وتحقّق", body:`<ul>
+   <li>أحد يطلب منك دفع «قيمة الفيزا».</li>
+   <li>«فيزا حرة» تسمح لك بالعمل عند أي أحد.</li>
+   <li>وكيل سفر أو «تاجر فيز» يعرض عليك عملًا. هذا من حق وكلاء الاستقدام المرخّصين فقط.</li>
+   <li>يقولون لك تعال بتأشيرة زيارة أو عمرة أو حج و«نغيّرها بعدين».</li>
+   <li>لا يوجد عقد مكتوب، أو العقد مختلف عمّا وُعدت به.</li>
+   <li>الوكيل لا يستطيع أن يريك رقم رخصة تتحقق منه في القائمة الرسمية.</li>
+   <li>يقولون إن صاحب العمل سيحتفظ بجوازك. هذا غير نظامي: احتفظ بجوازك بنفسك.</li>
+ </ul>`},
+ fees:{title:"من يدفع ماذا", sub:"ماذا يقول النظام", body:`<ul>
+   <li><strong>في السعودية:</strong> يتحمل صاحب العمل رسوم الاستقدام، ورسوم الإقامة ورخصة العمل وتجديدهما، وتذكرة عودتك إلى بلدك عند انتهاء العمل (نظام العمل، المادة ٤٠). إذا تركت العمل دون سبب مشروع قد تتحمل تذكرة عودتك بنفسك.</li>
+   <li><strong>العمالة المنزلية:</strong> لا يجوز لمكاتب الاستقدام طلب أي مال من العامل المنزلي مقابل استقدامه.</li>
+   <li><strong>باكستان:</strong> رسوم خدمة الوكيل المرخّص ١٥٬٠٠٠ روبية تُودَع في البنك. أي تكاليف فعلية أخرى (التذكرة، الفحص الطبي، التأشيرة، الأوراق) بإيصالات فقط.</li>
+   <li><strong>الهند:</strong> رسوم خدمة الوكيل لا تزيد على ٣٠٬٠٠٠ روبية + ضريبة ١٨٪، مع إيصال.</li>
+   <li>اطلب إيصالًا دائمًا، ولا تدفع «قيمة فيزا» أبدًا.</li>
+ </ul>`},
+ pk:{title:"الخطوات في باكستان", sub:"أنظمة مكتب الهجرة والتوظيف الخارجي", body:`<ol>
+   <li><strong>تعامل فقط مع OEP مرخّص</strong> (مروّج التوظيف الخارجي). وحده يحق له ترتيب عمل في الخارج. تحقّق من الرخصة لدى مكتب الهجرة والتوظيف الخارجي (BE&amp;OE). لا تدفع لوكيل سفر مقابل تأشيرة عمل.</li>
+   <li><strong>رسوم الخدمة ١٥٬٠٠٠ روبية تُدفع في البنك.</strong> لا تسلّمها للوكيل نقدًا. البنك يعطيك شهادة. الوكيل يستلم المبلغ فقط بعد أن تبدأ العمل، وتسترده إذا لم يتم التوظيف.</li>
+   <li><strong>التكاليف الأخرى بإيصالات فقط.</strong> يحق للوكيل أخذ التكاليف الفعلية فقط (تذكرة الطيران، الفحص الطبي، التأشيرة، الأوراق) بإيصالات مرقّمة.</li>
+   <li><strong>سجّل لدى «حامي المهاجرين»</strong> (Protector of Emigrants) قبل السفر. هذه خطوة مطلوبة للعمال المسافرين للخارج.</li>
+   <li><strong>عندك مشكلة مع وكيل؟</strong> قدّم شكوى إلى BE&amp;OE.</li>
+ </ol>`},
+ in:{title:"الخطوات في الهند", sub:"أنظمة وزارة الشؤون الخارجية", body:`<ol>
+   <li><strong>تعامل فقط مع وكيل توظيف مسجّل في eMigrate.</strong> تحقّق من «قائمة الوكلاء النشطين» (List of active RA) في موقع emigrate.gov.in. يجب أن يظهر رقم الرخصة في مكتب الوكيل وإعلاناته.</li>
+   <li><strong>رسوم الخدمة ٣٠٬٠٠٠ روبية كحد أقصى + ضريبة ١٨٪</strong>، ويجب أن يعطيك الوكيل إيصالًا.</li>
+   <li><strong>جوازك ECR؟</strong> إذا كان جوازك مختومًا بعبارة «يتطلب فحص الهجرة» (Emigration Check Required)، تحتاج تصريح هجرة عبر eMigrate قبل السفر للعمل في السعودية.</li>
+   <li><strong>التأمين:</strong> على عمال ECR الاشتراك في تأمين Pravasi Bharatiya Bima Yojana ‏(PBBY): ٢٧٥ روبية لسنتين أو ٣٧٥ روبية لثلاث سنوات، بتغطية ١٠ لاكه روبية (مليون روبية) عند الوفاة أو العجز الدائم بسبب حادث.</li>
+   <li><strong>المساعدة:</strong> الخط الساخن على مدار الساعة 1800 11 3090 (مجاني داخل الهند). ومن السعودية تستطيع رفع مشكلتك للسفارة الهندية عبر منصة MADAD.</li>
+ </ol>`},
+ other:{title:"الخطوات في بلدك", sub:"اسأل حكومة بلدك أولًا", body:`<ul>
+   <li>قد تكون لحكومة بلدك أنظمة للعمل في الخارج، مثل الوكلاء المرخّصين وحدود الرسوم والتسجيل قبل السفر. اسأل مكتب العمل أو الهجرة في بلدك قبل أن تدفع لأي أحد.</li>
+   <li>الأنظمة السعودية في هذه الصفحة تنطبق عليك أيضًا: صاحب العمل يتحمل رسوم الاستقدام والإقامة، وتحتاج تأشيرة عمل حقيقية وعقدًا مكتوبًا.</li>
+   <li>في سند حاليًا خطوات خاصة بباكستان والهند فقط.</li>
+ </ul>`},
+ links:{title:"المواقع الرسمية", sub:"تحقّق من كل شيء هنا، لا عبر الواتساب",
+  sa:`<ul class="work-links">
+   <li><a href="https://www.mofa.gov.sa/en/eservices/Pages/svc89.aspx" target="_blank" rel="noopener">وزارة الخارجية: الاستعلام عن تأشيرة صادرة</a></li>
+   <li><a href="https://qiwa.sa" target="_blank" rel="noopener">قوى: عقود العمل في الشركات</a></li>
+   <li><a href="https://musaned.gov.sa" target="_blank" rel="noopener">مساند: العمالة المنزلية ومكاتب الاستقدام المرخّصة</a></li>
+   <li><a href="https://www.hrsd.gov.sa/en/knowledge-centre/articles/64434" target="_blank" rel="noopener">وزارة الموارد البشرية: ما يتحمله صاحب العمل (المادة ٤٠)</a></li>
+   <li>خط العمل: <a href="tel:19911">19911</a></li>
+ </ul>`,
+  pk:`<ul class="work-links">
+   <li><a href="https://beoe.gov.pk" target="_blank" rel="noopener">مكتب الهجرة والتوظيف الخارجي (BE&amp;OE)</a></li>
+ </ul>`,
+  in:`<ul class="work-links">
+   <li><a href="https://www.emigrate.gov.in/" target="_blank" rel="noopener">eMigrate: الوكلاء المسجّلون وتصريح الهجرة</a></li>
+   <li><a href="https://www.mea.gov.in/pbby.htm" target="_blank" rel="noopener">تأمين PBBY</a></li>
+   <li><a href="https://www.madad.gov.in/madad/" target="_blank" rel="noopener">MADAD: مساعدة السفارة الهندية</a></li>
+   <li>الخط الساخن (مجاني داخل الهند): <a href="tel:18001113090">1800 11 3090</a></li>
+ </ul>`}
+},
+ur: {
+ legal:{title:"قانونی طریقہ، قدم بہ قدم", sub:"نوکری کی پیشکش سے اقامہ تک", body:`<ol>
+   <li><strong>اصل نوکری کی پیشکش</strong> سعودی عرب میں کسی نام سے معلوم آجر کی طرف سے: کوئی کمپنی، یا گھریلو کام (جیسے ہاؤس ڈرائیور یا گھریلو ملازمہ) کے لیے کوئی گھرانہ۔</li>
+   <li><strong>لائسنس یافتہ ایجنٹ</strong> آپ کے اپنے ملک میں۔ کچھ بھی ادا کرنے سے پہلے اپنی حکومت کی سرکاری فہرست میں اس کا لائسنس چیک کریں۔</li>
+   <li><strong>تحریری معاہدہ۔</strong> سفر سے پہلے پڑھیں اور اس کی کاپی رکھیں۔</li>
+   <li><strong>ورک ویزا۔</strong> جاری شدہ ویزا وزارتِ خارجہ کی ویزا انکوائری سروس سے چیک کیا جا سکتا ہے۔ کچھ ہنرمند پیشوں کے لیے مہارت کا ٹیسٹ (اسکل ویریفکیشن پروگرام) بھی ضروری ہے: اپنے ایجنٹ سے پوچھیں کہ کیا آپ کا پیشہ اس میں شامل ہے۔</li>
+   <li><strong>اپنے ملک سے روانگی کے مراحل</strong>، جیسے امیگریشن رجسٹریشن اور انشورنس۔ دیکھنے کے لیے اوپر اپنا ملک چنیں۔</li>
+   <li><strong>پہنچنے کے بعد</strong> آجر آپ کا اقامہ بنواتا ہے۔ کمپنی کی نوکری میں معاہدہ قویٰ پر درج ہوتا ہے، اور آپ اپنے قویٰ اکاؤنٹ سے اسے قبول یا مسترد کر سکتے ہیں یا تبدیلی کی درخواست دے سکتے ہیں۔ گھریلو ملازمتیں مساند کے ذریعے ہوتی ہیں۔</li>
+ </ol>`},
+ signs:{title:"جعلی نوکری کی پیشکش کی نشانیاں", sub:"ان میں سے کوئی بھی دکھے تو رک کر تصدیق کریں", body:`<ul>
+   <li>کوئی آپ سے ویزے کی قیمت مانگے۔</li>
+   <li>"آزاد ویزا" جس پر کسی کے پاس بھی کام کیا جا سکے۔</li>
+   <li>ٹریول ایجنٹ یا "ویزا ڈیلر" نوکری کی پیشکش کرے۔ یہ صرف لائسنس یافتہ ریکروٹمنٹ ایجنٹ کر سکتے ہیں۔</li>
+   <li>کہا جائے کہ وزٹ، عمرہ یا حج ویزا پر آ جاؤ اور "بعد میں بدل دیں گے"۔</li>
+   <li>کوئی تحریری معاہدہ نہیں، یا معاہدہ وعدے سے مختلف ہے۔</li>
+   <li>ایجنٹ ایسا لائسنس نمبر نہ دکھا سکے جسے آپ سرکاری فہرست میں چیک کر سکیں۔</li>
+   <li>کہا جائے کہ آجر آپ کا پاسپورٹ اپنے پاس رکھے گا۔ یہ غیر قانونی ہے: اپنا پاسپورٹ خود رکھیں۔</li>
+ </ul>`},
+ fees:{title:"کون کس چیز کا خرچ دیتا ہے", sub:"قانون کیا کہتا ہے", body:`<ul>
+   <li><strong>سعودی عرب میں:</strong> بھرتی کی فیس، اقامہ اور ورک پرمٹ کی فیس اور ان کی تجدید، اور نوکری ختم ہونے پر آپ کا واپسی کا ٹکٹ آجر دیتا ہے (لیبر قانون، آرٹیکل 40)۔ اگر آپ بغیر جائز وجہ کے نوکری چھوڑیں تو واپسی کا ٹکٹ خود دینا پڑ سکتا ہے۔</li>
+   <li><strong>گھریلو ملازمتیں:</strong> ریکروٹمنٹ دفاتر گھریلو ملازم سے بھرتی کے بدلے پیسے نہیں مانگ سکتے۔</li>
+   <li><strong>پاکستان:</strong> لائسنس یافتہ ایجنٹ کا سروس چارج 15,000 روپے ہے جو بینک میں جمع ہوتا ہے۔ باقی اصل اخراجات (ٹکٹ، میڈیکل، ویزا، کاغذات) صرف رسید کے ساتھ۔</li>
+   <li><strong>بھارت:</strong> ایجنٹ کا سروس چارج زیادہ سے زیادہ 30,000 روپے + 18% GST، رسید کے ساتھ۔</li>
+   <li>ہمیشہ رسید مانگیں، اور کبھی "ویزے کی قیمت" نہ دیں۔</li>
+ </ul>`},
+ pk:{title:"پاکستان میں مراحل", sub:"بیورو آف امیگریشن کے قواعد", body:`<ol>
+   <li><strong>صرف لائسنس یافتہ OEP سے کام کروائیں</strong> (اوورسیز ایمپلائمنٹ پروموٹر)۔ بیرون ملک نوکری صرف لائسنس یافتہ OEP دلوا سکتا ہے۔ لائسنس بیورو آف امیگریشن اینڈ اوورسیز ایمپلائمنٹ (BE&amp;OE) سے چیک کریں۔ ورک ویزے کے لیے ٹریول ایجنٹ کو پیسے نہ دیں۔</li>
+   <li><strong>سروس چارج: 15,000 روپے، بینک کے ذریعے۔</strong> ایجنٹ کو نقد نہ دیں۔ بینک آپ کو سرٹیفکیٹ دیتا ہے۔ ایجنٹ کو یہ رقم آپ کے نوکری شروع کرنے کے بعد ہی ملتی ہے، اور نوکری نہ ہونے پر آپ کو واپس ملتی ہے۔</li>
+   <li><strong>باقی اخراجات صرف رسید کے ساتھ۔</strong> ایجنٹ صرف اصل اخراجات (ہوائی ٹکٹ، میڈیکل، ویزا، کاغذات) نمبر والی رسیدوں کے ساتھ لے سکتا ہے۔</li>
+   <li><strong>روانگی سے پہلے پروٹیکٹر آف ایمیگرنٹس کے دفتر میں رجسٹریشن</strong> کروائیں۔ بیرون ملک جانے والے ورکرز کے لیے یہ ضروری مرحلہ ہے۔</li>
+   <li><strong>ایجنٹ سے مسئلہ ہے؟</strong> BE&amp;OE میں شکایت درج کروائیں۔</li>
+ </ol>`},
+ in:{title:"بھارت میں مراحل", sub:"وزارتِ خارجہ کے قواعد", body:`<ol>
+   <li><strong>صرف eMigrate پر رجسٹرڈ ریکروٹنگ ایجنٹ سے کام کروائیں۔</strong> emigrate.gov.in پر "List of active RA" میں چیک کریں۔ لائسنس نمبر ایجنٹ کے دفتر اور اشتہارات میں نظر آنا ضروری ہے۔</li>
+   <li><strong>سروس چارج: زیادہ سے زیادہ 30,000 روپے + 18% GST</strong>، اور ایجنٹ کو رسید دینی ہوگی۔</li>
+   <li><strong>ECR پاسپورٹ؟</strong> اگر آپ کے پاسپورٹ پر "Emigration Check Required" (ECR) لکھا ہے تو سعودی عرب کام کے لیے جانے سے پہلے eMigrate کے ذریعے امیگریشن کلیئرنس لینی ہوگی۔</li>
+   <li><strong>انشورنس:</strong> ECR ورکرز کے لیے پرواسی بھارتیہ بیمہ یوجنا (PBBY) ضروری ہے: 2 سال کے لیے 275 روپے یا 3 سال کے لیے 375 روپے، حادثاتی موت یا مستقل معذوری پر 10 لاکھ روپے کا کور۔</li>
+   <li><strong>مدد:</strong> 24 گھنٹے ہیلپ لائن 1800 11 3090 (بھارت میں مفت)۔ سعودی عرب سے آپ MADAD کے ذریعے بھارتی سفارت خانے تک اپنا مسئلہ پہنچا سکتے ہیں۔</li>
+ </ol>`},
+ other:{title:"آپ کے ملک میں مراحل", sub:"پہلے اپنی حکومت سے پوچھیں", body:`<ul>
+   <li>آپ کی حکومت کے بیرون ملک کام کے لیے قواعد ہو سکتے ہیں، جیسے لائسنس یافتہ ایجنٹ، فیس کی حد اور روانگی سے پہلے رجسٹریشن۔ کسی کو پیسے دینے سے پہلے اپنے ملک کے لیبر یا امیگریشن دفتر سے پوچھیں۔</li>
+   <li>اس صفحے کے سعودی قواعد آپ پر بھی لاگو ہوتے ہیں: بھرتی اور اقامہ کی فیس آجر دیتا ہے، اور آپ کو اصل ورک ویزا اور تحریری معاہدہ چاہیے۔</li>
+   <li>سند پر فی الحال صرف پاکستان اور بھارت کے مراحل موجود ہیں۔</li>
+ </ul>`},
+ links:{title:"سرکاری ویب سائٹس", sub:"ہر چیز یہاں چیک کریں، واٹس ایپ پر نہیں",
+  sa:`<ul class="work-links">
+   <li><a href="https://www.mofa.gov.sa/en/eservices/Pages/svc89.aspx" target="_blank" rel="noopener">وزارتِ خارجہ: جاری شدہ ویزا چیک کریں</a></li>
+   <li><a href="https://qiwa.sa" target="_blank" rel="noopener">قویٰ: کمپنی کی نوکریوں کے معاہدے</a></li>
+   <li><a href="https://musaned.gov.sa" target="_blank" rel="noopener">مساند: گھریلو ملازمتیں اور لائسنس یافتہ ریکروٹمنٹ دفاتر</a></li>
+   <li><a href="https://www.hrsd.gov.sa/en/knowledge-centre/articles/64434" target="_blank" rel="noopener">وزارتِ انسانی وسائل: آجر کیا خرچ دیتا ہے (آرٹیکل 40)</a></li>
+   <li>لیبر ہیلپ لائن: <a href="tel:19911">19911</a></li>
+ </ul>`,
+  pk:`<ul class="work-links">
+   <li><a href="https://beoe.gov.pk" target="_blank" rel="noopener">بیورو آف امیگریشن اینڈ اوورسیز ایمپلائمنٹ (BE&amp;OE)</a></li>
+ </ul>`,
+  in:`<ul class="work-links">
+   <li><a href="https://www.emigrate.gov.in/" target="_blank" rel="noopener">eMigrate: رجسٹرڈ ایجنٹ اور امیگریشن کلیئرنس</a></li>
+   <li><a href="https://www.mea.gov.in/pbby.htm" target="_blank" rel="noopener">PBBY انشورنس</a></li>
+   <li><a href="https://www.madad.gov.in/madad/" target="_blank" rel="noopener">MADAD: بھارتی سفارت خانے سے مدد</a></li>
+   <li>ہیلپ لائن (بھارت میں مفت): <a href="tel:18001113090">1800 11 3090</a></li>
+ </ul>`}
+},
+hi: {
+ legal:{title:"क़ानूनी रास्ता, कदम दर कदम", sub:"नौकरी के ऑफ़र से इक़ामा तक", body:`<ol>
+   <li><strong>असली नौकरी का ऑफ़र</strong> सऊदी अरब के किसी नाम से पता मालिक से: कोई कंपनी, या घरेलू काम (जैसे हाउस ड्राइवर या घरेलू कामगार) के लिए कोई परिवार।</li>
+   <li><strong>लाइसेंस वाला एजेंट</strong> आपके अपने देश में। कुछ भी देने से पहले अपनी सरकार की सरकारी सूची में उसका लाइसेंस जाँचें।</li>
+   <li><strong>लिखा हुआ कॉन्ट्रैक्ट।</strong> सफ़र से पहले पढ़ें और उसकी कॉपी रखें।</li>
+   <li><strong>वर्क वीज़ा।</strong> जारी हुआ वीज़ा सऊदी विदेश मंत्रालय की वीज़ा जाँच सेवा पर देखा जा सकता है। कुछ हुनर वाले कामों के लिए स्किल टेस्ट (स्किल वेरिफ़िकेशन प्रोग्राम) भी ज़रूरी है: अपने एजेंट से पूछें कि क्या आपका काम इसमें आता है।</li>
+   <li><strong>अपने देश से निकलने के कदम</strong>, जैसे इमिग्रेशन रजिस्ट्रेशन और बीमा। देखने के लिए ऊपर अपना देश चुनें।</li>
+   <li><strong>पहुँचने के बाद</strong> मालिक आपका इक़ामा बनवाता है। कंपनी की नौकरी में कॉन्ट्रैक्ट क़िवा पर दर्ज होता है, और आप अपने क़िवा अकाउंट से उसे मंज़ूर या नामंज़ूर कर सकते हैं या बदलाव माँग सकते हैं। घरेलू काम मुसानेद के ज़रिए होते हैं।</li>
+ </ol>`},
+ signs:{title:"नकली नौकरी के ऑफ़र की निशानियाँ", sub:"इनमें से कोई भी दिखे तो रुककर जाँचें", body:`<ul>
+   <li>कोई आपसे वीज़ा की क़ीमत माँगे।</li>
+   <li>"आज़ाद वीज़ा" या "फ़्री वीज़ा" जिस पर किसी के भी पास काम किया जा सके।</li>
+   <li>ट्रैवल एजेंट या "वीज़ा डीलर" नौकरी का ऑफ़र दे। यह सिर्फ़ लाइसेंस वाले भर्ती एजेंट कर सकते हैं।</li>
+   <li>कहा जाए कि विज़िट, उमरा या हज वीज़ा पर आ जाओ और "बाद में बदल देंगे"।</li>
+   <li>कोई लिखा हुआ कॉन्ट्रैक्ट नहीं, या कॉन्ट्रैक्ट वादे से अलग है।</li>
+   <li>एजेंट ऐसा लाइसेंस नंबर न दिखा पाए जिसे आप सरकारी सूची में जाँच सकें।</li>
+   <li>कहा जाए कि मालिक आपका पासपोर्ट अपने पास रखेगा। यह ग़ैरक़ानूनी है: अपना पासपोर्ट ख़ुद रखें।</li>
+ </ul>`},
+ fees:{title:"कौन किस चीज़ का ख़र्च देता है", sub:"क़ानून क्या कहता है", body:`<ul>
+   <li><strong>सऊदी अरब में:</strong> भर्ती की फ़ीस, इक़ामा और वर्क परमिट की फ़ीस और उनका नवीनीकरण, और नौकरी ख़त्म होने पर आपका वापसी का टिकट मालिक देता है (श्रम क़ानून, अनुच्छेद 40)। अगर आप बिना जायज़ वजह के नौकरी छोड़ते हैं, तो वापसी का टिकट ख़ुद देना पड़ सकता है।</li>
+   <li><strong>घरेलू काम:</strong> भर्ती दफ़्तर घरेलू कामगार से भर्ती के बदले पैसे नहीं माँग सकते।</li>
+   <li><strong>पाकिस्तान:</strong> लाइसेंस वाले एजेंट का सर्विस चार्ज 15,000 रुपये है, जो बैंक में जमा होता है। बाक़ी असली ख़र्च (टिकट, मेडिकल, वीज़ा, काग़ज़ात) सिर्फ़ रसीद के साथ।</li>
+   <li><strong>भारत:</strong> एजेंट का सर्विस चार्ज ज़्यादा से ज़्यादा 30,000 रुपये + 18% GST, रसीद के साथ।</li>
+   <li>हमेशा रसीद माँगें, और कभी "वीज़ा की क़ीमत" न दें।</li>
+ </ul>`},
+ pk:{title:"पाकिस्तान में कदम", sub:"ब्यूरो ऑफ़ इमिग्रेशन के नियम", body:`<ol>
+   <li><strong>सिर्फ़ लाइसेंस वाले OEP से काम करवाएँ</strong> (ओवरसीज़ एम्प्लॉयमेंट प्रमोटर)। विदेश में नौकरी सिर्फ़ लाइसेंस वाला OEP दिला सकता है। लाइसेंस ब्यूरो ऑफ़ इमिग्रेशन एंड ओवरसीज़ एम्प्लॉयमेंट (BE&amp;OE) से जाँचें। वर्क वीज़ा के लिए ट्रैवल एजेंट को पैसे न दें।</li>
+   <li><strong>सर्विस चार्ज: 15,000 रुपये, बैंक के ज़रिए।</strong> एजेंट को नक़द न दें। बैंक आपको सर्टिफ़िकेट देता है। एजेंट को यह रक़म आपके नौकरी शुरू करने के बाद ही मिलती है, और नौकरी न होने पर आपको वापस मिलती है।</li>
+   <li><strong>बाक़ी ख़र्च सिर्फ़ रसीद के साथ।</strong> एजेंट सिर्फ़ असली ख़र्च (हवाई टिकट, मेडिकल, वीज़ा, काग़ज़ात) नंबर वाली रसीदों के साथ ले सकता है।</li>
+   <li><strong>रवाना होने से पहले प्रोटेक्टर ऑफ़ एमिग्रेंट्स के दफ़्तर में रजिस्ट्रेशन</strong> करवाएँ। विदेश जाने वाले कामगारों के लिए यह ज़रूरी कदम है।</li>
+   <li><strong>एजेंट से कोई परेशानी?</strong> BE&amp;OE में शिकायत करें।</li>
+ </ol>`},
+ in:{title:"भारत में कदम", sub:"विदेश मंत्रालय (MEA) के नियम", body:`<ol>
+   <li><strong>सिर्फ़ eMigrate पर रजिस्टर्ड रिक्रूटिंग एजेंट से काम करवाएँ।</strong> emigrate.gov.in पर "List of active RA" में जाँचें। लाइसेंस नंबर एजेंट के दफ़्तर और विज्ञापनों में दिखना ज़रूरी है।</li>
+   <li><strong>सर्विस चार्ज: ज़्यादा से ज़्यादा 30,000 रुपये + 18% GST</strong>, और एजेंट को रसीद देनी होगी।</li>
+   <li><strong>ECR पासपोर्ट?</strong> अगर आपके पासपोर्ट पर "Emigration Check Required" (ECR) लिखा है, तो सऊदी अरब काम पर जाने से पहले eMigrate से इमिग्रेशन क्लियरेंस लेनी होगी।</li>
+   <li><strong>बीमा:</strong> ECR कामगारों के लिए प्रवासी भारतीय बीमा योजना (PBBY) ज़रूरी है: 2 साल के लिए 275 रुपये या 3 साल के लिए 375 रुपये, दुर्घटना में मौत या स्थायी विकलांगता पर 10 लाख रुपये का कवर।</li>
+   <li><strong>मदद:</strong> 24x7 हेल्पलाइन 1800 11 3090 (भारत में मुफ़्त)। सऊदी अरब से आप MADAD पर भारतीय दूतावास तक अपनी समस्या पहुँचा सकते हैं।</li>
+ </ol>`},
+ other:{title:"आपके देश में कदम", sub:"पहले अपनी सरकार से पूछें", body:`<ul>
+   <li>आपकी सरकार के विदेश में काम के लिए नियम हो सकते हैं, जैसे लाइसेंस वाले एजेंट, फ़ीस की सीमा और रवाना होने से पहले रजिस्ट्रेशन। किसी को पैसे देने से पहले अपने देश के श्रम या इमिग्रेशन दफ़्तर से पूछें।</li>
+   <li>इस पेज के सऊदी नियम आप पर भी लागू होते हैं: भर्ती और इक़ामा की फ़ीस मालिक देता है, और आपको असली वर्क वीज़ा और लिखा हुआ कॉन्ट्रैक्ट चाहिए।</li>
+   <li>सनद पर अभी सिर्फ़ पाकिस्तान और भारत के कदम हैं।</li>
+ </ul>`},
+ links:{title:"सरकारी वेबसाइटें", sub:"सब कुछ यहीं जाँचें, व्हाट्सऐप पर नहीं",
+  sa:`<ul class="work-links">
+   <li><a href="https://www.mofa.gov.sa/en/eservices/Pages/svc89.aspx" target="_blank" rel="noopener">सऊदी विदेश मंत्रालय: जारी हुआ वीज़ा जाँचें</a></li>
+   <li><a href="https://qiwa.sa" target="_blank" rel="noopener">क़िवा: कंपनी की नौकरियों के कॉन्ट्रैक्ट</a></li>
+   <li><a href="https://musaned.gov.sa" target="_blank" rel="noopener">मुसानेद: घरेलू काम और लाइसेंस वाले भर्ती दफ़्तर</a></li>
+   <li><a href="https://www.hrsd.gov.sa/en/knowledge-centre/articles/64434" target="_blank" rel="noopener">मानव संसाधन मंत्रालय: मालिक क्या ख़र्च देता है (अनुच्छेद 40)</a></li>
+   <li>श्रम हेल्पलाइन: <a href="tel:19911">19911</a></li>
+ </ul>`,
+  pk:`<ul class="work-links">
+   <li><a href="https://beoe.gov.pk" target="_blank" rel="noopener">ब्यूरो ऑफ़ इमिग्रेशन एंड ओवरसीज़ एम्प्लॉयमेंट (BE&amp;OE)</a></li>
+ </ul>`,
+  in:`<ul class="work-links">
+   <li><a href="https://www.emigrate.gov.in/" target="_blank" rel="noopener">eMigrate: रजिस्टर्ड एजेंट और इमिग्रेशन क्लियरेंस</a></li>
+   <li><a href="https://www.mea.gov.in/pbby.htm" target="_blank" rel="noopener">PBBY बीमा</a></li>
+   <li><a href="https://www.madad.gov.in/madad/" target="_blank" rel="noopener">MADAD: भारतीय दूतावास से मदद</a></li>
+   <li>हेल्पलाइन (भारत में मुफ़्त): <a href="tel:18001113090">1800 11 3090</a></li>
+ </ul>`}
+},
+bn: {
+ legal:{title:"আইনি পথ, ধাপে ধাপে", sub:"চাকরির অফার থেকে ইকামা পর্যন্ত", body:`<ol>
+   <li><strong>আসল চাকরির অফার</strong>, সৌদি আরবের নাম-জানা নিয়োগকর্তার কাছ থেকে: কোনো কোম্পানি, অথবা ঘরের কাজের (যেমন হাউস ড্রাইভার বা গৃহকর্মী) জন্য কোনো পরিবার।</li>
+   <li><strong>লাইসেন্সধারী এজেন্ট</strong>, আপনার নিজের দেশে। কিছু দেওয়ার আগে আপনার সরকারের সরকারি তালিকায় তার লাইসেন্স যাচাই করুন।</li>
+   <li><strong>লিখিত চুক্তি।</strong> যাওয়ার আগে পড়ুন এবং একটি কপি রাখুন।</li>
+   <li><strong>ওয়ার্ক ভিসা।</strong> ইস্যু হওয়া ভিসা সৌদি পররাষ্ট্র মন্ত্রণালয়ের ভিসা যাচাই সেবায় দেখা যায়। কিছু দক্ষ পেশার জন্য দক্ষতা পরীক্ষাও (স্কিল ভেরিফিকেশন প্রোগ্রাম) লাগে: আপনার পেশা এর মধ্যে পড়ে কি না, এজেন্টকে জিজ্ঞেস করুন।</li>
+   <li><strong>নিজের দেশ থেকে বের হওয়ার ধাপ</strong>, যেমন অভিবাসন নিবন্ধন ও বিমা। দেখতে উপরে আপনার দেশ বেছে নিন।</li>
+   <li><strong>পৌঁছানোর পর</strong> নিয়োগকর্তা আপনার ইকামা করিয়ে দেন। কোম্পানির চাকরিতে চুক্তি কিওয়াতে নথিভুক্ত হয়, আর আপনি নিজের কিওয়া অ্যাকাউন্ট থেকে তা গ্রহণ, প্রত্যাখ্যান বা পরিবর্তনের অনুরোধ করতে পারেন। ঘরের কাজ মুসানেদের মাধ্যমে হয়।</li>
+ </ol>`},
+ signs:{title:"ভুয়া চাকরির অফারের লক্ষণ", sub:"এর কোনোটা দেখলে থামুন ও যাচাই করুন", body:`<ul>
+   <li>কেউ আপনার কাছে ভিসার দাম চায়।</li>
+   <li>"ফ্রি ভিসা" বা "আজাদ ভিসা", যাতে যে কারো কাছে কাজ করা যায়।</li>
+   <li>ট্রাভেল এজেন্ট বা "ভিসা দালাল" চাকরির অফার দেয়। এটা শুধু লাইসেন্সধারী রিক্রুটিং এজেন্টরা পারেন।</li>
+   <li>বলা হয় ভিজিট, উমরাহ বা হজ ভিসায় চলে আসুন, "পরে বদলে দেব"।</li>
+   <li>কোনো লিখিত চুক্তি নেই, অথবা চুক্তি প্রতিশ্রুতির চেয়ে আলাদা।</li>
+   <li>এজেন্ট এমন লাইসেন্স নম্বর দেখাতে পারেন না, যা সরকারি তালিকায় যাচাই করা যায়।</li>
+   <li>বলা হয় নিয়োগকর্তা আপনার পাসপোর্ট নিজের কাছে রাখবেন। এটা বেআইনি: নিজের পাসপোর্ট নিজের কাছে রাখুন।</li>
+ </ul>`},
+ fees:{title:"কে কোন খরচ দেন", sub:"আইন কী বলে", body:`<ul>
+   <li><strong>সৌদি আরবে:</strong> নিয়োগ ফি, ইকামা ও ওয়ার্ক পারমিটের ফি এবং সেগুলোর নবায়ন, আর চাকরি শেষে আপনার দেশে ফেরার টিকিট নিয়োগকর্তা দেন (শ্রম আইন, ধারা ৪০)। বৈধ কারণ ছাড়া চাকরি ছাড়লে ফেরার টিকিট নিজেকে দিতে হতে পারে।</li>
+   <li><strong>ঘরের কাজ:</strong> রিক্রুটিং অফিস গৃহকর্মীর কাছে নিয়োগের বিনিময়ে টাকা চাইতে পারে না।</li>
+   <li><strong>পাকিস্তান:</strong> লাইসেন্সধারী এজেন্টের সার্ভিস চার্জ ১৫,০০০ রুপি, যা ব্যাংকে জমা হয়। বাকি আসল খরচ (টিকিট, মেডিকেল, ভিসা, কাগজপত্র) শুধু রসিদসহ।</li>
+   <li><strong>ভারত:</strong> এজেন্টের সার্ভিস চার্জ সর্বোচ্চ ৩০,০০০ রুপি + ১৮% জিএসটি, রসিদসহ।</li>
+   <li>সবসময় রসিদ চাইবেন, আর কখনো "ভিসার দাম" দেবেন না।</li>
+ </ul>`},
+ pk:{title:"পাকিস্তানের ধাপ", sub:"ব্যুরো অব ইমিগ্রেশনের নিয়ম", body:`<ol>
+   <li><strong>শুধু লাইসেন্সধারী OEP-র মাধ্যমে যান</strong> (ওভারসিজ এমপ্লয়মেন্ট প্রমোটার)। বিদেশে চাকরি শুধু লাইসেন্সধারী OEP-ই দিতে পারে। লাইসেন্স ব্যুরো অব ইমিগ্রেশন অ্যান্ড ওভারসিজ এমপ্লয়মেন্ট (BE&amp;OE)-এ যাচাই করুন। ওয়ার্ক ভিসার জন্য ট্রাভেল এজেন্টকে টাকা দেবেন না।</li>
+   <li><strong>সার্ভিস চার্জ: ১৫,০০০ রুপি, ব্যাংকের মাধ্যমে।</strong> এজেন্টকে নগদ দেবেন না। ব্যাংক আপনাকে একটি সার্টিফিকেট দেয়। আপনি কাজে যোগ দেওয়ার পরেই এজেন্ট এই টাকা পায়, আর চাকরি না হলে আপনি টাকা ফেরত পান।</li>
+   <li><strong>অন্য খরচ শুধু রসিদসহ।</strong> এজেন্ট শুধু আসল খরচ (বিমান টিকিট, মেডিকেল, ভিসা, কাগজপত্র) নম্বরযুক্ত রসিদসহ নিতে পারে।</li>
+   <li><strong>রওনা হওয়ার আগে প্রোটেক্টর অব এমিগ্র্যান্টস অফিসে নিবন্ধন</strong> করুন। বিদেশগামী কর্মীদের জন্য এটি একটি বাধ্যতামূলক ধাপ।</li>
+   <li><strong>এজেন্টের সাথে সমস্যা?</strong> BE&amp;OE-তে অভিযোগ করুন।</li>
+ </ol>`},
+ in:{title:"ভারতের ধাপ", sub:"বিদেশ মন্ত্রকের (MEA) নিয়ম", body:`<ol>
+   <li><strong>শুধু eMigrate-এ নিবন্ধিত রিক্রুটিং এজেন্টের মাধ্যমে যান।</strong> emigrate.gov.in-এ "List of active RA" দেখে যাচাই করুন। এজেন্টের অফিস ও বিজ্ঞাপনে লাইসেন্স নম্বর দেখানো বাধ্যতামূলক।</li>
+   <li><strong>সার্ভিস চার্জ: সর্বোচ্চ ৩০,০০০ রুপি + ১৮% জিএসটি</strong>, আর এজেন্টকে রসিদ দিতেই হবে।</li>
+   <li><strong>ECR পাসপোর্ট?</strong> আপনার পাসপোর্টে "Emigration Check Required" (ECR) লেখা থাকলে সৌদি আরবে কাজে যাওয়ার আগে eMigrate-এর মাধ্যমে ইমিগ্রেশন ক্লিয়ারেন্স নিতে হবে।</li>
+   <li><strong>বিমা:</strong> ECR কর্মীদের জন্য প্রবাসী ভারতীয় বিমা যোজনা (PBBY) বাধ্যতামূলক: ২ বছরের জন্য ২৭৫ রুপি বা ৩ বছরের জন্য ৩৭৫ রুপি, দুর্ঘটনায় মৃত্যু বা স্থায়ী অক্ষমতায় ১০ লাখ রুপির কভার।</li>
+   <li><strong>সাহায্য:</strong> ২৪ ঘণ্টার হেল্পলাইন 1800 11 3090 (ভারতে বিনামূল্যে)। সৌদি আরব থেকে MADAD-এর মাধ্যমে ভারতীয় দূতাবাসে সমস্যা জানাতে পারেন।</li>
+ </ol>`},
+ other:{title:"আপনার দেশের ধাপ", sub:"আগে নিজের সরকারকে জিজ্ঞেস করুন", body:`<ul>
+   <li>বিদেশে কাজের জন্য আপনার সরকারের নিয়ম থাকতে পারে, যেমন লাইসেন্সধারী এজেন্ট, ফির সীমা আর রওনার আগে নিবন্ধন। কাউকে টাকা দেওয়ার আগে নিজের দেশের শ্রম বা অভিবাসন অফিসে জিজ্ঞেস করুন।</li>
+   <li>এই পাতার সৌদি নিয়ম আপনার জন্যও প্রযোজ্য: নিয়োগ ও ইকামার ফি নিয়োগকর্তা দেন, আর আপনার দরকার আসল ওয়ার্ক ভিসা ও লিখিত চুক্তি।</li>
+   <li>সনদে এখন শুধু পাকিস্তান ও ভারতের ধাপ আছে।</li>
+ </ul>`},
+ links:{title:"সরকারি ওয়েবসাইট", sub:"সবকিছু এখানে যাচাই করুন, হোয়াটসঅ্যাপে নয়",
+  sa:`<ul class="work-links">
+   <li><a href="https://www.mofa.gov.sa/en/eservices/Pages/svc89.aspx" target="_blank" rel="noopener">সৌদি পররাষ্ট্র মন্ত্রণালয়: ইস্যু হওয়া ভিসা যাচাই</a></li>
+   <li><a href="https://qiwa.sa" target="_blank" rel="noopener">কিওয়া: কোম্পানির চাকরির চুক্তি</a></li>
+   <li><a href="https://musaned.gov.sa" target="_blank" rel="noopener">মুসানেদ: ঘরের কাজ ও লাইসেন্সধারী রিক্রুটিং অফিস</a></li>
+   <li><a href="https://www.hrsd.gov.sa/en/knowledge-centre/articles/64434" target="_blank" rel="noopener">মানবসম্পদ মন্ত্রণালয়: নিয়োগকর্তা কী খরচ দেন (ধারা ৪০)</a></li>
+   <li>শ্রম হেল্পলাইন: <a href="tel:19911">19911</a></li>
+ </ul>`,
+  pk:`<ul class="work-links">
+   <li><a href="https://beoe.gov.pk" target="_blank" rel="noopener">ব্যুরো অব ইমিগ্রেশন অ্যান্ড ওভারসিজ এমপ্লয়মেন্ট (BE&amp;OE)</a></li>
+ </ul>`,
+  in:`<ul class="work-links">
+   <li><a href="https://www.emigrate.gov.in/" target="_blank" rel="noopener">eMigrate: নিবন্ধিত এজেন্ট ও ইমিগ্রেশন ক্লিয়ারেন্স</a></li>
+   <li><a href="https://www.mea.gov.in/pbby.htm" target="_blank" rel="noopener">PBBY বিমা</a></li>
+   <li><a href="https://www.madad.gov.in/madad/" target="_blank" rel="noopener">MADAD: ভারতীয় দূতাবাসের সাহায্য</a></li>
+   <li>হেল্পলাইন (ভারতে বিনামূল্যে): <a href="tel:18001113090">1800 11 3090</a></li>
+ </ul>`}
+}
 };
 
 /* ============================= Housing listings ============================= */
@@ -491,9 +1206,32 @@ function syncThemeToggles(){
   });
 }
 
+/* ============================= Language ============================= */
+/* Arabic and Urdu read right-to-left. The choice is remembered on the device, so a
+   worker who reads Hindi or Bengali doesn't have to find it again on every visit. */
+const LANG_STORAGE_KEY = 'sanad_lang';
+const SUPPORTED_LANGS = ['en','ar','ur','hi','bn'];
+const RTL_LANGS = ['ar','ur'];
+// The closed language switcher shows this; its list shows each language's own name.
+const LANG_SHORT = {en:'EN', ar:'عربي', ur:'اردو', hi:'हिंदी', bn:'বাংলা'};
+
+function savedLang(){
+  try{
+    const saved = localStorage.getItem(LANG_STORAGE_KEY);
+    return SUPPORTED_LANGS.includes(saved) ? saved : 'en';
+  } catch(err){ return 'en'; }
+}
+function setLang(lang){
+  if(!SUPPORTED_LANGS.includes(lang)) return;
+  state.lang = lang;
+  try{ localStorage.setItem(LANG_STORAGE_KEY, lang); }
+  catch(err){ /* storage disabled — the language still applies for this visit */ }
+  renderAll();
+}
+
 /* ============================= State & render ============================= */
 let state = {
-  lang:'en', tab:'housing',
+  lang:savedLang(), tab:'housing',
   guideOpen:{},
   filters:{postType:'all', city:'all', budget:'all', nat:'all', gender:'all', roomType:'all'},
   forumCat:'All', openReplies:{}, communitySubTab:'qa',
@@ -560,7 +1298,7 @@ function flagWaInput(input, msgKey){
 
 function applyI18n(){
   document.documentElement.lang = state.lang;
-  document.documentElement.dir = (state.lang==='ar'||state.lang==='ur') ? 'rtl' : 'ltr';
+  document.documentElement.dir = RTL_LANGS.includes(state.lang) ? 'rtl' : 'ltr';
   document.documentElement.setAttribute('data-lang', state.lang);
   document.querySelectorAll('[data-i18n]').forEach(el=>{
     const k = el.getAttribute('data-i18n');
@@ -578,12 +1316,17 @@ function applyI18n(){
     }
   });
   document.querySelectorAll('[data-lang-btn]').forEach(b=>{
-    b.classList.toggle('active', b.getAttribute('data-lang-btn')===state.lang);
+    const on = b.getAttribute('data-lang-btn')===state.lang;
+    b.classList.toggle('active', on);
+    b.setAttribute('aria-pressed', on ? 'true' : 'false');
   });
+  document.querySelectorAll('[data-lang-select]').forEach(s=>{ s.value = state.lang; });
+  document.querySelectorAll('[data-lang-current]').forEach(el=>{ el.textContent = LANG_SHORT[state.lang]; });
   document.title = state.lang==='en' ? "Sanad · سند — Your support system in Saudi Arabia" : translations[state.lang].brandName + " — " + translations[state.lang].brandTag;
 }
 
 function setTab(tab){
+  if(tab !== 'work') leaveWorkUrl();
   state.tab = tab;
   document.querySelectorAll('section.view').forEach(s=>s.classList.remove('active'));
   document.getElementById('view-'+tab).classList.add('active');
@@ -659,18 +1402,349 @@ function renderGuide(){
   });
 }
 
+/* ============================= Looking for work? ============================= */
+/* For workers who are not in Saudi Arabia yet and want to come: the legal way, the warning signs
+   of a fake offer, who pays for what, and their own country's steps (Pakistan and India for now).
+   Every rule here comes from an official government source; the pull request that added this
+   section lists them. Nothing chosen or answered on this page leaves the phone. */
+const VISITOR_STORAGE_KEY = 'sanad_visitor';            // answer to the first-visit question
+const VISITOR_CHOICES = ['in_saudi','abroad','skipped'];
+const WORK_COUNTRY_STORAGE_KEY = 'sanad_work_country';  // country picked on the work page
+const WORK_COUNTRIES = ['pk','in','other'];
+const WORK_HASH = '#work';                               // shareable address of the work page
+
+function readStored(key, allowed){
+  try{
+    const value = localStorage.getItem(key);
+    return allowed.includes(value) ? value : null;
+  } catch(err){ return null; }
+}
+function writeStored(key, value){
+  try{ localStorage.setItem(key, value); }
+  catch(err){ /* storage disabled — the choice still applies for this visit */ }
+}
+
+let visitorChoice = readStored(VISITOR_STORAGE_KEY, VISITOR_CHOICES);
+let workCountry = readStored(WORK_COUNTRY_STORAGE_KEY, WORK_COUNTRIES);
+let workOpen = workCountry ? {[workCountry]:true} : {}; // open cards on the work page; their own country's steps start open
+let workReturnTab = 'housing';  // where the work page's Back button goes
+let workOpenedByPush = false;   // true when Sanad itself added #work to the browser history
+let workLeavingUrl = false;     // set while Sanad steps the history back off #work
+
+const workIcon = paths => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+paths+'</svg>';
+const workIcons = {
+  route:'<path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/>',
+  alert:'<path d="M10.3 4.2L2.6 17.5A2 2 0 0 0 4.3 20.5h15.4a2 2 0 0 0 1.7-3L13.7 4.2a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4M12 17h.01"/>',
+  coins:'<ellipse cx="12" cy="6" rx="7" ry="2.8"/><path d="M5 6v6c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8V6"/><path d="M5 12v6c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8v-6"/>',
+  flag:'<path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/>',
+  link:'<path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1.2 1.2"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1.2-1.2"/>',
+  shield:'<path d="M12 3l8 3.5v5.5c0 4.6-3.4 7.9-8 9-4.6-1.1-8-4.4-8-9V6.5L12 3z"/><path d="M9 12l2.2 2.2L15.5 10"/>',
+  check:'<path d="M5 12.5l4.5 4.5L19 7.5"/>',
+  back:'<path d="M15 18l-6-6 6-6"/>'
+};
+
+/* The offer check: six questions, each answered Yes / No / Not sure. For each question, the
+   answers that are a warning sign and how serious they are: 'danger' means stop before paying
+   anything, 'caution' means check this first. Any other answer is not a warning sign. */
+const OFFER_CHECKS = [
+  {q:'checkQ1', e:'checkE1', risk:{yes:'danger', unsure:'caution'}},   // asked to pay for the visa
+  {q:'checkQ2', e:'checkE2', risk:{yes:'danger', unsure:'caution'}},   // offered a "free visa"
+  {q:'checkQ3', e:'checkE3', risk:{no:'danger', unsure:'caution'}},    // a real work visa
+  {q:'checkQ4', e:'checkE4', risk:{no:'danger', unsure:'caution'}},    // licensed agent
+  {q:'checkQ5', e:'checkE5', risk:{no:'caution', unsure:'caution'}},   // read the written contract
+  {q:'checkQ6', e:'checkE6', risk:{no:'caution', unsure:'caution'}}    // a named employer
+];
+const OFFER_ANSWERS = [['yes','ansYes'], ['no','ansNo'], ['unsure','ansUnsure']];
+let offerStep = 0;      // 0 = intro, 1-6 = that question, 7 = result
+let offerAnswers = [];  // the answer to each question, kept in memory only
+
+/* Numbers inside sentences use the same digits as the rest of the language's text. */
+function localDigits(value){
+  const s = String(value);
+  if(state.lang === 'ar') return s.replace(/[0-9]/g, d=> '٠١٢٣٤٥٦٧٨٩'[d]);
+  if(state.lang === 'bn') return s.replace(/[0-9]/g, d=> '০১২৩৪৫৬৭৮৯'[d]);
+  return s;
+}
+
+/* ---- Work page render ---- */
+function renderWorkPage(){
+  renderWorkCountry();
+  renderOfferCheck();
+  renderWorkCards();
+}
+
+function renderWorkCountry(){
+  document.querySelectorAll('[data-work-country]').forEach(btn=>{
+    const on = btn.getAttribute('data-work-country') === workCountry;
+    btn.classList.toggle('active', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+  document.getElementById('workCountryHint').hidden = !!workCountry;
+}
+
+/* The chosen country's steps come first. Without a choice, the official links for both
+   Pakistan and India are listed, so nobody misses their own country's sites. */
+function renderWorkCards(){
+  const d = workData[state.lang];
+  const linksFor = c=> `<p class="work-links-h">${t(c==='pk' ? 'workCountryPK' : 'workCountryIN')}</p>${d.links[c]}`;
+  const linksBody = `<p class="work-links-h">${t('workSaudiLabel')}</p>${d.links.sa}`
+    + (workCountry !== 'in' && workCountry !== 'other' ? linksFor('pk') : '')
+    + (workCountry !== 'pk' && workCountry !== 'other' ? linksFor('in') : '');
+  const cards = [
+    ...(workCountry ? [{k:workCountry, icon:'flag', tone:'gold', ...d[workCountry]}] : []),
+    {k:'legal', icon:'route', tone:'', ...d.legal},
+    {k:'signs', icon:'alert', tone:'warn', ...d.signs},
+    {k:'fees', icon:'coins', tone:'gold', ...d.fees},
+    {k:'links', icon:'link', tone:'', title:d.links.title, sub:d.links.sub, body:linksBody}
+  ];
+  const grid = document.getElementById('workGrid');
+  grid.innerHTML = cards.map(c=>`
+    <div class="guide-card ${workOpen[c.k]?'open':''}">
+      <button class="guide-head" type="button" data-work-toggle="${c.k}" aria-expanded="${workOpen[c.k]?'true':'false'}" aria-controls="work-card-${c.k}">
+        <div class="ic ${c.tone ? 'ic--'+c.tone : ''}">${workIcon(workIcons[c.icon])}</div>
+        <div class="tt"><h3>${c.title}</h3><span>${c.sub}</span></div>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="guide-body" id="work-card-${c.k}"><div class="guide-body-inner">${c.body}</div></div>
+    </div>
+  `).join('');
+  grid.querySelectorAll('[data-work-toggle]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const k = btn.getAttribute('data-work-toggle');
+      workOpen[k] = !workOpen[k];
+      btn.closest('.guide-card').classList.toggle('open', workOpen[k]);
+      btn.setAttribute('aria-expanded', workOpen[k] ? 'true' : 'false');
+    });
+  });
+}
+
+function renderOfferCheck(){
+  const box = document.getElementById('offerCheck');
+  const total = OFFER_CHECKS.length;
+  if(offerStep === 0){
+    box.innerHTML = `
+      <div class="offer-intro">
+        <div class="offer-ic">${workIcon(workIcons.shield)}</div>
+        <div><h2 tabindex="-1">${t('checkTitle')}</h2><p>${t('checkSub')}</p></div>
+      </div>
+      <button class="btn-primary" type="button" data-offer-start>${t('checkStart')}</button>`;
+    return;
+  }
+  if(offerStep <= total){
+    const item = OFFER_CHECKS[offerStep-1];
+    const chosen = offerAnswers[offerStep-1];
+    box.innerHTML = `
+      <div class="offer-top">
+        <button class="offer-back" type="button" data-offer-back aria-label="${escapeHtml(t('backBtn'))}">${workIcon(workIcons.back)}</button>
+        <p class="offer-progress">${fmt('checkProgress', {n:localDigits(offerStep), total:localDigits(total)})}</p>
+      </div>
+      <div class="offer-bar" aria-hidden="true"><span style="width:${Math.round(offerStep/total*100)}%"></span></div>
+      <h2 class="offer-q" id="offerQuestion" tabindex="-1">${t(item.q)}</h2>
+      <div class="offer-answers" role="group" aria-labelledby="offerQuestion">
+        ${OFFER_ANSWERS.map(([value,key])=>`<button class="offer-answer ${chosen===value?'active':''}" type="button" data-offer-answer="${value}" aria-pressed="${chosen===value?'true':'false'}">${t(key)}</button>`).join('')}
+      </div>`;
+    return;
+  }
+  const answerKey = Object.fromEntries(OFFER_ANSWERS);
+  const flagged = OFFER_CHECKS
+    .map((item,i)=>({item, answer:offerAnswers[i], level:item.risk[offerAnswers[i]]}))
+    .filter(f=> f.level)
+    .sort((a,b)=> (a.level==='danger' ? 0 : 1) - (b.level==='danger' ? 0 : 1));
+  const level = flagged.some(f=> f.level==='danger') ? 'danger' : flagged.length ? 'caution' : 'ok';
+  const copy = {danger:['resultDangerTitle','resultDangerBody'], caution:['resultCautionTitle','resultCautionBody'], ok:['resultOkTitle','resultOkBody']}[level];
+  box.innerHTML = `
+    <div class="offer-result offer-result--${level}">
+      <div class="offer-result-head">
+        <div class="offer-result-ic">${workIcon(workIcons[level==='ok' ? 'check' : 'alert'])}</div>
+        <h2 tabindex="-1">${t(copy[0])}</h2>
+      </div>
+      <p>${t(copy[1])}</p>
+    </div>
+    ${flagged.length ? `
+      <p class="offer-flags-label">${t('resultFlagsLabel')}</p>
+      <ul class="offer-flags">
+        ${flagged.map(f=>`
+          <li class="offer-flag offer-flag--${f.level}">
+            <strong>${t(f.item.q)}</strong>
+            <span class="offer-flag-answer">${fmt('resultYourAnswer', {answer:t(answerKey[f.answer])})}</span>
+            <p>${t(f.item.e)}</p>
+          </li>`).join('')}
+      </ul>` : ''}
+    <button class="offer-again" type="button" data-offer-restart>${t('checkAgain')}</button>`;
+}
+
+/* After each step, focus moves to the new question (or the result) so a screen reader reads it,
+   and the box scrolls back into view when its top has gone above the screen. */
+function focusOfferCheck(){
+  const box = document.getElementById('offerCheck');
+  const heading = box.querySelector('[tabindex="-1"]');
+  if(heading) heading.focus({preventScroll:true});
+  const header = document.querySelector('header.topbar');
+  const headerBottom = header ? header.getBoundingClientRect().bottom : 0;
+  const top = box.getBoundingClientRect().top;
+  if(top < headerBottom) window.scrollTo({top: window.scrollY + top - headerBottom - 12, behavior:'smooth'});
+}
+
+document.getElementById('offerCheck').addEventListener('click', e=>{
+  const btn = e.target.closest('button');
+  if(!btn) return;
+  if(btn.hasAttribute('data-offer-start') || btn.hasAttribute('data-offer-restart')){ offerStep = 1; offerAnswers = []; }
+  else if(btn.hasAttribute('data-offer-answer')){ offerAnswers[offerStep-1] = btn.getAttribute('data-offer-answer'); offerStep++; }
+  else if(btn.hasAttribute('data-offer-back')){ offerStep--; }
+  else return;
+  renderOfferCheck();
+  focusOfferCheck();
+});
+
+document.querySelectorAll('[data-work-country]').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    workCountry = btn.getAttribute('data-work-country');
+    writeStored(WORK_COUNTRY_STORAGE_KEY, workCountry);
+    workOpen[workCountry] = true; // show the country's steps straight away
+    renderWorkCountry();
+    renderWorkCards();
+  });
+});
+
+/* ---- Opening and leaving the work page ----
+   The page has its own address (…/#work) so it can be shared, and the phone's Back button
+   returns to where the worker came from instead of closing Sanad. */
+function openWorkPage(){
+  if(state.tab !== 'work') workReturnTab = state.tab;
+  if(location.hash !== WORK_HASH){
+    history.pushState(null, '', location.pathname + location.search + WORK_HASH);
+    workOpenedByPush = true;
+  }
+  showWorkPage();
+}
+function showWorkPage(){
+  setTab('work');
+  renderWorkPage();
+}
+function closeWorkPage(){
+  if(workOpenedByPush){ history.back(); return; } // the popstate handler below switches the tab
+  setTab(workReturnTab);
+}
+/* Called by setTab for every other tab, so #work never stays in the address bar of another page. */
+function leaveWorkUrl(){
+  if(location.hash !== WORK_HASH) return;
+  if(workOpenedByPush){ workOpenedByPush = false; workLeavingUrl = true; history.back(); }
+  else history.replaceState(null, '', location.pathname + location.search);
+}
+window.addEventListener('popstate', ()=>{
+  if(workLeavingUrl){ workLeavingUrl = false; return; }
+  const onWork = location.hash === WORK_HASH;
+  if(onWork && state.tab !== 'work'){ workReturnTab = state.tab; workOpenedByPush = true; showWorkPage(); }
+  else if(!onWork && state.tab === 'work'){ workOpenedByPush = false; setTab(workReturnTab); }
+});
+
+/* Like a listing link, the work page can be shared without signing in. */
+function openWorkSharePanel(){
+  const url = baseShareUrl() + WORK_HASH;
+  document.getElementById('shareLinkInput').value = url;
+  document.getElementById('btnShareWhatsapp').href = `https://wa.me/?text=${encodeURIComponent(url)}`;
+  document.getElementById('sharePanel').style.display = 'flex';
+}
+
+/* "Ask a question" opens the composer on a question already filed under Before arrival, over the
+   Before arrival questions in Community; "See questions" only shows those questions. */
+function showBeforeArrivalQuestions(){
+  state.communitySubTab = 'qa';
+  setTab('community');
+  document.querySelectorAll('[data-subtab]').forEach(b=> b.classList.toggle('active', b.getAttribute('data-subtab')==='qa'));
+  document.getElementById('communityQA').style.display = 'block';
+  document.getElementById('communityBuddies').style.display = 'none';
+  document.getElementById('communityLeaderboard').style.display = 'none';
+  state.forumCat = 'Before arrival';
+  document.getElementById('forumFeedScroll').scrollTop = 0;
+  renderCatChips();
+  renderForum();
+  fitCommunityFeed();
+  // It is the last category, so on a phone its chip starts off screen: bring it into view.
+  const chip = document.querySelector('#catChipRow .cat-chip.active');
+  if(chip) chip.scrollIntoView({block:'nearest', inline:'nearest'});
+}
+function askBeforeArrival(){
+  showBeforeArrivalQuestions();
+  setQcCategory('inquiry');
+  setQuickComposerOpen(true);
+  syncQcStep2Copy();
+  showQcStep(2);
+  document.querySelectorAll('#qcInquiryCatRow [data-qc-i-cat]').forEach(b=> b.classList.toggle('active', b.getAttribute('data-qc-i-cat')==='Before arrival'));
+}
+
+document.querySelectorAll('[data-open-work]').forEach(btn=> btn.addEventListener('click', openWorkPage));
+document.getElementById('btnWorkBack').addEventListener('click', closeWorkPage);
+document.getElementById('btnWorkShare').addEventListener('click', openWorkSharePanel);
+document.getElementById('btnWorkAsk').addEventListener('click', askBeforeArrival);
+document.getElementById('btnWorkSeeQuestions').addEventListener('click', showBeforeArrivalQuestions);
+
+/* ---- First visit: "Where are you now?" ----
+   Asked once, on the Feed, to someone who isn't signed in. Workers who are still outside Saudi
+   Arabia go straight to the work page; the answer only decides whether the Feed keeps showing
+   the "Looking for work?" pill. */
+function syncWorkEntryPoints(){
+  document.querySelectorAll('.work-pill').forEach(el=>{ el.hidden = visitorChoice === 'in_saudi'; });
+}
+
+let welcomeReturnFocus = null;
+function maybeShowWelcome(){
+  if(visitorChoice || appUser || state.tab !== 'housing') return;
+  const params = new URLSearchParams(location.search);
+  if(params.has('listing') || params.has('profile')) return; // came for one post or profile: show that
+  if(document.getElementById('quickComposer').classList.contains('open')) return;
+  if([...document.querySelectorAll('.modal-overlay')].some(m=> m.style.display === 'flex')) return;
+  const sheet = document.getElementById('welcomeSheet');
+  const scrim = document.getElementById('welcomeScrim');
+  welcomeReturnFocus = document.activeElement;
+  sheet.hidden = false;
+  scrim.hidden = false;
+  requestAnimationFrame(()=> requestAnimationFrame(()=>{ sheet.classList.add('open'); scrim.classList.add('open'); }));
+  sheet.focus({preventScroll:true});
+}
+function closeWelcome(choice){
+  const sheet = document.getElementById('welcomeSheet');
+  if(sheet.hidden) return;
+  const scrim = document.getElementById('welcomeScrim');
+  visitorChoice = choice;
+  writeStored(VISITOR_STORAGE_KEY, choice);
+  sheet.classList.remove('open');
+  scrim.classList.remove('open');
+  setTimeout(()=>{ sheet.hidden = true; scrim.hidden = true; }, 300);
+  syncWorkEntryPoints();
+  if(choice === 'abroad') openWorkPage();
+  else if(welcomeReturnFocus && document.contains(welcomeReturnFocus)) welcomeReturnFocus.focus({preventScroll:true});
+}
+document.querySelectorAll('[data-visitor]').forEach(btn=>{
+  btn.addEventListener('click', ()=> closeWelcome(btn.getAttribute('data-visitor')));
+});
+document.getElementById('welcomeScrim').addEventListener('click', ()=> closeWelcome('skipped'));
+/* Escape closes it, and Tab stays inside it while it is open. */
+document.getElementById('welcomeSheet').addEventListener('keydown', e=>{
+  if(e.key === 'Escape'){ e.preventDefault(); closeWelcome('skipped'); return; }
+  if(e.key !== 'Tab') return;
+  const items = [...e.currentTarget.querySelectorAll('button')];
+  const first = items[0], last = items[items.length-1];
+  if(e.shiftKey && (document.activeElement === first || document.activeElement === e.currentTarget)){ e.preventDefault(); last.focus(); }
+  else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+});
+
 /* ============================= Cities & shared lookups ============================= */
 const CITY_KEYS = ["Riyadh","Jeddah","Dammam/Khobar","Makkah","Madinah","Hail"];
 const CITY_LABELS = {
   en:CITY_KEYS,
   ar:["الرياض","جدة","الدمام/الخبر","مكة","المدينة","حائل"],
-  ur:["ریاض","جدہ","دمام/خبر","مکہ","مدینہ","حائل"]
+  ur:["ریاض","جدہ","دمام/خبر","مکہ","مدینہ","حائل"],
+  hi:["रियाद","जेद्दा","दम्माम/ख़ोबर","मक्का","मदीना","हाइल"],
+  bn:["রিয়াদ","জেদ্দা","দাম্মাম/খোবার","মক্কা","মদিনা","হাইল"]
 };
 const NAT_KEYS = ["Any","Indian","Pakistani","Filipino","Arab","Bangladeshi"];
 const NAT_LABELS = {
   en:["Any nationality pref.","Indian","Pakistani","Filipino","Arab","Bangladeshi"],
   ar:["أي جنسية","هندي","باكستاني","فلبيني","عربي","بنغلاديشي"],
-  ur:["کوئی بھی قومیت","بھارتی","پاکستانی","فلپائنی","عرب","بنگلہ دیشی"]
+  ur:["کوئی بھی قومیت","بھارتی","پاکستانی","فلپائنی","عرب","بنگلہ دیشی"],
+  hi:["कोई भी राष्ट्रीयता","भारतीय","पाकिस्तानी","फ़िलिपीनी","अरब","बांग्लादेशी"],
+  bn:["যেকোনো জাতীয়তা","ভারতীয়","পাকিস্তানি","ফিলিপিনো","আরব","বাংলাদেশি"]
 };
 
 /* ---- Housing render ---- */
@@ -1132,8 +2206,8 @@ async function fetchAndRenderForum(){
 }
 
 function renderCatChips(){
-  const cats = ["All","Housing","Legal","Jobs","General life"];
-  const catKeys = {All:"catAll", Housing:"catHousing", Legal:"catLegal", Jobs:"catJobs", "General life":"catLife"};
+  const cats = ["All","Housing","Legal","Jobs","General life","Before arrival"];
+  const catKeys = {All:"catAll", Housing:"catHousing", Legal:"catLegal", Jobs:"catJobs", "General life":"catLife", "Before arrival":"catArrival"};
   const row = document.getElementById('catChipRow');
   row.innerHTML = cats.map(c=>`<button class="cat-chip ${state.forumCat===c?'active':''}" data-cat="${c}">${t(catKeys[c])}</button>`).join('');
   row.querySelectorAll('[data-cat]').forEach(btn=>{
@@ -1475,11 +2549,13 @@ function restoreAppUser(){
   } catch(err){ appUser = null; }
 }
 
-/* Codes may be typed with Arabic or Urdu digits. */
+/* Codes may be typed with Arabic, Urdu, Hindi (Devanagari) or Bengali digits. */
 function toLatinDigits(value){
   return String(value||'')
     .replace(/[٠-٩]/g, d=> String('٠١٢٣٤٥٦٧٨٩'.indexOf(d)))
-    .replace(/[۰-۹]/g, d=> String('۰۱۲۳۴۵۶۷۸۹'.indexOf(d)));
+    .replace(/[۰-۹]/g, d=> String('۰۱۲۳۴۵۶۷۸۹'.indexOf(d)))
+    .replace(/[०-९]/g, d=> String('०१२३४५६७८९'.indexOf(d)))
+    .replace(/[০-৯]/g, d=> String('০১২৩৪৫৬৭৮৯'.indexOf(d)));
 }
 // Same rule as sanad_clean_email in schema.sql.
 function normalizeEmail(raw){
@@ -2127,7 +3203,9 @@ function currentMonthLabel(){
   const months = {
     en:["January","February","March","April","May","June","July","August","September","October","November","December"],
     ar:["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"],
-    ur:["جنوری","فروری","مارچ","اپریل","مئی","جون","جولائی","اگست","ستمبر","اکتوبر","نومبر","دسمبر"]
+    ur:["جنوری","فروری","مارچ","اپریل","مئی","جون","جولائی","اگست","ستمبر","اکتوبر","نومبر","دسمبر"],
+    hi:["जनवरी","फ़रवरी","मार्च","अप्रैल","मई","जून","जुलाई","अगस्त","सितंबर","अक्टूबर","नवंबर","दिसंबर"],
+    bn:["জানুয়ারি","ফেব্রুয়ারি","মার্চ","এপ্রিল","মে","জুন","জুলাই","আগস্ট","সেপ্টেম্বর","অক্টোবর","নভেম্বর","ডিসেম্বর"]
   };
   const now = new Date();
   return months[state.lang][now.getMonth()] + ' ' + now.getFullYear();
@@ -2247,6 +3325,8 @@ function renderAll(){
   renderForum();
   renderBuddies();
   renderProfile();
+  renderWorkPage();
+  syncWorkEntryPoints();
   syncQcStep2Copy(); // re-sync the composer's dynamic labels after a language switch
 }
 
@@ -2255,10 +3335,10 @@ document.querySelectorAll('[data-theme-toggle]').forEach(btn=>{
   btn.addEventListener('click', ()=> applyTheme(currentTheme() === 'dark' ? 'light' : 'dark'));
 });
 document.querySelectorAll('[data-lang-btn]').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    state.lang = btn.getAttribute('data-lang-btn');
-    renderAll();
-  });
+  btn.addEventListener('click', ()=> setLang(btn.getAttribute('data-lang-btn')));
+});
+document.querySelectorAll('[data-lang-select]').forEach(sel=>{
+  sel.addEventListener('change', ()=> setLang(sel.value));
 });
 document.querySelectorAll('nav.tabbar button[data-tab]').forEach(btn=>{
   btn.addEventListener('click', ()=> setTab(btn.getAttribute('data-tab')));
@@ -2776,9 +3856,12 @@ async function initApp(){
     persistAppUser();
   }
 
-  setTab('housing'); // the Feed is the whole app's landing screen — there's no Home anymore
+  // A shared link to the work page (…/#work) opens on that page; everything else starts on the Feed.
+  const landedOnWork = location.hash === WORK_HASH;
+  setTab(landedOnWork ? 'work' : 'housing'); // the Feed is the whole app's landing screen — there's no Home anymore
   renderAll();
   applyFeedMode();
+  if(!landedOnWork) setTimeout(maybeShowWelcome, 700);
   await trackIncomingShareCode();
   await Promise.all([fetchAndRenderListings(), fetchAndRenderForum(), fetchAndRenderBuddies(), validateStoredSession()]);
   // Depends on buddies (isBuddy bonus) being loaded above, so it runs after.

@@ -88,7 +88,7 @@ a real Supabase project before you call a data change done.
 A branch is pushed when the work is **done** — not to store it remotely. Push it when:
 
 - the implementation is complete and actually works in a browser;
-- it has been tested in **all three languages** and in **both text directions**;
+- it has been tested in **all five languages** and in **both text directions**;
 - known issues are fixed, or written down deliberately;
 - it is ready for someone else to read.
 
@@ -110,6 +110,8 @@ that touches `index.html`, `app.js` or `styles.css` must be exercised against it
 - [ ] **English (LTR)** — the changed screen renders and behaves correctly.
 - [ ] **Arabic (RTL)** — layout mirrors correctly; nothing overlaps, clips or escapes its container.
 - [ ] **Urdu (RTL)** — every new string is translated, not falling back to English.
+- [ ] **Hindi and Bengali (LTR)** — every new string is translated, and the script renders without
+  clipped marks or overflowing text.
 - [ ] **Mobile viewport** (~390 px wide) — Sanad is used on phones first.
 - [ ] **Signed out** — browsing still works; login-gated actions prompt instead of failing silently.
 - [ ] **Signed in** — the gated action completes and persists after a refresh.
@@ -163,7 +165,7 @@ The order is fixed, and nothing is published before it completes:
    diagnostics, no placeholder credentials.
 3. Publish `develop`'s verified tree to `main`.
 4. Load the deployed `main` and smoke-test it: the app boots, Supabase connects, the tabs work in
-   all three languages.
+   all five languages.
 5. Tag the release.
 
 The tree that is audited, the tree that is published and the tree that users load are the same

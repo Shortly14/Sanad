@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sanad · سند — Your support system in Saudi Arabia</title>
-<meta name="description" content="Find a room, learn your rights and ask the community. Sanad helps workers in Saudi Arabia, in English, Arabic and Urdu.">
+<meta name="description" content="Find a room, learn your rights and ask the community. Sanad helps workers in Saudi Arabia, in English, Arabic, Urdu, Hindi and Bengali.">
 <meta name="theme-color" content="#0F5C4E">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="icon-192.png" type="image/png" sizes="192x192">
@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Sanad · سند">
 <meta property="og:title" content="Sanad · سند — Your support system in Saudi Arabia">
-<meta property="og:description" content="Find a room, learn your rights and ask the community. In English, Arabic and Urdu.">
+<meta property="og:description" content="Find a room, learn your rights and ask the community. In English, Arabic, Urdu, Hindi and Bengali.">
 <meta property="og:url" content="https://thesannad.com/">
 <meta property="og:image" content="https://thesannad.com/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -24,9 +24,11 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ar_SA">
 <meta property="og:locale:alternate" content="ur_PK">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:locale:alternate" content="bn_BD">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script>
 /* Applied before the stylesheet paints so the app never flashes the wrong palette.
    Light is the default look; dark is opt-in and remembered per device. Wrapped in
@@ -40,7 +42,7 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<noscript><p style="margin:0;padding:14px 18px;background:#0F5C4E;color:#fff;font:14px/1.5 system-ui,sans-serif;text-align:center;">Sanad needs JavaScript to work. Please turn it on in your browser settings. · يحتاج سند إلى JavaScript ليعمل. · سند کو چلنے کے لیے JavaScript درکار ہے۔</p></noscript>
+<noscript><p style="margin:0;padding:14px 18px;background:#0F5C4E;color:#fff;font:14px/1.5 system-ui,sans-serif;text-align:center;">Sanad needs JavaScript to work. Please turn it on in your browser settings. · يحتاج سند إلى JavaScript ليعمل. · سند کو چلنے کے لیے JavaScript درکار ہے۔ · सनद को चलाने के लिए JavaScript ज़रूरी है। · সনদ চালাতে JavaScript দরকার।</p></noscript>
 <div class="app" id="app">
 
   <header class="topbar">
@@ -54,11 +56,18 @@
       </div>
     </div>
     <div class="topbar-actions">
-      <div class="lang-switch">
-        <button data-lang-btn="en">EN</button>
-        <button data-lang-btn="ar">عربي</button>
-        <button data-lang-btn="ur">اردو</button>
-      </div>
+      <label class="lang-select">
+        <svg class="lang-select-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9M12 3c-2.5 2.6-3.8 5.6-3.8 9s1.3 6.4 3.8 9"/></svg>
+        <span class="lang-select-current" data-lang-current aria-hidden="true">EN</span>
+        <svg class="lang-select-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+        <select data-lang-select data-i18n-title="langMenuLabel" aria-label="Change language" title="Change language">
+          <option value="en" lang="en">English</option>
+          <option value="ar" lang="ar">العربية</option>
+          <option value="ur" lang="ur">اردو</option>
+          <option value="hi" lang="hi">हिंदी</option>
+          <option value="bn" lang="bn">বাংলা</option>
+        </select>
+      </label>
       <button class="theme-toggle" data-theme-toggle type="button">
         <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg>
         <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.2 8.2 0 019.5 4 8.3 8.3 0 1020 14.5z"/></svg>
@@ -150,15 +159,27 @@
       </div>
 
       <div class="explore-chip-bar">
-        <div class="lang-switch lang-switch--floating">
-          <button data-lang-btn="en">EN</button>
-          <button data-lang-btn="ar">عربي</button>
-          <button data-lang-btn="ur">اردو</button>
-        </div>
+        <label class="lang-select lang-select--floating">
+          <svg class="lang-select-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9M12 3c-2.5 2.6-3.8 5.6-3.8 9s1.3 6.4 3.8 9"/></svg>
+          <span class="lang-select-current" data-lang-current aria-hidden="true">EN</span>
+          <svg class="lang-select-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+          <select data-lang-select data-i18n-title="langMenuLabel" aria-label="Change language" title="Change language">
+            <option value="en" lang="en">English</option>
+            <option value="ar" lang="ar">العربية</option>
+            <option value="ur" lang="ur">اردو</option>
+            <option value="hi" lang="hi">हिंदी</option>
+            <option value="bn" lang="bn">বাংলা</option>
+          </select>
+        </label>
         <button class="theme-toggle theme-toggle--floating" data-theme-toggle type="button">
         <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg>
         <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.2 8.2 0 019.5 4 8.3 8.3 0 1020 14.5z"/></svg>
       </button>
+        <!-- For workers who are not in Saudi Arabia yet: opens the "Looking for work?" page -->
+        <button class="work-pill" data-open-work type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M8.5 7V5.5A1.5 1.5 0 0 1 10 4h4a1.5 1.5 0 0 1 1.5 1.5V7M3 12.5h18"/></svg>
+          <span data-i18n="workPillLabel">Looking for work?</span>
+        </button>
       </div>
       <div class="explore-chip-bar explore-chip-bar--cats">
         <div class="cat-chip-row explore-chip-row" id="feedTypeChips">
@@ -184,6 +205,11 @@
       </div>
       <h1 class="page-title" data-i18n="guideTitle">Understand the system before it confuses you</h1>
       <p class="page-sub" data-i18n="guideSub">Short, plain-language explainers on the things every worker eventually needs.</p>
+      <button class="work-entry" data-open-work type="button">
+        <span class="work-entry-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M8.5 7V5.5A1.5 1.5 0 0 1 10 4h4a1.5 1.5 0 0 1 1.5 1.5V7M3 12.5h18"/></svg></span>
+        <span class="work-entry-text"><strong data-i18n="workEntryTitle">Looking for work in Saudi Arabia?</strong><span data-i18n="workEntrySub">Start here before you pay anyone</span></span>
+        <span class="work-entry-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></span>
+      </button>
       <div class="guide-grid" id="guideGrid"></div>
     </section>
 
@@ -272,13 +298,15 @@
 
           <button class="guest-row" id="btnGuestLanguage">
             <span class="guest-row-ic guest-row-ic--gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></span>
-            <span class="guest-row-body"><strong data-i18n="guestLanguageLabel">Language</strong><span data-i18n="guestLanguageValue">العربية · English · اردو</span></span>
+            <span class="guest-row-body"><strong data-i18n="guestLanguageLabel">Language</strong><span data-i18n="guestLanguageValue">العربية · English · اردو · हिंदी · বাংলা</span></span>
             <svg class="guest-row-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="guest-inline-lang" id="guestLanguageRow" style="display:none;">
-            <button data-lang-btn="en">EN</button>
-            <button data-lang-btn="ar">عربي</button>
-            <button data-lang-btn="ur">اردو</button>
+            <button data-lang-btn="en" lang="en">EN</button>
+            <button data-lang-btn="ar" lang="ar">عربي</button>
+            <button data-lang-btn="ur" lang="ur">اردو</button>
+            <button data-lang-btn="hi" lang="hi">हिंदी</button>
+            <button data-lang-btn="bn" lang="bn">বাংলা</button>
           </div>
         </div>
 
@@ -363,6 +391,47 @@
         </div>
       </div>
       <div class="pf-grid" id="ppGrid"></div>
+    </section>
+
+    <!-- LOOKING FOR WORK? For workers outside Saudi Arabia who want to come: the legal way,
+         a fake-offer check and their own country's steps. Opened from the Feed pill, the Guide,
+         the first-visit question or a shared …/#work link. -->
+    <section class="view" id="view-work">
+      <div class="page-head-row work-head-row">
+        <button class="pf-back" id="btnWorkBack" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          <span data-i18n="backBtn">Back</span>
+        </button>
+        <button class="share-btn" id="btnWorkShare" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="M8.3 10.7l7.4-4.4M8.3 13.3l7.4 4.4"/></svg><span data-i18n="shareLabel">Share</span></button>
+      </div>
+      <p class="eyebrow" data-i18n="workEyebrow">Coming to Saudi Arabia</p>
+      <h1 class="page-title" data-i18n="workTitle">Looking for work in Saudi Arabia?</h1>
+      <p class="page-sub" data-i18n="workSub">Start here before you pay anyone. Sanad does not recruit workers, does not sell visas and never asks you for money.</p>
+
+      <div class="work-country">
+        <p class="work-country-label" id="workCountryLabel" data-i18n="workCountryLabel">Which country are you coming from?</p>
+        <div class="work-country-row" role="group" aria-labelledby="workCountryLabel">
+          <button class="work-country-btn" type="button" data-work-country="pk" aria-pressed="false" data-i18n="workCountryPK">Pakistan</button>
+          <button class="work-country-btn" type="button" data-work-country="in" aria-pressed="false" data-i18n="workCountryIN">India</button>
+          <button class="work-country-btn" type="button" data-work-country="other" aria-pressed="false" data-i18n="workCountryOther">Another country</button>
+        </div>
+        <p class="work-country-hint" id="workCountryHint" data-i18n="workCountryHint">Choose your country to see its steps.</p>
+      </div>
+
+      <div class="offer-check" id="offerCheck"></div>
+
+      <div class="guide-grid work-grid" id="workGrid"></div>
+
+      <div class="work-ask">
+        <h2 data-i18n="workAskTitle">Ask workers who are already in Saudi Arabia</h2>
+        <p data-i18n="workAskSub">Post your question in Community. Answers come from other workers, not officials. Never pay anyone who messages you about a visa.</p>
+        <div class="work-ask-actions">
+          <button class="btn-primary" id="btnWorkAsk" type="button" data-i18n="workAskBtn">Ask a question</button>
+          <button class="work-ask-secondary" id="btnWorkSeeQuestions" type="button" data-i18n="workSeeQuestionsBtn">See questions</button>
+        </div>
+      </div>
+
+      <p class="work-disclaimer" data-i18n="workDisclaimer">Sanad is not a recruitment agency. We checked this page against official government sources in November 2026, but rules change: always confirm on the official websites.</p>
     </section>
   </main>
 
@@ -504,6 +573,7 @@
           <button class="composer-chip" data-qc-i-cat="Legal" data-i18n="catLegal">Legal</button>
           <button class="composer-chip" data-qc-i-cat="Jobs" data-i18n="catJobs">Jobs</button>
           <button class="composer-chip" data-qc-i-cat="General life" data-i18n="catLife">General life</button>
+          <button class="composer-chip" data-qc-i-cat="Before arrival" data-i18n="catArrival">Before arrival</button>
         </div>
         <div class="field">
           <label data-i18n="lblQuestion">Your question</label>
@@ -529,6 +599,34 @@
       <button class="btn-primary composer-cta" id="btnQcNext" data-i18n="qcNext">Next</button>
       <button class="btn-primary composer-cta" id="btnSubmitQuickPost" style="display:none;" data-i18n="qcPublish">Publish</button>
     </div>
+  </div>
+
+  <!-- FIRST VISIT: one question, so workers who are not in Saudi Arabia yet find the work page.
+       Shown once, on the Feed, to someone who isn't signed in (see maybeShowWelcome in app.js). -->
+  <div class="welcome-scrim" id="welcomeScrim" hidden></div>
+  <div class="welcome-sheet" id="welcomeSheet" role="dialog" aria-modal="true" aria-labelledby="welcomeQuestion" tabindex="-1" hidden>
+    <span class="welcome-grabber" aria-hidden="true"></span>
+    <p class="eyebrow" data-i18n="welcomeTitle">Welcome to Sanad</p>
+    <p class="welcome-lang-label" id="welcomeLangLabel" data-i18n="welcomeLangLabel">Your language</p>
+    <div class="welcome-langs" role="group" aria-labelledby="welcomeLangLabel">
+      <button type="button" data-lang-btn="en" lang="en" aria-label="English">EN</button>
+      <button type="button" data-lang-btn="ar" lang="ar">عربي</button>
+      <button type="button" data-lang-btn="ur" lang="ur">اردو</button>
+      <button type="button" data-lang-btn="hi" lang="hi">हिंदी</button>
+      <button type="button" data-lang-btn="bn" lang="bn">বাংলা</button>
+    </div>
+    <h2 class="welcome-q" id="welcomeQuestion" data-i18n="welcomeQuestion">Where are you now?</h2>
+    <button class="welcome-option" type="button" data-visitor="in_saudi">
+      <span class="welcome-option-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 10.5L12 3.5l8.5 7"/><path d="M5.5 9v11h13V9"/><path d="M10 20v-5.5h4V20"/></svg></span>
+      <span class="welcome-option-text"><strong data-i18n="welcomeInSaudi">I'm in Saudi Arabia</strong><span data-i18n="welcomeInSaudiSub">Find a room, know your rights, ask other workers</span></span>
+      <span class="welcome-option-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></span>
+    </button>
+    <button class="welcome-option welcome-option--work" type="button" data-visitor="abroad">
+      <span class="welcome-option-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M8.5 7V5.5A1.5 1.5 0 0 1 10 4h4a1.5 1.5 0 0 1 1.5 1.5V7M3 12.5h18"/></svg></span>
+      <span class="welcome-option-text"><strong data-i18n="welcomeAbroad">I'm outside Saudi Arabia and want to work there</strong><span data-i18n="welcomeAbroadSub">Come the legal way and spot fake job offers</span></span>
+      <span class="welcome-option-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></span>
+    </button>
+    <button class="welcome-skip" type="button" data-visitor="skipped" data-i18n="welcomeSkip">Skip for now</button>
   </div>
 
   <!-- SIGN-IN MODAL -->

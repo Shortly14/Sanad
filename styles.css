@@ -53,6 +53,14 @@
     --font-display: 'Noto Nastaliq Urdu', serif;
     --font-body: 'Noto Nastaliq Urdu', serif;
   }
+  html[data-lang="hi"]{
+    --font-display: 'Noto Sans Devanagari', 'Space Grotesk', sans-serif;
+    --font-body: 'Noto Sans Devanagari', 'Inter', sans-serif;
+  }
+  html[data-lang="bn"]{
+    --font-display: 'Noto Sans Bengali', 'Space Grotesk', sans-serif;
+    --font-body: 'Noto Sans Bengali', 'Inter', sans-serif;
+  }
   *{box-sizing:border-box;}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);-webkit-font-smoothing:antialiased;}
   h1,h2,h3,h4,button,.display{font-family:var(--font-display);}
@@ -88,20 +96,28 @@
   .brand-mark svg{width:20px;height:20px;}
   .brand-text .name{font-size:16px;font-weight:700;line-height:1.1;letter-spacing:0.2px;}
   .brand-text .tag{font-size:10.5px;color:#C9D9D2;margin-top:2px;font-family:var(--font-body);}
-  .lang-switch{display:flex;background:rgba(243,241,230,0.12);border-radius:999px;padding:3px;gap:2px;}
-  .lang-switch button{
-    border:none;background:transparent;color:#C9D9D2;
-    font-size:11.5px;font-weight:600;padding:6px 9px;border-radius:999px;
-    transition:background .15s,color .15s;
+  /* Language switcher: a compact pill (globe + current language) over a real <select>,
+     so phones open their own native list of the five languages. The select is
+     transparent and covers the whole pill; the pill is only its visible face. */
+  .lang-select{
+    position:relative;flex:none;display:inline-flex;align-items:center;gap:5px;
+    height:34px;padding:0 10px;border-radius:999px;
+    border:1px solid rgba(243,241,230,0.28);background:rgba(243,241,230,0.12);color:#F3F1E6;
+    font-size:12.5px;font-weight:700;line-height:1;white-space:nowrap;
   }
-  .lang-switch button.active{background:var(--gold);color:#2A1D08;}
-  /* Floating variant used on top of the dark Feed itself (glass pill over video). */
-  .lang-switch--floating{
-    background:rgba(0,0,0,0.45);border:1px solid rgba(255,255,255,0.22);
+  .lang-select svg{flex:none;width:16px;height:16px;}
+  .lang-select .lang-select-chev{width:12px;height:12px;opacity:0.75;}
+  .lang-select select{
+    position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer;
+    -webkit-appearance:none;appearance:none;border:none;
+    font-size:16px; /* under 16px, iOS zooms the page in when the list opens */
+  }
+  .lang-select:has(select:focus-visible){outline:2px solid var(--gold);outline-offset:2px;}
+  /* Floating variant used on top of the Feed itself (glass pill over photos and video). */
+  .lang-select--floating{
+    height:38px;background:rgba(0,0,0,0.45);border-color:rgba(255,255,255,0.22);color:#fff;
     -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
   }
-  .lang-switch--floating button{color:#fff;}
-  .lang-switch--floating button.active{background:var(--gold);color:#2A1D08;}
 
   /* ---------- Tabs: bottom nav with a raised center "post" button ---------- */
   nav.tabbar{
@@ -128,6 +144,8 @@
   html[dir="rtl"] nav.tabbar button[data-tab]{font-size:12.5px;}
   html[dir="rtl"][data-lang="ur"] nav.tabbar button[data-tab]{font-size:14px;font-weight:700;line-height:1.3;}
   html[dir="rtl"][data-lang="ur"]{--tabbar-h:70px;}
+  html[data-lang="hi"] nav.tabbar button[data-tab],
+  html[data-lang="bn"] nav.tabbar button[data-tab]{font-size:11.5px;line-height:1.3;}
   .tabbar-post{
     flex:none;align-self:flex-start;margin-top:-22px;
     display:flex;align-items:center;justify-content:center;
@@ -1008,10 +1026,9 @@
   }
   html[data-theme="light"] nav.tabbar button[data-tab]{color:var(--ink-faint);}
   html[data-theme="light"] nav.tabbar button[data-tab] svg{stroke:var(--ink-faint);}
-  html[data-theme="light"] .lang-switch--floating{
-    background:rgba(255,255,255,0.86);border:1px solid var(--line);
+  html[data-theme="light"] .lang-select--floating{
+    background:rgba(255,255,255,0.86);border-color:var(--line);color:var(--ink);
   }
-  html[data-theme="light"] .lang-switch--floating button{color:var(--ink-soft);}
   /* The header stays dark green, but the tagline also picks up the generic .tag
      pill, whose light-theme tint made it pale text on a pale pill. */
   html[data-theme="light"] .brand-text .tag{background:rgba(255,255,255,0.1);}
@@ -1212,6 +1229,190 @@
      selected look; each is scoped with .active so it outranks its base rule. */
   html[data-theme="light"] nav.tabbar button[data-tab].active{color:var(--green);}
   html[data-theme="light"] nav.tabbar button[data-tab].active svg{stroke:var(--green);}
-  html[data-theme="light"] .lang-switch--floating button.active{color:#2A1D08;}
   html[data-theme="light"] .feed-rail .lk.active svg{fill:var(--feed-pink);stroke:var(--feed-pink);}
   html[data-theme="light"] .feed-rail .sv.active svg{fill:var(--green);stroke:var(--green);}
+
+  /* ---------- "Looking for work?" (workers who are not in Saudi Arabia yet) ---------- */
+  /* Feed pill: the same glass as the language and theme pills beside it, with a gold edge
+     so it reads as a way in, not a setting. */
+  .work-pill{
+    flex:none;display:inline-flex;align-items:center;gap:6px;margin-inline-start:auto;
+    height:38px;padding:0 13px;border-radius:999px;
+    border:1px solid rgba(240,200,120,0.6);background:rgba(0,0,0,0.45);color:#fff;
+    font-size:12.5px;font-weight:700;line-height:1.2;white-space:nowrap;
+    -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  }
+  .work-pill svg{flex:none;width:16px;height:16px;color:var(--accent-gold-bright);}
+  .work-pill[hidden]{display:none;}
+  html[data-theme="light"] .work-pill{background:rgba(255,255,255,0.86);border-color:var(--gold);color:var(--ink);}
+
+  /* Guide entry, above the guide cards */
+  .work-entry{
+    width:100%;display:flex;align-items:center;gap:12px;margin:0 0 14px;padding:14px 16px;
+    border:1px solid var(--gold);border-radius:var(--radius-md);background:var(--gold-tint);
+    color:var(--ink);text-align:start;
+  }
+  .work-entry-ic,.welcome-option-ic{
+    flex:none;width:38px;height:38px;border-radius:11px;
+    display:flex;align-items:center;justify-content:center;background:var(--gold);color:#2A1D08;
+  }
+  .work-entry-ic svg,.welcome-option-ic svg{width:19px;height:19px;}
+  .work-entry-text,.welcome-option-text{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px;}
+  .work-entry-text strong,.welcome-option-text strong{font-family:var(--font-display);font-size:14.5px;line-height:1.35;}
+  .work-entry-text span,.welcome-option-text span{font-size:12px;color:var(--ink-soft);line-height:1.45;}
+  .work-entry-chev,.welcome-option-chev{flex:none;display:flex;width:18px;height:18px;color:var(--ink-faint);}
+  .work-entry-chev svg,.welcome-option-chev svg{width:18px;height:18px;}
+  html[dir="rtl"] .work-entry-chev svg,html[dir="rtl"] .welcome-option-chev svg{transform:scaleX(-1);}
+
+  /* Work page */
+  .work-head-row{margin-bottom:10px;}
+  .work-head-row .pf-back{margin-bottom:0;}
+  .work-country{margin:0 0 16px;}
+  .work-country-label{margin:0 0 8px;font-size:13px;font-weight:700;color:var(--ink);}
+  .work-country-row{display:flex;flex-wrap:wrap;gap:8px;}
+  .work-country-btn{
+    border:1px solid var(--line);background:var(--card);color:var(--ink-soft);
+    border-radius:999px;padding:9px 16px;font-size:13px;font-weight:700;
+  }
+  .work-country-btn.active{background:var(--gold);border-color:var(--gold);color:#2A1D08;}
+  .work-country-hint{margin:8px 0 0;font-size:12px;color:var(--ink-faint);}
+
+  /* Offer check: intro, one question at a time, then the result */
+  .offer-check{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius-md);
+    padding:16px;margin:0 0 14px;
+  }
+  .offer-check h2{margin:0;font-size:16px;line-height:1.45;color:var(--ink);}
+  .offer-check [tabindex="-1"]:focus{outline:none;}
+  .offer-intro{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;}
+  .offer-intro p{margin:4px 0 0;font-size:12.5px;color:var(--ink-soft);line-height:1.5;}
+  .offer-ic{
+    flex:none;width:38px;height:38px;border-radius:11px;
+    display:flex;align-items:center;justify-content:center;background:var(--brick-tint);color:var(--brick);
+  }
+  .offer-ic svg{width:19px;height:19px;}
+  .offer-top{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+  .offer-back{
+    flex:none;width:32px;height:32px;border-radius:50%;border:1px solid var(--line);background:none;
+    color:var(--ink-soft);display:flex;align-items:center;justify-content:center;
+  }
+  .offer-back svg{width:16px;height:16px;}
+  html[dir="rtl"] .offer-back svg{transform:scaleX(-1);}
+  .offer-progress{margin:0;font-size:12px;font-weight:700;color:var(--ink-faint);}
+  .offer-bar{height:4px;border-radius:999px;background:var(--line);overflow:hidden;margin-bottom:14px;}
+  .offer-bar span{display:block;height:100%;border-radius:inherit;background:var(--gold);}
+  .offer-answers{display:grid;gap:8px;margin-top:14px;}
+  .offer-answer{
+    width:100%;padding:12px 14px;border-radius:var(--radius-sm);border:1px solid var(--line);
+    background:var(--bg-alt);color:var(--ink);font-size:14px;font-weight:700;text-align:start;
+  }
+  .offer-answer.active{border-color:var(--gold);background:var(--gold-tint);}
+  .offer-result{border-radius:var(--radius-sm);padding:14px;}
+  .offer-result--danger{background:var(--brick-tint);}
+  .offer-result--caution{background:var(--gold-tint);}
+  .offer-result--ok{background:var(--green-tint);}
+  .offer-result-head{display:flex;align-items:center;gap:10px;}
+  .offer-result-ic{flex:none;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+  .offer-result-ic svg{width:18px;height:18px;}
+  .offer-result--danger .offer-result-ic{background:var(--brick);color:var(--bg);}
+  .offer-result--caution .offer-result-ic{background:var(--gold);color:#2A1D08;}
+  .offer-result--ok .offer-result-ic{background:var(--green);color:#fff;}
+  .offer-result p{margin:10px 0 0;font-size:13px;line-height:1.55;color:var(--ink);}
+  .offer-flags-label{margin:16px 0 8px;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-faint);}
+  html[dir="rtl"] .offer-flags-label{letter-spacing:0;}
+  .offer-flags{list-style:none;margin:0;padding:0;display:grid;gap:10px;}
+  .offer-flag{border:1px solid var(--line);border-inline-start:4px solid var(--gold);border-radius:var(--radius-sm);padding:12px;}
+  .offer-flag--danger{border-inline-start-color:var(--brick);}
+  .offer-flag strong{display:block;font-size:13.5px;line-height:1.45;color:var(--ink);}
+  .offer-flag-answer{
+    display:inline-block;margin-top:6px;padding:3px 10px;border-radius:999px;
+    font-size:11.5px;font-weight:700;background:var(--gold-tint);color:var(--accent-gold-bright);
+  }
+  .offer-flag--danger .offer-flag-answer{background:var(--brick-tint);color:var(--brick);}
+  .offer-flag p{margin:8px 0 0;font-size:12.5px;line-height:1.6;color:var(--ink-soft);}
+  .offer-again,.work-ask-secondary{
+    width:100%;padding:11px;border-radius:999px;border:1px solid var(--line);background:none;
+    color:var(--ink);font-size:13px;font-weight:700;
+  }
+  .offer-again{margin-top:14px;}
+
+  /* Work cards reuse the guide cards. Their bodies are longer, and a closed card's links stay
+     out of the keyboard's way (visibility switches after the closing slide). */
+  .work-grid{margin-bottom:16px;}
+  .work-grid .guide-body{visibility:hidden;transition:max-height .25s ease,visibility 0s linear .25s;}
+  .work-grid .guide-card.open .guide-body{max-height:3200px;visibility:visible;transition:max-height .35s ease;}
+  .guide-head .ic.ic--warn{background:var(--brick-tint);color:var(--brick);}
+  .guide-head .ic.ic--gold{background:var(--gold-tint);color:var(--accent-gold-bright);}
+  .work-grid .guide-body-inner ol{margin:6px 0;padding-inline-start:20px;}
+  .work-grid .guide-body-inner li{margin-bottom:8px;}
+  .work-grid .guide-body-inner strong{color:var(--ink);}
+  .work-grid .guide-body-inner a{color:var(--accent-mint);font-weight:700;text-decoration:underline;text-underline-offset:2px;}
+  .work-links-h{margin:12px 0 2px;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent-gold-bright);}
+  .work-links-h:first-child{margin-top:0;}
+  html[dir="rtl"] .work-links-h{letter-spacing:0;}
+
+  .work-ask{background:var(--green-tint);border:1px solid var(--line);border-radius:var(--radius-md);padding:16px;margin-bottom:14px;}
+  .work-ask h2{margin:0 0 6px;font-size:15.5px;line-height:1.4;color:var(--ink);}
+  .work-ask p{margin:0 0 12px;font-size:12.5px;line-height:1.55;color:var(--ink-soft);}
+  .work-ask-actions{display:flex;flex-direction:column;gap:8px;}
+  .work-ask-actions .btn-primary{margin-top:0;}
+  .work-disclaimer{margin:0 0 8px;font-size:11.5px;line-height:1.6;color:var(--ink-faint);}
+
+  /* First-visit sheet */
+  .welcome-scrim{position:fixed;inset:0;z-index:97;background:rgba(0,0,0,0.6);opacity:0;transition:opacity .25s ease;}
+  .welcome-scrim.open{opacity:1;}
+  .welcome-sheet{
+    position:fixed;z-index:98;left:0;right:0;bottom:0;margin:0 auto;max-width:480px;
+    max-height:calc(100% - 24px);overflow-y:auto;overscroll-behavior:contain;
+    background:var(--bg-alt);color:var(--ink);border:1px solid var(--line);border-bottom:none;
+    border-radius:var(--radius-lg) var(--radius-lg) 0 0;
+    padding:10px 18px calc(16px + env(safe-area-inset-bottom));
+    box-shadow:0 -12px 40px rgba(0,0,0,0.45);
+    transform:translateY(100%);transition:transform .3s ease;
+  }
+  .welcome-sheet.open{transform:none;}
+  .welcome-sheet[hidden],.welcome-scrim[hidden]{display:none;}
+  .welcome-sheet:focus{outline:none;}
+  .welcome-grabber{display:block;width:40px;height:4px;border-radius:999px;background:var(--line);margin:0 auto 14px;}
+  .welcome-lang-label{margin:0 0 8px;font-size:12px;font-weight:700;color:var(--ink-faint);}
+  /* Same short names as the language row on the Profile tab, so all five fit on one line at 320px.
+     Each name is set in its own script's font, whatever the page's language is. */
+  .welcome-langs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin-bottom:18px;}
+  .welcome-langs button{
+    min-width:0;height:38px;padding:0 4px;display:flex;align-items:center;justify-content:center;
+    border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink-soft);
+    font-size:13px;font-weight:700;line-height:1;
+  }
+  .welcome-langs button[lang="en"]{font-family:'Inter',sans-serif;}
+  .welcome-langs button[lang="ar"]{font-family:'Noto Sans Arabic',sans-serif;}
+  .welcome-langs button[lang="ur"]{font-family:'Noto Nastaliq Urdu',serif;}
+  .welcome-langs button[lang="hi"]{font-family:'Noto Sans Devanagari',sans-serif;}
+  .welcome-langs button[lang="bn"]{font-family:'Noto Sans Bengali',sans-serif;}
+  .welcome-langs button.active{background:var(--gold);border-color:var(--gold);color:#2A1D08;}
+  .welcome-q{margin:0 0 12px;font-size:19px;line-height:1.35;color:var(--ink);}
+  .welcome-option{
+    width:100%;display:flex;align-items:center;gap:12px;margin-bottom:10px;padding:14px;
+    border-radius:var(--radius-md);border:1px solid var(--line);background:var(--card);color:var(--ink);text-align:start;
+  }
+  .welcome-option .welcome-option-ic{background:var(--green-tint);color:var(--accent-mint);}
+  .welcome-option--work{border-color:var(--gold);background:var(--gold-tint);}
+  .welcome-option--work .welcome-option-ic{background:var(--gold);color:#2A1D08;}
+  .welcome-skip{
+    display:block;margin:2px auto 0;padding:10px 16px;border:none;background:none;
+    color:var(--ink-faint);font-size:13px;font-weight:700;text-decoration:underline;text-underline-offset:3px;
+  }
+  @media (prefers-reduced-motion:reduce){
+    .welcome-sheet,.welcome-scrim,.work-grid .guide-body{transition:none;}
+  }
+  /* Nastaliq needs taller lines than the other scripts, or its dots run into the line above. */
+  html[data-lang="ur"] #view-work p,
+  html[data-lang="ur"] #view-work li,
+  html[data-lang="ur"] .welcome-option-text span,
+  html[data-lang="ur"] .work-entry-text span{line-height:2.2;}
+  html[data-lang="ur"] #view-work h1,
+  html[data-lang="ur"] #view-work h2,
+  html[data-lang="ur"] #view-work h3,
+  html[data-lang="ur"] .offer-flag strong,
+  html[data-lang="ur"] .welcome-q,
+  html[data-lang="ur"] .welcome-option-text strong,
+  html[data-lang="ur"] .work-entry-text strong{line-height:1.8;}
